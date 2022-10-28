@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <p align="center">
   <a href="https://github.com/ezaspy/KASM">
-    <img src="./images/logo_trans.png" alt="Logo" width="400" height="400">
+    <img src="./images/logo_trans.png" alt="Logo" width="600" height="600">
   </a>
   <p align="center">
     Kick-Ass Security Machine<br>Collation of security tools to aid in Digital Forensics/Incident Response (DFIR) and Threat Hunting.
