@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo ./KASM/./config.sh
+sudo tmp/KASM/KASM/./config.sh
