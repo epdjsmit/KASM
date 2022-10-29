@@ -53,7 +53,7 @@ Kick-Ass Security Machine (KASM) has been primariliy created as an all-in-one pr
 
 ### Related Projects
 
-Alot of the scripts and software installed in KASM has come from developing [elrond](https://github.com/ezaspy/elrond). 
+A lot of the scripts and software installed in KASM has come from developing [elrond](https://github.com/ezaspy/elrond). 
 <br><br><br>
 
 <!-- PREREQUISITES -->
