@@ -2,7 +2,7 @@
 sleep 1
 clear
 # installing and configuring elrond
-sudo /tmp/KASM/KASM/scripts/.elrond.sh
+sudo /tmp/KASM/KASM/scripts/./elrond.sh
 updatedb
 sudo chmod -R 744 /opt/elrond/
 export PATH=$PATH:/opt/elrond
