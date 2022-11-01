@@ -1,2 +1,3 @@
 #!/bin/bash
-https://kifarunix.com/install-thehive-on-ubuntu/
+sleep 1
+#https://kifarunix.com/install-thehive-on-ubuntu/
