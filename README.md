@@ -79,12 +79,16 @@ To invoke the script, simply follow the instructions in [CONFIG.md](https://gith
 
 ## Acknowledgements
 
-- [Desktop Background](https://www.canva.com/design/DAFQSTPtEA8/7YY9s1myBIXGEDi65F9dUw/edit?locale=en&ui=eyJBIjp7IkUiOnsiQSI6dHJ1ZX19fQ)
-- [VMware]()
-- [VirtualBox]()
-- [nmap]()
-- [Greenbone]()
-- [MISP]()
-- [TheHive]()
-- [REMnux]()
-- [Cuckoo]()<br><br>
+- [Desktop Background](https://www.canva.com/design/DAFQt9mHyiQ/sj_cMIlhHUAbQPiyLYR5TA/edit?utm_source=onboarding#)
+- [SIFT](https://www.sans.org/tools/sift-workstation/)
+- [VMware](https://www.vmware.com/uk/products/workstation-player.html)
+- [VirtualBox](https://www.virtualbox.org)
+- [nmap](https://nmap.org)
+- [Visual Studio Code](https://code.visualstudio.com)
+- [Greenbone](https://www.greenbone.net/en/)
+- [MISP](https://www.misp-project.org)
+- [TheHive](https://thehive-project.org)
+- [Cuckoo](https://cuckoosandbox.org)
+- [REMnux](https://docs.remnux.org)
+- [oscybershop](https://oscybershop.herokuapp.com/main/index.html)
+<br><br>
