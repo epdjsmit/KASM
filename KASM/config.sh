@@ -14,10 +14,10 @@ printf "\n\n  -> KASM will install the remaining software automaically. Press EN
 read answer
 sudo /tmp/KASM/KASM/scripts/./code.sh
 sudo /tmp/KASM/KASM/scripts/./greenbone.sh
-sudo /tmp/KASM/KASM/scripts/./misp.sh
-#sudo /tmp/KASM/KASM/scripts/./hive.sh
 #sudo /tmp/KASM/KASM/scripts/./cuckoo.sh
 sudo /tmp/KASM/KASM/scripts/./remnux.sh
+sudo /tmp/KASM/KASM/scripts/./misp.sh
+#sudo /tmp/KASM/KASM/scripts/./hive.sh
 gsettings get org.gnome.desktop.background picture-uri 'file:///tmp/KASM/KASM/images/background.png'
 sleep 1
 clear
