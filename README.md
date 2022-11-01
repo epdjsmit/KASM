@@ -39,8 +39,6 @@
 - [Configuration](#Installation/Configuration)
   - [KASM VM](#KASM-VM)
   - [KASM Script](https://github.com/ezaspy/elrond/blob/main/elrond/CONFIG.md)
-- [Contributing](#contributing)
-  - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
 <br><br>
@@ -49,7 +47,7 @@
 
 ## About
 
-Kick-Ass Security Machine (KASM) has been primariliy created as an all-in-one pre-packaged virtual machine. KASM is full of invaluable forensics, malware analysis, threat intelligence and security analytics tools to aid, assist and automate with conducting Digital Forensics/Incident Response (DFIR) and Threat Hunting.<br>
+Kick-Ass Security Machine (KASM) has been primariliy created as an all-in-one Digital Forensics/Incident Response, Threat Hunting (DFIR-TH) pre-packaged virtual machine. KASM is full of invaluable forensics, malware analysis, threat intelligence and security analytics tools to aid, assist and automate with conducting Digital Forensics/Incident Response (DFIR) and Threat Hunting. The main reason for creating this VM is that when I have encountered environments where regular access to the Internet is extremely limited making the installation of additional software very difficult. KASM should have everything you need top revent the reliance on having to install additional software. As new software and toolsets get released and reviewed, they will be added to the VM and relevant scripts.<br>
 
 ### Related Projects
 
@@ -75,24 +73,6 @@ To invoke the script, simply follow the instructions in [CONFIG.md](https://gith
   - Note: SANS SIFT 18.04 is not supported.
 - [CONFIG.md](https://github.com/ezaspy/KASM/blob/main/KASM/CONFIG.md) to install and configure the additional software for SIFT 20.04.
   - If you encounter errors with [CONFIG.md](https://github.com/ezaspy/KASM/blob/main/KASM/CONFIG.md), individual scripts for each of the software packages are contained in [.../KASM/scripts/](https://github.com/ezaspy/KASM/tree/main/KASM/tools/scripts/)
-<br><br><br>
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-<br><br>
-
-### Contact
-
-ezaspy - ezaspython (at) gmail (dot) com
 <br><br><br>
 
 <!-- ACKNOWLEDGEMENTS -->
