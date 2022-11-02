@@ -12,6 +12,7 @@ sudo runuser -l gvm -c 'git clone https://github.com/greenbone/gvm-libs.git && g
 sudo runuser -l gvm -c 'cd gvm-libs && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=/opt/gvm .. && make && make doc && make install && cd /opt/gvm/src'
 sudo runuser -l gvm -c 'cd openvas-smb && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && mkdir build && cd build/ && cmake -DCMAKE_INSTALL_PREFIX=/opt/gvm .. && make && make install && cd /opt/gvm/src'
 sudo runuser -l gvm -c 'cd openvas && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && mkdir build && cd build/ && cmake -DCMAKE_INSTALL_PREFIX=/opt/gvm .. && make && make doc && make install && cd /opt/gvm/src'
+sleep 10000
 # as root
 export LC_ALL="C" && ldconfig && cp /etc/redis/redis.conf /etc/redis/redis.orig && cp /opt/gvm/src/openvas/config/redis-openvas.conf /etc/redis/ && chown redis:redis /etc/redis/redis-openvas.conf && echo "db_address = /run/redis-openvas/redis.sock" > /opt/gvm/etc/openvas/openvas.conf && systemctl enable redis-server@openvas.service && systemctl start redis-server@openvas.service
 sysctl -w net.core.somaxconn=1024 && sysctl vm.overcommit_memory=1 && echo "net.core.somaxconn=1024"  >> /etc/sysctl.conf && echo "vm.overcommit_memory=1" >> /etc/sysctl.conf
