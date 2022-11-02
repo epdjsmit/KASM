@@ -6,13 +6,13 @@ sudo echo 'export PATH="$PATH:/opt/gvm/bin:/opt/gvm/sbin:/opt/gvm/.local/bin"' |
 EOF'
 sudo mkdir /opt/gvm && sudo adduser gvm --disabled-password --home /opt/gvm/ --no-create-home --gecos '' && sudo usermod -aG redis gvm && sudo chown gvm:gvm /opt/gvm/
 # as gvm
+sleep 10000
 # pkg-config --cflags json-glib-1.0
 sudo runuser -l gvm -c 'mkdir src && cd src && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH'
 sudo runuser -l gvm -c 'git clone https://github.com/greenbone/gvm-libs.git && git clone https://github.com/greenbone/openvas.git && git clone https://github.com/greenbone/gvmd.git && git clone https://github.com/greenbone/openvas-smb.git && git clone https://github.com/greenbone/gsa.git && git clone https://github.com/greenbone/ospd-openvas.git && git clone https://github.com/greenbone/ospd.git'
 sudo runuser -l gvm -c 'cd gvm-libs && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=/opt/gvm .. && make && make doc && make install && cd /opt/gvm/src'
 sudo runuser -l gvm -c 'cd openvas-smb && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && mkdir build && cd build/ && cmake -DCMAKE_INSTALL_PREFIX=/opt/gvm .. && make && make install && cd /opt/gvm/src'
 sudo runuser -l gvm -c 'cd openvas && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && mkdir build && cd build/ && cmake -DCMAKE_INSTALL_PREFIX=/opt/gvm .. && make && make doc && make install && cd /opt/gvm/src'
-sleep 10000
 # as root
 export LC_ALL="C" && ldconfig && cp /etc/redis/redis.conf /etc/redis/redis.orig && cp /opt/gvm/src/openvas/config/redis-openvas.conf /etc/redis/ && chown redis:redis /etc/redis/redis-openvas.conf && echo "db_address = /run/redis-openvas/redis.sock" > /opt/gvm/etc/openvas/openvas.conf && systemctl enable redis-server@openvas.service && systemctl start redis-server@openvas.service
 sysctl -w net.core.somaxconn=1024 && sysctl vm.overcommit_memory=1 && echo "net.core.somaxconn=1024"  >> /etc/sysctl.conf && echo "vm.overcommit_memory=1" >> /etc/sysctl.conf
