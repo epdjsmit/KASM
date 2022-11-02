@@ -6,7 +6,7 @@ sudo echo 'export PATH="$PATH:/opt/gvm/bin:/opt/gvm/sbin:/opt/gvm/.local/bin"' |
 EOF'
 sudo mkdir /opt/gvm && sudo adduser gvm --disabled-password --home /opt/gvm/ --no-create-home --gecos '' && sudo usermod -aG redis gvm && sudo chown gvm:gvm /opt/gvm/
 # as gvm
-sleep 10000
+sleep 10782
 # pkg-config --cflags json-glib-1.0
 sudo runuser -l gvm -c 'mkdir src && cd src && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH'
 sudo runuser -l gvm -c 'git clone https://github.com/greenbone/gvm-libs.git && git clone https://github.com/greenbone/openvas.git && git clone https://github.com/greenbone/gvmd.git && git clone https://github.com/greenbone/openvas-smb.git && git clone https://github.com/greenbone/gsa.git && git clone https://github.com/greenbone/ospd-openvas.git && git clone https://github.com/greenbone/ospd.git'
