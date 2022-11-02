@@ -1,3 +1,4 @@
+#!/bin/bash
 mkdir /home/sansforensics/Desktop/Posters
 mv /home/sansforensics/Desktop/*.pdf /home/sansforensics/Desktop/Posters
 yes '' | sudo add-apt-repository ppa:mrazavi/gvm
