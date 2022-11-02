@@ -12,6 +12,8 @@ sudo /tmp/KASM/KASM/scripts/./elrond.sh
 # installing all other scripts
 printf "\n\n  -> KASM will install the remaining software automaically. Press ENTER to continue..."
 read answer
+sleep 1
+clear
 sudo /tmp/KASM/KASM/scripts/./code.sh
 sudo /tmp/KASM/KASM/scripts/./greenbone.sh
 #sudo /tmp/KASM/KASM/scripts/./cuckoo.sh
