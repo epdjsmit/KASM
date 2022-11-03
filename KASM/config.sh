@@ -4,7 +4,7 @@ clear
 /tmp/KASM/KASM/scripts/./init.sh
 /tmp/KASM/KASM/scripts/./code.sh
 sleep 1
-sudo useradd -r -M -U -G sudo -s /usr/sbin/nologin gvm && sudo usermod -aG gvm $USER && sudo su $USER
+sudo useradd -r -M -U -G sudo -s /usr/sbin/nologin gvm && sudo usermod -aG gvm $USER && su $USER
 /tmp/KASM/KASM/scripts/./greenbone.sh # dev
 ##/tmp/KASM/KASM/scripts/./cuckoo.sh
 #/tmp/KASM/KASM/scripts/./remnux.sh
