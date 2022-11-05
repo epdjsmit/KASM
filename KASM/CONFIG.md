@@ -21,7 +21,7 @@ It is **highly recommended** to configure at least 4GB/4096MB RAM and also add a
 
 _Note, the following script will partition and format /dev/sdb. If you have not configured the second HDD as recommended above, it may delete data if you have another drive mounted. You can change this location, by editing the [init.sh](https://github.com/ezaspy/KASM/blob/main/KASM/scripts/init.sh) script_<br><br>
 When prompted, enter the following commands:
-- `sudo git clone https://github.com/ezaspy/KASM.git /tmp/KASM && /tmp/KASM/KASM/./config.sh`<br>
+- `sudo git clone https://github.com/ezaspy/KASM.git /tmp/KASM && /tmp/KASM/./make.sh`<br>
   - **&darr; &darr; ENTER c g**
 - `sudo useradd -r -M -U -G sudo -s /usr/sbin/nologin gvm && sudo usermod -aG gvm $USER && su $USER`<br>
 - `/tmp/KASM/KASM/scripts/./greenbone.sh`<br>
