@@ -5,7 +5,7 @@ sudo useradd -m KASM
 sudo passwd KASM
 sleep 1
 mv /home/sansforensics/Desktop/Posters /home/KASM/Desktop/
-gsettings get org.gnome.desktop.background picture-uri 'file:///tmp/KASM/KASM/images/background.png'
+gsettings get org.gnome.desktop.background picture-uri 'file:///tmp/KASM/KASM/images/KASM.png'
 printf "\n\n  -> KASM has been successfully configured. Press ENTER to reboot..."
 read answer
 sleep 1 && clear && sleep 1
