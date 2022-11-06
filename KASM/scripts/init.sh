@@ -6,7 +6,7 @@ sudo apt update
 sudo apt-get install mlocate virtualbox virtualbox-ext-pack virtualbox-qt net-tools nmap -y --fix-missing
 sudo apt install systemd gnupg software-properties-common apt-transport-https wget -y --fix-missing
 sudo apt update
-sudo python3 -m pip install --upgrade pip
+python3 -m pip install --upgrade pip
 sudo /tmp/KASM/KASM/scripts/./elrond.sh
 sleep 1
 clear
