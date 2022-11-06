@@ -31,3 +31,7 @@ sleep 1 && clear
 #sudo -E -u gvm -g gvm gvmd --rebuild
 
 #http://localhost:9392
+
+
+# gsettings get org.gnome.shell favorite-apps
+# gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'org.gnome.Nautilus.desktop', 'org.gnome.Screenshot.desktop', 'firefox.desktop', 'org.gnome.Terminal.desktop', 'bless.desktop', 'org.gnome.Logs.desktop', 'wireshark.desktop', 'gnome-control-center.desktop']"
