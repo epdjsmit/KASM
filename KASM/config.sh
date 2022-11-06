@@ -1,6 +1,5 @@
 #!/bin/bash
-sleep 1
-clear
+sleep 1 && clear && sleep 1
 /tmp/KASM/KASM/scripts/./init.sh
 /tmp/KASM/KASM/scripts/software/./code.sh
 /tmp/KASM/KASM/scripts/software/./remnux.sh
