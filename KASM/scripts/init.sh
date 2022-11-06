@@ -8,5 +8,4 @@ sudo apt install systemd gnupg software-properties-common apt-transport-https wg
 sudo apt update
 python3 -m pip install --upgrade pip
 sudo /tmp/KASM/KASM/scripts/./elrond.sh
-sleep 1
-clear
+sleep 1 && clear
