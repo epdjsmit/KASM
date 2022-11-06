@@ -1,3 +1,4 @@
+#!/bin/bash
 sleep 1
 hostnamectl set-hostname KASM
 sudo useradd -m KASM
@@ -15,7 +16,9 @@ sudo reboot
 #gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string "#EEEEEEEEECEC"
 #gconftool-2 --set "/apps/gnome-terminal/profiles/Default/background_color" --type string "#000000000000"
 #OR
-#sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M' && sudo chmod +x /usr/bin/theme.sh
+#sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M' && sudo chmod +x /usr/bin/theme.sh && echo "sudo /usr/bin/./theme.sh dot-gov" > /etc/profile.d/set_theme_KASM.sh && echo "gsettings get org.gnome.desktop.background picture-uri 'file:///tmp/KASM/KASM/images/background.png'" > /etc/profile.d/set_theme_KASM.sh
+
+
 #if command -v theme.sh > /dev/null; then
 #	[ -e ~/.theme_history ] && theme.sh "$(theme.sh -l|tail -n1)"
 #	# Optional
