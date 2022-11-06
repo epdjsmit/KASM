@@ -28,6 +28,8 @@ sudo git clone https://github.com/ezaspy/KASM.git /tmp/KASM && /tmp/KASM/./make.
     - **&lt;Ok&gt;**<br>
   - Do you accept the terms of the VirtualBox PUEL license?<br>
     - **&lt;Yes&gt;**<br>
+  - KDE Wallet Service<br>
+    - **Cancel**<br>
   - **&darr; &darr; ENTER c g**
   - New MISP User: 'y'<br>
     - **ENTER**
@@ -38,7 +40,7 @@ sudo git clone https://github.com/ezaspy/KASM.git /tmp/KASM && /tmp/KASM/./make.
 ```
 sudo useradd -r -M -U -G sudo -s /usr/sbin/nologin gvm && sudo usermod -aG gvm $USER && su $USER
 
-/tmp/KASM/KASM/scripts/./greenbone.sh
+/tmp/KASM/KASM/scripts/software/greenbone/./greenbone.sh
 ```
  - Errors? Please review [Building 22.4 from Source](https://greenbone.github.io/docs/latest/22.4/source-build/index.html)<br>
 ```
