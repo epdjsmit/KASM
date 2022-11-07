@@ -1,8 +1,41 @@
 #!/bin/bash
 sleep 1
-sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M' && sudo chmod +x /usr/bin/theme.sh && sudo cp /tmp/KASM/KASM/images/KASM.png /usr/share/backgrounds/KASM.png && sudo echo "sudo /usr/bin/./theme.sh dot-gov" > set_theme_KASM.sh && sudo echo "gsettings get org.gnome.desktop.background picture-uri 'file:///tmp/KASM/KASM/images/KASM.png'" >> set_theme_KASM.sh && chmod 644 set_theme_KASM.sh && sudo mv set_theme_KASM.sh /etc/profile.d/ && sudo chown root:root /etc/profile.d/set_theme_KASM.sh &&  gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'org.gnome.seahorse.Application.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Screenshot.desktop', 'firefox.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'bless.desktop', 'wireshark.desktop', 'networkminer.desktop', 'cyberchef.desktop', 'die.desktop', 'jd-gui.desktop', 'ghidra.desktop', 'cutter.desktop', 'gnome-control-center.desktop']" && sleep 1 && sudo /usr/bin/./theme.sh dot-gov && gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/KASM.png
-mkdir /home/sansforensics/Desktop/Posters && mv /home/sansforensics/Desktop/*.pdf /home/sansforensics/Desktop/Posters
+sudo useradd -m -u 5276 -p $(openssl passwd -1 kasm) ninja && sudo usermod -aG sudo ninja
+cat << EOF > /etc/gdm3/custom.conf
+# GDM configuration storage
+#
+# See /usr/share/gdm/gdm.schemas for a list of available options.
+
+[daemon]
+# Uncomment the line below to force the login screen to use Xorg
+#WaylandEnable=false
+
+# Enabling automatic login
+AutomaticLogonEnable = true
+AutomaticLogin = ninja
+
+# Enabling time login
+#  TimedLoginEnable = true
+#  TimedLogin = user1
+#  TimedLoginDelay = 10
+
+[security]
+
+[xdmcp]
+
+[chooser]
+
+[debug]
+# Uncomment the line below to turn on debugging
+# More verbose logs
+# Additionally lets the X server dump core if it crashes
+#Enable=true
+EOF
+sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M' && sudo chmod +x /usr/bin/theme.sh && sudo cp /tmp/KASM/KASM/images/KASM.png /usr/share/backgrounds/KASM.png && sudo echo "sudo /usr/bin/./theme.sh dot-gov" > set_theme_KASM.sh && sudo echo "gsettings get org.gnome.desktop.background picture-uri 'file:///tmp/KASM/KASM/images/KASM.png'" >> set_theme_KASM.sh && chmod 644 set_theme_KASM.sh && sudo mv set_theme_KASM.sh /etc/profile.d/ && sudo chown root:root /etc/profile.d/set_theme_KASM.sh
+sleep 1 && sudo /usr/bin/./theme.sh dot-gov && gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/KASM.png
+mkdir /home/ninja/Desktop/Posters && mv /home/sansforensics/Desktop/*.pdf /home/kasm/Desktop/Posters
 sleep 1 && clear && sleep 1
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'org.gnome.seahorse.Application.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Screenshot.desktop', 'firefox.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'bless.desktop', 'wireshark.desktop', 'networkminer.desktop', 'cyberchef.desktop', 'die.desktop', 'jd-gui.desktop', 'ghidra.desktop', 'cutter.desktop', 'gnome-control-center.desktop']"
 printf "\n\n\n\n\n\n  -> KASM has been successfully configured. Press ENTER to reboot..."
 read answer
 sleep 1 && clear && sleep 1
