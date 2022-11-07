@@ -13,4 +13,6 @@ sudo /opt/elrond/./make.sh
 /tmp/KASM/KASM/scripts/software/./misp.sh
 #/tmp/KASM/KASM/scripts/software/./cuckoo.sh
 #/tmp/KASM/KASM/scripts/software/./hive.sh
-#/tmp/KASM/KASM/scripts/./finish.sh
+chmod 755 /tmp/KASM/KASM/scripts/KASM.sh && sudo cp /tmp/KASM/KASM/scripts/KASM.sh /etc/profile.d/ && chmod 775 /tmp/KASM/KASM/scripts/KASM.sh && sudo chown ninja:ninja /etc/profile.d/KASM.sh
+sleep 1 && clear && sleep 1
+sudo reboot
