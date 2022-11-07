@@ -31,6 +31,9 @@ AutomaticLogin = ninja
 # Additionally lets the X server dump core if it crashes
 #Enable=true
 EOF
+cd /home/sansforensics
+tar cf - . | (cd ../ninja;tar xf -)
+chown -R ninja:ninja /home/ninja
 sudo rm -rf /etc/gdm3/custom.conf
 sudo chmod 644 custom.conf && sudo mv custom.conf /etc/gdm3/custom.conf && sudo chown root:root /etc/gdm3/custom.conf
 chmod 755 /tmp/KASM/KASM/scripts/init.sh && sudo cp /tmp/KASM/KASM/scripts/init.sh /etc/profile.d/ && chmod 775 /tmp/KASM/KASM/scripts/init.sh && sudo chown ninja:ninja /etc/profile.d/init.sh
