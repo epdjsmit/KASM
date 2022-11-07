@@ -21,34 +21,33 @@ It is **highly recommended** to configure at least 4GB/4096MB RAM and also add a
 
 _Note, the following script will partition and format /dev/sdb. If you have not configured the second HDD as recommended above, it may delete data if you have another drive mounted. You can change this location, by editing the [init.sh](https://github.com/ezaspy/KASM/blob/main/KASM/scripts/init.sh) script_<br><br>
 When prompted, enter the following commands (may need to use TAB to change options):
+### _Initialisation_
 ```
 sudo git clone https://github.com/ezaspy/KASM.git /tmp/KASM && /tmp/KASM/./make.sh
 ```
-  - Configuring virtualbox-ext-pack<br>
-    - **&lt;Ok&gt;**<br>
-  - Do you accept the terms of the VirtualBox PUEL license?<br>
-    - **&lt;Yes&gt;**<br>
   - KDE Wallet Service<br>
     - **Cancel**<br>
-  - **&darr; &darr; ENTER c g**
-  - New MISP User: 'y'<br>
-    - **ENTER**
+### _apfs-fuse_
+  - **&darr; &darr; ENTER c g**<br>
+### _MISP_
   - Configure smb.conf automatically?<br>
     - **&lt;Yes&gt;**<br>
   - What do you want to do about modified configuration file smb.conf?<br>
     - **install the package maintainer's version**<br>
+  - There is NO user called 'misp' create a user 'misp' (y) or continue as sansforensics (n)? (y/n)<br>
+    - **y**
+    - **ENTER**
+### _Greenbone_
 ```
 sudo useradd -r -M -U -G sudo -s /usr/sbin/nologin gvm && sudo usermod -aG gvm $USER && su $USER
-
 /tmp/KASM/KASM/scripts/software/greenbone/./greenbone.sh
 ```
  - Errors? Please review [Building 22.4 from Source](https://greenbone.github.io/docs/latest/22.4/source-build/index.html)<br>
 ```
 sudo yarn build
-
 sudo npx browserslist@latest --update-db
 ```
-<br>
+<br><br>
 
 ### Reverting KASM Virtual Machine
 
