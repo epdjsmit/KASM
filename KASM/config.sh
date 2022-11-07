@@ -33,4 +33,6 @@ AutomaticLogin = ninja
 EOF
 sudo rm -rf /etc/gdm3/custom.conf
 sudo chmod 644 custom.conf && sudo mv custom.conf /etc/gdm3/custom.conf && sudo chown root:root /etc/gdm3/custom.conf
-sudo -H -u ninja bash -c 'bash /tmp/KASM/KASM/scripts/./init.sh'
+chmod 755 /tmp/KASM/KASM/scripts/init.sh && sudo cp /tmp/KASM/KASM/scripts/init.sh /etc/profile.d/ && chmod 775 /tmp/KASM/KASM/scripts/init.sh && sudo chown ninja:ninja /etc/profile.d/init.sh
+sleep 1 && clear && sleep 1
+sudo reboot
