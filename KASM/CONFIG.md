@@ -21,9 +21,35 @@ It is **highly recommended** to configure at least 4GB/4096MB RAM and also add a
 
 _Note, the following script will partition and format /dev/sdb. If you have not configured the second HDD as recommended above, it may delete data if you have another drive mounted. You can change this location, by editing the [init.sh](https://github.com/ezaspy/KASM/blob/main/KASM/scripts/init.sh) script_<br><br>
 When prompted, enter the following commands (may need to use TAB to change options):
-### _Initialisation_
+
+---
+## _Initialisation_
 ```
 sudo git clone https://github.com/ezaspy/KASM.git /tmp/KASM && /tmp/KASM/./make.sh
+```
+  - New password:<br>
+    - _< password >_<br>
+  - Reenter new password:<br>
+    - _< password >_<br>
+
+---
+### _Account Manipulation_
+
+### _temp account_
+&nbsp;&nbsp;&nbsp;&nbsp;Log into **_temp_** account<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Open Terminal
+```
+./user.sh
+```
+
+### _ninja account_
+&nbsp;&nbsp;&nbsp;&nbsp;Log into **_ninja_** account<br>
+
+---
+
+## _Configuration_
+```
+sudo git clone https://github.com/ezaspy/KASM.git /tmp/KASM && /tmp/KASM/KASM/./config.sh
 ```
   - KDE Wallet Service<br>
     - **Cancel**<br>
