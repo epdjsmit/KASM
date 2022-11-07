@@ -40,7 +40,7 @@ sudo rm -rf /etc/gdm3/custom.conf && sudo chmod 644 custom.conf && sudo mv custo
 #sudo echo "bash /tmp/KASM/KASM/scripts/./init.sh" >> /home/ninja/.bashrc
 sudo cp /tmp/KASM/KASM/scripts/init.sh /etc/profile.d/
 sudo mv /etc/profile.d/init.sh /etc/profile.d/KASM.sh
-chmod 644 /etc/profile.d/KASM.sh
-chmod +x /etc/profile.d/KASM.sh
+sudo chmod 644 /etc/profile.d/KASM.sh
+sudo chmod +x /etc/profile.d/KASM.sh
 sleep 1 && clear && sleep 1
 sudo reboot
