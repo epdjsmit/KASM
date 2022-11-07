@@ -30,13 +30,12 @@ sudo git clone https://github.com/ezaspy/KASM.git /tmp/KASM && /tmp/KASM/./make.
 ### _apfs-fuse_
   - **&darr; &darr; ENTER c g**<br>
 ### _MISP_
+  - [sudo] password for misp:<br>
+    - _< password >_<br>
   - Configure smb.conf automatically?<br>
     - **&lt;Yes&gt;**<br>
   - What do you want to do about modified configuration file smb.conf?<br>
     - **install the package maintainer's version**<br>
-  - There is NO user called 'misp' create a user 'misp' (y) or continue as sansforensics (n)? (y/n)<br>
-    - **y**
-    - **ENTER**
 ### _Greenbone_
 ```
 sudo useradd -r -M -U -G sudo -s /usr/sbin/nologin gvm && sudo usermod -aG gvm $USER && su $USER
