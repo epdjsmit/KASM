@@ -32,8 +32,8 @@ AutomaticLogin = ninja
 #Enable=true
 EOF
 cd /home/sansforensics
-tar cf - . | (cd ../ninja;tar xf -)
-chown -R ninja:ninja /home/ninja
+sudo tar cf - . | (cd ../ninja;tar xf -)
+sudo chown -R ninja:ninja /home/ninja
 sudo rm -rf /etc/gdm3/custom.conf
 sudo chmod 644 custom.conf && sudo mv custom.conf /etc/gdm3/custom.conf && sudo chown root:root /etc/gdm3/custom.conf
 sleep 1000
