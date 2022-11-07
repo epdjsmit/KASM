@@ -1,7 +1,7 @@
 #!/bin/bash
 sleep 1 && clear && sleep 1
-sudo usermod -l ninja sansforensics && sudo usermod -m -d /home/ninja ninja -p kasm
-#sudo useradd -m -u 5276 -p $(openssl passwd -1 kasm) ninja && sudo usermod -aG sudo ninja
+hostnamectl set-hostname kasm
+sudo useradd -s /bin/bash -d /home/ninja/ -m -G sudo ninja && sudo passwd ninja
 sudo cat << EOF > custom.conf
 # GDM configuration storage
 #
@@ -24,6 +24,10 @@ AutomaticLogin = ninja
 
 [xdmcp]
 
+[greeter]
+IncludeAll=false
+Include=ninja
+
 [chooser]
 
 [debug]
@@ -32,7 +36,11 @@ AutomaticLogin = ninja
 # Additionally lets the X server dump core if it crashes
 #Enable=true
 EOF
-#cd /home/sansforensics && sudo tar cf - . | (cd ../ninja; sudo tar xf -) && sudo chown -R ninja:ninja /home/ninja
-sudo rm -rf /etc/gdm3/custom.conf && sudo chmod 644 custom.conf && sudo mv custom.conf /etc/gdm3/custom.conf && sudo chown root:root /etc/gdm3/custom.conf && chmod 755 /tmp/KASM/KASM/scripts/init.sh && sudo cp /tmp/KASM/KASM/scripts/init.sh /etc/profile.d/ && chmod 775 /tmp/KASM/KASM/scripts/init.sh && sudo chown ninja:ninja /etc/profile.d/init.sh
+sudo rm -rf /etc/gdm3/custom.conf && sudo chmod 644 custom.conf && sudo mv custom.conf /etc/gdm3/custom.conf && sudo chown root:root /etc/gdm3/custom.conf
+#sudo echo "bash /tmp/KASM/KASM/scripts/./init.sh" >> /home/ninja/.bashrc
+sudo cp /tmp/KASM/KASM/scripts/init.sh /etc/profile.d/
+sudo mv /etc/profile.d/init.sh /etc/profile.d/KASM.sh
+chmod 644 /etc/profile.d/KASM.sh
+chmod +x /etc/profile.d/KASM.sh
 sleep 1 && clear && sleep 1
 sudo reboot
