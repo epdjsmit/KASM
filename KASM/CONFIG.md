@@ -29,7 +29,7 @@ sudo git clone https://github.com/ezaspy/KASM.git /tmp/KASM && /tmp/KASM/./make.
 ```
   - New password:<br>
     - _< password >_<br>
-  - Reenter new password:<br>
+  - Retype new password:<br>
     - _< password >_<br>
 
 ---
