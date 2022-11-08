@@ -11,6 +11,7 @@ rm -rf /opt/elrond/elrond/tools/config/scripts/finish.sh
 sleep 1
 echo "sleep 1" > /opt/elrond/elrond/tools/config/scripts/finish.sh
 sudo /opt/elrond/./make.sh
+sudo updatedb
 /opt/KASM/KASM/scripts/software/./code.sh
 /opt/KASM/KASM/scripts/software/./remnux.sh
 /opt/KASM/KASM/scripts/software/./misp.sh
