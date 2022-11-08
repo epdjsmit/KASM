@@ -27,10 +27,16 @@ When prompted, enter the following commands (may need to use TAB to change optio
 ```
 sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.sh
 ```
-  - New password:<br>
-    - _< password >_<br>
-  - Retype new password:<br>
-    - _< password >_<br>
+### _elrond_
+  - KDE Wallet Service<br>
+    - **Cancel**<br>
+  - **&darr; &darr; ENTER c g**<br>
+
+#### _temp account_
+- New password:<br>
+  - _< password >_<br>
+- Retype new password:<br>
+  - _< password >_<br>
 
 ---
 ### _User Account Adjustments_
@@ -38,7 +44,9 @@ sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.
 #### _temp account_
   - Log into **_temp_** account<br>
     - Open Terminal<br>
-      - `./user.sh`
+      ```
+      ./user.sh
+      ```
 
 #### _ninja account_
   - Log into **_ninja_** account<br>
@@ -49,10 +57,6 @@ sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.
 ```
 /opt/KASM/KASM/./config.sh
 ```
-  - KDE Wallet Service<br>
-    - **Cancel**<br>
-### _apfs-fuse_
-  - **&darr; &darr; ENTER c g**<br>
 ### _MISP_
   - [sudo] password for misp:<br>
     - _< password >_<br>
