@@ -16,4 +16,3 @@ echo "echo -e '\n\n  -> When prompted, please enter a password for the 'ninja' a
 echo "sudo passwd ninja # change password
 gnome-session-quit --no-prompt" >> /home/temp/user.sh
 sudo chmod +x /home/temp/user.sh
-sudo reboot
