@@ -1,13 +1,27 @@
 #!/bin/bash
 sleep 1
-sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M' && sudo chmod +x /usr/bin/theme.sh && sudo cp /tmp/KASM/KASM/images/KASM.png /usr/share/backgrounds/KASM.png && sudo echo "sudo /usr/bin/./theme.sh dot-gov" > KASM_Theme.sh && sudo echo "gsettings get org.gnome.desktop.background picture-uri 'file:///tmp/KASM/KASM/images/KASM.png'" >> KASM_Theme.sh && chmod 755 KASM_Theme.sh && sudo mv KASM_Theme.sh /etc/profile.d/ && sudo chown ninja:ninja /etc/profile.d/KASM_Theme.sh
-sleep 1 && sudo /usr/bin/./theme.sh dot-gov && gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/KASM.png
-mkdir /home/ninja/Desktop/Posters && mv /home/sansforensics/Desktop/*.pdf /home/kasm/Desktop/Posters
-sleep 1 && clear && sleep 1
+sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M'
+sudo chmod +x /usr/bin/theme.sh
+sudo cp /tmp/KASM/KASM/images/KASM.png /usr/share/backgrounds/KASM.png
+sudo echo "sudo /usr/bin/./theme.sh dot-gov" > KASM_Theme.sh
+sudo echo "gsettings get org.gnome.desktop.background picture-uri 'file:///tmp/KASM/KASM/images/KASM.png'" >> KASM_Theme.sh
+chmod 755 KASM_Theme.sh
+sudo mv KASM_Theme.sh /etc/profile.d/
+sudo chown ninja:ninja /etc/profile.d/KASM_Theme.sh
+sleep 1
+sudo /usr/bin/./theme.sh dot-gov
+gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/KASM.png
+mkdir /home/ninja/Desktop/Posters
+mv /home/sansforensics/Desktop/*.pdf /home/kasm/Desktop/Posters
+sleep 1
+clear
+sleep 1
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'org.gnome.seahorse.Application.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Screenshot.desktop', 'firefox.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'bless.desktop', 'wireshark.desktop', 'networkminer.desktop', 'cyberchef.desktop', 'die.desktop', 'jd-gui.desktop', 'ghidra.desktop', 'cutter.desktop', 'gnome-control-center.desktop']"
 printf "\n\n\n\n\n\n  -> KASM has been successfully configured. Press ENTER to reboot..."
 read answer
-sleep 1 && clear && sleep 1
+sleep 1
+clear
+sleep 1
 sudo reboot
 
 
@@ -50,7 +64,11 @@ sudo reboot
 #gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string "#EEEEEEEEECEC"
 #gconftool-2 --set "/apps/gnome-terminal/profiles/Default/background_color" --type string "#000000000000"
 #OR
-#sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M' && sudo chmod +x /usr/bin/theme.sh && echo "sudo /usr/bin/./theme.sh dot-gov" > /etc/profile.d/KASM_Theme.sh && echo "gsettings get org.gnome.desktop.background picture-uri 'file:///tmp/KASM/KASM/images/background.png'" > /etc/profile.d/KASM_Theme.sh
+#sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M'
+#sudo chmod +x /usr/bin/theme.sh
+#echo "sudo /usr/bin/./theme.sh dot-gov" > /etc/profile.d/KASM_Theme.sh
+#echo "gsettings get org.gnome.desktop.background picture-uri 'file:///tmp/KASM/KASM/images/background.png'" > /etc/profile.d/KASM_Theme.sh
+
 
 #hostnamectl set-hostname KASM
 #sudo useradd -u 5276 -p $(openssl passwd -1 kasm) kasm
