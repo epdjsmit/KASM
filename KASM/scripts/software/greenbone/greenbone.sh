@@ -16,11 +16,11 @@ echo "8AE4BE429B60A59B311C2E739823FAA60ED1E580:6:" > /tmp/ownertrust.txt
 gpg --import-ownertrust < /tmp/ownertrust.txt
 sleep 1
 #gvm-libs
-sudo wget -O /tmp/KASM/KASM/software/libpaho-mqtt1.3_1.3.8-1_amd64.deb "http://ftp.de.debian.org/debian/pool/main/p/paho.mqtt.c/libpaho-mqtt1.3_1.3.8-1_amd64.deb"
-sudo wget -O /tmp/KASM/KASM/software/libpaho-mqtt-dev_1.3.8-1_amd64.deb "http://ftp.de.debian.org/debian/pool/main/p/paho.mqtt.c/libpaho-mqtt-dev_1.3.8-1_amd64.deb"
+sudo wget -O /opt/KASM/KASM/software/libpaho-mqtt1.3_1.3.8-1_amd64.deb "http://ftp.de.debian.org/debian/pool/main/p/paho.mqtt.c/libpaho-mqtt1.3_1.3.8-1_amd64.deb"
+sudo wget -O /opt/KASM/KASM/software/libpaho-mqtt-dev_1.3.8-1_amd64.deb "http://ftp.de.debian.org/debian/pool/main/p/paho.mqtt.c/libpaho-mqtt-dev_1.3.8-1_amd64.deb"
 sudo apt install -y libglib2.0-dev libgpgme-dev libgnutls28-dev uuid-dev libssh-gcrypt-dev libhiredis-dev libxml2-dev libpcap-dev libnet1-dev libldap2-dev libradcli-dev
-sudo dpkg -i /tmp/KASM/KASM/software/libpaho-mqtt1.3_1.3.8-1_amd64.deb
-sudo dpkg -i /tmp/KASM/KASM/software/libpaho-mqtt-dev_1.3.8-1_amd64.deb
+sudo dpkg -i /opt/KASM/KASM/software/libpaho-mqtt1.3_1.3.8-1_amd64.deb
+sudo dpkg -i /opt/KASM/KASM/software/libpaho-mqtt-dev_1.3.8-1_amd64.deb
 sudo curl -f -L https://github.com/greenbone/gvm-libs/archive/refs/tags/v22.4.0.tar.gz -o $SOURCE_DIR/gvm-libs-22.4.0.tar.gz
 sudo curl -f -L https://github.com/greenbone/gvm-libs/releases/download/v22.4.0/gvm-libs-22.4.0.tar.gz.asc -o $SOURCE_DIR/gvm-libs-22.4.0.tar.gz.asc
 gpg --verify $SOURCE_DIR/gvm-libs-22.4.0.tar.gz.asc $SOURCE_DIR/gvm-libs-22.4.0.tar.gz

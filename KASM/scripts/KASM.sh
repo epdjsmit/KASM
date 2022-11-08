@@ -2,7 +2,7 @@
 sleep 1
 sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M'
 sudo chmod +x /usr/bin/theme.sh
-sudo cp /tmp/KASM/KASM/images/KASM.png /usr/share/backgrounds/KASM.png
+sudo cp /opt/KASM/KASM/images/KASM.png /usr/share/backgrounds/KASM.png
 sudo echo "sudo /usr/bin/./theme.sh dot-gov" > KASM_Theme.sh
 sudo echo "gsettings get org.gnome.desktop.background picture-uri 'file:///tmp/KASM/KASM/images/KASM.png'" >> KASM_Theme.sh
 chmod 755 KASM_Theme.sh

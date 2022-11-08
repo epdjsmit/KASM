@@ -25,7 +25,7 @@ When prompted, enter the following commands (may need to use TAB to change optio
 ---
 ## _Initialisation_
 ```
-sudo git clone https://github.com/ezaspy/KASM.git /tmp/KASM && /tmp/KASM/./make.sh
+sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.sh
 ```
   - New password:<br>
     - _< password >_<br>
