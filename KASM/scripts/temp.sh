@@ -9,7 +9,6 @@ sudo usermod -d /home/ninja -m ninja # change home folder
 sudo chfn -f 'ninja' ninja # change 'name'
 sudo groupmod --new-name ninja sansforensics # change group
 sudo rm /home/ninja/.local/share/keyrings/login.keyring
-#sudo find /home/ninja -type f -exec egrep -H '/home/sansforensics' {} \;
 #sudo find /home/ninja -type f -exec egrep -H '/home/sansforensics' {} \; | xargs sed -i 's%/home/sansforensics%/home/ninja/‌​;g'
 echo \n  -> When prompted, please enter a password for the 'ninja' account...\n
 sudo passwd ninja # change password
