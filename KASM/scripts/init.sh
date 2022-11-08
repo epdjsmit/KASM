@@ -13,6 +13,7 @@ echo "sleep 1" > /opt/elrond/elrond/tools/config/scripts/finish.sh
 sudo /opt/elrond/./make.sh
 sudo updatedb
 /opt/KASM/KASM/scripts/./temp.sh
+sudo reboot
 /opt/KASM/KASM/scripts/software/./code.sh
 /opt/KASM/KASM/scripts/software/./remnux.sh
 /opt/KASM/KASM/scripts/software/./misp.sh
