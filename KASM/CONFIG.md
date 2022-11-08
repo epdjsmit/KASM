@@ -36,14 +36,12 @@ sudo git clone https://github.com/ezaspy/KASM.git /tmp/KASM && /tmp/KASM/./make.
 ### _Account Manipulation_
 
 ### _temp account_
-&nbsp;&nbsp;&nbsp;&nbsp;Log into **_temp_** account<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Open Terminal
-```
-./user.sh
-```
+  - Log into **_temp_** account<br>
+    - Open Terminal<br>
+      - `./user.sh`
 
 ### _ninja account_
-&nbsp;&nbsp;&nbsp;&nbsp;Log into **_ninja_** account<br>
+  - Log into **_ninja_** account<br>
 
 ---
 
