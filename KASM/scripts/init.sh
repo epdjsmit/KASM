@@ -4,7 +4,7 @@ clear
 sudo apt update
 /tmp/KASM/KASM/scripts/./virtualbox.sh
 sleep 1
-sudo apt-get install mlocate dconf2 virtualbox virtualbox-ext-pack virtualbox-qt net-tools nmap -y --fix-missing
+sudo apt-get install mlocate virtualbox virtualbox-ext-pack virtualbox-qt net-tools nmap -y --fix-missing
 sudo apt install systemd gnupg software-properties-common apt-transport-https wget -y --fix-missing
 python3 -m pip install --upgrade pip
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
