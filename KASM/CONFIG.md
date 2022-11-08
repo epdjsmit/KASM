@@ -33,21 +33,21 @@ sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.
     - _< password >_<br>
 
 ---
-### _Account Manipulation_
+### _User Account Adjustments_
 
-### _temp account_
+#### _temp account_
   - Log into **_temp_** account<br>
     - Open Terminal<br>
       - `./user.sh`
 
-### _ninja account_
+#### _ninja account_
   - Log into **_ninja_** account<br>
 
 ---
 
 ## _Configuration_
 ```
-sudo git clone https://github.com/ezaspy/KASM.git /tmp/KASM && /tmp/KASM/KASM/./config.sh
+/opt/KASM/KASM/./config.sh
 ```
   - KDE Wallet Service<br>
     - **Cancel**<br>
