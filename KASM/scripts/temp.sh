@@ -14,6 +14,6 @@ clear
 sleep 1
 echo "echo -e '\n\n  -> When prompted, please enter a password for the 'ninja' account...\n'" >> /home/temp/user.sh
 sudo passwd ninja # change password
-gnome-session-quit --no-prompt" >> /home/temp/user.sh
+echo "gnome-session-quit --no-prompt" >> /home/temp/user.sh
 sudo chmod +x /home/temp/user.sh
 sudo reboot
