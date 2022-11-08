@@ -1,4 +1,6 @@
-printf "\n\n  -> Ready in configure greenbone scanning..." && read answer && sleep 10782
+printf "\n\n  -> Ready in configure greenbone scanning..."
+read answer
+sleep 10782
 
 # configure scanning
 sudo visudo
@@ -9,9 +11,18 @@ sudo visudo
 %gvm ALL = NOPASSWD: /usr/local/sbin/openvas
 
 # setting up postgresql
-sudo apt install -y postgresql && sudo systemctl start postgresql@13-main
-sudo -u postgres bash && createuser -DRS gvm && createdb -O gvm gvmd && exit
-sudo -u postgres bash && psql gvmd && create role dba with superuser noinherit; && grant dba to gvm; && exit && exit
+sudo apt install -y postgresql
+sudo systemctl start postgresql@13-main
+sudo -u postgres bash
+createuser -DRS gvm
+createdb -O gvm gvmd
+exit
+sudo -u postgres bash
+psql gvmd
+create role dba with superuser noinherit;
+grant dba to gvm;
+exit
+exit
 gvmd --create-user=admin --password=kasm
 # feed import owner
 gvmd --modify-setting 78eceaec-3385-11ea-b237-28d24461215b --value `gvmd --get-users --verbose | grep admin | awk '{print $2}'`
@@ -108,7 +119,11 @@ WantedBy=multi-user.target
 Alias=greenbone-security-assistant.service
 EOF
 sudo cp $BUILD_DIR/gsad.service /etc/systemd/system/
-sudo systemctl daemon-reload && sudo systemctl enable notus-scanner && sudo systemctl enable ospd-openvas && sudo systemctl enable gvmd && sudo systemctl enable gsad
+sudo systemctl daemon-reload
+sudo systemctl enable notus-scanner
+sudo systemctl enable ospd-openvas
+sudo systemctl enable gvmd
+sudo systemctl enable gsad
 # downloading vulnerability tests
 sudo -u gvm greenbone-nvt-sync
 sudo -u gvm greenbone-feed-sync --type SCAP
