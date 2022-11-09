@@ -67,7 +67,7 @@ sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.
 ### _Greenbone_
 ```
 sudo useradd -r -M -U -G sudo -s /usr/sbin/nologin gvm && sudo usermod -aG gvm $USER && su $USER
-/tmp/KASM/KASM/scripts/software/greenbone/./greenbone.sh
+/tmp/KASM/KASM/scripts/tools/greenbone/./greenbone.sh
 ```
  - Errors? Please review [Building 22.4 from Source](https://greenbone.github.io/docs/latest/22.4/source-build/index.html)<br>
 ```

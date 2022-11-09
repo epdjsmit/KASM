@@ -1,5 +1,6 @@
 #!/bin/bash
 sudo hostnamectl set-hostname kasm
+hostname | (echo -n "127.0.0.1        " && cat) | sudo tee -a /etc/hosts
 clear
 printf "\n  -> When prompted, please enter a password for the 'temp' account...\n"
 sudo useradd -s /bin/bash -d /home/temp/ -m -G sudo temp
