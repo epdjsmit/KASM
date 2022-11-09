@@ -1,7 +1,7 @@
 #!/bin/bash
 sleep 1
 wget -O /tmp/INSTALL.sh https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/INSTALL.sh
-sudo chown sansforensics:sansforensics /tmp/INSTALL.sh
+sudo chown ninja:ninja /tmp/INSTALL.sh
 sleep 1
 sudo useradd -m -u 6477 -p $(openssl passwd -1 misp) misp
 sudo usermod -aG sudo misp
