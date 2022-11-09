@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt update
-/opt/KASM/KASM/scripts/./virtualbox.sh
+/opt/KASM/KASM/scripts/tools/./virtual.sh
 sleep 1
 sudo apt-get install mlocate virtualbox virtualbox-ext-pack virtualbox-qt net-tools nmap -y --fix-missing
 sudo apt install systemd gnupg software-properties-common apt-transport-https wget dconf-editor -y --fix-missing
@@ -12,5 +12,5 @@ sleep 1
 sudo echo "sleep 1" > /opt/elrond/elrond/tools/config/scripts/finish.sh
 sudo /opt/elrond/./make.sh
 sudo updatedb
-/opt/KASM/KASM/scripts/config/./temp.sh
+/opt/KASM/KASM/scripts/./user.sh
 sudo reboot
