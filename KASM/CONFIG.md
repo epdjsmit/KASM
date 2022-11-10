@@ -7,7 +7,6 @@ Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-works
 
 - **Network Adaptor -> NAT/Bridged**<br>
 
-It is **highly recommended** to configure at least 4GB/4096MB RAM and also add another HDD dedicated for linux-swap.<br>
 #### **Menu Bar -> Virtual Machine -> Settings... ->**
   - Add Device...
     - New Hard Disk...
