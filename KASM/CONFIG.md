@@ -1,4 +1,4 @@
-# KASM Configuration (via script)
+# Building KASM
 
 ## _Virtual Machine Settings_
 Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-workstation/) (adjust settings such as RAM if desired)<br>
