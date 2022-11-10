@@ -7,7 +7,6 @@ sudo apt install systemd gnupg software-properties-common apt-transport-https wg
 python3 -m pip install --upgrade pip
 sudo git clone https://github.com/ezaspy/gandalf.git /opt/gandalf
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
-sudo chmod -R 744 /opt/elrond/
 sudo rm -rf /opt/elrond/elrond/config.sh
 sudo echo '#!/bin/bash
 sleep 1
@@ -26,7 +25,7 @@ sudo chmod -R 744 /opt/elrond/ && sudo chmod +x /opt/elrond/elrond/elrond.py
 echo "export PATH=$PATH:/opt/elrond" >> /home/sansforensics/.bashrc
 sudo updatedb
 sleep 1' > /opt/elrond/elrond/config.sh
-sleep 1000
+sleep 10000
 sudo /opt/elrond/./make.sh
 sudo updatedb
 /opt/KASM/KASM/scripts/./user.sh
