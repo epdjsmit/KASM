@@ -24,7 +24,10 @@ cd /opt/elrond/elrond
 sudo chmod -R 744 /opt/elrond/ && sudo chmod +x /opt/elrond/elrond/elrond.py
 echo "export PATH=$PATH:/opt/elrond" >> /home/sansforensics/.bashrc
 sudo updatedb
-sleep 1' > /opt/elrond/elrond/config.sh
+sleep 1' > config.sh
+chmod +x config.sh
+sudo mv config.sh /opt/elrond/elrond/
+sudo chown -R root:root /opt/elrond/elrond/
 sleep 10000
 sudo /opt/elrond/./make.sh
 sudo updatedb
