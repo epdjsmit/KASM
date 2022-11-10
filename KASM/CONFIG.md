@@ -25,9 +25,11 @@ When prompted, enter the following commands (may need to use TAB to change optio
 sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.sh
 ```
 ### _elrond_
-  - KDE Wallet Service<br>
-    - **Cancel**<br>
   - **&darr; &darr; ENTER c g**<br>
+
+---
+### _temp account_
+  - Log into **_temp_** account<br>
 
 ---
 ### _ninja account_
