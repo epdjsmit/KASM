@@ -25,6 +25,7 @@ sudo chmod -R 744 /opt/elrond/ && sudo chmod +x /opt/elrond/elrond/elrond.py
 echo "export PATH=$PATH:/opt/elrond" >> /home/sansforensics/.bashrc
 sudo updatedb
 sleep 1' > /opt/elrond/elrond/config.sh
+sleep 1000
 sudo /opt/elrond/./make.sh
 sudo updatedb
 /opt/KASM/KASM/scripts/./user.sh
