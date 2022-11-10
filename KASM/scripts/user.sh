@@ -16,7 +16,9 @@ Name[en_NG]=Terminal
 Name=Terminal
 Comment[en_NG]=Start Terminal On Startup
 Comment=Start Terminal On Startup" > gnome-terminal.desktop
-sudo mv gnome-terminal.desktop /home/temp/.config/autostart/gnome-terminal.desktop
+sudo mkdir -p /home/temp/.config/autostart/
+sudo mv gnome-terminal.desktop /home/temp/.config/autostart/
+sudo chmod 755 /home/temp/.config/autostart/gnome-terminal.desktop
 echo "sudo usermod -l ninja sansforensics # change username
 sudo usermod -d /home/ninja -m ninja # change home folder
 sudo chfn -f 'ninja' ninja # change 'name'
