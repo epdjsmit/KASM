@@ -27,7 +27,7 @@ sudo rm /home/ninja/.local/share/keyrings/login.keyring
 #sudo find /home/ninja -type f -exec egrep -H '/home/sansforensics' {} \; | xargs sed -i 's%/home/sansforensics%/home/ninja/‌​;g'
 clear
 sleep 1" > user.sh
-echo "echo -e '\n\n  -> When prompted, please enter a password for the 'ninja' account...\n'" >> user.sh
+echo "echo '\n\n  -> When prompted, please enter a password for the 'ninja' account...\n'" >> user.sh
 echo "sudo passwd ninja # change password
 gnome-session-quit --no-prompt" >> user.sh
 sudo chmod +x user.sh
