@@ -8,7 +8,7 @@
     <img src="./KASM/images/text.png" alt="Logo" width="300" height="120">
   </a>
   <p align="center">
-    <b>Kick-Ass Security Machine</b><br><br>Collation of security toolsets, frameworks and projects to assist folks during Digital Forensics/Incident Response (DFIR), Threat Hunting, Malware Analysis and OSINT Gathering.
+    <b>Kick-Ass Security Machine</b><br><br>Collation of security toolsets, frameworks and projects to assist folks during Digital Forensics/Incident Response (DFIR) investigations, Threat Hunting, Malware Analysis and OSINT Gathering.
     <br><br>
     <a href="https://mit-license.org">
       <img src="https://img.shields.io/github/license/ezaspy/KASM" alt="License: MIT">
