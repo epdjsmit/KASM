@@ -9,7 +9,7 @@ sudo git clone https://github.com/ezaspy/gandalf.git /opt/gandalf
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
 sudo chmod -R 744 /opt/elrond/
 sudo rm -rf /opt/elrond/elrond/config.sh
-echo '#!/bin/bash
+sudo echo '#!/bin/bash
 sleep 1
 clear
 cd /opt/elrond/elrond
