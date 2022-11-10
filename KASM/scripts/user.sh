@@ -2,7 +2,7 @@
 sudo hostnamectl set-hostname kasm
 hostname | (echo -n "127.0.0.1        " && cat) | sudo tee -a /etc/hosts
 clear
-printf "\n  -> When prompted, please enter a password for the 'temp' account...\n"
+printf "\n  -> Please enter a password for the 'temp' account...\n"
 sudo useradd -s /bin/bash -d /home/temp/ -m -G sudo temp
 sudo passwd temp
 sleep 2
@@ -45,7 +45,7 @@ sudo cp /opt/KASM/KASM/config.sh /home/ninja/config.sh
 sudo chmod +x /home/ninja/config.sh
 sleep 1
 clear" > user.sh
-echo "echo '\n\n  -> When prompted, please enter a password for the 'ninja' account...\n'" >> user.sh
+echo "echo '\n\n  -> Please enter a password for the 'ninja' account...\n'" >> user.sh
 echo "sudo passwd ninja # change password
 sleep 1
 gnome-session-quit --no-prompt" >> user.sh
