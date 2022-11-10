@@ -1,10 +1,14 @@
 <!-- PROJECT LOGO -->
 <p align="center">
   <a href="https://github.com/ezaspy/KASM">
-    <img src="./KASM/images/logo_trans.png" alt="Logo" width="400" height="400">
+    <img src="./KASM/images/mask.png" alt="Logo" width="300" height="380">
+  </a>
+  <br>
+  <a href="https://github.com/ezaspy/KASM">
+    <img src="./KASM/images/text.png" alt="Logo" width="300" height="120">
   </a>
   <p align="center">
-    Kick-Ass Security Machine<br>Collation of security tools to aid in Digital Forensics/Incident Response (DFIR) and Threat Hunting.
+    Kick-Ass Security Machine<br><br>Collation of security tools to aid in Digital Forensics/Incident Response (DFIR) and Threat Hunting.
     <br><br>
     <a href="https://mit-license.org">
       <img src="https://img.shields.io/github/license/ezaspy/KASM" alt="License: MIT">
