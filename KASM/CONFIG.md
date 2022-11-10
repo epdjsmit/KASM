@@ -38,13 +38,8 @@ sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.
 ---
 
 ## _Configuration_
-```
-/opt/KASM/KASM/./config.sh
-```
 ### _Greenbone_
 ### _MISP_
-  - [sudo] password for misp:<br>
-    - _< password >_<br>
   - Configure smb.conf automatically?<br>
     - **&lt;Yes&gt;**<br>
   - What do you want to do about modified configuration file smb.conf?<br>
