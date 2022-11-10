@@ -40,7 +40,7 @@
 
 - [About](#about)
   - [Related Projects](#related-projects)
-- [Configuration](#installation/configuration)
+- [Configuration](#configuration)
   - [KASM Virtual Machine](#kasm-virtual-machine)
   - [KASM Configuration Script](https://github.com/ezaspy/elrond/blob/main/elrond/CONFIG.md)
 - [Acknowledgements](#acknowledgements)
@@ -60,7 +60,7 @@ A lot of the scripts and software installed in KASM has come from developing [el
 
 <!-- PREREQUISITES -->
 
-## Installation/Configuration
+## Configuration
 
 ### KASM Virtual Machine
 
