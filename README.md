@@ -40,9 +40,9 @@
 
 - [About](#about)
   - [Related Projects](#related-projects)
-- [Configuration](#Installation/Configuration)
-  - [KASM VM](#KASM-VM)
-  - [KASM Script](https://github.com/ezaspy/elrond/blob/main/elrond/CONFIG.md)
+- [Configuration](#installation/configuration)
+  - [KASM Virtual Machine](#kasm-virtual-machine)
+  - [KASM Configuration Script](https://github.com/ezaspy/elrond/blob/main/elrond/CONFIG.md)
 - [Acknowledgements](#acknowledgements)
 
 <br><br>
@@ -62,13 +62,13 @@ A lot of the scripts and software installed in KASM has come from developing [el
 
 ## Installation/Configuration
 
-### KASM-VM
+### KASM Virtual Machine
 
 - Download [KASM-VM](https://drive.google.com/file/d/1BjL3DUoE2-V7AwXCUFhmHuwQoThd48l_/view?usp=sharing) OVA, which is the latest version of SIFT (20.04) with additional software packages, pre-installed.
 - Alternatively, follow the instructions below...
 <br><br>
 
-### KASM-Script
+### KASM Configuration Script
 
 There are several software package required for using elrond but almost all of them are contained within the [SANS SIFT Worksation](https://www.sans.org/tools/sift-workstation/) virtual machine OVA. However, for the software which is not included, I have provided a series of scripts which installs and configures the additional software.<br>
 To invoke the scripts, simply follow the instructions in [CONFIG.md](https://github.com/ezaspy/KASM/blob/main/KASM/CONFIG.md#configuration)
