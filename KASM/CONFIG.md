@@ -1,9 +1,3 @@
-# KASM-VM
-
-- Download [KASM](https://drive.google.com/file/d/1BjL3DUoE2-V7AwXCUFhmHuwQoThd48l_/view?usp=sharing) OVA, which is the latest version of KASM with all of the software packages, pre-installed.
-- Alternatively, follow the instructions below...
-<br><br><br>
-
 # KASM-Script
 
 - Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-workstation/) (adjust settings such as RAM if desired)<br>
@@ -39,15 +33,6 @@ sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.
   - _< password >_<br>
 
 ---
-### _User Account Adjustments_
-
-#### _temp account_
-  - Log into **_temp_** account<br>
-    - Open Terminal<br>
-      ```
-      ./user.sh
-      ```
-
 #### _ninja account_
   - Log into **_ninja_** account<br>
 
@@ -57,6 +42,7 @@ sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.
 ```
 /opt/KASM/KASM/./config.sh
 ```
+### _Greenbone_
 ### _MISP_
   - [sudo] password for misp:<br>
     - _< password >_<br>
@@ -64,16 +50,8 @@ sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.
     - **&lt;Yes&gt;**<br>
   - What do you want to do about modified configuration file smb.conf?<br>
     - **install the package maintainer's version**<br>
-### _Greenbone_
-```
-sudo useradd -r -M -U -G sudo -s /usr/sbin/nologin gvm && sudo usermod -aG gvm $USER && su $USER
-/tmp/KASM/KASM/scripts/tools/greenbone/./greenbone.sh
-```
- - Errors? Please review [Building 22.4 from Source](https://greenbone.github.io/docs/latest/22.4/source-build/index.html)<br>
-```
-sudo yarn build
-sudo npx browserslist@latest --update-db
-```
+### _Cuckoo_
+### _TheHive_
 <br><br>
 
 ### Reverting KASM Virtual Machine
