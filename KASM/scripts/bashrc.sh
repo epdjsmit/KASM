@@ -23,6 +23,20 @@ python3 /opt/KASM/KASM/scripts/bashrc.py
 sleep 1
 sudo -E -u gvm -g gvm gvmd --rebuild #greenbone - http://localhost:9392
 sleep 1
+echo "[Desktop Entry]
+Type=Application
+Exec=gnome-terminal
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_NG]=Terminal
+Name=Terminal
+Comment[en_NG]=Start Terminal On Startup
+Comment=Start Terminal On Startup" > gnome-terminal.desktop
+sudo rm -rf /home/ninja/.config/autostart/gnome-terminal.desktop
+sudo mv gnome-terminal.desktop /home/ninja/.config/autostart/
+sudo chmod 755 /home/ninja/.config/autostart/gnome-terminal.desktop
+sleep 1
 printf "\n\n\n\n\n\n  -> KASM has been successfully configured. Press ENTER to reboot..."
 read answer
 sleep 1
