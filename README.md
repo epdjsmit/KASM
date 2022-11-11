@@ -1,14 +1,11 @@
 <!-- PROJECT LOGO -->
 <p align="center">
   <a href="https://github.com/ezaspy/KASM">
-    <img src="./KASM/images/mask.png" alt="Logo" width="300" height="380">
+    <img src="./KASM/images/kasm-logo_yellow.png" alt="Logo" width="600" height="250">
   </a>
-  <br>
-  <a href="https://github.com/ezaspy/KASM">
-    <img src="./KASM/images/text.png" alt="Logo" width="300" height="120">
-  </a>
+  <br><br>
   <p align="center">
-    <b>Kick-Ass Security Machine</b><br><br>Collation of security toolsets, frameworks and projects to assist folks during Digital Forensics/Incident Response (DFIR) investigations, Threat Hunting, Malware Analysis and OSINT Gathering.
+    Collation of security toolsets, frameworks and projects to assist folks during Digital Forensics/Incident Response (DFIR) investigations, Threat Hunting, Malware Analysis and OSINT Gathering.
     <br><br>
     <a href="https://mit-license.org">
       <img src="https://img.shields.io/github/license/ezaspy/KASM" alt="License: MIT">
@@ -85,6 +82,7 @@ To invoke the scripts, simply follow the instructions in [CONFIG.md](https://git
 ## Acknowledgements
 
 - [Desktop Background](https://www.canva.com/design/DAFQt9mHyiQ/sj_cMIlhHUAbQPiyLYR5TA/edit?utm_source=onboarding#)
+- [Logo](https://app.logo.com/dashboard/logo_e2285b91-8ee8-4900-a40a-96da8d0ded1e/your-logo-files)
 - [SIFT](https://www.sans.org/tools/sift-workstation/)
 - [VMware](https://www.vmware.com/uk/products/workstation-player.html)
 - [VirtualBox](https://www.virtualbox.org)
