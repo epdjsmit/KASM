@@ -68,7 +68,7 @@ echo 'echo # GDM configuration storage
 
 # Enabling automatic login
   AutomaticLoginEnable = true
-  AutomaticLogin = temp
+  AutomaticLogin = ninja
 
 # Enabling timed login
 #  TimedLoginEnable = true
