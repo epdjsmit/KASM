@@ -6,6 +6,37 @@ printf "\n  -> Please enter a password for the 'temp' account...\n"
 sudo useradd -s /bin/bash -d /home/temp/ -m -G sudo temp
 sudo passwd temp
 sleep 2
+# autologin for temp account
+echo "# GDM configuration storage
+#
+# See /usr/share/gdm/gdm.schemas for a list of available options.
+
+[daemon]
+# Uncomment the line below to force the login screen to use Xorg
+#WaylandEnable=false
+
+# Enabling automatic login
+  AutomaticLoginEnable = true
+  AutomaticLogin = temp
+
+# Enabling timed login
+#  TimedLoginEnable = true
+#  TimedLogin = user1
+#  TimedLoginDelay = 10
+
+[security]
+
+[xdmcp]
+
+[chooser]
+
+[debug]
+# Uncomment the line below to turn on debugging
+# More verbose logs
+# Additionally lets the X server dump core if it crashes
+#Enable=true" > custom.conf
+sudo mv custom.conf /etc/gdm3/custom.conf
+sudo chmod 644 /etc/gdm3/custom.conf
 # autostarting user.sh upon login for temp account
 echo "[Desktop Entry]
 Type=Application
@@ -27,6 +58,36 @@ sudo chfn -f 'ninja' ninja # change 'name'
 sudo groupmod --new-name ninja sansforensics # change group
 sudo rm /home/ninja/.local/share/keyrings/login.keyring #sudo find /home/ninja -type f -exec egrep -H '/home/sansforensics' {} \; | xargs sed -i 's%/home/sansforensics%/home/ninja/‌​;g'
 sleep 1
+echo 'echo # GDM configuration storage
+#
+# See /usr/share/gdm/gdm.schemas for a list of available options.
+
+[daemon]
+# Uncomment the line below to force the login screen to use Xorg
+#WaylandEnable=false
+
+# Enabling automatic login
+  AutomaticLoginEnable = true
+  AutomaticLogin = temp
+
+# Enabling timed login
+#  TimedLoginEnable = true
+#  TimedLogin = user1
+#  TimedLoginDelay = 10
+
+[security]
+
+[xdmcp]
+
+[chooser]
+
+[debug]
+# Uncomment the line below to turn on debugging
+# More verbose logs
+# Additionally lets the X server dump core if it crashes
+#Enable=true' > custom.conf
+sudo mv custom.conf /etc/gdm3/custom.conf
+sudo chmod 644 /etc/gdm3/custom.conf
 echo '[Desktop Entry]
 Type=Application
 Exec=gnome-terminal -- /home/ninja/./config.sh
