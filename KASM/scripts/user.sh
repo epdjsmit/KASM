@@ -90,7 +90,7 @@ sudo mv custom.conf /etc/gdm3/custom.conf
 sudo chmod 644 /etc/gdm3/custom.conf
 echo '[Desktop Entry]
 Type=Application
-Exec=gnome-terminal -- /home/ninja/./config.sh
+Exec=gnome-terminal -- /home/ninja/./build.sh
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
@@ -102,8 +102,8 @@ sudo mkdir -p /home/ninja/.config/autostart/
 sudo mv gnome-terminal.desktop /home/ninja/.config/autostart/
 sudo chmod 755 /home/ninja/.config/autostart/gnome-terminal.desktop
 sleep 1
-sudo cp /opt/KASM/KASM/config.sh /home/ninja/config.sh
-sudo chmod +x /home/ninja/config.sh
+sudo cp /opt/KASM/KASM/build.sh /home/ninja/build.sh
+sudo chmod +x /home/ninja/build.sh
 sleep 1
 clear" > user.sh
 echo "echo '\n\n  -> Please enter a password for the 'ninja' account...\n'" >> user.sh

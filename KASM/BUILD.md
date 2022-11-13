@@ -21,7 +21,7 @@ Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-works
 ## _Initialisation_
 _Note, the following script will partition and format /dev/sdb. If you have not configured the second HDD as recommended above, it may delete data if you have another drive mounted. You can change this location, by editing the [elrond init.sh](https://github.com/ezaspy/elrond/blob/main/elrond/tools/config/scripts/init.sh) script_<br><br>
 The virtual machine will reboot and/or log out automatically, the lines below indicate when this will occur during the script execution.<br>
-When prompted, enter the necessary credentials and/or the following commands (may need to use TAB to change options):<br><br>
+The installation can take serveral hours. When prompted, enter the necessary credentials and/or the following commands (may need to use TAB to change options):<br><br>
 ```
 sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.sh
 ```
@@ -33,9 +33,13 @@ Enter **_temp_** account password<br>
 
 ---
 ## _Configuration_
-Enter **_ninja_** account password<br>
+- Log into _ninja_ account<br>
+  - Enter **_ninja_** account password<br>
 ### _Greenbone_
+  - Configure smb.conf automatically?<br>
+    - **&lt;Yes&gt;**<br>
 ### _MISP_
+Enter **_misp_** account password<br>
   - Configure smb.conf automatically?<br>
     - **&lt;Yes&gt;**<br>
   - What do you want to do about modified configuration file smb.conf?<br>
@@ -44,9 +48,11 @@ Enter **_ninja_** account password<br>
 ### _TheHive_
 <br>
 
----
+## ⚠️ Take Snapshot ⚠️
 
-## _Reverting Virtual Machine_
+<br><br><br>
+
+# _Reverting Virtual Machine_
 
 #### **Menu Bar -> Virtual Machine -> Settings... ->**
 

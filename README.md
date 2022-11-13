@@ -39,7 +39,7 @@
   - [Related Projects](#related-projects)
 - [Configuration](#configuration)
   - [KASM Virtual Machine](#kasm-virtual-machine)
-  - [KASM Configuration Script](https://github.com/ezaspy/elrond/blob/main/elrond/CONFIG.md)
+  - [KASM Configuration Script](https://github.com/ezaspy/elrond/blob/main/elrond/BUILD.md)
 - [Acknowledgements](#acknowledgements)
 
 <br><br>
@@ -72,12 +72,12 @@ A lot of the scripts and software installed in KASM has come from developing [el
 
 ---
 There are several software package required for using elrond but almost all of them are contained within the [SANS SIFT Worksation](https://www.sans.org/tools/sift-workstation/) virtual machine OVA. However, for the software which is not included, I have provided a series of scripts which installs and configures the additional software.<br>
-To invoke the scripts, simply follow the instructions in [CONFIG.md](https://github.com/ezaspy/KASM/blob/main/KASM/CONFIG.md#configuration)
+To invoke the scripts, simply follow the instructions in [BUILD.md](https://github.com/ezaspy/KASM/blob/main/KASM/BUILD.md#configuration)
 
 - [SANS SIFT Workstation](https://digital-forensics.sans.org/community/downloads) (20.04)
   - Note: SANS SIFT 18.04 is not supported.
-- [CONFIG.md](https://github.com/ezaspy/KASM/blob/main/KASM/CONFIG.md) to install and configure the additional software for SIFT 20.04.
-  - If you encounter errors with [CONFIG.md](https://github.com/ezaspy/KASM/blob/main/KASM/CONFIG.md), individual scripts for each of the software packages are contained in [.../KASM/scripts/](https://github.com/ezaspy/KASM/tree/main/KASM/tools/scripts/)
+- [BUILD.md](https://github.com/ezaspy/KASM/blob/main/KASM/BUILD.md) to install and configure the additional software for SIFT 20.04.
+  - If you encounter errors with [BUILD.md](https://github.com/ezaspy/KASM/blob/main/KASM/BUILD.md), individual scripts for each of the software packages are contained in [.../KASM/scripts/](https://github.com/ezaspy/KASM/tree/main/KASM/scripts/)
 <br><br><br>
 
 <!-- ACKNOWLEDGEMENTS -->
