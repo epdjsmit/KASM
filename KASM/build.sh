@@ -1,5 +1,5 @@
 #!/bin/bash
-/opt/KASM/KASM/scripts/build/./elrond.sh
+/opt/KASM/KASM/scripts/./elrond.sh
 sudo userdel temp && sudo rm -rf /home/temp
 /opt/KASM/KASM/scripts/build/./code.sh
 /opt/KASM/KASM/scripts/build/./gvm.sh
