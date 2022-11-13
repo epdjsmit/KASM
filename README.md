@@ -5,7 +5,7 @@
   </a>
   <br><br>
   <p align="center">
-    Collation of security toolsets, frameworks and projects to assist folks during Digital Forensics/Incident Response (DFIR) investigations, Threat Hunting, Malware Analysis and OSINT Gathering.
+    Collation of security toolsets, frameworks and projects to assist folks during Digital Forensics/Incident Response (DFIR) investigations, Threat Hunting, Malware Analysis and OSINT Gathering
     <br><br>
     <a href="https://mit-license.org">
       <img src="https://img.shields.io/github/license/ezaspy/KASM" alt="License: MIT">
@@ -67,7 +67,10 @@ A lot of the scripts and software installed in KASM has come from developing [el
 <br><br>
 
 ### KASM Configuration Script
+---
+ ⚠️ WARNING ⚠️ - You must have a stable and reliable Internet connection during the entirety of running the KASM configuration script
 
+---
 There are several software package required for using elrond but almost all of them are contained within the [SANS SIFT Worksation](https://www.sans.org/tools/sift-workstation/) virtual machine OVA. However, for the software which is not included, I have provided a series of scripts which installs and configures the additional software.<br>
 To invoke the scripts, simply follow the instructions in [CONFIG.md](https://github.com/ezaspy/KASM/blob/main/KASM/CONFIG.md#configuration)
 
