@@ -7,7 +7,7 @@ sudo apt install systemd gnupg software-properties-common apt-transport-https wg
 python3 -m pip install --upgrade pip
 sudo git clone https://github.com/ezaspy/gandalf.git /opt/gandalf
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
-sudo rm -rf /opt/elrond/elrond/build.sh
+sudo rm -rf /opt/elrond/elrond/config.sh
 sudo echo '#!/bin/bash
 sleep 1
 clear
@@ -30,5 +30,6 @@ sudo mv config.sh /opt/elrond/elrond/
 sudo chown -R root:root /opt/elrond/elrond/
 sudo /opt/elrond/./make.sh
 sudo updatedb
+sleep 10000
 /opt/KASM/KASM/scripts/./user.sh
 sudo reboot
