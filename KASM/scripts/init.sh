@@ -28,7 +28,7 @@ sleep 1' > config.sh
 chmod +x config.sh
 sudo mv config.sh /opt/elrond/elrond/
 sudo chown -R root:root /opt/elrond/elrond/
-sudo /opt/elrond/./make.sh
+#sudo /opt/elrond/./make.sh
 sudo updatedb
 sleep 2
 /opt/KASM/KASM/scripts/./user.sh
