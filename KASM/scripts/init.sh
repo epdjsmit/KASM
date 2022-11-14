@@ -28,6 +28,8 @@ sleep 1' > config.sh
 chmod +x config.sh
 sudo mv config.sh /opt/elrond/elrond/
 sudo chown -R root:root /opt/elrond/elrond/
+# breakpoint 1
+sleep 10000
 sudo /opt/elrond/./make.sh
 sudo updatedb
 /opt/KASM/KASM/scripts/./user.sh
