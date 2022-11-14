@@ -1,4 +1,8 @@
 #!/bin/bash
+python3 -m keyring --disable
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+gsettings set org.gnome.desktop.session idle-delay 0
 sudo apt update
 /opt/KASM/KASM/scripts/build/./virtual.sh
 /opt/KASM/KASM/scripts/build/./repos.sh
@@ -31,5 +35,5 @@ sudo chown -R root:root /opt/elrond/elrond/
 #sudo /opt/elrond/./make.sh
 sudo updatedb
 sleep 2
-sleep 1000
+sleep 10000
 /opt/KASM/KASM/scripts/./user.sh
