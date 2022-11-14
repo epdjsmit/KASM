@@ -35,5 +35,4 @@ sudo chown -R root:root /opt/elrond/elrond/
 #sudo /opt/elrond/./make.sh
 sudo updatedb
 sleep 2
-sleep 10000
 /opt/KASM/KASM/scripts/./user.sh
