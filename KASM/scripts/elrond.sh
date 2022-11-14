@@ -30,6 +30,4 @@ sudo mv config.sh /opt/elrond/elrond/
 sudo chown -R root:root /opt/elrond/elrond/
 sudo /opt/elrond/./make.sh
 sudo updatedb
-sleep 10000
 /opt/KASM/KASM/scripts/./user.sh
-sudo reboot
