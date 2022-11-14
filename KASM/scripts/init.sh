@@ -2,8 +2,6 @@
 sudo apt update
 /opt/KASM/KASM/scripts/build/./virtual.sh
 /opt/KASM/KASM/scripts/build/./repos.sh
-sudo apt install code
-sleep 1
 sudo apt-get install mlocate dconf-tools virtualbox virtualbox-ext-pack virtualbox-qt net-tools nmap -y --fix-missing
 sudo apt install systemd gnupg software-properties-common apt-transport-https wget -y --fix-missing
 python3 -m pip install --upgrade pip
