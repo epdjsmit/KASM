@@ -32,9 +32,9 @@ sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.
 Enter **_temp_** account password<br>
 
 ---
-## _Configuration_
-- Log into _ninja_ account<br>
-  - Enter **_ninja_** account password<br>
+## _Installation_
+Log into _ninja_ account<br>
+Enter **_ninja_** account password<br>
 ### _Greenbone_
   - Configure smb.conf automatically?<br>
     - **&lt;Yes&gt;**<br>
@@ -45,12 +45,37 @@ Enter **_misp_** account password<br>
   - What do you want to do about modified configuration file smb.conf?<br>
     - **install the package maintainer's version**<br>
 ### _Cuckoo_
+  - 
 ### _TheHive_
+  - 
+### _Metasploit_
+  - 
 <br>
 
-## ⚠️ Take Snapshot ⚠️
+---
+<h2 align="center">⚠️ Take Snapshot ⚠️</h2>
 
-<br><br><br>
+---
+<br><br>
+
+# Configuring KASM
+
+## _Configuration_
+### _MISP_
+  - 
+### _Cuckoo_
+  - 
+### _TheHive_
+  - 
+### _Metasploit_
+  - 
+<br>
+
+---
+<h2 align="center">⚠️ Take Snapshot ⚠️</h2>
+
+---
+<br><br>
 
 # _Reverting Virtual Machine_
 
