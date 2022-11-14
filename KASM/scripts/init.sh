@@ -1,6 +1,8 @@
 #!/bin/bash
 sudo apt update
 /opt/KASM/KASM/scripts/build/./virtual.sh
+/opt/KASM/KASM/scripts/build/./repos.sh
+sudo apt install code
 sleep 1
 sudo apt-get install mlocate dconf-tools virtualbox virtualbox-ext-pack virtualbox-qt net-tools nmap -y --fix-missing
 sudo apt install systemd gnupg software-properties-common apt-transport-https wget -y --fix-missing
@@ -28,9 +30,7 @@ sleep 1' > config.sh
 chmod +x config.sh
 sudo mv config.sh /opt/elrond/elrond/
 sudo chown -R root:root /opt/elrond/elrond/
-# breakpoint 1
-sleep 10000
 sudo /opt/elrond/./make.sh
 sudo updatedb
+sleep 2
 /opt/KASM/KASM/scripts/./user.sh
-sudo reboot
