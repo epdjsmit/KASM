@@ -112,3 +112,4 @@ sleep 1
 gnome-session-quit --no-prompt" >> user.sh
 sudo chmod +x user.sh
 sudo mv user.sh /home/temp/user.sh
+sudo reboot
