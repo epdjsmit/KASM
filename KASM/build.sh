@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo userdel temp && sudo rm -rf /home/temp
-#sudo apt install code
+sudo apt install code
 #/opt/KASM/KASM/scripts/build/./gvm.sh
 #/opt/KASM/KASM/scripts/build/./misp.sh
 #/opt/KASM/KASM/scripts/build/./remnux.sh
