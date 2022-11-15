@@ -2,12 +2,9 @@
 sleep 1
 sudo updatedb
 # clean desktop & set background
-mkdir /home/ninja/Desktop/Posters
-mv /home/ninja/Desktop/*.pdf /home/ninja/Desktop/Posters
-sudo rm -rf /usr/local/share/remnux/remnux-logo.png
-sudo rm -rf /var/cache/remnux/cli/v2022.44.5/salt-states-2022.44.5/remnux/theme/gnome-config/remnux-logo.png
-sudo cp /opt/KASM/KASM/images/kasm.png /usr/share/backgrounds/kasm.png
-gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/kasm.png
+mkdir /home/ninja/Desktop/Posters && mv /home/ninja/Desktop/*.pdf /home/ninja/Desktop/Posters
+sudo rm -rf /usr/local/share/remnux/remnux-logo.png && sudo rm -rf /var/cache/remnux/cli/v2022.44.5/salt-states-2022.44.5/remnux/theme/gnome-config/remnux-logo.png
+sudo cp /opt/KASM/KASM/images/kasm.png /usr/share/backgrounds/kasm.png && gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/kasm.png
 sleep 1
 # set icons
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'org.gnome.seahorse.Application.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Screenshot.desktop', 'firefox.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'bless.desktop', 'wireshark.desktop', 'networkminer.desktop', 'cyberchef.desktop', 'die.desktop', 'jd-gui.desktop', 'ghidra.desktop', 'cutter.desktop', 'gnome-control-center.desktop']"
