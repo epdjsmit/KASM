@@ -106,7 +106,7 @@ sudo cp /opt/KASM/KASM/build.sh /home/ninja/build.sh
 sudo chmod +x /home/ninja/build.sh
 sleep 1
 clear" > user.sh
-echo "echo '\n\n  -> Please enter a password for the 'ninja' account...\n'" >> user.sh
+echo "echo '\n  -> Please enter a password for the 'ninja' account...\n'" >> user.sh
 echo "sudo passwd ninja # change password
 sleep 1
 gnome-session-quit --no-prompt" >> user.sh
