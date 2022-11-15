@@ -104,9 +104,10 @@ sudo chmod 755 /home/ninja/.config/autostart/gnome-terminal.desktop
 sleep 1
 sudo cp /opt/KASM/KASM/build.sh /home/ninja/build.sh
 sudo chmod +x /home/ninja/build.sh
-sleep 1000
 sudo echo '/opt/elrond/elrond/tools/config/scripts/./virtual.sh &' > /home/ninja/VMware_Tools.sh
+sleep 10
 sudo chmod +x /home/ninja/VMware_Tools.sh
+sleep 1000
 sleep 1
 clear" > user.sh
 echo "echo '\n  -> Please enter a password for the 'ninja' account...\n'" >> user.sh
