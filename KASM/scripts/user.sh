@@ -104,7 +104,8 @@ sudo chmod 755 /home/ninja/.config/autostart/gnome-terminal.desktop
 sleep 1
 sudo cp /opt/KASM/KASM/build.sh /home/ninja/build.sh
 sudo chmod +x /home/ninja/build.sh
-sudo echo '/opt/elrond/elrond/tools/config/scripts/./virtual.sh &' > /home/ninja/VMware_Tools.sh
+sudo cp /opt/elrond/elrond/tools/config/scripts/virtual.sh /home/ninja/VMware_Tools.sh
+sudo chmod +x /home/ninja/VMware_Tools.sh
 sleep 10
 sudo chmod +x /home/ninja/VMware_Tools.sh
 sleep 1000
