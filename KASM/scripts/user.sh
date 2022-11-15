@@ -56,9 +56,9 @@ echo "sudo usermod -l ninja sansforensics # change username
 sudo usermod -d /home/ninja -m ninja # change home folder
 sudo chfn -f 'ninja' ninja # change 'name'
 sudo groupmod --new-name ninja sansforensics # change group
-sudo rm /home/ninja/.local/share/keyrings/login.keyring #sudo find /home/ninja -type f -exec egrep -H '/home/sansforensics' {} \; | xargs sed -i 's%/home/sansforensics%/home/ninja/‌​;g'
+sudo rm /home/ninja/.local/share/keyrings/login.keyring
 sleep 1
-echo 'echo # GDM configuration storage
+echo '# GDM configuration storage
 #
 # See /usr/share/gdm/gdm.schemas for a list of available options.
 
@@ -105,7 +105,7 @@ sleep 1
 sudo cp /opt/KASM/KASM/build.sh /home/ninja/build.sh
 sudo chmod +x /home/ninja/build.sh
 echo '/opt/elrond/elrond/tools/config/scripts/./virtual.sh &' > /home/ninja/VMware_Tools.sh
-sudo chmod +x /home/ninja/Desktop/VMware_Tools.sh
+sudo chmod +x /home/ninja/VMware_Tools.sh
 sleep 1
 clear" > user.sh
 echo "echo '\n  -> Please enter a password for the 'ninja' account...\n'" >> user.sh
