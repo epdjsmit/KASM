@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <p align="center">
   <a href="https://github.com/ezaspy/KASM">
-    <img src="./KASM/images/kasm-logo-color.png" alt="Logo" width="600" height="250">
+    <img src="./kasm/images/kasm-logo-color.png" alt="Logo" width="600" height="250">
   </a>
   <br><br>
   <p align="center">
@@ -73,12 +73,12 @@ If you do wish to build and configure KASM yourself, follow the instructions bel
 
 ---
 There are several software package required for using elrond but almost all of them are contained within the [SANS SIFT Worksation](https://www.sans.org/tools/sift-workstation/) virtual machine OVA. However, for the software which is not included, I have provided a series of scripts which installs and configures the additional software.<br>
-To invoke the scripts, simply follow the instructions in [BUILD.md](https://github.com/ezaspy/KASM/blob/main/KASM/BUILD.md#configuration)
+To invoke the scripts, simply follow the instructions in [BUILD.md](https://github.com/ezaspy/KASM/blob/main/kasm/BUILD.md#configuration)
 
 - [SANS SIFT Workstation](https://digital-forensics.sans.org/community/downloads) (20.04)
   - Note: SANS SIFT 18.04 is not supported.
-- [BUILD.md](https://github.com/ezaspy/KASM/blob/main/KASM/BUILD.md) to install and configure the additional software for SIFT 20.04.
-  - If you encounter errors with [BUILD.md](https://github.com/ezaspy/KASM/blob/main/KASM/BUILD.md), individual scripts for each of the software packages are contained in [.../KASM/scripts/](https://github.com/ezaspy/KASM/tree/main/KASM/scripts/)
+- [BUILD.md](https://github.com/ezaspy/KASM/blob/main/kasm/BUILD.md) to install and configure the additional software for SIFT 20.04.
+  - If you encounter errors with [BUILD.md](https://github.com/ezaspy/KASM/blob/main/kasm/BUILD.md), individual scripts for each of the software packages are contained in [.../KASM/scripts/](https://github.com/ezaspy/KASM/tree/main/kasm/scripts/)
 <br><br><br>
 
 <!-- ACKNOWLEDGEMENTS -->
