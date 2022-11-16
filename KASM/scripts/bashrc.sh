@@ -19,6 +19,7 @@ sudo chmod +x /opt/KASM/KASM/scripts/bashrc.py
 python3 /opt/KASM/KASM/scripts/bashrc.py
 sleep 1
 sudo -E -u gvm -g gvm gvmd --rebuild
+libvirtd -d
 sleep 1
 echo "[Desktop Entry]
 Type=Application
