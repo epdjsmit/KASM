@@ -14,11 +14,11 @@ sudo adduser --system thehive
 sudo chown -R thehive:thehive /opt/thehive
 sudo mkdir -p /opt/thehive/files
 sudo mkdir -p /opt/thehive/conf
-sudo touch /etc/thehive/conf/application.conf
-sudo touch /etc/thehive/conf/secret.conf
-sudo chown -R root:thehive /etc/thehive
-sudo chgrp thehive /etc/thehive/conf/*.conf
-sudo chmod 666 /etc/thehive/conf/*.conf
+sudo touch /opt/thehive/conf/application.conf
+sudo touch /opt/thehive/conf/secret.conf
+sudo chown -R root:thehive /opt/thehive
+sudo chgrp thehive /opt/thehive/conf/*.conf
+sudo chmod 666 /opt/thehive/conf/*.conf
 cd /tmp
 wget https://github.com/TheHive-Project/TheHive/blob/master/package/thehive.service
 sudo cp thehive.service /etc/systemd/system/thehive.service
@@ -63,11 +63,11 @@ localfs.location = /opt/thp/thehive/files
 # ommenting the configuration line.
 scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
 scalligraph.modules += org.thp.thehive.connector.misp.MispModule
-' > /etc/thehive/conf/application.conf
-cat > /etc/thehive/conf/secret.conf << _EOF_
+' > /opt/thehive/conf/application.conf
+cat > /opt/thehive/conf/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
-sudo chmod 640 /etc/thehive/conf/*.conf
+sudo chmod 640 /opt/thehive/conf/*.conf
 sudo chown -R thehive:thehive /opt/thehive/files
 sudo systemctl enable thehive
 sudo systemctl start thehive
