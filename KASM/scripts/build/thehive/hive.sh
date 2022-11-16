@@ -1,5 +1,5 @@
 #!/bin/bash
-# clear && sudo rm -rf /opt/KASM/ && sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && sudo /opt/KASM/KASM/scripts/build/thehive/./hive.sh
+# clear && sudo rm -rf /opt/KASM/ && sudo git clone https://github.com/ezaspy/KASM.git /opt/kasm && sudo /opt/kasm/kasm/scripts/build/thehive/./hive.sh
 wget -qO- https://apt.corretto.aws/corretto.key | sudo gpg --dearmor  -o /usr/share/keyrings/corretto.gpg
 echo "deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main" |  sudo tee -a /etc/apt/sources.list.d/corretto.sources.list
 wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
@@ -10,7 +10,7 @@ wget -qO -  https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o
 echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://downloads.apache.org/cassandra/debian 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
 sudo apt-get update
 sudo apt install java-common java-11-amazon-corretto-jdk cassandra thehive -y
-sudo python3 /mnt/hgfs/KASM/KASM/scripts/build/cassandra.py
+sudo python3 /mnt/hgfs/kasm/kasm/scripts/build/cassandra.py
 sudo systemctl start cassandra
 sudo systemctl stop cassandra
 sudo rm -rf /var/lib/cassandra/commitlog
@@ -24,7 +24,7 @@ sudo mkdir -p /opt/thp/thehive/files
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo chown -R thehive:thehive /opt/thp/thehive/files
-unzip /opt/KASM/KASM/software/thehive-latest.zip -d /opt/
+unzip /opt/kasm/kasm/software/thehive-latest.zip -d /opt/
 sudo ln -s thehive-5.0.19-1 thehive
 sudo addgroup thehive
 sudo adduser --system thehive
@@ -37,7 +37,7 @@ sudo chgrp thehive /etc/thehive/application.conf
 sudo chgrp thehive /etc/thehive/secret.conf
 sudo chmod 666 /etc/thehive/application.conf
 sudo chmod 666 /etc/thehive/secret.conf
-sudo cp /opt/KASM/KASM/software/ /etc/systemd/system/thehive.service
+sudo cp /opt/kasm/kasm/software/ /etc/systemd/system/thehive.service
 sudo echo '# Service configuration
 application.baseUrl = "http://localhost:9000"
 play.http.context = "/"
