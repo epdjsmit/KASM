@@ -23,7 +23,7 @@ _Note, the following script will partition and format /dev/sdb. If you have not 
 The virtual machine will reboot and/or log out automatically, the lines below indicate when this will occur during the script execution.<br>
 The installation can take serveral hours. When prompted, enter the necessary credentials and/or the following commands (may need to use TAB to change options):<br><br>
 ```
-sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && /opt/KASM/./make.sh
+sudo git clone https://github.com/ezaspy/KASM.git /opt/kasm && /opt/kasm/./make.sh
 ```
 ### _elrond_
   - **&darr; &darr; ENTER c g**<br>
@@ -85,4 +85,4 @@ Enter **_misp_** account password<br>
 
 ---
 
-_If you experience any issues, please try building a new KASM Virtual Machine and then raise an issue inline with the instructions in the [README.md](https://github.com/ezaspy/KASM/blob/main/KASM/README.md)_<br>
+_If you experience any issues, please try building a new KASM Virtual Machine and then raise an issue inline with the instructions in the [README.md](https://github.com/ezaspy/KASM/blob/main/kasm/README.md)_<br>
