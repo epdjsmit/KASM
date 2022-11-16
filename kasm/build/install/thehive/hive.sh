@@ -12,14 +12,12 @@ sudo ln -s thehive-5.0.19-1 /opt/thehive
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo chown -R thehive:thehive /opt/thehive
-sudo mkdir /etc/thehive
+sudo mkdir -p /opt/thehive/files
 sudo touch /etc/thehive/conf/application.conf
 sudo touch /etc/thehive/conf/secret.conf
 sudo chown -R root:thehive /etc/thehive
-sudo chgrp thehive /etc/thehive/conf/application.conf
-sudo chgrp thehive /etc/thehive/conf/secret.conf
-sudo chmod 666 /etc/thehive/conf/application.conf
-sudo chmod 666 /etc/thehive/conf/secret.conf
+sudo chgrp thehive /etc/thehive/conf/*.conf
+sudo chmod 666 /etc/thehive/conf/*.conf
 cd /tmp
 wget https://github.com/TheHive-Project/TheHive/blob/master/package/thehive.service
 sudo cp thehive.service /etc/systemd/system/thehive.service
@@ -69,7 +67,6 @@ cat > /etc/thehive/conf/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
 sudo chmod 640 /etc/thehive/conf/*.conf
-sudo mkdir /opt/thehive/files
 sudo chown -R thehive:thehive /opt/thehive/files
 sudo systemctl enable thehive
 sudo systemctl start thehive
