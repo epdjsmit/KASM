@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <p align="center">
   <a href="https://github.com/ezaspy/KASM">
-    <img src="./KASM/images/kasm-logo_yellow.png" alt="Logo" width="600" height="250">
+    <img src="./KASM/images/kasm-logo-color.png" alt="Logo" width="600" height="250">
   </a>
   <br><br>
   <p align="center">
