@@ -1,22 +1,12 @@
 #!/bin/bash
-# clear && sudo rm -rf /opt/KASM/ && sudo rm -rf /opt/kasm/ && sudo git clone https://github.com/ezaspy/KASM.git /opt/kasm && sudo /opt/kasm/kasm/build/install/thehive/./hive.sh
 sudo apt install java-common java-11-amazon-corretto-jdk cassandra -y
 sudo python3 /opt/kasm/kasm/build/install/thehive/cassandra.py
 sudo systemctl start cassandra
 sudo systemctl stop cassandra
 sudo rm -rf /var/lib/cassandra/commitlog
 sudo systemctl restart cassandra
-sleep 180
-for TABLE in edgestore edgestore_lock_ graphindex graphindex_lock_ janusgraph_ids system_properties system_properties_lock_ systemlog txlog
-    do
-    cqlsh -u cassandra -p cassandra -e "ALTER TABLE thehive.${TABLE} WITH gc_grace_seconds = 0;"
-    done
-sudo mkdir -p /opt/thp/thehive/files
-sudo addgroup thehive
-sudo adduser --system thehive
-sudo chown -R thehive:thehive /opt/thp/thehive/files
-unzip /opt/kasm/kasm/build/software/thehive-latest.zip -d /opt/
-sudo ln -s thehive-5.0.19-1 thehive
+sudo unzip /mnt/hgfs/kasm/kasm/build/software/thehive.zip -d /opt/
+sudo ln -s thehive-5.0.19-1 /opt/thehive
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo chown -R thehive:thehive /opt/thehive
