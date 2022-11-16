@@ -5,7 +5,9 @@ sudo systemctl start cassandra
 sudo systemctl stop cassandra
 sudo rm -rf /var/lib/cassandra/commitlog
 sudo systemctl restart cassandra
-sudo unzip /opt/kasm/kasm/build/software/thehive.zip -d /opt/
+cd /opt
+wget https://archives.strangebee.com/zip/thehive-latest.zip
+unzip thehive-latest.zip
 sudo ln -s thehive-5.0.19-1 /opt/thehive
 sudo addgroup thehive
 sudo adduser --system thehive
@@ -13,12 +15,14 @@ sudo chown -R thehive:thehive /opt/thehive
 sudo mkdir /etc/thehive
 sudo touch /etc/thehive/application.conf
 sudo touch /etc/thehive/secret.conf
-sudo chown root:thehive /etc/thehive
+sudo chown -R root:thehive /etc/thehive
 sudo chgrp thehive /etc/thehive/application.conf
 sudo chgrp thehive /etc/thehive/secret.conf
 sudo chmod 666 /etc/thehive/application.conf
 sudo chmod 666 /etc/thehive/secret.conf
-sudo cp /opt/kasm/kasm/build/software/thehive.service /etc/systemd/system/thehive.service
+cd /tmp
+wget https://github.com/TheHive-Project/TheHive/blob/master/package/thehive.service
+sudo cp thehive.service /etc/systemd/system/thehive.service
 sudo echo '# Service configuration
 application.baseUrl = "http://localhost:9000"
 play.http.context = "/"
@@ -66,6 +70,6 @@ cat > /etc/thehive/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
 sudo chmod 640 /etc/thehive/*.conf
-sudo chown -R thehive:thehive /opt/thp/thehive/files
+sudo chown -R thehive:thehive /opt/thehive/files
 sudo systemctl enable thehive
 sudo systemctl start thehive
