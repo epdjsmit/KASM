@@ -4,8 +4,8 @@ gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
 sudo apt update
-/opt/kasm/kasm/build/scripts/./virtual.sh
-/opt/kasm/kasm/build/scripts/./repos.sh
+/opt/kasm/kasm/build/install/./virtual.sh
+/opt/kasm/kasm/build/install/./repos.sh
 sudo apt-get install mlocate dconf-tools virtualbox virtualbox-ext-pack virtualbox-qt net-tools nmap -y --fix-missing
 sudo apt install systemd gnupg software-properties-common apt-transport-https wget -y --fix-missing
 python3 -m pip install --upgrade pip

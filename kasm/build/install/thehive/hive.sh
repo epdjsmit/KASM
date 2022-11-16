@@ -1,14 +1,7 @@
 #!/bin/bash
-# clear && sudo rm -rf /opt/kasm/ && sudo git clone https://github.com/ezaspy/KASM.git /opt/kasm && sudo /opt/kasm/kasm/build/scripts/thehive/./hive.sh
-wget -qO- https://apt.corretto.aws/corretto.key | sudo gpg --dearmor  -o /usr/share/keyrings/corretto.gpg
-echo "deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main" |  sudo tee -a /etc/apt/sources.list.d/corretto.sources.list
-echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment 
-export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
-wget -qO -  https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o /usr/share/keyrings/cassandra-archive.gpg
-echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://downloads.apache.org/cassandra/debian 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
-sudo apt update
+# clear && sudo rm -rf /opt/KASM/ && sudo rm -rf /opt/kasm/ && sudo git clone https://github.com/ezaspy/KASM.git /opt/kasm && sudo /opt/kasm/kasm/build/install/thehive/./hive.sh
 sudo apt install java-common java-11-amazon-corretto-jdk cassandra -y
-sudo python3 /opt/kasm/kasm/build/scripts/thehive/cassandra.py
+sudo python3 /opt/kasm/kasm/build/install/thehive/cassandra.py
 sudo systemctl start cassandra
 sudo systemctl stop cassandra
 sudo rm -rf /var/lib/cassandra/commitlog
