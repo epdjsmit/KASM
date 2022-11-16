@@ -73,3 +73,4 @@ sudo chmod 640 /etc/thehive/*.conf
 sudo chown -R thehive:thehive /opt/thehive/files
 sudo systemctl enable thehive
 sudo systemctl start thehive
+cd ~
