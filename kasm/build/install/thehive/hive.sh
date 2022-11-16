@@ -33,8 +33,8 @@ User=thehive
 Group=thehive
 
 ExecStart=/opt/thehive/bin/thehive \
-	-Dconfig.file=/etc/thehive/application.conf \
-	-Dlogger.file=/etc/thehive/logback.xml \
+	-Dconfig.file=/etc/thehive/conf/application.conf \
+	-Dlogger.file=/etc/thehive/conf/logback.xml \
 	-Dpidfile.path=/dev/null
 
 StandardOutput=null
@@ -104,7 +104,7 @@ cat > /opt/thehive/conf/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
 sudo chmod 640 /opt/thehive/conf/*.conf
-sudo chown -R thehive:thehive /opt/thehive/files
+sudo chown -R thehive:thehive /opt/thehive
 sudo systemctl enable thehive
 sudo systemctl start thehive
 cd ~
