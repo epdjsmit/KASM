@@ -5,7 +5,7 @@ sudo systemctl start cassandra
 sudo systemctl stop cassandra
 sudo rm -rf /var/lib/cassandra/commitlog
 sudo systemctl restart cassandra
-sudo unzip /mnt/hgfs/kasm/kasm/build/software/thehive.zip -d /opt/
+sudo unzip /opt/kasm/kasm/build/software/thehive.zip -d /opt/
 sudo ln -s thehive-5.0.19-1 /opt/thehive
 sudo addgroup thehive
 sudo adduser --system thehive
