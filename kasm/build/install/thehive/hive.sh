@@ -13,6 +13,7 @@ sudo addgroup thehive
 sudo adduser --system thehive
 sudo chown -R thehive:thehive /opt/thehive
 sudo mkdir -p /opt/thehive/files
+sudo mkdir -p /opt/thehive/conf
 sudo touch /etc/thehive/conf/application.conf
 sudo touch /etc/thehive/conf/secret.conf
 sudo chown -R root:thehive /etc/thehive
