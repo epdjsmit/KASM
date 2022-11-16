@@ -8,7 +8,7 @@ wget -qO -  https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o
 echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://downloads.apache.org/cassandra/debian 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
 sudo apt update
 sudo apt install java-common java-11-amazon-corretto-jdk cassandra -y
-sudo python3 /mnt/hgfs/kasm/kasm/scripts/build/cassandra.py
+sudo python3 /opt/kasm/kasm/scripts/build/thehive/cassandra.py
 sudo systemctl start cassandra
 sudo systemctl stop cassandra
 sudo rm -rf /var/lib/cassandra/commitlog
