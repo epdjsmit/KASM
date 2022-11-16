@@ -1,4 +1,5 @@
 #!/bin/bash
+# clear && sudo rm -rf /opt/KASM/ && sudo git clone https://github.com/ezaspy/KASM.git /opt/KASM && sudo /opt/KASM/KASM/scripts/build/thehive/./hive.sh
 wget -qO- https://apt.corretto.aws/corretto.key | sudo gpg --dearmor  -o /usr/share/keyrings/corretto.gpg
 echo "deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main" |  sudo tee -a /etc/apt/sources.list.d/corretto.sources.list
 wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
