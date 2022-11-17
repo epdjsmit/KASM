@@ -1,4 +1,5 @@
 #!/bin/bash
+# https://docs.strangebee.com/thehive/setup/installation/step-by-step-guide/
 sudo apt install java-common java-11-amazon-corretto-jdk cassandra -y
 sudo python3 /opt/kasm/kasm/build/install/thehive/cassandra.py
 sudo systemctl start cassandra
