@@ -2,7 +2,6 @@
 ###########################
 ######### GENERAL #########
 ###########################
-sudo apt update
 git clone https://github.com/ezaspy/oscybershop.git /home/ninja/Desktop/cybershop
 # jupyter
 pip install jupyterlab
@@ -46,6 +45,10 @@ sudo unzip /opt/Sysmon.zip -d /opt/Sysmon
 sudo git clone https://github.com/Sysinternals/SysmonForLinux.git /opt/Sysmon/SysmonForLinux
 # WmiExplorer
 sudo git clone https://github.com/vinaypamnani/wmie2/ /opt/WMIExplorer
+# CobaltStrike-Defence
+sudo git clone https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence /home/ninja/Desktop/CobaltStrike-Defence
+sudo mkdir /home/ninja/Desktop/CobaltStrike-Defence/content
+sudo python3 CobaltStrike-Defence.py
 ###############################
 ####### OFFENSIVE CYBER #######
 ###############################
@@ -78,8 +81,3 @@ sudo git clone https://github.com/sherlock-project/sherlock.git /opt/sherlock
 sudo git clone https://github.com/jonbakerfish/TweetScraper.git /opt/TweetScraper
 # karma
 sudo git clone https://github.com/Dheerajmadhukar/karma_v2.git /opt/karma
-
-
-####################-- UNFINISHED --####################
-# CobaltStrike-Defence
-#sudo git clone https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence /opt/CobaltStrike-Defence
