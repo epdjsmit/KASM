@@ -40,7 +40,7 @@ Confirm **_ninja_** account password<br>
 ---
 ## _Installation_
 Log into _ninja_ account<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Enter **_ninja_** account password<br>
+&nbsp;&nbsp;Enter **_ninja_** account password<br>
 ### _Greenbone_
  - Configure smb.conf automatically?<br>
    - **&lt;Yes&gt;**<br>
