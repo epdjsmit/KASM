@@ -26,22 +26,21 @@ The installation can take serveral hours. When prompted, enter the necessary cre
 sudo git clone https://github.com/ezaspy/KASM.git /opt/kasm && /opt/kasm/./make.sh
 ```
 ### _elrond_
- - **&darr; &darr; ENTER c g**<br>
+ - **&darr; &darr; ENTER c g**<br><br>
 
-Created **_temp_** account<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Enter **_temp_** account password<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Confirm **_temp_** account password<br>
+Enter **_temp_** account password<br>
+Confirm **_temp_** account password<br>
 
 ---
 
 Enter **_temp_** account password<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Enter **_ninja_** account password<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Confirm **_ninja_** account password<br>
+Enter **_ninja_** account password<br>
+Confirm **_ninja_** account password<br>
 
 ---
 ## _Installation_
 Log into _ninja_ account<br>
-Enter **_ninja_** account password<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Enter **_ninja_** account password<br>
 ### _Greenbone_
  - Configure smb.conf automatically?<br>
    - **&lt;Yes&gt;**<br>
