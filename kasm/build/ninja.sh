@@ -35,3 +35,5 @@ sudo rm -rf /home/ninja/.config/autostart/gnome-terminal.desktop
 sudo mv gnome-terminal.desktop /home/ninja/.config/autostart/
 sudo chmod 755 /home/ninja/.config/autostart/gnome-terminal.desktop
 sleep 1
+sudo chown -R ninja:ninja /opt/
+sudo reboot
