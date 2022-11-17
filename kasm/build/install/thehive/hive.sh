@@ -89,7 +89,7 @@ index.search {
 # The path can be updated and should belong to the user/group running thehive service. (by default: thehive:thehive)
 storage {
 provider = localfs
-localfs.location = /opt/thp/thehive/files
+localfs.location = /opt/thehive/files
 }
 
 # Additional modules
