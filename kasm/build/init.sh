@@ -3,6 +3,7 @@ python3 -m keyring --disable
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
+sudo chmod -R 755 /opt/kasm
 sudo apt update
 /opt/kasm/kasm/build/install/./virtual.sh
 /opt/kasm/kasm/build/install/./repos.sh
