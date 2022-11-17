@@ -1,7 +1,5 @@
 #!/bin/bash
-###########################
-######### GENERAL #########
-###########################
+# GENERAL
 git clone https://github.com/ezaspy/oscybershop.git /home/ninja/Desktop/cybershop
 # jupyter
 pip install jupyterlab
@@ -12,9 +10,7 @@ pip2 install notebook
 pip2 install voila
 # Bookstack
 sudo git clone https://github.com/BookStackApp/BookStack.git /opt/bookstack
-###########################
-##### DEFENSIVE CYBER #####
-###########################
+# DEFENSIVE CYBER
 # TZWorks
 sudo mkdir /opt/TZWorks
 sudo wget -O /opt/TZWorks/2022.10.19.win64.zip https://tzworks.com/prototypes/builds/2022.10.19.win64.zip
@@ -49,9 +45,7 @@ sudo git clone https://github.com/vinaypamnani/wmie2/ /opt/WMIExplorer
 sudo git clone https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence /home/ninja/Desktop/CobaltStrike-Defence
 sudo mkdir /home/ninja/Desktop/CobaltStrike-Defence/content
 sudo python3 CobaltStrike-Defence.py
-###############################
-####### OFFENSIVE CYBER #######
-###############################
+# OFFENSIVE CYBER
 # metasploit
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
 sudo chmod 755 msfinstall
@@ -63,9 +57,7 @@ sudo ./configure
 sudo make -j8
 sudo make install DESTDIR=/
 cd ~
-###############################
-##### THREAT INTELLIGENCE #####
-###############################
+# THREAT INTELLIGENCE
 # Maltego
 wget -O Maltego.v4.3.1.deb https://maltego-downloads.s3.us-east-2.amazonaws.com/linux/Maltego.v4.3.1.deb
 sudo dpkg -i Maltego.v4.3.1.deb
