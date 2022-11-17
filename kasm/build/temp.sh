@@ -37,10 +37,10 @@ echo "# GDM configuration storage
 #Enable=true" > custom.conf
 sudo mv custom.conf /etc/gdm3/custom.conf
 sudo chmod 644 /etc/gdm3/custom.conf
-# autostarting user.sh upon login for temp account
+# autostarting temp.sh upon login for temp account
 echo "[Desktop Entry]
 Type=Application
-Exec=gnome-terminal -- /home/temp/./user.sh
+Exec=gnome-terminal -- /home/temp/./temp.sh
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
@@ -107,11 +107,11 @@ sudo chmod +x /home/ninja/build.sh
 sudo cp /opt/elrond/elrond/tools/config/install/virtual.sh /home/ninja/VMware_Tools.sh
 sudo chmod +x /home/ninja/VMware_Tools.sh
 sleep 1
-clear" > user.sh
-echo "echo '\n  -> Please enter a password for the 'ninja' account...\n'" >> user.sh
+clear" > temp.sh
+echo "echo '\n  -> Please enter a password for the 'ninja' account...\n'" >> temp.sh
 echo "sudo passwd ninja # change password
 sleep 1
-gnome-session-quit --no-prompt" >> user.sh
-sudo chmod +x user.sh
-sudo mv user.sh /home/temp/user.sh
+gnome-session-quit --no-prompt" >> temp.sh
+sudo chmod +x temp.sh
+sudo mv temp.sh /home/temp/temp.sh
 sudo reboot
