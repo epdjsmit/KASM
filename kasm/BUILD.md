@@ -44,12 +44,13 @@ Enter **_misp_** account password<br>
     - **&lt;Yes&gt;**<br>
   - What do you want to do about modified configuration file smb.conf?<br>
     - **install the package maintainer's version**<br>
-### _Cuckoo_
-  - 
 ### _TheHive_
   - 
-### _Metasploit_
+### _Cuckoo_
   - 
+### _BlueTeamPowerShell_
+  - LAPTOP-SETUP-README-NOW.txt password:
+    - **505**
 <br>
 
 ---

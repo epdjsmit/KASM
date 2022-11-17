@@ -12,16 +12,16 @@ pip2 install jupyterlab
 pip2 install notebook
 pip2 install voila
 # Bookstack
-sudo git clone https://github.com/BookStackApp/BookStack.git /opt/Bookstack
+sudo git clone https://github.com/BookStackApp/BookStack.git /opt/bookstack
 ###########################
 ##### DEFENSIVE CYBER #####
 ###########################
 # TZWorks
-sudo mkdir /opt/TZworks/
-sudo wget -O /opt/TZworks/2022.10.19.win64.zip https://tzworks.com/prototypes/builds/2022.10.19.win64.zip
-sudo unzip /opt/TZworks/2022.10.19.win64.zip -d /opt/TZWorks/2022.10.19.win64
-sudo wget -O /opt/TZworks/2022.09.27.lin64.zip https://tzworks.com/prototypes/builds/2022.09.27.lin64.zip
-sudo unzip /opt/TZworks/2022.09.27.lin64.zip -d /opt/TZWorks/2022.09.27.lin64
+sudo mkdir /opt/TZWorks
+sudo wget -O /opt/TZWorks/2022.10.19.win64.zip https://tzworks.com/prototypes/builds/2022.10.19.win64.zip
+sudo unzip /opt/TZWorks/2022.10.19.win64.zip -d /opt/TZWorks/2022.10.19.win64
+sudo wget -O /opt/TZWorks/2022.09.27.lin64.zip https://tzworks.com/prototypes/builds/2022.09.27.lin64.zip
+sudo unzip /opt/TZWorks/2022.09.27.lin64.zip -d /opt/TZWorks/2022.09.27.lin64
 # BlueTeamPowerShell
 sudo mkdir /opt/BlueTeamPowerShell
 sudo wget -O /opt/BlueTeamPowerShell.zip https://blueteampowershell.com/SEC505-Scripts.zip
@@ -83,4 +83,3 @@ sudo git clone https://github.com/Dheerajmadhukar/karma_v2.git /opt/karma
 ####################-- UNFINISHED --####################
 # CobaltStrike-Defence
 #sudo git clone https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence /opt/CobaltStrike-Defence
-#
