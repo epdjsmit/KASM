@@ -8,13 +8,13 @@ Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-works
 - **Network Adaptor -> NAT/Bridged**<br>
 
 #### **Menu Bar -> Virtual Machine -> Settings... ->**
-  - Add Device...
-    - New Hard Disk...
-      - Add...
-        - **File name: `Virtual Disk 2.vmdk`**
-        - **Disk Size: `20.00GB` (more, if desired)**
-        - **Advanced options: `None`**
-        - **Apply**
+ - Add Device...
+   - New Hard Disk...
+     - Add...
+       - **File name: `Virtual Disk 2.vmdk`**
+       - **Disk Size: `20.00GB` (more, if desired)**
+       - **Advanced options: `None`**
+       - **Apply**
 - Start SIFT<br>
 
 ---
@@ -26,31 +26,38 @@ The installation can take serveral hours. When prompted, enter the necessary cre
 sudo git clone https://github.com/ezaspy/KASM.git /opt/kasm && /opt/kasm/./make.sh
 ```
 ### _elrond_
-  - **&darr; &darr; ENTER c g**<br>
+ - **&darr; &darr; ENTER c g**<br>
+
+Created **_temp_** account<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Enter **_temp_** account password<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Confirm **_temp_** account password<br>
+
 ---
 
 Enter **_temp_** account password<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Enter **_ninja_** account password<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Confirm **_ninja_** account password<br>
 
 ---
 ## _Installation_
 Log into _ninja_ account<br>
 Enter **_ninja_** account password<br>
 ### _Greenbone_
-  - Configure smb.conf automatically?<br>
-    - **&lt;Yes&gt;**<br>
+ - Configure smb.conf automatically?<br>
+   - **&lt;Yes&gt;**<br>
 ### _MISP_
 Enter **_misp_** account password<br>
-  - Configure smb.conf automatically?<br>
-    - **&lt;Yes&gt;**<br>
-  - What do you want to do about modified configuration file smb.conf?<br>
-    - **install the package maintainer's version**<br>
+ - Configure smb.conf automatically?<br>
+   - **&lt;Yes&gt;**<br>
+ - What do you want to do about modified configuration file smb.conf?<br>
+   - **install the package maintainer's version**<br>
 ### _TheHive_
-  - 
+ - 
 ### _Cuckoo_
-  - 
+ - 
 ### _BlueTeamPowerShell_
-  - LAPTOP-SETUP-README-NOW.txt password:
-    - **505**
+ - LAPTOP-SETUP-README-NOW.txt password:
+   - **505**
 <br>
 
 ---
@@ -63,13 +70,13 @@ Enter **_misp_** account password<br>
 
 ## _Configuration_
 ### _MISP_
-  - 
+ - 
 ### _Cuckoo_
-  - 
+ - 
 ### _TheHive_
-  - 
+ - 
 ### _Metasploit_
-  - 
+ - 
 <br>
 
 ---
