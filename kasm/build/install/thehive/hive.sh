@@ -104,6 +104,9 @@ scalligraph.modules += org.thp.thehive.connector.misp.MispModule
 cat > /opt/thehive/conf/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
+sudo mkdir /var/log/thehive
+sudo chmod 640 /var/log/thehive/
+sudo chown -R thehive:thehive /var/log/thehive/
 sudo chmod 640 /opt/thehive/conf/*.conf
 sudo chown -R thehive:thehive /opt/thehive
 sudo systemctl enable thehive
