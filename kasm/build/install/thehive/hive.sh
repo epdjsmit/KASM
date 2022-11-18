@@ -107,8 +107,8 @@ _EOF_
 sudo mkdir /var/log/thehive
 sudo chmod 640 /var/log/thehive/
 sudo chown -R thehive:thehive /var/log/thehive/
-sudo chmod 640 /opt/thehive/conf/*.conf
-sudo chown -R thehive:thehive /opt/thehive
+sudo chmod 640 /opt/thehive/
+sudo chown -R thehive:thehive /opt/thehive/
 sudo systemctl enable thehive
 sudo systemctl start thehive
 cd ~
