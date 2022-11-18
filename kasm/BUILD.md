@@ -46,8 +46,6 @@ Log into _ninja_ account<br>
    - **&lt;Yes&gt;**<br>
 ### _MISP_
 Enter **_misp_** account password<br>
- - Configure smb.conf automatically?<br>
-   - **&lt;Yes&gt;**<br>
  - What do you want to do about modified configuration file smb.conf?<br>
    - **install the package maintainer's version**<br>
 ### _TheHive_
