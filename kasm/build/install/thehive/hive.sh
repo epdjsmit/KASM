@@ -13,13 +13,13 @@ sudo ln -s thehive-5.0.19-1 /opt/thehive
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo chown -R thehive:thehive /opt/thehive
-sudo mkdir -p /opt/thehive/files
-sudo mkdir -p /opt/thehive/conf
-sudo touch /opt/thehive/conf/application.conf
-sudo touch /opt/thehive/conf/secret.conf
-sudo chown -R root:thehive /opt/thehive
-sudo chgrp thehive /opt/thehive/conf/*.conf
-sudo chmod 666 /opt/thehive/conf/*.conf
+#sudo mkdir -p /opt/thehive/files
+sudo mkdir -p /etc/thehive
+sudo touch /etc/thehive/application.conf
+sudo chown -R root:thehive /etc/thehive
+#sudo touch /opt/thehive/conf/secret.conf
+sudo chgrp thehive /etc/thehive/*.conf
+sudo chmod 640 /etc/thehive/*.conf
 cd /tmp
 echo '[Unit]
 Description=TheHive
@@ -100,8 +100,8 @@ localfs.location = /opt/thehive/files
 # ommenting the configuration line.
 scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
 scalligraph.modules += org.thp.thehive.connector.misp.MispModule
-' > /opt/thehive/conf/application.conf
-cat > /opt/thehive/conf/secret.conf << _EOF_
+' > /etc/thehive/application.conf
+cat > /etc/thehive/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
 sudo mkdir /var/log/thehive
