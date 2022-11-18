@@ -44,7 +44,8 @@ sudo git clone https://github.com/vinaypamnani/wmie2/ /opt/WMIExplorer
 # CobaltStrike-Defence
 sudo git clone https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence /home/ninja/Desktop/CobaltStrike-Defence
 sudo mkdir /home/ninja/Desktop/CobaltStrike-Defence/content
-sudo python3 CobaltStrike-Defence.py
+sudo chmod +x /opt/kasm/kasm/build/config/CobaltStrike-Defence.py
+sudo python3 /opt/kasm/kasm/build/config/CobaltStrike-Defence.py
 # OFFENSIVE CYBER
 # metasploit
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
