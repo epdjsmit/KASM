@@ -60,7 +60,7 @@ SuccessExitStatus=143
 WantedBy=multi-user.target' > thehive.service
 sudo cp thehive.service /etc/systemd/system/thehive.service
 sudo echo '# Service configuration
-application.baseUrl = "http://localhost:9000"
+application.baseUrl = "http://127.0.0.1:9000"
 play.http.context = "/"
 
 # Database and index configuration
