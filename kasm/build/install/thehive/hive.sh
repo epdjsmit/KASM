@@ -13,11 +13,11 @@ sudo ln -s thehive-5.0.19-1 /opt/thehive
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo chown -R thehive:thehive /opt/thehive
-#sudo mkdir -p /opt/thehive/files
+sudo mkdir -p /opt/thehive/files
 sudo mkdir -p /etc/thehive
 sudo touch /etc/thehive/application.conf
 sudo chown -R root:thehive /etc/thehive
-#sudo touch /opt/thehive/conf/secret.conf
+sudo touch /etc/thehive/secret.conf
 sudo chgrp thehive /etc/thehive/*.conf
 sudo chmod 640 /etc/thehive/*.conf
 cd /tmp
@@ -34,8 +34,8 @@ User=thehive
 Group=thehive
 
 ExecStart=/opt/thehive/bin/thehive \
-	-Dconfig.file=/etc/thehive/conf/application.conf \
-	-Dlogger.file=/etc/thehive/conf/logback.xml \
+	-Dconfig.file=/etc/thehive/application.conf \
+	-Dlogger.file=/etc/thehive/logback.xml \
 	-Dpidfile.path=/dev/null
 
 StandardOutput=null
