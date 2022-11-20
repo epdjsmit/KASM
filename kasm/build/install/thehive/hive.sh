@@ -27,10 +27,6 @@ sudo addgroup thehive
 sudo adduser --system thehive
 sudo mkdir /etc/thehive
 sudo mkdir -p /opt/thehive/logs
-sudo chmod 755 /opt/thehive
-sudo chown -R thehive:thehive /opt/thehive
-sudo chmod 755 /opt/thehive
-sudo chown -R root:thehive /etc/thehive
 # thehive.service
 echo '[Unit]
 Description=TheHive
@@ -122,12 +118,16 @@ cat > /etc/thehive/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
 # permissions
-sudo chgrp thehive /etc/thehive/application.conf
-sudo chmod 640 /etc/thehive/application.conf
-sudo chgrp thehive /etc/thehive/secret.conf
-sudo chmod 640 /etc/thehive/secret.conf
-sudo chmod -R 640 /opt/thehive/
+sudo chmod 755 /opt/thehive
 sudo chown -R thehive:thehive /opt/thehive
+sudo chmod 755 /etc/thehive
+sudo chown -R root:thehive /etc/thehive
+#sudo chgrp thehive /etc/thehive/application.conf
+#sudo chmod 640 /etc/thehive/application.conf
+#sudo chgrp thehive /etc/thehive/secret.conf
+#sudo chmod 640 /etc/thehive/secret.conf
+#sudo chmod -R 640 /opt/thehive/
+#sudo chown -R thehive:thehive /opt/thehive
 # logging
 sudo mkdir /var/log/thehive
 sudo chmod 640 /var/log/thehive/
