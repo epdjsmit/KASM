@@ -27,9 +27,9 @@ sudo addgroup thehive
 sudo adduser --system thehive
 sudo mkdir /etc/thehive
 sudo mkdir -p /opt/thehive/logs
-sudo chmod 755 /opt/thehive/logs
-sudo chown -R thehive:thehive /opt/thehive/logs
-sudo chmod 640 /opt/thehive/logs
+sudo chmod 755 /opt/thehive
+sudo chown -R thehive:thehive /opt/thehive
+sudo chmod 640 /opt/thehive
 sudo touch /opt/thehive-5.0.19-1/conf/application.conf
 sudo chown -R root:thehive /etc/thehive
 echo '[Unit]
