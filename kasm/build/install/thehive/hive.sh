@@ -22,17 +22,16 @@ cd /opt
 wget https://archives.strangebee.com/zip/thehive-latest.zip
 unzip thehive-latest.zip
 sudo ln -s thehive-5.0.19-1 thehive
-sudo mkdir -p /opt/thehive/logs
-sudo chmod 640 /opt/thehive/logs
-sudo chown -R thehive:thehive /opt/thehive/logs
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo chown -R thehive:thehive /opt/thehive
-sudo mkdir -p /etc/thehive
+sudo mkdir /etc/thehive
+sudo mkdir -p /opt/thehive/logs
+sudo chmod 755 /opt/thehive/logs
+sudo chown -R thehive:thehive /opt/thehive/logs
+sudo chmod 640 /opt/thehive/logs
 sudo touch /etc/thehive/application.conf
 sudo chown -R root:thehive /etc/thehive
-sudo chgrp thehive /etc/thehive/application.conf
-sudo chmod 640 /etc/thehive/application.conf
 echo '[Unit]
 Description=TheHive
 Documentation=https://thehive-project.org
@@ -114,10 +113,15 @@ localfs.location = /opt/thp/thehive/files
 scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
 scalligraph.modules += org.thp.thehive.connector.misp.MispModule
 ' > /etc/thehive/application.conf
+sudo chgrp thehive /etc/thehive/application.conf
+sudo chmod 640 /etc/thehive/application.conf
 sudo touch /etc/thehive/secret.conf
+sudo chmod 777 /etc/thehive/secret.conf
 cat > /etc/thehive/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
+sudo chgrp thehive /etc/thehive/secret.conf
+sudo chmod 640 /etc/thehive/secret.conf
 sudo chown -R thehive:thehive /opt/thp/thehive
 sudo mkdir /var/log/thehive
 sudo chmod 640 /var/log/thehive/
