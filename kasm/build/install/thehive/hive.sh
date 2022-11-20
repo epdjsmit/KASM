@@ -72,7 +72,7 @@ WantedBy=multi-user.target
 ' > thehive.service
 sudo cp thehive.service /etc/systemd/system/thehive.service
 # application.conf
-sudo touch /opt/thehive/application.conf
+sudo touch /etc/thehive/application.conf
 sudo echo '# Service configuration
 application.baseUrl = "http://127.0.0.1:9000"
 play.http.context = "/"
@@ -114,7 +114,7 @@ localfs.location = /opt/thehive/files
 # ommenting the configuration line.
 scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
 scalligraph.modules += org.thp.thehive.connector.misp.MispModule
-' > /opt/thehive/application.conf
+' > /etc/thehive/application.conf
 # secret.conf
 sudo touch /etc/thehive/secret.conf
 sudo chmod 777 /etc/thehive/secret.conf
@@ -122,8 +122,8 @@ cat > /etc/thehive/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
 # permissions
-sudo chgrp thehive /opt/thehive/application.conf
-sudo chmod 640 /opt/thehive/application.conf
+sudo chgrp thehive /etc/thehive/application.conf
+sudo chmod 640 /etc/thehive/application.conf
 sudo chgrp thehive /etc/thehive/secret.conf
 sudo chmod 640 /etc/thehive/secret.conf
 sudo chmod -R 640 /opt/thehive/
