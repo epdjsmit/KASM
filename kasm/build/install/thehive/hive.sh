@@ -12,6 +12,7 @@ sudo chmod 777 /etc/elasticsearch/elasticsearch.yml
 sudo python3 /opt/kasm/kasm/build/install/thehive/elastic.py
 sudo chmod 660 /etc/elasticsearch/elasticsearch.yml
 sudo chown root:elasticsearch /etc/elasticsearch/elasticsearch.yml
+sudo touch /etc/elasticsearch/jvm.options.d/jvm.options
 sudo chmod 777 /etc/elasticsearch/jvm.options.d/jvm.options
 sudo python3 /opt/kasm/kasm/build/install/thehive/jvm.py
 sudo chmod 660 /etc/elasticsearch/jvm.options.d/jvm.options
@@ -24,7 +25,6 @@ unzip thehive-latest.zip
 sudo ln -s thehive-5.0.19-1 thehive
 sudo addgroup thehive
 sudo adduser --system thehive
-sudo chown -R thehive:thehive /opt/thehive
 sudo mkdir /etc/thehive
 sudo mkdir -p /opt/thehive/logs
 sudo chmod 755 /opt/thehive/logs
@@ -123,9 +123,11 @@ _EOF_
 sudo chgrp thehive /etc/thehive/secret.conf
 sudo chmod 640 /etc/thehive/secret.conf
 sudo chown -R thehive:thehive /opt/thp/thehive
+sudo chmod 640 /opt/thehive
+sudo chown -R thehive:thehive /opt/thehive
 sudo mkdir /var/log/thehive
 sudo chmod 640 /var/log/thehive/
 sudo chown -R thehive:thehive /var/log/thehive/
 cd ~
-sudo systemctl start thehive
 sudo systemctl enable thehive
+sudo systemctl start thehive
