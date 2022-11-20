@@ -30,7 +30,7 @@ sudo mkdir -p /opt/thehive/logs
 sudo chmod 755 /opt/thehive/logs
 sudo chown -R thehive:thehive /opt/thehive/logs
 sudo chmod 640 /opt/thehive/logs
-sudo touch /etc/thehive/application.conf
+sudo touch /opt/thehive-5.0.19-1/conf/application.conf
 sudo chown -R root:thehive /etc/thehive
 echo '[Unit]
 Description=TheHive
@@ -45,7 +45,7 @@ User=thehive
 Group=thehive
 
 ExecStart=/opt/thehive/bin/thehive \
-	-Dconfig.file=/etc/thehive/application.conf \
+	-Dconfig.file=/opt/thehive-5.0.19-1/conf/application.conf \
 	-Dlogger.file=/etc/thehive/logback.xml \
 	-Dpidfile.path=/dev/null
 
@@ -112,9 +112,9 @@ localfs.location = /opt/thp/thehive/files
 # ommenting the configuration line.
 scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
 scalligraph.modules += org.thp.thehive.connector.misp.MispModule
-' > /etc/thehive/application.conf
-sudo chgrp thehive /etc/thehive/application.conf
-sudo chmod 640 /etc/thehive/application.conf
+' > /opt/thehive-5.0.19-1/conf/application.conf
+sudo chgrp thehive /opt/thehive-5.0.19-1/conf/application.conf
+sudo chmod 640 /opt/thehive-5.0.19-1/conf/application.conf
 sudo touch /etc/thehive/secret.conf
 sudo chmod 777 /etc/thehive/secret.conf
 cat > /etc/thehive/secret.conf << _EOF_
