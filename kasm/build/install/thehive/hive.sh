@@ -1,26 +1,40 @@
 #!/bin/bash
 # https://docs.strangebee.com/thehive/setup/installation/step-by-step-guide/
+# cassandra
 sudo apt install java-common java-11-amazon-corretto-jdk cassandra -y
 sudo python3 /opt/kasm/kasm/build/install/thehive/cassandra.py
 sudo systemctl start cassandra
 sudo systemctl stop cassandra
 sudo rm -rf /var/lib/cassandra/commitlog
 sudo systemctl restart cassandra
+# elastic
+sudo chmod 777 /etc/elasticsearch/elasticsearch.yml
+sudo python3 /opt/kasm/kasm/build/install/thehive/elastic.py
+sudo chmod 660 /etc/elasticsearch/elasticsearch.yml
+sudo chown root:elasticsearch /etc/elasticsearch/elasticsearch.yml
+sudo chmod 777 /etc/elasticsearch/jvm.options.d/jvm.options
+sudo python3 /opt/kasm/kasm/build/install/thehive/jvm.py
+sudo chmod 660 /etc/elasticsearch/jvm.options.d/jvm.options
+sudo chown root:elasticsearch /etc/elasticsearch/jvm.options.d/jvm.options
+# thehive
+sudo mkdir -p /opt/thp/thehive/files
 cd /opt
 wget https://archives.strangebee.com/zip/thehive-latest.zip
 unzip thehive-latest.zip
-sudo ln -s thehive-5.0.19-1 /opt/thehive
+sudo ln -s thehive-5.0.19-1 thehive
+
+sudo mkdir -p /opt/thehive/logs
+sudo chmod 640 /opt/thehive/logs
+sudo chown -R thehive:thehive /opt/thehive/logs
+
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo chown -R thehive:thehive /opt/thehive
-sudo mkdir -p /opt/thehive/files
 sudo mkdir -p /etc/thehive
 sudo touch /etc/thehive/application.conf
 sudo chown -R root:thehive /etc/thehive
-sudo touch /etc/thehive/secret.conf
-sudo chgrp thehive /etc/thehive/*.conf
-sudo chmod 640 /etc/thehive/*.conf
-cd /tmp
+sudo chgrp thehive /etc/thehive/application.conf
+sudo chmod 640 /etc/thehive/application.conf
 echo '[Unit]
 Description=TheHive
 Documentation=https://thehive-project.org
@@ -57,7 +71,8 @@ SendSIGKILL=no
 SuccessExitStatus=143
 
 [Install]
-WantedBy=multi-user.target' > thehive.service
+WantedBy=multi-user.target
+' > thehive.service
 sudo cp thehive.service /etc/systemd/system/thehive.service
 sudo echo '# Service configuration
 application.baseUrl = "http://127.0.0.1:9000"
@@ -101,14 +116,15 @@ localfs.location = /opt/thp/thehive/files
 scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
 scalligraph.modules += org.thp.thehive.connector.misp.MispModule
 ' > /etc/thehive/application.conf
+sudo touch /etc/thehive/secret.conf
 cat > /etc/thehive/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
-sudo mkdir /var/log/thehive
-sudo chmod 640 /var/log/thehive/
-sudo chown -R thehive:thehive /var/log/thehive/
-sudo chmod 640 /opt/thehive/
-sudo chown -R thehive:thehive /opt/thehive/
-sudo systemctl enable thehive
+sudo chown -R thehive:thehive /opt/thp/thehive
 sudo systemctl start thehive
-cd ~
+sudo systemctl enable thehive
+
+#sudo mkdir /var/log/thehive
+#sudo chmod 640 /var/log/thehive/
+#sudo chown -R thehive:thehive /var/log/thehive/
+#cd ~
