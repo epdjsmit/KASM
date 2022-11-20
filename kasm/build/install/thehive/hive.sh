@@ -23,15 +23,16 @@ cd /opt
 wget https://archives.strangebee.com/zip/thehive-latest.zip
 unzip thehive-latest.zip
 sudo ln -s thehive-5.0.19-1 thehive
+sudo mv /opt/thehive-5.0.19-1 /opt/thehive
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo mkdir /etc/thehive
 sudo mkdir -p /opt/thehive/logs
 sudo chmod 755 /opt/thehive
 sudo chown -R thehive:thehive /opt/thehive
-sudo chmod 640 /opt/thehive
-sudo touch /opt/thehive-5.0.19-1/conf/application.conf
+sudo chmod 755 /opt/thehive
 sudo chown -R root:thehive /etc/thehive
+# thehive.service
 echo '[Unit]
 Description=TheHive
 Documentation=https://thehive-project.org
@@ -45,7 +46,7 @@ User=thehive
 Group=thehive
 
 ExecStart=/opt/thehive/bin/thehive \
-	-Dconfig.file=/opt/thehive-5.0.19-1/conf/application.conf \
+	-Dconfig.file=/etc/thehive/application.conf \
 	-Dlogger.file=/etc/thehive/logback.xml \
 	-Dpidfile.path=/dev/null
 
@@ -71,6 +72,8 @@ SuccessExitStatus=143
 WantedBy=multi-user.target
 ' > thehive.service
 sudo cp thehive.service /etc/systemd/system/thehive.service
+# application.conf
+sudo touch /opt/thehive/application.conf
 sudo echo '# Service configuration
 application.baseUrl = "http://127.0.0.1:9000"
 play.http.context = "/"
@@ -112,9 +115,10 @@ localfs.location = /opt/thp/thehive/files
 # ommenting the configuration line.
 scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
 scalligraph.modules += org.thp.thehive.connector.misp.MispModule
-' > /opt/thehive-5.0.19-1/conf/application.conf
-sudo chgrp thehive /opt/thehive-5.0.19-1/conf/application.conf
-sudo chmod 640 /opt/thehive-5.0.19-1/conf/application.conf
+' > /opt/thehive/application.conf
+sudo chgrp thehive /opt/thehive/application.conf
+sudo chmod 640 /opt/thehive/application.conf
+# secret.conf
 sudo touch /etc/thehive/secret.conf
 sudo chmod 777 /etc/thehive/secret.conf
 cat > /etc/thehive/secret.conf << _EOF_
@@ -122,12 +126,16 @@ play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | hea
 _EOF_
 sudo chgrp thehive /etc/thehive/secret.conf
 sudo chmod 640 /etc/thehive/secret.conf
+# variable
+sudo chmod -R 640 /opt/thp/
 sudo chown -R thehive:thehive /opt/thp/thehive
-sudo chmod 640 /opt/thehive
+sudo chmod -R 640 /opt/thehive/
 sudo chown -R thehive:thehive /opt/thehive
+# logging
 sudo mkdir /var/log/thehive
 sudo chmod 640 /var/log/thehive/
 sudo chown -R thehive:thehive /var/log/thehive/
 cd ~
+# service
 sudo systemctl enable thehive
 sudo systemctl start thehive
