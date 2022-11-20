@@ -88,6 +88,7 @@ To invoke the scripts, simply follow the instructions in [BUILD.md](https://gith
 - [Desktop Background](https://www.canva.com/design/DAFQt9mHyiQ/sj_cMIlhHUAbQPiyLYR5TA/edit?utm_source=onboarding#)
 - [Logo](https://app.logo.com/dashboard/logo_e2285b91-8ee8-4900-a40a-96da8d0ded1e/your-logo-files)
 - [SIFT](https://www.sans.org/tools/sift-workstation/)
+- [bruce](https://github.com/ezaspy/bruce.git)
 - [gandalf](https://github.com/ezaspy/gandalf.git)
 - [elrond](https://github.com/ezaspy/elrond.git)
 - [VMware](https://www.vmware.com/uk/products/workstation-player.html)
