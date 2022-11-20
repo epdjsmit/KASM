@@ -23,7 +23,11 @@ cd /opt
 wget https://archives.strangebee.com/zip/thehive-latest.zip
 unzip thehive-latest.zip
 #sudo ln -s thehive-5.0.19-1 thehive
-sudo mv thehive-5.0.19-1 thehive
+sudo mv /opt/thehive-5.0.19-1/bin /opt/thehive
+sudo mv /opt/thehive-5.0.19-1/conf /opt/thehive
+sudo mv /opt/thehive-5.0.19-1/lib /opt/thehive
+sudo mv /opt/thehive-5.0.19-1/LICENSE /opt/thehive
+sudo rm -rf /opt/thehive-5.0.19-1
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo mkdir /etc/thehive
