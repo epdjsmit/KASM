@@ -18,12 +18,11 @@ sudo python3 /opt/kasm/kasm/build/install/thehive/jvm.py
 sudo chmod 660 /etc/elasticsearch/jvm.options.d/jvm.options
 sudo chown root:elasticsearch /etc/elasticsearch/jvm.options.d/jvm.options
 # thehive
-sudo mkdir -p /opt/thp/thehive/files
+sudo mkdir -p /opt/thehive/files
 cd /opt
 wget https://archives.strangebee.com/zip/thehive-latest.zip
 unzip thehive-latest.zip
 sudo ln -s thehive-5.0.19-1 thehive
-sudo mv /opt/thehive-5.0.19-1 /opt/thehive
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo mkdir /etc/thehive
@@ -105,7 +104,7 @@ index.search {
 # The path can be updated and should belong to the user/group running thehive service. (by default: thehive:thehive)
 storage {
 provider = localfs
-localfs.location = /opt/thp/thehive/files
+localfs.location = /opt/thehive/files
 }
 
 # Additional modules
@@ -116,19 +115,17 @@ localfs.location = /opt/thp/thehive/files
 scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
 scalligraph.modules += org.thp.thehive.connector.misp.MispModule
 ' > /opt/thehive/application.conf
-sudo chgrp thehive /opt/thehive/application.conf
-sudo chmod 640 /opt/thehive/application.conf
 # secret.conf
 sudo touch /etc/thehive/secret.conf
 sudo chmod 777 /etc/thehive/secret.conf
 cat > /etc/thehive/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
+# permissions
+sudo chgrp thehive /opt/thehive/application.conf
+sudo chmod 640 /opt/thehive/application.conf
 sudo chgrp thehive /etc/thehive/secret.conf
 sudo chmod 640 /etc/thehive/secret.conf
-# variable
-sudo chmod -R 640 /opt/thp/
-sudo chown -R thehive:thehive /opt/thp/thehive
 sudo chmod -R 640 /opt/thehive/
 sudo chown -R thehive:thehive /opt/thehive
 # logging
@@ -136,6 +133,9 @@ sudo mkdir /var/log/thehive
 sudo chmod 640 /var/log/thehive/
 sudo chown -R thehive:thehive /var/log/thehive/
 cd ~
+sudo rm -rf /opt/thehive-latest.zip
+sudo rm -rf /opt/thehive.service
 # service
 sudo systemctl enable thehive
 sudo systemctl start thehive
+
