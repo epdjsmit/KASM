@@ -22,11 +22,9 @@ cd /opt
 wget https://archives.strangebee.com/zip/thehive-latest.zip
 unzip thehive-latest.zip
 sudo ln -s thehive-5.0.19-1 thehive
-
 sudo mkdir -p /opt/thehive/logs
 sudo chmod 640 /opt/thehive/logs
 sudo chown -R thehive:thehive /opt/thehive/logs
-
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo chown -R thehive:thehive /opt/thehive
@@ -121,10 +119,9 @@ cat > /etc/thehive/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
 sudo chown -R thehive:thehive /opt/thp/thehive
+sudo mkdir /var/log/thehive
+sudo chmod 640 /var/log/thehive/
+sudo chown -R thehive:thehive /var/log/thehive/
+cd ~
 sudo systemctl start thehive
 sudo systemctl enable thehive
-
-#sudo mkdir /var/log/thehive
-#sudo chmod 640 /var/log/thehive/
-#sudo chown -R thehive:thehive /var/log/thehive/
-#cd ~
