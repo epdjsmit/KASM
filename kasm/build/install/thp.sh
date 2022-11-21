@@ -12,5 +12,3 @@ sudo -H -u misp bash -c 'bash /tmp/INSTALL.sh -A' | tee misp.txt
 sleep 1
 sudo ufw allow 80/tcp > /dev/null 2>&1
 sudo ufw allow 443/tcp > /dev/null 2>&1
-printf "\n\n  -> Have you made a note of the MISP Credentials above? - MISP; DB; Local User. When ready, press ENTER to continue..."
-read answer
