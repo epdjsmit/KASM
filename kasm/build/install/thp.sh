@@ -8,7 +8,7 @@ sleep 1
 wget -O /tmp/INSTALL.sh https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/INSTALL.sh
 sudo chown ninja:ninja /tmp/INSTALL.sh
 sleep 1
-sudo -H -u misp bash -c 'bash /tmp/INSTALL.sh -A'
+sudo -H -u misp bash -c 'bash /tmp/INSTALL.sh -A' | tee misp.txt
 sleep 1
 sudo ufw allow 80/tcp > /dev/null 2>&1
 sudo ufw allow 443/tcp > /dev/null 2>&1
