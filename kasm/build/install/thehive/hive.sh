@@ -41,6 +41,7 @@ sudo chmod 777 /etc/thehive/application.conf
 /opt/kasm/kasm/build/install/thehive/./application.sh
 sudo chmod 640 /etc/thehive/application.conf
 #sudo chmod 640 /etc/thehive/logback.xml
+sudo cp -r /opt/thehive/conf/logback.xml /etc/thehive
 /opt/kasm/kasm/build/install/thehive/./service.sh
 # secret.conf
 sudo touch /etc/thehive/secret.conf
