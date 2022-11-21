@@ -20,7 +20,7 @@ sudo unzip /opt/TZWorks/2022.09.27.lin64.zip -d /opt/TZWorks/2022.09.27.lin64
 # BlueTeamPowerShell
 sudo mkdir /opt/BlueTeamPowerShell
 sudo wget -O /opt/BlueTeamPowerShell.zip https://blueteampowershell.com/SEC505-Scripts.zip
-sudo unzip /opt/BlueTeamPowerShell.zip -d /opt/BlueTeamPowerShell
+sudo unzip -P 505 /opt/BlueTeamPowerShell.zip -d /opt/BlueTeamPowerShell
 # Registry Viewer
 sudo mkdir /opt/RegistryViewer
 sudo wget -O /opt/RegistryViewer/RegistryViewer_1.8.0.5.exe http://marketing.accessdata.com/Registry%20Viewer_1.8.0.5.exe
