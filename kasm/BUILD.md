@@ -19,7 +19,7 @@ Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-works
 
 ---
 <h2 align="center">⚠️ WARNING ⚠️</h2>
-<p align="center">You must have a stable and reliable Internet connection during the entirety of running the KASM configuration script.</p>
+<p align="center">You must have a <b>stable and reliable Internet connection</b> during the entirety of running the KASM configuration script. It is also <b>highly recommended</b>, you reduce network usage whilst KASM is built and configured.</p>
 
 ---
 ## _Initialisation_
