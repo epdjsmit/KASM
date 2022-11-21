@@ -30,22 +30,24 @@ sudo ln -s thehive-5.0.19-1 thehive
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo chown -R thehive:thehive /opt/thehive
+#sudo cp /opt/thehive/conf/application.conf /etc/thehive/
+#sudo cp /opt/thehive/conf/logback.xml /etc/thehive/
 sudo mkdir /etc/thehive
 sudo touch /etc/thehive/application.conf
 sudo chown -R root:thehive /etc/thehive
 sudo chgrp thehive /etc/thehive/application.conf
+#sudo chgrp thehive /etc/thehive/logback.xml
+sudo chmod 777 /etc/thehive/application.conf
+/opt/kasm/kasm/build/install/thehive/./application.sh
 sudo chmod 640 /etc/thehive/application.conf
+#sudo chmod 640 /etc/thehive/logback.xml
+/opt/kasm/kasm/build/install/thehive/./service.sh
 # secret.conf
 sudo touch /etc/thehive/secret.conf
 sudo chmod 777 /etc/thehive/secret.conf
 cat > /etc/thehive/secret.conf << _EOF_
 play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
 _EOF_
-# configuration
-sudo chmod +x /opt/kasm/kasm/build/install/thehive/service.sh
-/opt/kasm/kasm/build/install/thehive/./service.sh
-sudo chmod +x /opt/kasm/kasm/build/install/thehive/application.sh
-/opt/kasm/kasm/build/install/thehive/./application.sh
 # file storage
 sudo mkdir -p /opt/thp/thehive/files
 chown -R thehive:thehive /opt/thp/thehive/files
