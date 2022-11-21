@@ -1,5 +1,10 @@
 #!/bin/bash
 sleep 1
+# thehive
+sudo apt-get install ca-certificates curl gnupg lsb-release docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+sudo docker run -d=true --rm -p 9000:9000 strangebee/thehive:latest
+# misp
+sleep 1
 wget -O /tmp/INSTALL.sh https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/INSTALL.sh
 sudo chown ninja:ninja /tmp/INSTALL.sh
 sleep 1
