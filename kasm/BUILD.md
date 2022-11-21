@@ -44,12 +44,10 @@ Log into _ninja_ account<br>
 ### _Greenbone_
  - Configure smb.conf automatically?<br>
    - **&lt;Yes&gt;**<br>
-### _MISP_
+### _TheHive-Project_
 Enter **_misp_** account password<br>
  - What do you want to do about modified configuration file smb.conf?<br>
    - **install the package maintainer's version**<br>
-### _TheHive_
- - 
 ### _Cuckoo_
  - 
 ### _BlueTeamPowerShell_
@@ -63,14 +61,10 @@ Enter **_misp_** account password<br>
 ---
 <br><br>
 
-# Configuring KASM
-
 ## _Configuration_
-### _MISP_
+### _TheHive-Project_
  - 
 ### _Cuckoo_
- - 
-### _TheHive_
  - 
 ### _Metasploit_
  - 
