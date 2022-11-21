@@ -25,22 +25,26 @@ sudo mkdir -p /opt/thehive/logs
 cd /opt
 wget https://archives.strangebee.com/zip/thehive-latest.zip
 unzip thehive-latest.zip
-sudo ln -s thehive-5.0.19-1 thehive
+sudo mv /opt/thehive-5.0.19-1/bin /opt/thehive
+sudo mv /opt/thehive-5.0.19-1/conf /opt/thehive
+sudo mv /opt/thehive-5.0.19-1/lib /opt/thehive
+sudo mv /opt/thehive-5.0.19-1/LICENSE /opt/thehive
+sudo rm -rf /opt/thehive-5.0.19-1
 # 2
 sudo addgroup thehive
 sudo adduser --system thehive
 sudo chown -R thehive:thehive /opt/thehive
-#sudo cp /opt/thehive/conf/application.conf /etc/thehive/
-#sudo cp /opt/thehive/conf/logback.xml /etc/thehive/
+sudo cp /opt/thehive/conf/application.conf /etc/thehive/
+sudo cp /opt/thehive/conf/logback.xml /etc/thehive/
 sudo mkdir /etc/thehive
 sudo touch /etc/thehive/application.conf
 sudo chown -R root:thehive /etc/thehive
 sudo chgrp thehive /etc/thehive/application.conf
-#sudo chgrp thehive /etc/thehive/logback.xml
+sudo chgrp thehive /etc/thehive/logback.xml
 sudo chmod 777 /etc/thehive/application.conf
 /opt/kasm/kasm/build/install/thehive/./application.sh
 sudo chmod 640 /etc/thehive/application.conf
-#sudo chmod 640 /etc/thehive/logback.xml
+sudo chmod 640 /etc/thehive/logback.xml
 sudo cp -r /opt/thehive/conf/logback.xml /etc/thehive
 /opt/kasm/kasm/build/install/thehive/./service.sh
 # secret.conf
