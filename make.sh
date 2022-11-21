@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo python3 -m keyring --disable
+python3 -m keyring --disable
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
