@@ -15,7 +15,11 @@ Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-works
        - **Disk Size: `20.00GB` (more, if desired)**
        - **Advanced options: `None`**
        - **Apply**
-- Start SIFT<br>
+- Start SIFT<br><br>
+
+---
+<h2 align="center">⚠️ WARNING ⚠️</h2>
+<p align="center">You must have a stable and reliable Internet connection during the entirety of running the KASM configuration script.</p>
 
 ---
 ## _Initialisation_
