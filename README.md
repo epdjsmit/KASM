@@ -62,23 +62,11 @@ A lot of the scripts and software installed in KASM has come from developing [el
 
 ## KASM Virtual Machine
 
-It is recommended to simply download the [KASM Virtual Machine](https://drive.google.com/file/d/1BjL3DUoE2-V7AwXCUFhmHuwQoThd48l_/view?usp=sharing) OVA, which is the latest version of SIFT (20.04) with additional software packages, pre-installed.<br><br>
-If you do wish to build and configure KASM yourself, follow the instructions below...
-<br><br>
+**Recommended Method**<br>
+Download the [KASM Virtual Machine](https://drive.google.com/file/d/1BjL3DUoE2-V7AwXCUFhmHuwQoThd48l_/view?usp=sharing) OVA, which is the latest version of SIFT (20.04) with additional software packages, pre-installed.<br><br>
 
 ## KASM Configuration Script
----
-<h2 align="center">⚠️ WARNING ⚠️</h2>
-<p align="center">You must have a stable and reliable Internet connection during the entirety of running the KASM configuration script.</p>
-
----
-There are several software package required for using elrond but almost all of them are contained within the [SANS SIFT Worksation](https://www.sans.org/tools/sift-workstation/) virtual machine OVA. However, for the software which is not included, I have provided a series of scripts which installs and configures the additional software.<br>
-To invoke the scripts, simply follow the instructions in [BUILD.md](https://github.com/ezaspy/KASM/blob/main/kasm/BUILD.md#configuration)
-
-- [SANS SIFT Workstation](https://digital-forensics.sans.org/community/downloads) (20.04)
-  - Note: SANS SIFT 18.04 is not supported.
-- [BUILD.md](https://github.com/ezaspy/KASM/blob/main/kasm/BUILD.md) to install and configure the additional software for SIFT 20.04.
-  - If you encounter errors with [BUILD.md](https://github.com/ezaspy/KASM/blob/main/kasm/BUILD.md), individual scripts for each of the software packages are contained in [.../KASM/scripts/](https://github.com/ezaspy/KASM/tree/main/kasm/scripts/)
+Follow the instructions in [BUILD.md](https://github.com/ezaspy/KASM/blob/main/kasm/BUILD.md)
 <br><br><br>
 
 <!-- ACKNOWLEDGEMENTS -->
