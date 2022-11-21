@@ -47,7 +47,7 @@ sudo chmod +x /opt/kasm/kasm/build/install/thehive/service.sh
 sudo chmod +x /opt/kasm/kasm/build/install/thehive/application.sh
 /opt/kasm/kasm/build/install/thehive/./application.sh
 # file storage
-sudo mkdir /opt/thp/thehive/files
+sudo mkdir -p /opt/thp/thehive/files
 chown -R thehive:thehive /opt/thp/thehive/files
 # service
 sudo systemctl enable thehive
