@@ -1,4 +1,8 @@
 #!/bin/bash
+clear
+sleep 1
+printf "\n\n  -> Configuring temp account...\n"
+sleep 1
 sudo hostnamectl set-hostname kasm
 hostname | (echo -n "127.0.0.1        " && cat) | sudo tee -a /etc/hosts
 clear

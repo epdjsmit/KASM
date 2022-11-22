@@ -1,4 +1,8 @@
 #!/bin/bash
+clear
+sleep 1
+printf "\n\n  -> Configuring virtualization software...\n"
+sleep 1
 #vmware
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle
 sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle

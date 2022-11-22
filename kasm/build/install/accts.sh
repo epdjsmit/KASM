@@ -1,4 +1,8 @@
 #!/bin/bash
+clear
+sleep 1
+printf "\n\n  -> Configuring accounts...\n"
+sleep 1
 sudo adduser --system docker # thehive
 sudo groupadd docker # thehive
 sudo usermod -aG docker docker # thehive

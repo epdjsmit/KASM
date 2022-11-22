@@ -44,19 +44,14 @@ Confirm **_ninja_** account password<br>
 ---
 ## _Installation_
 Log into _ninja_ account<br>
-Enter **_ninja_** account password<br><br>
-### _Greenbone_
+Enter **_ninja_** account password<br>
+
  - Configure smb.conf automatically?<br>
    - **&lt;Yes&gt;**<br>
-### _TheHive-Project_
+
 Enter **_misp_** account password<br>
  - What do you want to do about modified configuration file smb.conf?<br>
    - **install the package maintainer's version**<br>
-### _Cuckoo_
- - 
-### _BlueTeamPowerShell_
- - LAPTOP-SETUP-README-NOW.txt password:
-   - **505**
 <br>
 
 ---

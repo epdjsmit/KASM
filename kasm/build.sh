@@ -1,4 +1,6 @@
 #!/bin/bash
+clear
+sleep 1
 sudo userdel temp && sudo rm -rf /home/temp
 sudo apt install code
 /opt/kasm/kasm/build/install/./gvm.sh

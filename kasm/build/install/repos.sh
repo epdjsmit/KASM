@@ -1,4 +1,8 @@
 #!/bin/bash
+clear
+sleep 1
+printf "\n\n  -> Configuring repositories...\n"
+sleep 1
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add - # vscode
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" # vscode
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - # virtualbox

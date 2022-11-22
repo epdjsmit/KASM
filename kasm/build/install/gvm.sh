@@ -1,4 +1,8 @@
 #!/bin/bash
+clear
+sleep 1
+printf "\n\n  -> Configuring Greenbone...\n"
+sleep 1
 yes '' | sudo add-apt-repository ppa~mrazavi/gvm # greenbone
 sudo apt install gvm postgresql -y --fix-missing
 sudo -u gvm -g gvm greenbone-nvt-sync

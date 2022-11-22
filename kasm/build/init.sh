@@ -1,4 +1,8 @@
 #!/bin/bash
+clear
+sleep 1
+printf "\n\n  -> Initialising KASM...\n"
+sleep 1
 sudo chmod -R 755 /opt/kasm
 sudo apt update
 /opt/kasm/kasm/build/install/./virtual.sh
