@@ -28,7 +28,6 @@ The virtual machine will reboot and/or log out automatically, the grey horizonta
 The installation can take serveral hours. When prompted, enter the necessary credentials and/or the following commands (may need to use TAB to change options):<br><br>
 `sudo git clone https://github.com/ezaspy/KASM.git /opt/kasm && /opt/kasm/./make.sh`
 
-### _elrond_
  - **&darr; &darr; `ENTER c g`**<br>
 
 > Enter **_temp_** account password<br>
@@ -58,14 +57,17 @@ The installation can take serveral hours. When prompted, enter the necessary cre
 <h2 align="center">⚠️ Take Snapshot ⚠️</h2>
 
 ---
-<br><br>
+<br>
 
 ## _Configuration_
 ### _TheHive-Project_
+#### _TheHive_
+ - 
+#### _MISP_
+ - 
+#### _Cortex_
  - 
 ### _Cuckoo_
- - 
-### _Metasploit_
  - 
 <br>
 
