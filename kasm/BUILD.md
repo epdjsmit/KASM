@@ -46,10 +46,9 @@ The installation can take serveral hours. When prompted, enter the necessary cre
 
 > Enter **_ninja_** account password<br>
 
+> Enter **_misp_** account password<br>
  - Configure smb.conf automatically?<br>
    - **&lt;`Yes`&gt;**<br>
-
-> Enter **_misp_** account password<br>
  - What do you want to do about modified configuration file smb.conf?<br>
    - **`install the package maintainer's version`**<br><br>
 
