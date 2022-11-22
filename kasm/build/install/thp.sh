@@ -2,7 +2,7 @@
 # thehive
 clear
 sleep 1
-printf "\n\n  -> Configuring TheHive...\n"
+printf "\n\n  -> Configuring TheHive...\n\n"
 sleep 1
 sudo apt-get install ca-certificates curl gnupg lsb-release docker-ce docker-ce-cli containerd.io docker-compose-plugin dbus-user-session -y
 sudo docker run -d=true --rm -p 9000:9000 strangebee/thehive:latest

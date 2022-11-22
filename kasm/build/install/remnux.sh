@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 sleep 1
-printf "\n\n  -> Configuring REMnux...\n"
+printf "\n\n  -> Configuring REMnux...\n\n"
 sleep 1
 wget https://REMnux.org/remnux-cli
 mv remnux-cli remnux

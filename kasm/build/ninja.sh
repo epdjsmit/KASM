@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 sleep 1
-printf "\n\n  -> Configuring ninja account...\n"
+printf "\n\n  -> Configuring ninja account...\n\n"
 sleep 1
 sudo updatedb
 # clean desktop & set background

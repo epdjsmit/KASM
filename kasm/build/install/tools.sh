@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 sleep 1
-printf "\n\n  -> Configuring additional tools...\n"
+printf "\n\n  -> Configuring additional tools...\n\n"
 sleep 1
 # GENERAL
 git clone https://github.com/ezaspy/oscybershop.git /home/ninja/Desktop/cybershop

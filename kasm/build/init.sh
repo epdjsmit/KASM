@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 sleep 1
-printf "\n\n  -> Initialising KASM...\n"
+printf "\n\n  -> Initialising KASM...\n\n"
 sleep 1
 sudo chmod -R 755 /opt/kasm
 sudo apt update
