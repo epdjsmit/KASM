@@ -3,7 +3,7 @@ import time
 
 def main():
     with open("/tmp/INSTALL_orig.sh") as orig:
-        with open("/tmp/INSTALL.sh") as install:
+        with open("/tmp/INSTALL.sh", "a") as install:
             for eachline in orig:
                 if "echo" in eachline and "Password:" in eachline and "PASSWORD_" in eachline and "##" not in eachline:
                     print(eachline)
