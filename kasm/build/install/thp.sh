@@ -4,6 +4,9 @@ clear
 sleep 1
 printf "\n\n  -> Configuring TheHive...\n\n"
 sleep 1
+sudo adduser --system docker
+sudo groupadd docker
+sudo usermod -aG docker docker
 sudo apt-get install ca-certificates curl gnupg lsb-release docker-ce docker-ce-cli containerd.io docker-compose-plugin dbus-user-session -y
 sudo docker run -d=true --rm -p 9000:9000 strangebee/thehive:latest
 # misp
@@ -15,8 +18,8 @@ sudo chown ninja:ninja /tmp/INSTALL.sh
 sleep 1
 sudo touch /tmp/misp.txt
 sudo chmod 777 /tmp/misp.txt
-#sudo python3 /opt/kasm/kasm/build/install/misp.py
-sleep 1000000
+sudo useradd -m -u 6477 -p $(openssl passwd -1 misp) misp
+sudo usermod -aG sudo misp
 sudo -H -u misp bash -c 'bash /tmp/INSTALL.sh -A 2>&1 | tee misp.txt'
 sleep 1
 mv /tmp/misp.txt /home/ninja/Desktop
