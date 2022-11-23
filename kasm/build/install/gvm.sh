@@ -3,8 +3,7 @@ clear
 sleep 1
 printf "\n\n  -> Configuring Greenbone...\n\n"
 sleep 1
-yes '' | sudo add-apt-repository ppa~mrazavi/gvm # greenbone
-sudo apt install gvm postgresql -y --fix-missing
+sudo apt install postgresql gvm -y --fix-missing # DEBIAN_FRONTEND=noninteractive - sudo DEBIAN_FRONTEND=noninteractive apt-get -y install postgresql
 sudo -u gvm -g gvm greenbone-nvt-sync
 sudo -u gvm -g gvm greenbone-feed-sync --type CERT
 sudo -u gvm -g gvm greenbone-feed-sync --type SCAP
