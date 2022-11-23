@@ -19,6 +19,7 @@ sleep 1
 wget -O /tmp/INSTALL_orig.sh https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/INSTALL.sh
 sudo chown ninja:ninja /tmp/INSTALL_orig.sh
 python3 misp.py
+sleep 1000000
 sudo -H -u misp bash -c 'bash /tmp/INSTALL.sh -A'
 sleep 1
 mv /tmp/misp.txt /home/ninja/Desktop
