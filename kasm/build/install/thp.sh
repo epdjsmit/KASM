@@ -13,14 +13,13 @@ sudo docker run -d=true --rm -p 9000:9000 strangebee/thehive:latest
 clear
 sleep 1
 printf "\n\n  -> Configuring MISP...\n"
+sudo useradd -m -u 6477 -p $(openssl passwd -1 misp) misp && sudo usermod -aG sudo misp
+sudo touch /tmp/misp.txt && sudo chmod 777 /tmp/misp.txt
+sleep 1
 wget -O /tmp/INSTALL.sh https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/INSTALL.sh
 sudo chown ninja:ninja /tmp/INSTALL.sh
-sleep 1
-sudo touch /tmp/misp.txt
-sudo chmod 777 /tmp/misp.txt
-sudo useradd -m -u 6477 -p $(openssl passwd -1 misp) misp
-sudo usermod -aG sudo misp
-sudo -H -u misp bash -c 'bash /tmp/INSTALL.sh -A 2>&1 | tee misp.txt'
+sudo -H -u misp bash -c 'bash /tmp/INSTALL.sh -A'
+#sudo -H -u misp bash -c 'bash /tmp/INSTALL.sh -A 2>&1 | tee /tmp/misp.txt'
 sleep 1
 mv /tmp/misp.txt /home/ninja/Desktop
 sudo ufw allow 80/tcp > /dev/null 2>&1
