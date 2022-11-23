@@ -15,8 +15,9 @@ sudo chown ninja:ninja /tmp/INSTALL.sh
 sleep 1
 sudo touch /tmp/misp.txt
 sudo chmod 777 /tmp/misp.txt
-sudo python3 /opt/kasm/kasm/build/install/thp.py
-#sudo -H -u misp bash -c 'bash /tmp/INSTALL.sh -A' # | tee /tmp/misp.txt
+#sudo python3 /opt/kasm/kasm/build/install/misp.py
+sleep 1000000
+sudo -H -u misp bash -c 'bash /tmp/INSTALL.sh -A 2>&1 | tee misp.txt'
 sleep 1
 mv /tmp/misp.txt /home/ninja/Desktop
 sudo ufw allow 80/tcp > /dev/null 2>&1
