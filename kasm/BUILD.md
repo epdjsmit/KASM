@@ -45,6 +45,22 @@ The installation can take serveral hours. When prompted, enter the necessary cre
 > Log into **_ninja_** account<br>
 
 > Enter **_ninja_** account password<br>
+ - Do you want to enable redis unix socket in /etc/redis/redis.conf?<br>
+   - **&lt;`Yes`&gt;**<br>
+ - Configure database for gvmd-pg with dbconfig-common?<br>
+   - **&lt;`Yes`&gt;**<br>
+ - Configuring gvmd-pg<br>
+   - **`localhost`**<br>
+   - **&lt;`Ok`&gt;**<br>
+ - PostgreSQL application password for gvmd-pg<br>
+   - **__________**<br>
+ - Password confirmation<br>
+   - **__________**<br>
+> Enter **_ninja_** account password<br>
+
+> Enter **_ninja_** account password<br>
+
+Confirm prompts...
 
 > Enter **_misp_** account password<br>
  - Configure smb.conf automatically?<br>
