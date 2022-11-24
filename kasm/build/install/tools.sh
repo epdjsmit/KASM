@@ -4,6 +4,10 @@ sleep 1
 printf "\n\n  -> Configuring additional tools...\n\n"
 sleep 1
 # GENERAL
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb && sudo rm -rf google-chrome-stable_current_amd64.deb
+sudo snap install opera
+sudo apt install torbrowser-launcher -y
+sudo apt install code -y
 git clone https://github.com/ezaspy/oscybershop.git /home/ninja/Desktop/cybershop
 # jupyter
 pip install jupyterlab
