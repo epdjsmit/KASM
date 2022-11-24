@@ -19,6 +19,8 @@ pip2 install voila
 # Bookstack
 sudo git clone https://github.com/BookStackApp/BookStack.git /opt/bookstack
 # DEFENSIVE CYBER
+sudo git clone https://github.com/ezaspy/bruce.git /opt/bruce
+sudo git clone https://github.com/ezaspy/gandalf.git /opt/gandalf
 # TZWorks
 sudo mkdir /opt/TZWorks
 sudo wget -O /opt/TZWorks/2022.10.19.win64.zip https://tzworks.com/prototypes/builds/2022.10.19.win64.zip
