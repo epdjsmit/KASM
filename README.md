@@ -63,10 +63,13 @@ A lot of the scripts and software installed in KASM has come from developing [el
 ## KASM Virtual Machine
 
 **Recommended Method**<br>
-Download the [KASM Virtual Machine](https://drive.google.com/file/d/1BjL3DUoE2-V7AwXCUFhmHuwQoThd48l_/view?usp=sharing) OVA, which is the latest version of SIFT (20.04) with additional software packages, pre-installed.<br><br>
+Download the [KASM Virtual Machine](https://drive.google.com/file/d/1BjL3DUoE2-V7AwXCUFhmHuwQoThd48l_/view?usp=sharing) OVA, which is the latest version of SIFT (20.04) with additional software packages, pre-installed.
+- Last Updated: <span style="color:red">**24-NOV-2022**</span>
+<br><br>
 
 ## KASM Configuration Script
 Follow the instructions in [BUILD.md](https://github.com/ezaspy/KASM/blob/main/kasm/BUILD.md)
+- Last Updated: <span style="color:red">**24-NOV-2022**</span>
 <br><br><br>
 
 <!-- ACKNOWLEDGEMENTS -->
