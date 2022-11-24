@@ -60,7 +60,7 @@ The installation can take serveral hours. When prompted, enter the necessary cre
 
 > Enter **_ninja_** account password<br>
 
-Confirm prompts...
+CONFIRMING PROMPTS...
 
 > Enter **_misp_** account password<br>
  - Configure smb.conf automatically?<br>
