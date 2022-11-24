@@ -4,9 +4,6 @@ import os
 def main():
     if os.path.exists("/tmp/INSTALL.sh"):
         os.remove("/tmp/INSTALL.sh")
-    if not os.path.exists("/home/misp/misp.txt"):
-        with open("/home/misp/misp.txt", "w") as misptxt:
-            misptxt.write("")
     with open("/tmp/INSTALL_orig.sh") as orig:
         with open("/tmp/INSTALL.sh", "a") as install:
             for eachline in orig:
