@@ -10,8 +10,6 @@ sudo apt update
 sudo apt-get install mlocate dconf-tools virtualbox virtualbox-ext-pack virtualbox-qt net-tools nmap -y --fix-missing
 sudo apt install systemd gnupg software-properties-common apt-transport-https wget -y --fix-missing
 python3 -m pip install --upgrade pip
-sudo git clone https://github.com/ezaspy/bruce.git /opt/bruce
-sudo git clone https://github.com/ezaspy/gandalf.git /opt/gandalf
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
 sudo rm -rf /opt/elrond/elrond/config.sh
 sudo echo '#!/bin/bash
@@ -33,7 +31,8 @@ sudo updatedb
 sleep 1' > config.sh
 chmod +x config.sh
 sudo mv config.sh /opt/elrond/elrond/
-sudo chown -R root:root /opt/elrond/elrond/
+sudo chmod -R 755 /opt/elrond/
+sudo chown -R root:root /opt/elrond/
 sudo /opt/elrond/./make.sh
 sudo updatedb
 sleep 2
