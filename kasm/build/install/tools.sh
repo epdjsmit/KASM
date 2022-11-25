@@ -9,6 +9,8 @@ sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle
 sudo rm -rf virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
 sudo dpkg -i /opt/elrond/elrond/tools/.splunk-9.0.0.1-9e907cedecb1-linux-2.6-amd64.deb
 sudo /opt/splunk/bin/./splunk start --accept-license --answer-yes --no-prompt --seed-passwd kasm
+sudo chmod +x /opt/kasm/kasm/build/install/elastic.py
+sudo python3 /opt/kasm/kasm/build/install/elastic.py
 clear
 sleep 1
 printf "\n\n  -> Installing browsers...\n\n"
