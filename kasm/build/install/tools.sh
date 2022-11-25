@@ -1,18 +1,22 @@
 #!/bin/bash
+sudo apt install python3-apt
+wget -O aptsources-cleanup.pyz https://github.com/davidfoerster/aptsources-cleanup/releases/download/v0.1.7.5.2/aptsources-cleanup.pyz
+chmod a+x aptsources-cleanup.pyz
+sudo ./aptsources-cleanup.pyz -n
 # GENERAL
 /opt/kasm/kasm/build/install/./virtual.sh
+sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle
+sudo rm -rf virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
+sudo dpkg -i /opt/elrond/elrond/tools/.splunk-9.0.0.1-9e907cedecb1-linux-2.6-amd64.deb
+sudo /opt/splunk/bin/./splunk start --accept-license --answer-yes --no-prompt --seed-passwd kasm
 clear
 sleep 1
 printf "\n\n  -> Installing browsers...\n\n"
 sleep 1
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb && sudo rm -rf google-chrome-stable_current_amd64.deb
 sudo snap install opera
-# flatpak install flathub com.github.micahflee.torbrowser-launcher
-# flatpak run com.github.micahflee.torbrowser-launcher
 sudo apt install torbrowser-launcher -y
-# torbrowser-launcher
-sudo snap install onionshare
-# sudo apt-get install pdf-redact-tools -y
+torbrowser-launcher
 clear
 sleep 1
 printf "\n\n  -> Configuring additional tools...\n\n"
