@@ -19,8 +19,8 @@ sudo chmod +x /usr/bin/theme.sh
 /usr/bin/./theme.sh dracula
 sleep 1
 # configure .bashrc
-sudo chmod +x /opt/kasm/kasm/build/bashrc.py
-python3 /opt/kasm/kasm/build/bashrc.py
+sudo chmod +x /opt/kasm/kasm/build/ninja.py
+python3 /opt/kasm/kasm/build/ninja.py
 sleep 1
 sudo -E -u gvm -g gvm gvmd --rebuild
 libvirtd -d
@@ -40,4 +40,7 @@ sudo mv gnome-terminal.desktop /home/ninja/.config/autostart/
 sudo chmod 755 /home/ninja/.config/autostart/gnome-terminal.desktop
 sleep 1
 sudo chown -R ninja:ninja /opt/
+sudo /home/ninja/./aptsources-cleanup.pyz -n
+history -c
+unset HISTFILE
 sudo reboot
