@@ -1,13 +1,22 @@
 #!/bin/bash
+# GENERAL
+/opt/kasm/kasm/build/install/./virtual.sh
+clear
+sleep 1
+printf "\n\n  -> Installing browsers...\n\n"
+sleep 1
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb && sudo rm -rf google-chrome-stable_current_amd64.deb
+sudo snap install opera
+# flatpak install flathub com.github.micahflee.torbrowser-launcher
+# flatpak run com.github.micahflee.torbrowser-launcher
+sudo apt install torbrowser-launcher -y
+# torbrowser-launcher
+sudo snap install onionshare
+# sudo apt-get install pdf-redact-tools -y
 clear
 sleep 1
 printf "\n\n  -> Configuring additional tools...\n\n"
 sleep 1
-# GENERAL
-/opt/kasm/kasm/build/install/./virtual.sh
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb && sudo rm -rf google-chrome-stable_current_amd64.deb
-sudo snap install opera
-sudo apt install torbrowser-launcher -y
 sudo apt install code -y
 git clone https://github.com/ezaspy/oscybershop.git /home/ninja/Desktop/cybershop
 # jupyter
@@ -20,6 +29,10 @@ pip2 install voila
 # Bookstack
 sudo git clone https://github.com/BookStackApp/BookStack.git /opt/bookstack
 # DEFENSIVE CYBER
+clear
+sleep 1
+printf "\n\n  -> Configuring 'Defensive Cyber' tools...\n\n"
+sleep 1
 sudo git clone https://github.com/ezaspy/bruce.git /opt/bruce
 sudo git clone https://github.com/ezaspy/gandalf.git /opt/gandalf
 # TZWorks
@@ -58,6 +71,10 @@ sudo mkdir /home/ninja/Desktop/CobaltStrike-Defence/content
 sudo chmod +x /opt/kasm/kasm/build/config/CobaltStrike-Defence.py
 sudo python3 /opt/kasm/kasm/build/config/CobaltStrike-Defence.py
 # OFFENSIVE CYBER
+clear
+sleep 1
+printf "\n\n  -> Configuring 'Offensive Cyber' tools...\n\n"
+sleep 1
 # metasploit
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
 sudo chmod 755 msfinstall
@@ -70,6 +87,10 @@ sudo make -j8
 sudo make install DESTDIR=/
 cd ~
 # THREAT INTELLIGENCE
+clear
+sleep 1
+printf "\n\n  -> Configuring 'Threat Intelligence' tools...\n\n"
+sleep 1
 # Maltego
 wget -O Maltego.v4.3.1.deb https://maltego-downloads.s3.us-east-2.amazonaws.com/linux/Maltego.v4.3.1.deb
 sudo dpkg -i Maltego.v4.3.1.deb
