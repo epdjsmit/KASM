@@ -3,7 +3,7 @@ clear
 sleep 1
 printf "\n\n  -> Configuring Greenbone...\n\n"
 sleep 1
-sudo apt install postgresql gvm -y --fix-missing
+sudo apt install postgresql gvm libvirt-daemon -y --fix-missing
 sudo -u gvm -g gvm greenbone-nvt-sync
 sudo -u gvm -g gvm greenbone-feed-sync --type CERT
 sudo -u gvm -g gvm greenbone-feed-sync --type SCAP
