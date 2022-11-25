@@ -1,7 +1,8 @@
 # Building KASM
 
 ## _Virtual Machine Settings_
-Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-workstation/) (adjust settings such as RAM if desired)<br>
+Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-workstation/)<br>
+- **Processors &amp; Memory -> Memory -> `8192MB`**<br>
 
 #### **Menu Bar -> Virtual Machine -> Settings... ->**
 
