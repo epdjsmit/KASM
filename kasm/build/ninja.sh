@@ -10,7 +10,7 @@ sudo rm -rf /usr/local/share/remnux/remnux-logo.png && sudo rm -rf /var/cache/re
 sudo cp /opt/kasm/kasm/images/kasm.png /usr/share/backgrounds/kasm.png && gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/kasm.png
 sleep 1
 # set icons
-gsettings set org.gnome.shell favorite-apps "['gnome-control-center.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Todo.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Screenshot.desktop', 'google-chrome.desktop', 'firefox.desktop', 'opera_opera.desktop', 'torbrowser.desktop', 'vmware-player.desktop', 'virtualbox.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'bless.desktop', 'wireshark.desktop', 'networkminer.desktop', 'cyberchef.desktop', 'die.desktop', 'jd-gui.desktop', 'ghidra.desktop', 'cutter.desktop', 'maltego.desktop']"
+gsettings set org.gnome.shell favorite-apps "['gnome-control-center.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Todo.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Screenshot.desktop', 'google-chrome.desktop', 'firefox.desktop', 'opera_opera.desktop', 'torbrowser.desktop', 'vmware-player.desktop', 'virtualbox.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'jupyter-notebook.desktop', 'bless.desktop', 'wireshark.desktop', 'networkminer.desktop', 'cyberchef.desktop', 'die.desktop', 'jd-gui.desktop', 'ghidra.desktop', 'cutter.desktop', 'maltego.desktop']"
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 32
 sleep 1
 # set bash shell theme
@@ -40,7 +40,10 @@ sudo mv gnome-terminal.desktop /home/ninja/.config/autostart/
 sudo chmod 755 /home/ninja/.config/autostart/gnome-terminal.desktop
 sleep 1
 sudo chown -R ninja:ninja /opt/
-sudo /home/ninja/./aptsources-cleanup.pyz -n
+sudo apt install python3-apt
+wget -O aptsources-cleanup.pyz https://github.com/davidfoerster/aptsources-cleanup/releases/download/v0.1.7.5.2/aptsources-cleanup.pyz
+chmod a+x aptsources-cleanup.pyz
+sudo ./aptsources-cleanup.pyz -n
 history -c
 unset HISTFILE
 sudo reboot
