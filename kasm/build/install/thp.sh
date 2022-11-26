@@ -9,6 +9,7 @@ sudo groupadd docker
 sudo usermod -aG docker docker
 sudo apt-get install ca-certificates curl gnupg lsb-release docker-ce docker-ce-cli containerd.io docker-compose-plugin dbus-user-session -y
 sudo docker run -d=true --rm -p 9000:9000 strangebee/thehive:latest
+sudo rm etc/apt/sources.list.d/docker.list
 ## misp
 clear
 sleep 1
