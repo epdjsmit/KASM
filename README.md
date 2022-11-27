@@ -18,9 +18,6 @@
     <a href="https://github.com/ezaspy/KASM/stargazers">
       <img src="https://img.shields.io/github/stars/ezaspy/KASM" alt="Stars">
     </a>
-    <a>
-      <img src="https://img.shields.io/badge/subject-DFIR-red" alt="Subject">
-    </a>
     </a>
       <img src="https://img.shields.io/github/last-commit/ezaspy/KASM" alt="Last Commit">
     </a>
