@@ -7,6 +7,11 @@ sudo python3 /opt/kasm/kasm/build/config/elastic.py
 sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/config/nav_json.py
 sudo python3 /opt/kasm/kasm/build/config/navigator.py
 sudo python3 /opt/kasm/kasm/build/config/CobaltStrike-Defence.py
+# kasm applications to start upon logging in
+echo '#!/bin/bash
+sudo pg_ctlcluster 12 main start # gvm
+' > /home/ninja/kasm.sh
+sudo chmod 755 /home/ninja/kasm.sh
 printf "\n\n\n\n\n\n  -> KASM has been successfully configured. Press ENTER to reboot..."
 read answer
 sleep 1
