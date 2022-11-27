@@ -31,7 +31,7 @@ sudo chown -R cuckoo:cuckoo /home/cuckoo/conf
 mkdir -p /mnt/cuckoo/win10
 #sudo mount -o ro,loop win10.iso /mnt/cuckoo/win10
 sudo mount -o ro,loop /mnt/hgfs/kasm/TEST/Windows10.iso /mnt/cuckoo/win10
-sudo apt install virtualbox-6.0 -y
+sudo apt install virtualbox-6.0 -y # virtualbox virtualbox-ext-pack virtualbox-qt
 sudo usermod -a -G vboxusers cuckoo
 vboxmanage hostonlyif create
 echo 1 | sudo tee -a /proc/sys/net/ipv4/ip_forward
