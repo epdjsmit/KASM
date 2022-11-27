@@ -23,3 +23,4 @@ sudo -H -u misp bash -c 'bash /tmp/INSTALL.sh -A'
 sleep 1
 sudo ufw allow 80/tcp > /dev/null 2>&1
 sudo ufw allow 443/tcp > /dev/null 2>&1
+su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root

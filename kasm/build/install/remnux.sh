@@ -9,3 +9,4 @@ chmod +x remnux
 sudo mv remnux /usr/local/bin
 sudo remnux install
 sleep 1
+su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root
