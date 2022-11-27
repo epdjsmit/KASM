@@ -1,6 +1,6 @@
 #!/bin/bash
-clear
 sleep 1
+clear
 printf "\n\n  -> Initialising KASM...\n\n"
 sleep 1
 sudo chmod -R 755 /opt/kasm
