@@ -3,10 +3,6 @@
 /opt/kasm/kasm/build/install/./virtual.sh
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle
 sudo rm -rf virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
-sudo dpkg -i /opt/elrond/elrond/tools/.splunk-9.0.0.1-9e907cedecb1-linux-2.6-amd64.deb
-sudo /opt/splunk/bin/./splunk start --accept-license --answer-yes --no-prompt --seed-passwd kasm
-sudo python3 /opt/kasm/kasm/build/config/elastic.py
-sudo python3 /opt/kasm/kasm/build/config/navigator.py
 clear
 sleep 1
 printf "\n\n  -> Installing browsers...\n\n"
@@ -68,7 +64,6 @@ sudo git clone https://github.com/vinaypamnani/wmie2/ /opt/WMIExplorer
 sudo git clone https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence /home/ninja/Desktop/CobaltStrike-Defence
 sudo mkdir /home/ninja/Desktop/CobaltStrike-Defence/content
 sudo chmod +x /opt/kasm/kasm/build/config/CobaltStrike-Defence.py
-sudo python3 /opt/kasm/kasm/build/config/CobaltStrike-Defence.py
 # OFFENSIVE CYBER
 clear
 sleep 1
