@@ -1,6 +1,6 @@
 #!/bin/bash
-clear
 sleep 1
+clear
 printf "\n\n  -> Configuring temp account...\n\n"
 sleep 1
 sudo hostnamectl set-hostname kasm
