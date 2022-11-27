@@ -17,6 +17,10 @@ clear
 sleep 1
 printf "\n\n  -> Configuring additional tools...\n\n"
 sleep 1
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 sudo apt install code -y
 git clone https://github.com/ezaspy/oscybershop.git /home/ninja/Desktop/cybershop
 # jupyter
