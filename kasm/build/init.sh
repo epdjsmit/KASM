@@ -2,6 +2,15 @@
 sleep 1
 clear
 printf "\n\n  -> Initialising KASM...\n\n"
+# clean up
+du -sh /var/cache/apt/archives
+sudo apt-get clean
+sudo apt-get autoremove --purge
+sudo apt-get remove --purge rhythmbox libreoffice* -y
+sudo apt-get remove --auto-remove aisleriot gnome-mines gnome-sudoku mahjongg ace-of-penguins gnomine gbrainy
+sudo apt-get clean
+sudo apt-get autoremove
+# initialising kasm
 sleep 1
 sudo chmod -R 755 /opt/kasm
 sudo apt update
@@ -23,7 +32,7 @@ cd /opt/elrond/elrond
 /opt/elrond/elrond/tools/config/scripts/./splunk.sh
 /opt/elrond/elrond/tools/config/scripts/./elastic.sh
 /opt/elrond/elrond/tools/config/scripts/./navigator.sh
-#/opt/elrond/elrond/tools/config/scripts/./nsrl.sh
+/opt/elrond/elrond/tools/config/scripts/./nsrl.sh
 sudo chmod -R 744 /opt/elrond/ && sudo chmod +x /opt/elrond/elrond/elrond.py
 echo "export PATH=$PATH:/opt/elrond" >> /home/sansforensics/.bashrc
 sudo updatedb
