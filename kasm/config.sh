@@ -12,6 +12,7 @@ echo '#!/bin/bash
 sudo pg_ctlcluster 12 main start # gvm
 ' > /home/ninja/kasm.sh
 sudo chmod 755 /home/ninja/kasm.sh
+# success - final reboot
 printf "\n\n\n\n\n\n  -> KASM has been successfully configured. Press ENTER to reboot..."
 read answer
 sleep 1
