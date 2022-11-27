@@ -4,7 +4,7 @@ clear
 printf "\n\n  -> Initialising KASM...\n\n"
 # clean up
 du -sh /var/cache/apt/archives
-sudo apt-get remove --auto-remove --purge rhythmbox libreoffice* aisleriot gnome-mines gnome-sudoku gnome-mahjongg -y
+sudo apt-get remove --auto-remove --purge thunderbird rhythmbox libreoffice* aisleriot gnome-mines gnome-sudoku gnome-mahjongg -y
 sudo apt-get clean
 sudo apt-get autoremove --purge
 # initialising kasm
