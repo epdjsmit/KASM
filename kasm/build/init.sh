@@ -2,7 +2,7 @@
 sleep 1
 clear
 printf "\n\n  -> Initialising KASM...\n\n"
-# clean up
+# removing uneeded applications
 du -sh /var/cache/apt/archives
 sudo apt-get remove --auto-remove --purge thunderbird rhythmbox libreoffice* aisleriot gnome-mines gnome-sudoku gnome-mahjongg -y
 sudo apt-get clean
