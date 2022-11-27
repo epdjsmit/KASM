@@ -12,7 +12,7 @@ sleep 1
 sudo chmod -R 755 /opt/kasm
 sudo apt update
 /opt/kasm/kasm/build/install/./repos.sh
-sudo apt-get install mlocate dconf-tools virtualbox virtualbox-ext-pack virtualbox-qt net-tools nmap -y --fix-missing
+sudo apt-get install mlocate dconf-tools net-tools nmap -y --fix-missing
 sudo apt install systemd gnupg software-properties-common apt-transport-https wget -y --fix-missing
 python3 -m pip install --upgrade pip
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
