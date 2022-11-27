@@ -2,20 +2,19 @@
 
 ## _Virtual Machine Settings_
 Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-workstation/)<br>
+
+#### **Menu Bar -> Virtual Machine -> Settings... ->**<br>
+
 - **Processors &amp; Memory -> Memory -> `8192MB`**<br>
 
-#### **Menu Bar -> Virtual Machine -> Settings... ->**
-
-- **Network Adaptor -> NAT/Bridged**<br>
-
-#### **Menu Bar -> Virtual Machine -> Settings... ->**
- - Add Device...
-   - New Hard Disk...
-     - Add...
-       - **File name: `Virtual Disk 2.vmdk`**
-       - **Disk Size: `20.00GB` (more, if desired)**
-       - **Advanced options: `None`**
-       - **Apply**
+- **Network Adaptor -> `NAT/Bridged`**<br>
+- **Add Device...**
+  - **New Hard Disk...**
+    - **Add...**
+      - **File name: `Virtual Disk 2.vmdk`**
+      - **Disk Size: `20.00GB` (more, if desired)**
+      - **Advanced options: `None`**
+      - **Apply**
 - Start SIFT<br><br>
 
 ---

@@ -13,4 +13,4 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 yes '' | sudo add-apt-repository ppa:mrazavi/gvm # greenbone
 yes '' | sudo add-apt-repository ppa:micahflee/ppa # tor
 sudo apt update
-su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root
+sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root

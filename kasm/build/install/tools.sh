@@ -102,4 +102,4 @@ sudo git clone https://github.com/sherlock-project/sherlock.git /opt/sherlock
 sudo git clone https://github.com/jonbakerfish/TweetScraper.git /opt/TweetScraper
 # karma
 sudo git clone https://github.com/Dheerajmadhukar/karma_v2.git /opt/karma
-su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root
+sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root

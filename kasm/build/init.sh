@@ -15,6 +15,7 @@ sudo apt update
 sudo apt-get install mlocate dconf-tools net-tools nmap -y --fix-missing
 sudo apt install systemd gnupg software-properties-common apt-transport-https wget -y --fix-missing
 python3 -m pip install --upgrade pip
+python2.7 -m pip install --upgrade pip
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
 sudo rm -rf /opt/elrond/elrond/config.sh
 sudo echo '#!/bin/bash

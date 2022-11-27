@@ -46,5 +46,5 @@ chmod a+x aptsources-cleanup.pyz
 sudo ./aptsources-cleanup.pyz -n
 history -c
 unset HISTFILE
-su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root
+sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root
 sudo reboot
