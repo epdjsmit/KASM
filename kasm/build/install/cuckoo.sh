@@ -29,7 +29,7 @@ sudo rm -rf distorm-3.4.1.tar.gz
 sudo rm -rf build.sh
 sudo rm -rf yara-3.8.1
 sudo rm -rf yara-3.8.1.tar.gz
-sudo useradd -m -u 2825 -p $(openssl passwd -1 cuckoo) cuckoo
+sudo useradd -m -u 2825 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo
 sudo usermod -aG sudo cuckoo
 sudo usermod -L cuckoo
 sudo usermod -a -G kvm cuckoo
