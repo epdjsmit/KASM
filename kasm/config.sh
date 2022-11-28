@@ -11,6 +11,7 @@ sudo python3 /opt/kasm/kasm/build/config/CobaltStrike-Defence.py
 # kasm applications to start upon logging in
 echo '#!/bin/bash
 sudo pg_ctlcluster 12 main start # gvm
+cuckoo web runserver # cuckoo
 ' > /home/ninja/kasm.sh
 sudo chmod 755 /home/ninja/kasm.sh
 # success - final reboot
