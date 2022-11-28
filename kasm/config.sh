@@ -6,6 +6,7 @@ sudo /opt/splunk/bin/./splunk start --accept-license --answer-yes --no-prompt --
 sudo python3 /opt/kasm/kasm/build/config/elastic.py
 sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/config/nav_json.py
 sudo python3 /opt/kasm/kasm/build/config/navigator.py
+sudo /opt/kasm/kasm/build/config/./cuckoo.sh
 sudo python3 /opt/kasm/kasm/build/config/CobaltStrike-Defence.py
 # kasm applications to start upon logging in
 echo '#!/bin/bash
