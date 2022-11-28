@@ -1,8 +1,6 @@
 #!/bin/bash
 # GENERAL
-sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle
-sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
-sudo ./VMware-Player-Full-16.2.4-20089737.x86_64.bundle
+/opt/kasm/kasm/build/install/./virtual.sh
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle
 sudo rm -rf virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
 clear
@@ -17,6 +15,7 @@ clear
 sleep 1
 printf "\n\n  -> Configuring additional tools...\n\n"
 sleep 1
+sudosnap install sqlitebrowser
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
