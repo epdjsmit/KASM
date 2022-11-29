@@ -10,7 +10,7 @@ pip2 install -U setuptools cuckoo
 sudo cp /opt/kasm/kasm/build/config/agent.pyw /home/cuckoo/vmshared/
 sudo systemctl enable mongodb.service
 sudo service mongodb start
-sed -i '14s/enabled = no/enabled = yes/' /home/ninja/.cuckoo/conf/reporting.conf
+sed -i '45s/enabled = no/enabled = yes/' /home/ninja/.cuckoo/conf/reporting.conf
 sed -i '10s/= no/= yes/' /home/ninja/.cuckoo/conf/cuckoo.conf
 sudo service mongodb restart
 deactivate
