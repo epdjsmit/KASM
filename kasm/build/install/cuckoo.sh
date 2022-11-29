@@ -31,16 +31,14 @@ sudo rm -rf yara-3.8.1
 sudo rm -rf yara-3.8.1.tar.gz
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo
 sleep 1
-sudo usermod -aG sudo cuckoo
+sudo groupadd libvirt
+sudo groupadd pcap
 sudo usermod -L cuckoo
 sudo usermod -a -G kvm cuckoo
-sudo groupadd libvirt
 sudo usermod -a -G libvirt cuckoo
-sudo groupadd pcap
 sudo usermod -a -G pcap cuckoo
 sudo chgrp pcap /usr/sbin/tcpdump
 sudo setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
 sudo mkdir -p /home/cuckoo/vmshared/pub
-sudo chown -R cuckoo:cuckoo /home/cuckoo
 sudo chmod -R ug=rwX,o=rX /home/cuckoo/vmshared/
 sudo chmod -R ugo=rwX /home/cuckoo/vmshared/pub
