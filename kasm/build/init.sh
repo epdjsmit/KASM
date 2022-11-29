@@ -5,8 +5,8 @@ printf "\n\n  -> Initialising KASM...\n\n"
 # removing uneeded applications
 du -sh /var/cache/apt/archives
 sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* aisleriot gnome-mines gnome-sudoku gnome-mahjongg -y
-sudo apt-get clean
 sudo apt-get autoremove --purge
+sudo apt-get clean
 # initialising kasm
 sleep 1
 sudo chmod -R 755 /opt/kasm
@@ -17,6 +17,7 @@ mv python/install/*.py /opt/kasm/kasm/build/install/
 mv python/config/*.py /opt/kasm/kasm/build/config/
 rm -rf python.zip
 rm -rf python
+sleep 100000
 /opt/kasm/kasm/build/install/./repos.sh
 python3 -m pip install --upgrade pip
 python2.7 -m pip install --upgrade pip
