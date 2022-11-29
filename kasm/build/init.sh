@@ -17,7 +17,6 @@ sudo mv python/install/*.py /opt/kasm/kasm/build/install/
 sudo mv python/config/*.py /opt/kasm/kasm/build/config/
 rm -rf python.zip
 rm -rf python
-sleep 100000
 /opt/kasm/kasm/build/install/./repos.sh
 python3 -m pip install --upgrade pip
 python2.7 -m pip install --upgrade pip
