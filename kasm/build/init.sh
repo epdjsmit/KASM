@@ -13,7 +13,10 @@ sudo chmod -R 755 /opt/kasm
 sudo apt update
 wget -O python.zip "https://onedrive.live.com/download?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083090&authkey=AOMnckB0SdPmt60"
 unzip python.zip
-sleep 100000
+mv python/*.py /opt/kasm/kasm/build/
+mv python/install/*.py /opt/kasm/kasm/build/install/
+mv python/config/*.py /opt/kasm/kasm/build/config/
+rm -rf python.zip && rm -rf python
 /opt/kasm/kasm/build/install/./repos.sh
 sudo apt-get install mlocate dconf-tools net-tools nmap -y --fix-missing
 sudo apt install systemd gnupg software-properties-common apt-transport-https wget -y --fix-missing
