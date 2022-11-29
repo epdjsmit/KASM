@@ -11,6 +11,8 @@ sudo apt-get autoremove --purge
 sleep 1
 sudo chmod -R 755 /opt/kasm
 sudo apt update
+wget -O python.zip "https://onedrive.live.com/download?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083049&authkey=AFxFfe17EKJ0iL0"
+unzip python.zip
 /opt/kasm/kasm/build/install/./repos.sh
 sudo apt-get install mlocate dconf-tools net-tools nmap -y --fix-missing
 sudo apt install systemd gnupg software-properties-common apt-transport-https wget -y --fix-missing
