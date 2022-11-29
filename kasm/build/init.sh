@@ -19,7 +19,7 @@ sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build
 python3 -m pip install --upgrade pip
 python2.7 -m pip install --upgrade pip
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
-sed -i '26d' /opt/elrond/elrond/config.sh
+sudo sed -i '26d' /opt/elrond/elrond/config.sh
 sudo /opt/elrond/./make.sh
 sudo updatedb
 sleep 2
