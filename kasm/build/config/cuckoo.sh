@@ -7,7 +7,7 @@ sudo virtualenv venv
 . venv/bin/activate
 pip2 install -U setuptools cuckoo
 #/home/ninja/.local/bin/cuckoo -d
-#sudo cp /home/ninja/.cuckoo/agent/agent.py /home/cuckoo/vmshared/agent.pyw
+sudo cp /opt/kasm/kasm/build/config/agent.pyw /home/cuckoo/vmshared/
 systemctl enable mongodb.service
 sudo service mongodb start
 sudo rm -rf /home/ninja/.cuckoo/conf/reporting.conf
