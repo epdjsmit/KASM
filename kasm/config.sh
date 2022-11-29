@@ -17,7 +17,7 @@ echo "#!/bin/bash
 sudo pg_ctlcluster 12 main start
 cuckoo web runserver
 " > /home/ninja/kick-ass.sh
-sudo chmod +x /home/ninja/kick-ass.sh
+sudo chmod +x /home/ninja/./kick-ass.sh
 # success - final reboot
 printf "\n\n\n\n\n\n  -> KASM has been successfully configured. Press ENTER to reboot..."
 read answer
