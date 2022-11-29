@@ -43,6 +43,7 @@ sudo sed -i '44s/#anon_mkdir_write_enable=YES/anon_mkdir_write_enable=YES/' /etc
 sudo service vsftpd restart
 # creating cuckoo user
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo
+sudo passwd cuckoo
 sleep 1
 sudo groupadd libvirt
 sudo groupadd pcap
