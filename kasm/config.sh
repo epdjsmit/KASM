@@ -6,18 +6,9 @@ sudo /opt/splunk/bin/./splunk start --accept-license --answer-yes --no-prompt --
 sudo python3 /opt/kasm/kasm/build/config/navigator.py
 sudo /opt/kasm/kasm/build/config/./cuckoo.sh
 sudo python3 /opt/kasm/kasm/build/config/CobaltStrike-Defence.py
-# start kasm applications - sudo /home/ninja/./kick-ass.sh
-printf "
-        I came here to drink milk and kick ass, and I've just finished my milk.
-                                                        - Word (Moss), 2010
-
-"
-echo "#!/bin/bash
-
-sudo pg_ctlcluster 12 main start
-cuckoo web runserver
-" > /home/ninja/kick-ass.sh
-sudo chmod +x /home/ninja/./kick-ass.sh
+# start kasm applications - sudo /home/ninja/Desktop/./kick-ass.sh
+echo "python3 /opt/kasm/.kick-ass.py" > /home/ninja/Desktop/kick-ass.sh
+sudo chmod +x /home/ninja/Desktop/./kick-ass.sh
 # success - final reboot
 printf "\n\n\n\n\n\n  -> KASM has been successfully configured. Press ENTER to reboot..."
 read answer
