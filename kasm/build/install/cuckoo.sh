@@ -4,6 +4,7 @@ clear
 sleep 1
 printf "\n\n  -> Installing Cuckoo...\n\n"
 sleep 1
+python3 /opt/kasm/kasm/build/config/cuckoo.py
 sudo apt-get install libmysqlclient20 libffi-dev libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev python-setuptools libjpeg-dev zlib1g-dev libxml2-dev libxslt1-dev libevent-dev libpcre3 libpcre3-dev libtool libpcre++-dev g++ automake dkms unzip wget python-sqlalchemy python-jinja2 python-magic python-mysqldb python-chardet mongodb postgresql libpq-dev tcpdump libcap2-bin apparmor-utils ssdeep python-pyrex subversion libfuzzy-dev swig vsftpd libjansson-dev libmagic-dev libtool-bin ./python-mysqldb_1.3.10-1build1_amd64.deb -y
 pip2 install virtualenv bson dpkt gridfs-fuse bottle cybox==2.0.1.4 maec "Django<2" m2crypto==0.31.0 IPython==5.0 jupyter openpyxl ujson
 sudo -H pip2 install ansible --upgrade
@@ -29,6 +30,9 @@ sudo rm -rf distorm-3.4.1.tar.gz
 sudo rm -rf build.sh
 sudo rm -rf yara-3.8.1
 sudo rm -rf yara-3.8.1.tar.gz
+sudo rm -rf /etc/vsftpd.conf
+sudo mv vsftpd.conf /etc/
+# creating cuckoo user
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo
 sleep 1
 sudo groupadd libvirt
