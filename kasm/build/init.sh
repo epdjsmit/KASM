@@ -12,9 +12,9 @@ sleep 1
 sudo chmod -R 755 /opt/kasm
 wget -O python.zip "https://onedrive.live.com/download?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083090&authkey=AOMnckB0SdPmt60"
 unzip python.zip
-mv python/*.py /opt/kasm/kasm/build/
-mv python/install/*.py /opt/kasm/kasm/build/install/
-mv python/config/*.py /opt/kasm/kasm/build/config/
+sudo mv python/*.py /opt/kasm/kasm/build/
+sudo mv python/install/*.py /opt/kasm/kasm/build/install/
+sudo mv python/config/*.py /opt/kasm/kasm/build/config/
 rm -rf python.zip
 rm -rf python
 sleep 100000
