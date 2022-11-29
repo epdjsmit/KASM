@@ -53,9 +53,9 @@ The installation can take serveral hours. When prompted, enter the necessary cre
    - **`localhost`**<br>
    - **&lt;`Ok`&gt;**<br>
  - PostgreSQL application password for gvmd-pg<br>
-   - **__________**<br>
+   - **________**<br>
  - Password confirmation<br>
-   - **__________**<br>
+   - **________**<br>
 > Enter **_ninja_** account password<br>
 
 > Enter **_ninja_** account password<br>
