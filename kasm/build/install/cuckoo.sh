@@ -31,7 +31,9 @@ sudo rm -rf build.sh
 sudo rm -rf yara-3.8.1
 sudo rm -rf yara-3.8.1.tar.gz
 # configuring ftp server
-sudo cat /etc/vsftpd.conf > /etc/vsftpd.conf.bak
+sudo cat /etc/vsftpd.conf > vsftpd.conf.bak
+sudo mv vsftpd.conf.bak /etc/
+sudo chmod 644 /etc/vsftpd.conf.bak
 sudo sed -i '14s/listen=NO/listen=YES/' /etc/vsftpd.conf
 sudo sed -i '22s/listen_ipv6=YES/listen_ipv6=NO/' /etc/vsftpd.conf
 sudo sed -i '25s/anonymous_enable=NO/anonymous_enable=YES/' /etc/vsftpd.conf
