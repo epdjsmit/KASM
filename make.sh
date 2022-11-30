@@ -11,9 +11,10 @@ while :; do
     shift
 done
 echo $all $cuckoo $greenbone $remnux $thehiveproject > .vars
-sleep 100000
 clear
 sudo chmod +x /opt/kasm/kasm/*.sh
 sudo chmod +x /opt/kasm/kasm/build/*.*
 sudo chmod +x /opt/kasm/kasm/build/install/*.*
+options=$(cat /home/ninja/.vars)
+sleep 100000
 /opt/kasm/kasm/build/./init.sh
