@@ -1,5 +1,6 @@
 #!/usr/bin/env python3 -tt
 import subprocess
+import time
 
 def main():
     word = """
@@ -58,6 +59,7 @@ def main():
                                  ...        .............,looo:...........                                                         ................                                                     
 """
     print("\n\n{}\n\n        I came here to drink milk and kick ass. And I've just finished my milk.\n                                                        - Word (Moss), 2010\n".format(word))
+    time.sleep(10)
     subprocess.Popen(["sudo" "pg_ctlcluster" "12" "main" "start"], stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
     subprocess.Popen(["cuckoo" "web" "runserver"], stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
 
