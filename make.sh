@@ -15,7 +15,7 @@ clear
 sudo chmod +x /opt/kasm/kasm/*.sh
 sudo chmod +x /opt/kasm/kasm/build/*.*
 sudo chmod +x /opt/kasm/kasm/build/install/*.*
-options=$(cat /home/ninja/.vars)
+options=$(cat /home/sansforensics/.vars)
 echo $options
 sleep 100000
 /opt/kasm/kasm/build/./init.sh
