@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-sleep 10
+sleep 10000000
 sudo userdel temp && sudo rm -rf /home/temp
 /opt/kasm/kasm/build/install/./gvm.sh
 /opt/kasm/kasm/build/install/./thp.sh
