@@ -18,9 +18,11 @@ Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-works
 - Start SIFT<br><br>
 
 ---
+---
 <h2 align="center">⚠️ IMPORTANT ⚠️</h2>
 <p align="center">You must have a <b>stable and reliable Internet connection</b> during the entirety of running the KASM configuration script. It is also <b>highly recommended</b>, you reduce network usage whilst KASM is built and configured.</p>
 
+---
 ---
 ## _Installation_
 > __Warning__ - _the following script will partition and format /dev/sdb. If you have not configured the second HDD as recommended above, it may delete data if you have another drive mounted. You can change this location, by editing the [elrond init.sh](https://github.com/ezaspy/elrond/blob/main/elrond/tools/config/scripts/init.sh) script_<br>
@@ -70,6 +72,7 @@ The installation can take serveral hours. When prompted, enter the necessary cre
 
 <br>
 
+---
 ---
 <br>
 
