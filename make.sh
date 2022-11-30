@@ -5,7 +5,7 @@ while :; do
         -g|--greenbone) greenbone="greenbone";;
         -r|--remnux) remnux="remnux";;
         -t|--thehiveproject) thehiveproject="thp";;
-        ) break
+        *) break
     esac
     shift
 done
