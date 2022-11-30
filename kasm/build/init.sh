@@ -14,7 +14,16 @@ gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
 sudo chmod -R 755 /opt/kasm
-/opt/kasm/kasm/build/install/./repos.sh
+# configuring repositories
+sudo apt update
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg # thehive
+yes '' | echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null # thehive / cuckoo
+yes '' | sudo add-apt-repository ppa:mrazavi/gvm # greenbone
+echo 'deb http://security.ubuntu.com/ubuntu xenial-security main' | sudo tee /etc/apt/sources.list.d/xenial-security.list # cuckoo
+wget -c http://archive.ubuntu.com/ubuntu/pool/main/p/python-mysqldb/python-mysqldb_1.3.10-1build1_amd64.deb # cuckoo
+yes '' | sudo add-apt-repository ppa:micahflee/ppa # tor
+sudo apt update
+sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root
 python3 -m pip install --upgrade pip
 python2.7 -m pip install --upgrade pip
 # preparing elastic
