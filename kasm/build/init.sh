@@ -19,9 +19,7 @@ python3 -m pip install --upgrade pip
 python2.7 -m pip install --upgrade pip
 # preparing elastic
 wget -O elastic.py "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M"
-cp elastic.py /opt/kasm/kasm/build/install/
-# preparing navigator
-sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/nav_json.py
+sudo mv elastic.py /opt/kasm/kasm/build/install/
 # preparing cuckoo
 wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E"
 sudo mv agent.pyw /opt/kasm/kasm/build/install/
@@ -29,6 +27,9 @@ sudo mv agent.pyw /opt/kasm/kasm/build/install/
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
 sleep 4
 sudo sed -i '26d' /opt/elrond/elrond/config.sh
+# preparing navigator
+sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/nav_json.py
+sleep 2
 sudo /opt/elrond/./make.sh
 sudo updatedb
 sleep 2
