@@ -74,30 +74,9 @@ The installation can take serveral hours. When prompted, enter the necessary cre
 <br>
 
 ---
-<h2 align="center">⚠️ Take Snapshot ⚠️</h2>
-
----
 <br>
 
-## _Configuration_
-### _TheHive-Project_
-#### _TheHive_
- - 
-#### _MISP_
- - 
-#### _Cortex_
- - 
-### _Cuckoo_
- - 
-<br>
-
----
-<h2 align="center">⚠️ Take Snapshot ⚠️</h2>
-
----
-<br><br>
-
-# _Reverting Virtual Machine_
+# _Reverting Virtual Machine (Optional)_
 
 #### **Menu Bar -> Virtual Machine -> Settings... ->**
 
