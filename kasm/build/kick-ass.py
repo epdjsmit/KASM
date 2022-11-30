@@ -48,7 +48,7 @@ def main():
                            ....'cl:'..........    ...                         ....      ....                            
 
 """
-    print("\n{}\n        I came here to drink milk and kick ass. And I've just finished my milk.\n                                                        - Word (Moss), 2010".format(word))
+    print("\n{}\n                        I came here to drink milk and kick ass. And I've just finished my milk.\n                                                                        - Word (Moss), 2010".format(word))
     time.sleep(30)
     subprocess.Popen(["sudo" "pg_ctlcluster" "12" "main" "start"], stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
     subprocess.Popen(["cuckoo" "web" "runserver"], stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
