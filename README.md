@@ -34,6 +34,7 @@
 
 - [About](#about)
   - [Related Projects](#related-projects)
+- [Usage](#usage)
 - [Configuration](#configuration)
   - [KASM Virtual Machine](#kasm-virtual-machine)
   - [KASM Configuration Script](https://github.com/ezaspy/elrond/blob/main/elrond/BUILD.md)
@@ -52,6 +53,14 @@ KASM should have everything you need whilst alleviating the reliance on having t
 
 A lot of the scripts and software installed in KASM has come from developing [elrond](https://github.com/ezaspy/elrond). 
 <br><br><br>
+
+<!-- PREREQUISITES -->
+
+# Usage
+
+`sudo /home/ninja/Desktop/./kick-ass.sh`
+
+<br><br>
 
 <!-- PREREQUISITES -->
 
