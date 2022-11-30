@@ -11,7 +11,7 @@ while :; do
     shift
 done
 echo $all $cuckoo $greenbone $remnux $thehiveproject > .vars
-sleep 1
+sleep 100000
 clear
 sudo chmod +x /opt/kasm/kasm/*.sh
 sudo chmod +x /opt/kasm/kasm/build/*.*
