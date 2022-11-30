@@ -73,7 +73,7 @@ Download the [KASM Virtual Machine](https://drive.google.com/file/d/1BjL3DUoE2-V
 > __Note__ - Last Updated: **DEC-2022**<br>
 
 ## KASM Configuration Script
-Follow the instructions in [BUILD.md](https://github.com/ezaspy/KASM/blob/main/kasm/BUILD.md)
+Follow the instructions in [BUILD.md](https://github.com/ezaspy/KASM/blob/main/kasm/BUILD.md).&nbsp;&nbsp;**_Please read the instructions carefully._**
 > __Note__ - Last Updated: **DEC-2022**<br>
 
 <br><br>
