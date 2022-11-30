@@ -14,11 +14,11 @@ wget https://download.virtualbox.org/virtualbox/6.1.26/Oracle_VM_VirtualBox_Exte
 sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.26.vbox-extpack
 clear
 sleep 1
-printf "\n\n  -> Installing browsers and VSCode...\n\n"
+printf "\n\n  -> Installing browsers...\n\n"
 sleep 1
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb && sudo rm -rf google-chrome-stable_current_amd64.deb
 sudo snap install opera
-sudo apt install torbrowser-launcher code -y
+sudo apt install torbrowser-launcher -y
 torbrowser-launcher
 clear
 sleep 1
