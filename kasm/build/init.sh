@@ -45,8 +45,8 @@ chmod +x virtualbox.sh
 sudo rm -rf virtualbox.sh
 # initialising elrond
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
-sleep 4
-sudo sed -i '26d' /opt/elrond/elrond/config.sh
+sudo chmod -R 777 /opt/elrond/elrond/config.sh
+sudo sed -i '$ d' /opt/elrond/elrond/config.sh
 # preparing navigator
 sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/nav_json.py
 sleep 2
