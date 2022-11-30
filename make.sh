@@ -1,4 +1,16 @@
 #!/bin/bash
+while :; do
+    case $1 in
+        -a|--all) all="all";;
+        -c|--cuckoo) cuckoo="cuckoo";;
+        -g|--greenbone) greenbone="greenbone";;
+        -r|--remnux) remnux="remnux";;
+        -t|--thehiveproject) thehiveproject="thp";;
+        *) break
+    esac
+    shift
+done
+echo $all $cuckoo $greenbone $remnux $thehiveproject > .vars
 sleep 1
 clear
 sudo chmod +x /opt/kasm/kasm/*.sh
