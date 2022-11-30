@@ -27,7 +27,9 @@ wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B
 sudo mv agent.pyw /opt/kasm/kasm/build/install/
 # initialising elrond
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
+sleep 2
 sudo sed -i '26d' /opt/elrond/elrond/config.sh
+sleep 2
 sudo /opt/elrond/./make.sh
 sudo updatedb
 sleep 2
