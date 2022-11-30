@@ -66,7 +66,12 @@ The installation can take serveral hours. When prompted, enter the necessary cre
  - Configure smb.conf automatically?<br>
    - **&lt;`Yes`&gt;**<br>
  - What do you want to do about modified configuration file smb.conf?<br>
-   - **`install the package maintainer's version`**<br><br>
+   - **`install the package maintainer's version`**<br>
+
+> Enter **_cuckoo_** account password<br>
+> Confirm **_cuckoo_** account password<br>
+
+<br>
 
 ---
 <h2 align="center">⚠️ Take Snapshot ⚠️</h2>
