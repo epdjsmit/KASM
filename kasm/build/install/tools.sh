@@ -68,7 +68,7 @@ sudo git clone https://github.com/vinaypamnani/wmie2/ /opt/WMIExplorer
 # CobaltStrike-Defence
 sudo git clone https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence /home/ninja/Desktop/CobaltStrike-Defence
 sudo mkdir /home/ninja/Desktop/CobaltStrike-Defence/content
-sudo chmod +x /opt/kasm/kasm/build/config/CobaltStrike-Defence.py
+sudo chmod +x /opt/kasm/kasm/build/install/CobaltStrike-Defence.py
 # OFFENSIVE CYBER
 clear
 sleep 1
