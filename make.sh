@@ -10,6 +10,9 @@ while :; do
     shift
 done
 echo $cuckoo $greenbone $remnux $thehiveproject > .vars
+options=$(cat /home/sansforensics/.vars)
+echo $options
+sleep 100000
 clear
 sudo chmod +x /opt/kasm/kasm/*.sh
 sudo chmod +x /opt/kasm/kasm/build/*.*
