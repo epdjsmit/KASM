@@ -8,7 +8,7 @@ sudo python3 /opt/kasm/kasm/build/install/CobaltStrike-Defence.py
 # creating kick-ass.sh
 echo "clear
 sleep 2
-python3 /opt/kasm/./kick-ass.py
+python3 /opt/kasm/kasm/./kick-ass.py
 sleep 20
 sudo pg_ctlcluster 12 main start > /dev/null 2>&1 &
 /home/ninja/.local/bin/cuckoo web runserver 127.0.0.1:8080 > /dev/null 2>&1 &
