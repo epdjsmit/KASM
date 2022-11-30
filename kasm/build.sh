@@ -2,7 +2,7 @@
 clear
 sleep 10
 sudo userdel temp && sudo rm -rf /home/temp
-sleep 10000000
+#sleep 10000000
 #options=$(cat /home/ninja/.vars)
 #echo $options
 /opt/kasm/kasm/build/install/./gvm.sh
