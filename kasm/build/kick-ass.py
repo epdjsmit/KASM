@@ -52,8 +52,8 @@ def main():
 """
     print("\n{}\n                        I came here to drink milk and kick ass. And I've just finished my milk.\n                                                                        - Word (Moss), 2010".format(word))
     time.sleep(20)
-    subprocess.Popen(["sudo" "pg_ctlcluster" "12" "main" "start"], stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
-    subprocess.Popen(["cuckoo" "web" "runserver"], stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
+    subprocess.Popen(["sudo" "pg_ctlcluster", "12", "main", "start"], stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
+    subprocess.Popen(["/home/ninja/.local/bin/cuckoo", "web", "runserver", "127.0.0.1:8080", ">", "/dev/null", "2>&1", "&"], stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
 
 if __name__ == "__main__":
     main()
