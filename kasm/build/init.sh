@@ -9,18 +9,27 @@ sudo apt-get autoremove --purge
 sudo apt-get clean
 # initialising kasm
 sleep 1
+python3 -m keyring --disable
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+gsettings set org.gnome.desktop.session idle-delay 0
 sudo chmod -R 755 /opt/kasm
-wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E"
-sudo mv agent.pyw /opt/kasm/kasm/build/install/
-wget -O elastic.py "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M"
-cp elastic.py /opt/kasm/kasm/build/install/
-sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/nav_json.py
 /opt/kasm/kasm/build/install/./repos.sh
 python3 -m pip install --upgrade pip
 python2.7 -m pip install --upgrade pip
+# preparing elastic
+wget -O elastic.py "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M"
+cp elastic.py /opt/kasm/kasm/build/install/
+# preparing navigator
+sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/nav_json.py
+# preparing cuckoo
+wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E"
+sudo mv agent.pyw /opt/kasm/kasm/build/install/
+# initialising elrond
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
 sudo sed -i '26d' /opt/elrond/elrond/config.sh
 sudo /opt/elrond/./make.sh
 sudo updatedb
 sleep 2
+# initialising temp account
 /opt/kasm/kasm/build/./temp.sh
