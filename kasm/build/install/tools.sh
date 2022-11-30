@@ -7,11 +7,12 @@ sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-F
 sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
 sudo ./VMware-Player-Full-16.2.4-20089737.x86_64.bundle
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle
-sudo wget -O virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb https://download.virtualbox.org/virtualbox/7.0.2/virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
+echo "sudo wget -O virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb https://download.virtualbox.org/virtualbox/7.0.2/virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
 sudo dpkg -i virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
-sudo rm -rf virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
-wget https://download.virtualbox.org/virtualbox/6.1.26/Oracle_VM_VirtualBox_Extension_Pack-6.1.26.vbox-extpack
-sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.26.vbox-extpack
+echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections" > virtualbox.sh
+chmod +x virtualbox.sh
+./virtualbox.sh
+sudo rm -rf virtualbox.sh
 clear
 sleep 1
 printf "\n\n  -> Installing browsers...\n\n"
