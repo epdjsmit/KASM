@@ -32,6 +32,17 @@ sudo mv elastic.py /opt/kasm/kasm/build/install/
 # preparing cuckoo
 wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E"
 sudo mv agent.pyw /opt/kasm/kasm/build/install/
+# installing virtualisation software
+sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle
+sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
+sudo ./VMware-Player-Full-16.2.4-20089737.x86_64.bundle
+sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle
+echo "sudo wget -O virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb https://download.virtualbox.org/virtualbox/7.0.2/virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
+sudo dpkg -i virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
+echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections" > virtualbox.sh
+chmod +x virtualbox.sh
+./virtualbox.sh
+sudo rm -rf virtualbox.sh
 # initialising elrond
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
 sleep 4
@@ -39,6 +50,7 @@ sudo sed -i '26d' /opt/elrond/elrond/config.sh
 # preparing navigator
 sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/nav_json.py
 sleep 2
+# installing elrond
 sudo /opt/elrond/./make.sh
 sudo updatedb
 sleep 2
