@@ -58,7 +58,17 @@ A lot of the scripts and software installed in KASM has come from developing [el
 
 # Usage
 
-`sudo /home/ninja/Desktop/./kick-ass.sh`
+`sudo /home/ninja/Desktop/./kick-ass.sh`<br>
+
+All of the main tooling is accessible via a web browser at **127.0.0.1**:
+
+- **GreenBone**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;127.0.0.1:**9392**<br>
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**TheHive**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;127.0.0.1:**9000**<br>
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**MISP**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;127.0.0.1:**443**<br>
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Splunk**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;127.0.0.1:**8000**<br>
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Kibana**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;127.0.0.1:**9201**<br>
+- &nbsp;&nbsp;&nbsp;**Navigator**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;127.0.0.1/**attack-navigator**<br>
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Cuckoo**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;127.0.0.1:**8080**<br>
 
 <br><br>
 
