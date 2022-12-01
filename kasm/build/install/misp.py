@@ -15,6 +15,7 @@ def main():
                     install.write("{}\n".format(eachline[0:-1].replace("sha${{sum}} matches", "")))
                 else:
                     install.write(eachline)
+    os.remove("/tmp/INSTALL_orig.sh")
 
 if __name__ == "__main__":
     main()
