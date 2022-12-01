@@ -8,7 +8,7 @@ def main():
         with open("/tmp/INSTALL.sh", "a") as install:
             for eachline in orig:
                 if "echo" in eachline and "##" not in eachline and "tee" not in eachline and ("Password:" in eachline or "User:" in eachline):
-                    install.write("{} | tee /home/misp/misp.txt\n".format(eachline[0:-1]))
+                    install.write("{} | tee misp.txt\n".format(eachline[0:-1]))
                 elif '  if [[ "${chsum}" == "${INSTsum}" ]]; then' in eachline:
                     install.write("{}\n".format(eachline[0:-1].replace(" == ", " != ")))
                 elif 'echo "sha${sum} matches"' in eachline:
