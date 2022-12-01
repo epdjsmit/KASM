@@ -20,6 +20,8 @@ sleep 1
 cd /home/ninja/
 " > /home/ninja/Desktop/kick-ass.sh
 sudo chmod +x /home/ninja/Desktop/kick-ass.sh
+sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root
+sleep 10
 # success - final reboot
 printf "\n\n\n\n\n\n  -> KASM has been successfully configured. Press ENTER to reboot..."
 read answer
