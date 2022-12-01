@@ -8,5 +8,5 @@ mv remnux-cli remnux
 chmod +x remnux
 sudo mv remnux /usr/local/bin
 sudo remnux install
-sleep 1
 sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root
+sleep 10
