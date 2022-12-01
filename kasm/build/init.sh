@@ -2,18 +2,27 @@
 sleep 1
 clear
 printf "\n\n  -> Initialising KASM...\n\n"
-# removing uneeded applications
-du -sh /var/cache/apt/archives
-sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan -y
-sudo apt-get autoremove --purge
-sudo apt-get clean
 # initialising kasm
 sleep 1
+sudo chmod -R 755 /opt/kasm
 python3 -m keyring --disable
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
-sudo chmod -R 755 /opt/kasm
+# removing uneeded applications
+sudo du -sh /var/cache/apt/archives
+sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan -y
+sudo apt-get autoremove --purge
+sudo apt-get clean
+sudo chmod 777 /etc/sysctl.conf
+# disabling updates via ipv6
+sudo echo "
+
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1
+" >> /etc/sysctl.conf
+sudo chmod 644 /etc/sysctl.conf
 # configuring repositories
 sudo apt update
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg # thehive
