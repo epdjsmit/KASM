@@ -7,8 +7,8 @@ sudo userdel temp && sudo rm -rf /home/temp
 #echo $options
 
 /opt/kasm/kasm/build/install/./thp.sh # testing
-/opt/kasm/kasm/build/install/./gvm.sh # untested
-/opt/kasm/kasm/build/install/./cuckoo.sh # untested
+/opt/kasm/kasm/build/install/./gvm.sh # tested
+/opt/kasm/kasm/build/install/./cuckoo.sh # tested
 /opt/kasm/kasm/build/install/./remnux.sh # untested
 /opt/kasm/kasm/build/install/./tools.sh # untested
 
