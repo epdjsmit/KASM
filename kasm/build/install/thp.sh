@@ -21,8 +21,10 @@ sleep 4
 wget -O /tmp/INSTALL_orig.sh https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/INSTALL.sh
 sudo chmod +x /tmp/INSTALL_orig.sh
 sudo python3 /opt/kasm/kasm/build/install/./misp.py
-sudo bash /tmp/INSTALL.sh -A
+sudo chmod 777 /tmp/INSTALL.sh
+bash /tmp/INSTALL.sh -A
 sleep 4
+sudo rm /tmp/INSTALL.sh
 sudo ufw allow 80/tcp > /dev/null 2>&1
 sudo ufw allow 443/tcp > /dev/null 2>&1
 sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root
