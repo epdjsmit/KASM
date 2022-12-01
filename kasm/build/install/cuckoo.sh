@@ -45,7 +45,7 @@ sudo service vsftpd restart
 # creating cuckoo user
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo
 sudo passwd cuckoo
-sleep 1
+sleep 4
 sudo groupadd libvirt
 sudo groupadd pcap
 sudo usermod -L cuckoo
@@ -69,3 +69,5 @@ sed -i '45s/enabled = no/enabled = yes/' /home/ninja/.cuckoo/conf/reporting.conf
 sed -i '10s/= no/= yes/' /home/ninja/.cuckoo/conf/cuckoo.conf
 sudo service mongodb restart
 deactivate
+sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root
+sleep 10
