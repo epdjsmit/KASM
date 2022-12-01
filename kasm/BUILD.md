@@ -25,8 +25,8 @@ Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-works
 ## _Installation_
 > __Warning__ - _the following script will partition and format /dev/sdb. If you have not configured the second HDD as recommended above, it may delete data if you have another drive mounted. You can change this location, by editing the [elrond init.sh](https://github.com/ezaspy/elrond/blob/main/elrond/tools/config/scripts/init.sh) script_<br>
 
-The virtual machine will reboot and/or log out automatically, the coffee icons below indicate when this will occur during script execution.<br>
-The installation can take serveral hours. When prompted, enter the necessary credentials and/or the following commands (may need to use **TAB** to change options; most options are default):<br><br>
+The virtual machine will reboot and/or log out automatically. The boot icon - 🥾 - indicate when this will happen.<br>
+The installation can take serveral hours. The coffee icons below indicate wthe optimal times to step away for a beverage or leg stretch.<br>When prompted, enter the necessary credentials and/or the following commands (may need to use **TAB** to change options; most options are default):<br><br>
 
 ## _Configuration_
 
@@ -35,21 +35,32 @@ The installation can take serveral hours. When prompted, enter the necessary cre
 
  - **&darr; &darr; `ENTER c g`**<br>
 
+<p align="center">☕</p>
+
 > Enter **_temp_** account password<br>
 > Confirm **_temp_** account password<br>
 
-<p align="center">☕</p>
+<p align="center">🥾</p>
 
 > Enter **_temp_** account password<br>
 
 > Enter **_ninja_** account password<br>
 > Confirm **_ninja_** account password<br>
 
-<p align="center">☕</p>
+<p align="center">🥾</p>
 
 > Log into **_ninja_** account<br>
 
 > Enter **_ninja_** account password<br>
+
+> Enter **_misp_** account password<br>
+ - `Configure smb.conf automatically?`<br>
+   - **&lt;`Yes`&gt;**<br>
+ - `What do you want to do about modified configuration file smb.conf?`<br>
+   - **`install the package maintainer's version`**<br>
+
+<p align="center">☕</p>
+
  - `Do you want to enable redis unix socket in /etc/redis/redis.conf?`<br>
    - **&lt;`Yes`&gt;**<br>
  - `Configure database for gvmd-pg with dbconfig-common?`<br>
@@ -63,16 +74,12 @@ The installation can take serveral hours. When prompted, enter the necessary cre
    - **`________`**<br>
 > Enter **_ninja_** account password<br>
 
-> Enter **_misp_** account password<br>
- - `Configure smb.conf automatically?`<br>
-   - **&lt;`Yes`&gt;**<br>
- - `What do you want to do about modified configuration file smb.conf?`<br>
-   - **`install the package maintainer's version`**<br>
-
 > Enter **_cuckoo_** account password<br>
 > Confirm **_cuckoo_** account password<br>
 
 <p align="center">☕</p>
+
+<p align="center">🥾</p>
 
 ## _Usage_
 
