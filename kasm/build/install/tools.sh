@@ -1,16 +1,10 @@
 #!/bin/bash
 clear
 sleep 1
-printf "\n\n  -> Installing browsers...\n\n"
-sleep 1
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb && sudo rm -rf google-chrome-stable_current_amd64.deb
 sudo snap install opera
 sudo apt install torbrowser-launcher -y
 torbrowser-launcher
-clear
-sleep 1
-printf "\n\n  -> Configuring additional tools...\n\n"
-sleep 1
 sudosnap install sqlitebrowser
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -20,10 +14,6 @@ git clone https://github.com/ezaspy/oscybershop.git /home/ninja/Desktop/cybersho
 pip install jupyterlab notebook voila
 pip2 install jupyterlab notebook voila
 sudo git clone https://github.com/BookStackApp/BookStack.git /opt/bookstack
-clear
-sleep 1
-printf "\n\n  -> Configuring 'Defensive Cyber' tools...\n\n"
-sleep 1
 sudo git clone https://github.com/ezaspy/bruce.git /opt/bruce
 sudo git clone https://github.com/ezaspy/gandalf.git /opt/gandalf
 sudo mkdir /opt/TZWorks
@@ -47,10 +37,6 @@ sudo git clone https://github.com/vinaypamnani/wmie2/ /opt/WMIExplorer
 sudo git clone https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence /home/ninja/Desktop/CobaltStrike-Defence
 sudo mkdir /home/ninja/Desktop/CobaltStrike-Defence/content
 sudo chmod +x /opt/kasm/kasm/build/install/CobaltStrike-Defence.py
-clear
-sleep 1
-printf "\n\n  -> Configuring 'Offensive Cyber' tools...\n\n"
-sleep 1
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
 sudo chmod 755 msfinstall
 sudo ./msfinstall
@@ -60,10 +46,6 @@ sudo ./configure
 sudo make -j8
 sudo make install DESTDIR=/
 cd ~
-clear
-sleep 1
-printf "\n\n  -> Configuring 'Threat Intelligence' tools...\n\n"
-sleep 1
 wget -O Maltego.v4.3.1.deb https://maltego-downloads.s3.us-east-2.amazonaws.com/linux/Maltego.v4.3.1.deb
 sudo dpkg -i Maltego.v4.3.1.deb
 sudo git clone https://github.com/MarkBaggett/freq.git /opt/freq
@@ -73,4 +55,3 @@ sudo git clone https://github.com/sherlock-project/sherlock.git /opt/sherlock
 sudo git clone https://github.com/jonbakerfish/TweetScraper.git /opt/TweetScraper
 sudo git clone https://github.com/Dheerajmadhukar/karma_v2.git /opt/karma
 sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root
-sleep 10
