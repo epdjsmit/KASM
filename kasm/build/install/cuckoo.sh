@@ -2,8 +2,6 @@
 #https://tech-zealots.com/malware-analysis/cuckoo-sandbox-host-installation-part-1/
 clear
 sleep 1
-printf "\n\n  -> Installing Cuckoo...\n\n"
-sleep 1
 # installing components
 sudo apt-get install libmysqlclient20 libffi-dev libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev python-setuptools libjpeg-dev zlib1g-dev libxml2-dev libxslt1-dev libevent-dev libpcre3 libpcre3-dev libtool libpcre++-dev g++ automake dkms unzip wget python-sqlalchemy python-jinja2 python-magic python-mysqldb python-chardet mongodb postgresql libpq-dev tcpdump libcap2-bin apparmor-utils ssdeep python-pyrex subversion libfuzzy-dev swig vsftpd libjansson-dev libmagic-dev libtool-bin /tmp/./python-mysqldb_1.3.10-1build1_amd64.deb -y
 pip2 install virtualenv bson dpkt gridfs-fuse bottle cybox==2.0.1.4 maec "Django<2" m2crypto==0.31.0 IPython==5.0 jupyter openpyxl ujson
@@ -67,4 +65,3 @@ sed -i '10s/= no/= yes/' /home/ninja/.cuckoo/conf/cuckoo.conf
 sudo service mongodb restart
 deactivate
 sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root
-sleep 10
