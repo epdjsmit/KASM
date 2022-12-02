@@ -16,6 +16,18 @@ echo "
  >> Please enter a password for the cuckoo account"
 sudo passwd cuckoo
 
+# remnux must be installed before anything else
+echo "
+ >> Downloading and installing REMnux\n"
+clear
+sleep 1
+wget https://REMnux.org/remnux-cli # > /dev/null 2>&1
+mv remnux-cli remnux # > /dev/null 2>&1
+chmod +x remnux # > /dev/null 2>&1
+sudo mv remnux /usr/local/bin # > /dev/null 2>&1
+sudo remnux install # > /dev/null 2>&1
+sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root # > /dev/null 2>&1
+
 # configuring repositories
 echo "
  >> Updating repositories..."
@@ -32,17 +44,6 @@ echo " >>  Repositories updated\n"
 # installing kasm software suites
 options=$(cat /home/ninja/.vars)
 
-# remnux must be installed before anything else
-echo "
- >> Downloading and installing REMnux\n"
-clear
-sleep 1
-wget https://REMnux.org/remnux-cli # > /dev/null 2>&1
-mv remnux-cli remnux # > /dev/null 2>&1
-chmod +x remnux # > /dev/null 2>&1
-sudo mv remnux /usr/local/bin # > /dev/null 2>&1
-sudo remnux install # > /dev/null 2>&1
-sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root # > /dev/null 2>&1
 /opt/kasm/kasm/build/install/./cuckoo.sh
 /opt/kasm/kasm/build/install/./tools.sh # > /dev/null 2>&1
 /opt/kasm/kasm/build/install/./thp.sh
