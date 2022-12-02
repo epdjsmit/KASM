@@ -52,6 +52,15 @@ echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-
 chmod +x virtualbox.sh
 ./virtualbox.sh
 sudo rm -rf virtualbox.sh
+# installing kasm software suites
+#sleep 10000000
+#options=$(cat /home/ninja/.vars)
+#echo $options
+#/opt/kasm/kasm/build/install/./tools.sh # untested
+/opt/kasm/kasm/build/install/./remnux.sh
+#/opt/kasm/kasm/build/install/./thp.sh # testing
+#/opt/kasm/kasm/build/install/./gvm.sh # tested
+#/opt/kasm/kasm/build/install/./cuckoo.sh # tested
 # initialising elrond
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond
 sudo chmod -R 777 /opt/elrond/elrond/config.sh

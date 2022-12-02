@@ -94,7 +94,7 @@ sudo mv custom.conf /etc/gdm3/custom.conf
 sudo chmod 644 /etc/gdm3/custom.conf
 echo '[Desktop Entry]
 Type=Application
-Exec=gnome-terminal -- /home/ninja/./build.sh
+Exec=gnome-terminal -- /home/ninja/./ninja.sh
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
@@ -106,8 +106,8 @@ sudo mkdir -p /home/ninja/.config/autostart/
 sudo mv gnome-terminal.desktop /home/ninja/.config/autostart/
 sudo chmod 755 /home/ninja/.config/autostart/gnome-terminal.desktop
 sleep 1
-sudo cp /opt/kasm/kasm/build.sh /home/ninja/build.sh
-sudo chmod +x /home/ninja/build.sh
+#sudo cp /opt/kasm/kasm/ninja.sh /home/ninja/ninja.sh
+#sudo chmod +x /home/ninja/ninja.sh
 sudo cp /opt/elrond/elrond/tools/config/scripts/virtual.sh /home/ninja/VMware_Tools.sh
 sudo chmod +x /home/ninja/VMware_Tools.sh
 sleep 1

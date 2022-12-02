@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo userdel temp && sudo rm -rf /home/temp
 clear
 sleep 1
 printf "\n\n  -> Configuring ninja account...\n\n"
@@ -38,8 +39,27 @@ Comment=Start Terminal On Startup" > gnome-terminal.desktop
 sudo rm -rf /home/ninja/.config/autostart/gnome-terminal.desktop
 sudo mv gnome-terminal.desktop /home/ninja/.config/autostart/
 sudo chmod 755 /home/ninja/.config/autostart/gnome-terminal.desktop
-sleep 1
 sudo chown -R ninja:ninja /opt/
+sudo dpkg -i /opt/elrond/elrond/tools/.splunk-9.0.0.1-9e907cedecb1-linux-2.6-amd64.deb
+sudo /opt/splunk/bin/./splunk start --accept-license --answer-yes --no-prompt --seed-passwd kasm
+sudo python3 /opt/kasm/kasm/build/install/navigator.py
+sudo python3 /opt/kasm/kasm/build/install/CobaltStrike-Defence.py
+# creating kick-ass.sh
+echo "clear
+sleep 2
+python3 /opt/kasm/kasm/install/./kick-ass.py
+sleep 20
+sudo pg_ctlcluster 12 main start > /dev/null 2>&1 &
+/home/ninja/.local/bin/cuckoo web runserver 127.0.0.1:8080 > /dev/null 2>&1 &
+printf '\n\n  Press ENTER to continue...'
+read answer
+sleep 1
+clear
+sleep 1
+cd /home/ninja/
+" > /home/ninja/Desktop/kick-ass.sh
+sudo chmod +x /home/ninja/Desktop/kick-ass.sh
+sleep 10
 sudo apt install python3-apt
 wget -O aptsources-cleanup.pyz https://github.com/davidfoerster/aptsources-cleanup/releases/download/v0.1.7.5.2/aptsources-cleanup.pyz
 chmod a+x aptsources-cleanup.pyz
