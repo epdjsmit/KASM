@@ -12,11 +12,13 @@ gsettings set org.gnome.desktop.session idle-delay 0
 
 # creating cuckoo user
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo # > /dev/null 2>&1
-echo "\n >> Please enter a password for the cuckoo account"
+echo "
+ >> Please enter a password for the cuckoo account"
 sudo passwd cuckoo
 
 # configuring repositories
-echo "\n >> Updating repositories..."
+echo "
+ >> Updating repositories..."
 sudo apt update # > /dev/null 2>&1
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg # > /dev/null 2>&1 # thehive
 yes '' | echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null # > /dev/null 2>&1 # thehive / cuckoo
@@ -31,7 +33,8 @@ echo " >>  Repositories updated\n"
 options=$(cat /home/ninja/.vars)
 
 # remnux must be installed before anything else
-echo "\n >> Downloading and installing REMnux\n"
+echo "
+ >> Downloading and installing REMnux\n"
 clear
 sleep 1
 wget https://REMnux.org/remnux-cli # > /dev/null 2>&1
@@ -46,7 +49,8 @@ sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root 
 /opt/kasm/kasm/build/install/./gvm.sh
 
 # removing uneeded applications
-echo "\n >> Removing unneeded software..."
+echo "
+ >> Removing unneeded software..."
 sudo du -sh /var/cache/apt/archives # > /dev/null 2>&1
 sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* kdeconnect aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan wxhexeditor scite -y # > /dev/null 2>&1
 sudo apt-get autoremove --purge # > /dev/null 2>&1
@@ -67,17 +71,20 @@ python3 -m pip install --upgrade pip # > /dev/null 2>&1
 python2.7 -m pip install --upgrade pip # > /dev/null 2>&1
 
 # preparing elastic
-echo "\n >>  Preparing elastic stack"
+echo "
+ >>  Preparing elastic stack"
 wget -O elastic.py "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M" # > /dev/null 2>&1
 sudo mv elastic.py /opt/kasm/kasm/build/install/ # > /dev/null 2>&1
 
 # preparing cuckoo
-echo "\n >>  Preparing cuckoo sandbox"
+echo "
+ >>  Preparing cuckoo sandbox"
 wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E" # > /dev/null 2>&1
 sudo mv agent.pyw /opt/kasm/kasm/build/install/ # > /dev/null 2>&1
 
 # installing virtualisation software
-echo "\n >> Installing virtualisation software"
+echo "
+ >> Installing virtualisation software"
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle # > /dev/null 2>&1
 sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle # > /dev/null 2>&1
 sudo ./VMware-Player-Full-16.2.4-20089737.x86_64.bundle # > /dev/null 2>&1
@@ -90,7 +97,8 @@ chmod +x virtualbox.sh # > /dev/null 2>&1
 sudo rm -rf virtualbox.sh # > /dev/null 2>&1
 
 # initialising elrond
-echo "\n >> Initialising elrond"
+echo "
+ >> Initialising elrond"
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond # > /dev/null 2>&1
 sudo chmod -R 777 /opt/elrond/elrond/config.sh # > /dev/null 2>&1
 sudo sed -i '$ d' /opt/elrond/elrond/config.sh # > /dev/null 2>&1
