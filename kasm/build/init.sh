@@ -44,8 +44,8 @@ echo " >>  Repositories updated\n"
 # installing kasm software suites
 options=$(cat /home/ninja/.vars)
 
-/opt/kasm/kasm/build/install/./cuckoo.sh
 /opt/kasm/kasm/build/install/./tools.sh # > /dev/null 2>&1
+/opt/kasm/kasm/build/install/./cuckoo.sh
 /opt/kasm/kasm/build/install/./thp.sh
 /opt/kasm/kasm/build/install/./gvm.sh
 
