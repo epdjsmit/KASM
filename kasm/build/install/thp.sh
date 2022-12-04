@@ -1,7 +1,5 @@
 #!/bin/bash
 # thehive
-clear
-sleep 1
 sudo adduser --system docker
 sudo groupadd docker
 sudo usermod -aG docker docker
