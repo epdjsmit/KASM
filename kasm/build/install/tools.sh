@@ -2,15 +2,21 @@
 clear
 sleep 1
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb && sudo rm -rf google-chrome-stable_current_amd64.deb
-sudo snap install opera
-sudo apt install torbrowser-launcher -y
-torbrowser-launcher
-sudosnap install sqlitebrowser
+sudo snap install opera sqlitebrowser
+sudo apt install xz-utils -y
+####################################################################################################
+#sudo apt install torbrowser-launcher -y
+#sudo torbrowser-launcher
+# OR
+#sudo apt install flatpak -y
+#sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#flatpak install flathub com.github.micahflee.torbrowser-launcher -y
+####################################################################################################
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
-git clone https://github.com/ezaspy/oscybershop.git /home/ninja/Desktop/cybershop
+git clone https://github.com/ezaspy/oscybershop.git /home/sansforensics/Desktop/cybershop
 pip install jupyterlab notebook voila
 pip2 install jupyterlab notebook voila
 sudo git clone https://github.com/BookStackApp/BookStack.git /opt/bookstack
@@ -30,12 +36,12 @@ sudo git clone https://github.com/EricZimmerman/KapeFiles.git /opt/KAPE
 sudo git clone https://github.com/Invoke-IR/PowerForensics.git /opt/PowerForensics
 sudo git clone https://github.com/ufrisk/MemProcFS.git /opt/MemProcFS
 sudo mkdir -p /opt/Sysmon/SysmonForLinux
-wget -O /opt/Sysmon.zip https://download.sysinternals.com/files/Sysmon.zip
+sudo wget -O /opt/Sysmon.zip https://download.sysinternals.com/files/Sysmon.zip
 sudo unzip /opt/Sysmon.zip -d /opt/Sysmon
 sudo git clone https://github.com/Sysinternals/SysmonForLinux.git /opt/Sysmon/SysmonForLinux
 sudo git clone https://github.com/vinaypamnani/wmie2/ /opt/WMIExplorer
-sudo git clone https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence /home/ninja/Desktop/CobaltStrike-Defence
-sudo mkdir /home/ninja/Desktop/CobaltStrike-Defence/content
+sudo git clone https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence /home/sansforensics/Desktop/CobaltStrike-Defence
+sudo mkdir /home/sansforensics/Desktop/CobaltStrike-Defence/content
 sudo chmod +x /opt/kasm/kasm/build/install/CobaltStrike-Defence.py
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
 sudo chmod 755 msfinstall
