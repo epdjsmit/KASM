@@ -15,7 +15,12 @@ wget -O /tmp/INSTALL_orig.sh https://raw.githubusercontent.com/MISP/MISP/2.4/INS
 sudo chmod +x /tmp/INSTALL_orig.sh
 sudo python3 /opt/kasm/kasm/build/install/./misp.py
 sudo chmod 777 /tmp/INSTALL.sh
-bash /tmp/INSTALL.sh -A
+#sudo dpkg --configure -a
+#sudo apt install --reinstall python3-six
+#sudo apt install --reinstall python3-chardet
+#pip install pytz
+
+bash /tmp/INSTALL.sh -c -M -u
 sudo rm /tmp/INSTALL.sh
 sudo ufw allow 80/tcp > /dev/null 2>&1
 sudo ufw allow 443/tcp > /dev/null 2>&1
