@@ -38,11 +38,15 @@ sudo apt update # > /dev/null 2>&1
 echo " >>  Repositories updated\n"
 
 # installing kasm software suites
-options=$(cat /home/sansforensics/.vars)
+#options=$(cat /home/sansforensics/.vars)
 
-/opt/kasm/kasm/build/install/./tools.sh # > /dev/null 2>&1
+# preparing cuckoo
+printf "\n >>  Preparing cuckoo sandbox\n"
+wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E" # > /dev/null 2>&1
+sudo mv agent.pyw /opt/kasm/kasm/build/install/ # > /dev/null 2>&1
 /opt/kasm/kasm/build/install/./cuckoo.sh
 /opt/kasm/kasm/build/install/./thp.sh
+/opt/kasm/kasm/build/install/./tools.sh # > /dev/null 2>&1
 sudo apt install postgresql gvm libvirt-daemon -y --fix-missing
 sudo -u gvm -g gvm greenbone-nvt-sync
 sudo -u gvm -g gvm greenbone-feed-sync --type CERT
@@ -75,11 +79,6 @@ python2.7 -m pip install --upgrade pip # > /dev/null 2>&1
 printf "\n >>  Preparing elastic stack\n"
 wget -O elastic.py "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M" # > /dev/null 2>&1
 sudo mv elastic.py /opt/kasm/kasm/build/install/ # > /dev/null 2>&1
-
-# preparing cuckoo
-printf "\n >>  Preparing cuckoo sandbox\n"
-wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E" # > /dev/null 2>&1
-sudo mv agent.pyw /opt/kasm/kasm/build/install/ # > /dev/null 2>&1
 
 # installing virtualisation software
 printf "\n >> Installing virtualisation software\n"
