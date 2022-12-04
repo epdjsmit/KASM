@@ -19,8 +19,6 @@ sudo passwd cuckoo
 # remnux must be installed before anything else
 echo "
  >> Downloading and installing REMnux\n"
-clear
-sleep 1
 wget https://REMnux.org/remnux-cli # > /dev/null 2>&1
 mv remnux-cli remnux # > /dev/null 2>&1
 chmod +x remnux # > /dev/null 2>&1
@@ -31,7 +29,6 @@ sudo su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a" root 
 # configuring repositories
 echo "
  >> Updating repositories..."
-sudo apt update # > /dev/null 2>&1
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg # > /dev/null 2>&1 # thehive
 yes '' | echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null # > /dev/null 2>&1 # thehive / cuckoo
 yes '' | sudo add-apt-repository ppa:mrazavi/gvm # > /dev/null 2>&1 # greenbone
