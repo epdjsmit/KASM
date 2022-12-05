@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo userdel temp
 sudo rm -rf /home/temp
-printf " >> Configuring 'ninja' account"
+printf "\n >> Configuring 'ninja' account"
 sudo updatedb > /dev/null 2>&1
 
 # clean desktop & set background & set icons
@@ -44,7 +44,7 @@ sudo python3 /opt/kasm/kasm/build/install/navigator.py > /dev/null 2>&1
 sudo python3 /opt/kasm/kasm/build/install/CobaltStrike-Defence.py > /dev/null 2>&1
 
 # cleaning repositories
-printf " >> Finalising KASM"
+printf "\n >> Finalising KASM"
 sudo du -sh /var/cache/apt/archives > /dev/null 2>&1
 sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan -y > /dev/null 2>&1
 sudo apt-get autoremove --purge > /dev/null 2>&1
@@ -72,7 +72,7 @@ chmod a+x aptsources-cleanup.pyz
 sudo ./aptsources-cleanup.pyz -n > /dev/null 2>&1
 history -c
 unset HISTFILE
-printf " >> Success! KASM has been fully configured\n\n"
+printf "\n >> Success! KASM has been fully configured\n\n"
 sleep 4
 echo "Press ENTER to perform final reboot"
 read input
