@@ -1,8 +1,4 @@
 #!/bin/bash
-sleep 2
-clear
-printf "\n\n  -> Initialising KASM...\n\n"
-
 # initialising kasm
 sudo chmod -R 755 /opt/kasm
 python3 -m keyring --disable
