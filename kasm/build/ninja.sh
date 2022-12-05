@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo userdel temp
 sudo rm -rf /home/temp
-printf "\n >> Configuring 'ninja' account"
+printf "\n >> Configuring 'ninja' account\n"
 sudo updatedb > /dev/null 2>&1
 
 # clean desktop & set background & set icons
