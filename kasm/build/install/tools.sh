@@ -1,5 +1,7 @@
 #!/bin/bash
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb && sudo rm -rf google-chrome-stable_current_amd64.deb
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo rm -rf google-chrome-stable_current_amd64.deb
 sudo snap install opera sqlitebrowser
 sudo apt install xz-utils -y
 pip install jupyterlab notebook voila
@@ -16,6 +18,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
+rm awscliv2.zip
 
 git clone https://github.com/ezaspy/oscybershop.git /home/sansforensics/Desktop/cybershop
 
@@ -65,3 +68,4 @@ cd ~
 
 wget -O Maltego.v4.3.1.deb https://maltego-downloads.s3.us-east-2.amazonaws.com/linux/Maltego.v4.3.1.deb
 sudo dpkg -i Maltego.v4.3.1.deb
+rm Maltego.v4.3.1.deb
