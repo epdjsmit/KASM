@@ -106,8 +106,8 @@ sudo mkdir -p /home/ninja/.config/autostart/
 sudo mv gnome-terminal.desktop /home/ninja/.config/autostart/
 sudo chmod 755 /home/ninja/.config/autostart/gnome-terminal.desktop
 sleep 1
-#sudo cp /opt/kasm/kasm/ninja.sh /home/ninja/ninja.sh
-#sudo chmod +x /home/ninja/ninja.sh
+sudo cp /opt/kasm/kasm/ninja.sh /home/ninja/ninja.sh
+sudo chmod +x /home/ninja/ninja.sh
 sudo cp /opt/elrond/elrond/tools/config/scripts/virtual.sh /home/ninja/VMware_Tools.sh
 sudo chmod +x /home/ninja/VMware_Tools.sh
 sleep 1
