@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo userdel temp
 sudo rm -rf /home/temp
-printf "\n >> Configuring ninja account...\n"
+printf " >> Configuring 'ninja' account"
 sudo updatedb > /dev/null 2>&1
 
 # clean desktop & set background & set icons
@@ -44,6 +44,7 @@ sudo python3 /opt/kasm/kasm/build/install/navigator.py > /dev/null 2>&1
 sudo python3 /opt/kasm/kasm/build/install/CobaltStrike-Defence.py > /dev/null 2>&1
 
 # cleaning repositories
+printf " >> Finalising KASM"
 sudo du -sh /var/cache/apt/archives > /dev/null 2>&1
 sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan -y > /dev/null 2>&1
 sudo apt-get autoremove --purge > /dev/null 2>&1
@@ -54,8 +55,8 @@ echo "clear
 sleep 2
 python3 /opt/kasm/kasm/install/./kick-ass.py
 sleep 20
-sudo pg_ctlcluster 12 main start > /dev/null 2>&1 &
-/home/ninja/.local/bin/cuckoo web runserver 127.0.0.1:8080 > /dev/null 2>&1 &
+sudo pg_ctlcluster 12 main start > /dev/null 2>&1
+/home/ninja/.local/bin/cuckoo web runserver 127.0.0.1:8080 > /dev/null 2>&1
 printf '\n\n  Press ENTER to continue...'
 read answer
 sleep 1
@@ -71,7 +72,8 @@ chmod a+x aptsources-cleanup.pyz
 sudo ./aptsources-cleanup.pyz -n > /dev/null 2>&1
 history -c
 unset HISTFILE
-sudo su -c "echo 3 >'/proc/sys/vm/drop_caches'
-swapoff -a
-swapon -a" root
+printf " >> Success! KASM has been fully configured\n\n"
+sleep 4
+echo "Press ENTER to perform final reboot"
+read input
 sudo reboot

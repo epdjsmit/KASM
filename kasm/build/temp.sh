@@ -1,15 +1,12 @@
 #!/bin/bash
-sleep 1
-clear
-printf "\n\n  -> Configuring temp account...\n\n"
-sleep 1
 sudo hostnamectl set-hostname kasm
 hostname | (echo -n "127.0.0.1        " && cat) | sudo tee -a /etc/hosts
 clear
-printf "\n  -> Please enter a password for the 'temp' account...\n"
+printf "  -> Please enter a password for the 'temp' account\n"
 sudo useradd -s /bin/bash -d /home/temp/ -m -G sudo temp
 sudo passwd temp
 sleep 2
+
 # autologin for temp account
 echo "# GDM configuration storage
 #
@@ -41,6 +38,7 @@ echo "# GDM configuration storage
 #Enable=true" > custom.conf
 sudo mv custom.conf /etc/gdm3/custom.conf
 sudo chmod 644 /etc/gdm3/custom.conf
+
 # autostarting temp.sh upon login for temp account
 echo "[Desktop Entry]
 Type=Application
@@ -55,6 +53,7 @@ Comment=Start Terminal On Startup" > gnome-terminal.desktop
 sudo mkdir -p /home/temp/.config/autostart/
 sudo mv gnome-terminal.desktop /home/temp/.config/autostart/
 sudo chmod 755 /home/temp/.config/autostart/gnome-terminal.desktop
+
 # temp user setting up ninja account
 echo "sudo usermod -l ninja sansforensics # change username
 sudo usermod -d /home/ninja -m ninja # change home folder
@@ -112,7 +111,9 @@ sudo cp /opt/elrond/elrond/tools/config/scripts/virtual.sh /home/ninja/VMware_To
 sudo chmod +x /home/ninja/VMware_Tools.sh
 sleep 1
 clear" > temp.sh
-echo "echo '\n  -> Please enter a password for the 'ninja' account...\n'" >> temp.sh
+echo 'printf "  -> Please enter a password for the ' >> temp.sh
+echo "'cuckoo' account\n" >> temp.sh
+echo '"' >> temp.sh
 echo "sudo passwd ninja # change password
 sleep 1
 gnome-session-quit --no-prompt" >> temp.sh
