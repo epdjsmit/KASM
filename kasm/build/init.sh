@@ -99,13 +99,12 @@ cd /home/sansforensics/
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle # > /dev/null 2>&1
 sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle # > /dev/null 2>&1
 sudo ./VMware-Player-Full-16.2.4-20089737.x86_64.bundle # > /dev/null 2>&1
-sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle # > /dev/null 2>&1
 echo "sudo wget -O virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb https://download.virtualbox.org/virtualbox/7.0.2/virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
 sudo dpkg -i virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
 echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections" > virtualbox.sh # > /dev/null 2>&1
 chmod +x virtualbox.sh # > /dev/null 2>&1
 ./virtualbox.sh # > /dev/null 2>&1
-sudo rm -rf virtualbox.sh # > /dev/null 2>&1
+sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb # > /dev/null 2>&1
 
 # initialising elrond
 printf "\n >> Initialising elrond\n"
