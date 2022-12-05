@@ -39,18 +39,18 @@ The installation can take serveral hours. The coffee icons below indicate wthe o
 <p align="center">☕</p>
 
  - `Do you want to enable redis unix socket in /etc/redis/redis.conf?`<br>
-   - **&lt;`Yes`&gt;**<br>
+   - **&lt;`Yes`&gt;**<br><br>
  - `Configure database for gvmd-pg with dbconfig-common?`<br>
-   - **&lt;`Yes`&gt;**<br>
+   - **&lt;`Yes`&gt;**<br><br>
  - `Configuring gvmd-pg`<br>
    - **`localhost`**<br>
-   - **&lt;`Ok`&gt;**<br>
- - `PostgreSQL application password for gvmd-pg`<br>
-   - **`________`**<br>
- - `Password confirmation`<br>
-   - **`________`**<br>
+   - **&lt;`Ok`&gt;**<br><br>
 
-<p align="center">☕</p>
+ - `PostgreSQL application password for gvmd-pg`<br>
+   - **`________`**<br><br>
+
+ - `Password confirmation`<br>
+   - **`________`**<br><br>
 
  - **&darr; &darr; `ENTER c g`**<br>
 
