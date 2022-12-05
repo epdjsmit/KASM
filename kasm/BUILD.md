@@ -49,10 +49,10 @@ The installation can take serveral hours. The coffee icons below indicate wthe o
    - **`________`**<br>
  - `Password confirmation`<br>
    - **`________`**<br>
-<br><br>
- - **&darr; &darr; `ENTER c g`**<br>
 
 <p align="center">☕</p>
+
+ - **&darr; &darr; `ENTER c g`**<br>
 
 > Enter **_temp_** account password<br>
 > Confirm **_temp_** account password<br>
