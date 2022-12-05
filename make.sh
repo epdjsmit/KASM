@@ -10,21 +10,22 @@ while :; do
     shift
 done
 echo $cuckoo $greenbone $remnux $thehiveproject > .vars
+clear
+sleep 2
 echo "
+
+
 ##################################################
 ---- Welcome to the KASM configuration script ----
 ##################################################"
 sleep 4
-echo "
-
-
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##################################################
 |    Please note the following:                  |
 |      > Configuring KASM takes ~10 hours        |
 |      > Ensure you have BUILD.md to hand        |
 |      > Select the options as instructed        |
 ##################################################
-
 "
 sleep 4
 echo "
