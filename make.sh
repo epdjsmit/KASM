@@ -15,21 +15,21 @@ sleep 2
 echo "
 
 
-##################################################
----- Welcome to the KASM configuration script ----
-##################################################"
+  ##################################################
+  ---- Welcome to the KASM configuration script ----
+  ##################################################"
 sleep 2
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##################################################
-|    Please note the following:                  |
-|      > Configuring KASM takes ~10 hours        |
-|      > Ensure you have BUILD.md to hand        |
-|      > Select the options as instructed        |
-##################################################
+echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ##################################################
+  |    Please note the following:                  |
+  |      > Configuring KASM takes ~10 hours        |
+  |      > Ensure you have BUILD.md to hand        |
+  |      > Select the options as instructed        |
+  ##################################################
 "
 sleep 4
 echo "
-    Press ENTER to begin...
+      Press ENTER to begin...
 "
 read input
 clear
