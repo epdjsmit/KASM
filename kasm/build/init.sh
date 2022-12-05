@@ -60,7 +60,7 @@ printf "\n >> Removing unneeded software...\n"
 sudo du -sh /var/cache/apt/archives # > /dev/null 2>&1
 sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* kdeconnect aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan wxhexeditor scite -y # > /dev/null 2>&1
 sudo apt-get autoremove --purge # > /dev/null 2>&1
-sudo apt-get clean > /dev/null 2>&1
+sudo apt-get clean # > /dev/null 2>&1
 sudo chmod 777 /etc/sysctl.conf # > /dev/null 2>&1
 
 # disabling updates via ipv6
@@ -97,12 +97,15 @@ sudo rm -rf virtualbox.sh # > /dev/null 2>&1
 printf "\n >> Initialising elrond\n"
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond # > /dev/null 2>&1
 sudo chmod -R 777 /opt/elrond/elrond/config.sh # > /dev/null 2>&1
+sudo sed -i '7d' /opt/elrond/elrond/config.sh # > /dev/null 2>&1
 sudo sed -i '$ d' /opt/elrond/elrond/config.sh # > /dev/null 2>&1
+
 # preparing navigator
 sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/nav_json.py # > /dev/null 2>&1
 
 # installing elrond
 sudo /opt/elrond/./make.sh # > /dev/null 2>&1
+/opt/elrond/elrond/tools/config/scripts/./apfs-fuse.sh
 sudo updatedb # > /dev/null 2>&1
 
 # initialising temp account
