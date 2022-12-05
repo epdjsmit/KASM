@@ -80,8 +80,22 @@ printf "\n >>  Preparing elastic stack\n"
 wget -O elastic.py "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M" # > /dev/null 2>&1
 sudo mv elastic.py /opt/kasm/kasm/build/install/ # > /dev/null 2>&1
 
+# installing apfs-fuse
+sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y --fix-missing
+cd /usr/local/bin
+sudo git clone https://github.com/ezaspy/apfs-fuse.git
+cd apfs-fuse
+sudo git submodule init
+sudo git submodule update
+sudo mkdir build
+cd build
+sudo cmake ..
+sudo ccmake .
+sudo make
+
 # installing virtualisation software
 printf "\n >> Installing virtualisation software\n"
+cd /home/sansforensics/
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle # > /dev/null 2>&1
 sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle # > /dev/null 2>&1
 sudo ./VMware-Player-Full-16.2.4-20089737.x86_64.bundle # > /dev/null 2>&1
@@ -105,7 +119,6 @@ sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build
 
 # installing elrond
 sudo /opt/elrond/./make.sh # > /dev/null 2>&1
-/opt/elrond/elrond/tools/config/scripts/./apfs-fuse.sh
 sudo updatedb # > /dev/null 2>&1
 
 # initialising temp account
