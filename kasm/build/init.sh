@@ -10,7 +10,7 @@ gsettings set org.gnome.desktop.session idle-delay 0
 # creating cuckoo user
 printf "\n >> Creating Cuckoo user"
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo > /dev/null 2>&1
-printf "  -> Please enter a password for the 'cuckoo' account\n"
+printf "\n  -> Please enter a password for the 'cuckoo' account\n"
 sudo passwd cuckoo
 
 # remnux must be installed before anything else
