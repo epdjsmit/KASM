@@ -10,6 +10,7 @@ while :; do
     shift
 done
 echo $cuckoo $greenbone $remnux $thehiveproject > .vars
+clear
 sudo chmod +x /opt/kasm/kasm/build/*.*
 sudo chmod +x /opt/kasm/kasm/build/install/*.*
 /opt/kasm/kasm/build/./init.sh
