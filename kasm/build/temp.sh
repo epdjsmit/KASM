@@ -2,7 +2,7 @@
 sudo hostnamectl set-hostname kasm
 hostname | (echo -n "127.0.0.1        " && cat) | sudo tee -a /etc/hosts
 clear
-printf "  -> Please enter a password for the 'temp' account\n"
+printf "\n  -> Please enter a password for the 'temp' account\n"
 sudo useradd -s /bin/bash -d /home/temp/ -m -G sudo temp
 sudo passwd temp
 sleep 2
@@ -111,7 +111,7 @@ sudo cp /opt/elrond/elrond/tools/config/scripts/virtual.sh /home/ninja/VMware_To
 sudo chmod +x /home/ninja/VMware_Tools.sh
 sleep 1
 clear" > temp.sh
-echo 'printf "  -> Please enter a password for the ' >> temp.sh
+echo 'printf "\n  -> Please enter a password for the ' >> temp.sh
 echo "'ninja' account\n" >> temp.sh
 echo '"' >> temp.sh
 echo "sudo passwd ninja # change password
