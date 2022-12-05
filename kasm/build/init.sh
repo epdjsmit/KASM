@@ -60,7 +60,7 @@ printf "\n >> Removing unneeded software...\n"
 sudo du -sh /var/cache/apt/archives # > /dev/null 2>&1
 sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* kdeconnect aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan wxhexeditor scite -y # > /dev/null 2>&1
 sudo apt-get autoremove --purge # > /dev/null 2>&1
-sudo apt-get clean > /dev/null 2>&
+sudo apt-get clean > /dev/null 2>&1
 sudo chmod 777 /etc/sysctl.conf # > /dev/null 2>&1
 
 # disabling updates via ipv6
