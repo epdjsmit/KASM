@@ -13,6 +13,8 @@ def main():
                     install.write("{}\n".format(eachline[0:-1].replace(" == ", " != ")))
                 elif 'echo "sha${sum} matches"' in eachline:
                     install.write("{}\n".format(eachline[0:-1].replace("sha${{sum}} matches", "")))
+                elif 'echo -e "${' in eachline:
+                    install.write("{}\n".format(eachline[0:-1].replace("echo -e ", "#echo -e ")))
                 else:
                     install.write(eachline)
     os.remove("/tmp/INSTALL_orig.sh")
