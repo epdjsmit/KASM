@@ -44,7 +44,7 @@ sudo python3 /opt/kasm/kasm/build/install/navigator.py > /dev/null 2>&1
 sudo python3 /opt/kasm/kasm/build/install/CobaltStrike-Defence.py > /dev/null 2>&1
 
 # cleaning repositories
-printf "\n >> Finalising KASM"
+printf " >> Finalising KASM\n"
 sudo du -sh /var/cache/apt/archives > /dev/null 2>&1
 sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan -y > /dev/null 2>&1
 sudo apt-get autoremove --purge > /dev/null 2>&1
