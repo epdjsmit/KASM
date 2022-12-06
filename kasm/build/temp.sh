@@ -109,7 +109,7 @@ sudo cp /opt/elrond/elrond/tools/config/scripts/virtual.sh /home/ninja/VMware_To
 sudo chmod +x /home/ninja/VMware_Tools.sh
 sleep 1
 clear" > temp.sh
-echo 'printf " >> Creating ninja user\n"' >> temp.sh
+echo 'printf "      >> Creating ninja user\n"' >> temp.sh
 echo "sudo passwd ninja # change password
 sleep 1
 gnome-session-quit --no-prompt" >> temp.sh
