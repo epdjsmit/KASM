@@ -1,6 +1,8 @@
 #!/bin/bash
 sudo userdel temp
 sudo rm -rf /home/temp
+clear
+sleep 2
 printf "\n >> Configuring 'ninja' account\n"
 sudo updatedb > /dev/null 2>&1
 
@@ -12,7 +14,7 @@ sudo rm -rf /var/cache/remnux/cli/v2022.44.5/salt-states-2022.44.5/remnux/theme/
 sudo cp /opt/kasm/kasm/images/kasm.png /usr/share/backgrounds/kasm.png
 gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/kasm.png
 gsettings set org.gnome.shell favorite-apps "['gnome-control-center.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Todo.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Screenshot.desktop', 'google-chrome.desktop', 'firefox.desktop', 'opera_opera.desktop', 'torbrowser.desktop', 'vmware-player.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'jupyter-notebook.desktop', 'bless.desktop', 'wireshark.desktop', 'networkminer.desktop', 'cyberchef.desktop', 'die.desktop', 'jd-gui.desktop', 'ghidra.desktop', 'cutter.desktop', 'edb.desktop', 'maltego.desktop']"
-gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 32
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 28
 
 # set bash shell theme
 sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M' > /dev/null 2>&1
@@ -38,7 +40,7 @@ sudo rm -rf /home/ninja/.config/autostart/gnome-terminal.desktop
 sudo mv gnome-terminal.desktop /home/ninja/.config/autostart/
 sudo chmod 755 /home/ninja/.config/autostart/gnome-terminal.desktop
 sudo chown -R ninja:ninja /opt/
-sudo dpkg -i /opt/elrond/elrond/tools/.splunk-9.0.0.1-9e907cedecb1-linux-2.6-amd64.deb > /dev/null 2>&1
+sudo dpkg -i /opt/elrond/elrond/tools/.splunk.deb > /dev/null 2>&1
 sudo /opt/splunk/bin/./splunk start --accept-license --answer-yes --no-prompt --seed-passwd kasm
 sudo python3 /opt/kasm/kasm/build/install/navigator.py > /dev/null 2>&1
 sudo python3 /opt/kasm/kasm/build/install/CobaltStrike-Defence.py > /dev/null 2>&1
