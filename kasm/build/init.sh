@@ -112,7 +112,7 @@ sudo ccmake .
 sudo make > /dev/null 2>&1
 
 # installing virtualisation software
-printf "      >> Installing Virtualisation software\n"
+printf "      >> Installing virtualisation software\n"
 cd /home/sansforensics/
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle > /dev/null 2>&1
 sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
