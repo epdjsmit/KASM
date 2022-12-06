@@ -14,7 +14,7 @@ sleep 1
 sudo passwd cuckoo
 
 # remnux must be installed before anything else
-printf " >> Configuring KASM\n"
+printf " >> Configuring REMnux\n"
 wget https://REMnux.org/remnux-cli > /dev/null 2>&1
 mv remnux-cli remnux
 chmod +x remnux
