@@ -109,7 +109,7 @@ sudo mkdir build
 cd build
 sudo cmake ..
 sudo ccmake .
-sudo make
+sudo make > /dev/null 2>&1
 
 # installing virtualisation software
 printf "      >> Installing Virtualisation software\n"
