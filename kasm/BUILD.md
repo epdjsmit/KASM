@@ -12,7 +12,7 @@ Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-works
   - **New Hard Disk...**
     - **Add...**
       - **File name: `Virtual Disk 2.vmdk`**
-      - **Disk Size: `20.00GB` (more, if desired)**
+      - **Disk Size: `40.00GB` (more, if desired)**
       - **Advanced options: `None`**
       - **Apply**
 - Start SIFT<br><br>
@@ -31,12 +31,15 @@ The installation can take serveral hours. The coffee icons below indicate wthe o
 ## _Configuration_
 
 `sudo git clone https://github.com/ezaspy/KASM.git /opt/kasm && /opt/kasm/./make.sh [-c/--cuckoo] [-g/--greenbone] [-r/--remnux] [-t/--thehiveproject]`<br>
-> __Note__ - _the aforementioned flags/switches are optional; providing one or more of them will only install that specified software suite. Anything else provided will install all components of KASM._<br>
+> __Note__ - _the aforementioned flags/switches are optional; providing one or more of them will only install that specified software suite. Anything else provided will install all components of KASM._
+
+<br>
+
+ - **`ENTER`**<br>
 
 > Enter **_cuckoo_** account password<br>
 > Confirm **_cuckoo_** account password<br>
-
-<p align="center">&nbsp;☕&nbsp;&nbsp;~ 6 hours&nbsp;&nbsp;☕&nbsp;</p>
+<p align="center">&nbsp;☕&nbsp;&nbsp;~ 6 hours ~&nbsp;&nbsp;☕&nbsp;</p>
 
  - `Do you want to enable redis unix socket in /etc/redis/redis.conf?`<br>
    - **&lt;`Yes`&gt;**<br><br>
@@ -51,29 +54,24 @@ The installation can take serveral hours. The coffee icons below indicate wthe o
 
  - `Password confirmation`<br>
    - **`________`**<br><br>
-
-<p align="center">&nbsp;☕&nbsp;&nbsp;~ 1 hour&nbsp;&nbsp;☕&nbsp;</p>
+<p align="center">&nbsp;☕&nbsp;&nbsp;~ 1 hour ~&nbsp;&nbsp;☕&nbsp;</p>
 
  - **&darr; &darr; `ENTER c g`**<br>
-
-<p align="center">&nbsp;☕&nbsp;&nbsp;~ 2.5 hours&nbsp;&nbsp;☕&nbsp;</p>
+<p align="center">&nbsp;☕&nbsp;&nbsp;~ 2.5 hours ~&nbsp;&nbsp;☕&nbsp;</p>
 
 > Enter **_temp_** account password<br>
 > Confirm **_temp_** account password<br>
-
 <p align="center">🥾</p>
 
 > Enter **_temp_** account password<br>
 
 > Enter **_ninja_** account password<br>
 > Confirm **_ninja_** account password<br>
-
 <p align="center">🥾</p>
 
 > Log into **_ninja_** account<br>
 
 > Enter **_ninja_** account password<br>
-
 <p align="center">🥾</p>
 <br><br>
 
