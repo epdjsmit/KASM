@@ -115,4 +115,6 @@ sleep 1
 gnome-session-quit --no-prompt" >> temp.sh
 sudo chmod +x temp.sh
 sudo mv temp.sh /home/temp/temp.sh
+printf "\n\n      >> Rebooting...\n"
+sleep 2
 sudo reboot
