@@ -1,8 +1,8 @@
 #!/bin/bash
 # initialising temp account
 printf "      >> Creating temp user\n"
-sudo hostnamectl set-hostname kasm
-hostname | (echo -n "127.0.0.1        " && cat) | sudo tee -a /etc/hosts
+sudo hostnamectl set-hostname kasm > /dev/null 2>&1
+hostname | (echo -n "127.0.0.1        " && cat) | sudo tee -a /etc/hosts > /dev/null 2>&1
 sleep 1
 sudo useradd -s /bin/bash -d /home/temp/ -m -G sudo temp
 sudo passwd temp
