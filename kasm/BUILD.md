@@ -57,7 +57,7 @@ The installation can take serveral hours. The coffee icons below indicate wthe o
 <p align="center">&nbsp;☕&nbsp;&nbsp;~ 1 hour ~&nbsp;&nbsp;☕&nbsp;</p>
 
  - **&darr; &darr; `ENTER c g`**<br>
-<p align="center">&nbsp;☕&nbsp;&nbsp;~ 2.5 hours ~&nbsp;&nbsp;☕&nbsp;</p>
+<p align="center">&nbsp;☕&nbsp;&nbsp;~ 3 hours ~&nbsp;&nbsp;☕&nbsp;</p>
 
 > Enter **_temp_** account password<br>
 > Confirm **_temp_** account password<br>
