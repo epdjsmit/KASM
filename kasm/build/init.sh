@@ -10,7 +10,6 @@ gsettings set org.gnome.desktop.session idle-delay 0
 # creating cuckoo user
 printf "\n >> Creating Cuckoo user"
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo > /dev/null 2>&1
-printf "\n  -> Please enter a password for the 'cuckoo' account\n"
 sleep 1
 sudo passwd cuckoo
 
@@ -45,12 +44,12 @@ wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B
 sudo mv agent.pyw /opt/kasm/kasm/build/install/ > /dev/null 2>&1
 printf "\n >> Installing Cuckoo Sandbox"
 /opt/kasm/kasm/build/install/./cuckoo.sh > /dev/null 2>&1
-printf "\n >> Installing TheHive & MISP"
+printf "\n >> Installing TheHive & MISP\n"
 /opt/kasm/kasm/build/install/./thp.sh > /dev/null 2>&1
 printf "\n >> Installing Additional Tools"
 /opt/kasm/kasm/build/install/./tools.sh > /dev/null 2>&1
 printf "\n >> Installing Greenbone Vulnerability Manager"
-sudo apt install postgresql gvm libvirt-daemon -y --fix-missing > /dev/null 2>&1
+sudo apt install postgresql gvm libvirt-daemon -y --fix-missing
 sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
 sudo -u gvm -g gvm greenbone-feed-sync --type CERT > /dev/null 2>&1
 sudo -u gvm -g gvm greenbone-feed-sync --type SCAP > /dev/null 2>&1
