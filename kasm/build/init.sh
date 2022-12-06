@@ -24,12 +24,14 @@ gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
 
 # creating cuckoo user
+printf "       -> Done\n"
 printf "      >> Creating Cuckoo user\n"
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo > /dev/null 2>&1
 sleep 1
 sudo passwd cuckoo
 
 # remnux must be installed before anything else
+printf "       -> Done\n"
 printf "\n      >> Configuring REMnux\n"
 wget https://REMnux.org/remnux-cli > /dev/null 2>&1
 mv remnux-cli remnux
@@ -38,6 +40,7 @@ sudo mv remnux /usr/local/bin
 sudo remnux install > /dev/null 2>&1
 
 # configuring repositories
+printf "       -> Done\n"
 printf "      >> Updating repositories\n"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg > /dev/null 2>&1 # thehive
 sleep 4
@@ -49,7 +52,7 @@ wget -O /tmp/python-mysqldb_1.3.10-1build1_amd64.deb http://archive.ubuntu.com/u
 sleep 4
 #yes '' | sudo add-apt-repository ppa:micahflee/ppa > /dev/null 2>&1 # tor
 sudo apt update > /dev/null 2>&1
-printf "      >> Repositories updated\n"
+printf "       -> Done\n"
 
 # installing kasm software suites
 #options=$(cat /home/sansforensics/.vars)
@@ -58,12 +61,16 @@ printf "      >> Repositories updated\n"
 printf "      >> Preparing Cuckoo Sandbox\n"
 wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E" > /dev/null 2>&1
 sudo mv agent.pyw /opt/kasm/kasm/build/install/ > /dev/null 2>&1
+printf "       -> Done\n"
 printf "      >> Installing Cuckoo Sandbox\n"
 /opt/kasm/kasm/build/install/./cuckoo.sh > /dev/null 2>&1
-printf "\n >> Installing TheHive & MISP\n"
+printf "       -> Done\n"
+printf " >> Installing TheHive & MISP\n"
 /opt/kasm/kasm/build/install/./thp.sh > /dev/null 2>&1
+printf "       -> Done\n"
 printf "      >> Installing Additional Tools\n"
 /opt/kasm/kasm/build/install/./tools.sh > /dev/null 2>&1
+printf "       -> Done\n"
 printf "      >> Installing Greenbone Vulnerability Manager\n"
 sudo apt install postgresql gvm libvirt-daemon -y --fix-missing
 sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
@@ -74,6 +81,7 @@ export $(sudo cat /etc/default/gvmd-pg)
 sudo pg_ctlcluster 12 main start > /dev/null 2>&1
 
 # removing uneeded applications
+printf "       -> Done\n"
 printf "      >> Uninstalling redundant software\n"
 sudo du -sh /var/cache/apt/archives > /dev/null 2>&1
 sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* kdeconnect aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan wxhexeditor scite -y > /dev/null 2>&1
@@ -81,6 +89,7 @@ sudo apt-get autoremove --purge > /dev/null 2>&1
 sudo apt-get clean > /dev/null 2>&1
 
 # disabling updates via ipv6
+printf "       -> Done\n"
 printf "      >> Disabling IPv6 Updates\n"
 sudo chmod 777 /etc/sysctl.conf
 sudo echo "
@@ -90,16 +99,19 @@ net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1
 " >> /etc/sysctl.conf
 sudo chmod 644 /etc/sysctl.conf
+printf "       -> Done\n"
 printf "      >> Upgrading Python pip\n"
 python3 -m pip install --upgrade pip > /dev/null 2>&1
 python2.7 -m pip install --upgrade pip > /dev/null 2>&1
 
 # preparing elastic
+printf "       -> Done\n"
 printf "      >> Preparing elastic stack\n"
 wget -O elastic.py "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M" > /dev/null 2>&1
 sudo mv elastic.py /opt/kasm/kasm/build/install/
 
 # installing apfs-fuse
+printf "       -> Done\n"
 printf "      >> Installing apfs-fuse\n"
 sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y --fix-missing > /dev/null 2>&1
 cd /usr/local/bin
@@ -114,6 +126,7 @@ sudo ccmake .
 sudo make
 
 # installing virtualisation software
+printf "       -> Done\n"
 printf "      >> Installing Virtualisation software\n"
 cd /home/sansforensics/
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle > /dev/null 2>&1
@@ -127,6 +140,7 @@ chmod +x virtualbox.sh
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
 
 # initialising elrond
+printf "       -> Done\n"
 printf "      >> Initialising elrond\n"
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond > /dev/null 2>&1
 sudo chmod -R 777 /opt/elrond/elrond/config.sh
@@ -136,10 +150,12 @@ sudo sed -i '$ d' /opt/elrond/elrond/config.sh
 sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/nav_json.py
 
 # installing elrond
+printf "       -> Done\n"
 printf "      >> Installing elrond\n"
 sudo /opt/elrond/./make.sh > /dev/null 2>&1
 sudo updatedb > /dev/null 2>&1
 
 # initialising temp account
+printf "       -> Done\n"
 printf "      >> Creating temp user\n"
 /opt/kasm/kasm/build/./temp.sh
