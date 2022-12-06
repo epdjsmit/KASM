@@ -1,4 +1,6 @@
 #!/bin/bash
+# initialising temp account
+printf "      >> Creating temp user\n"
 sudo hostnamectl set-hostname kasm
 hostname | (echo -n "127.0.0.1        " && cat) | sudo tee -a /etc/hosts
 sleep 1
@@ -115,6 +117,8 @@ sleep 1
 gnome-session-quit --no-prompt" >> temp.sh
 sudo chmod +x temp.sh
 sudo mv temp.sh /home/temp/temp.sh
+printf "       -> Done\n"
+sleep 10
 printf "\n\n      >> Rebooting...\n"
 sleep 2
 sudo reboot
