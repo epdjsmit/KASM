@@ -8,7 +8,7 @@ gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
 
 # creating cuckoo user
-printf "\n >> Creating Cuckoo user\n"
+printf " >> Creating Cuckoo user\n"
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo > /dev/null 2>&1
 sleep 1
 sudo passwd cuckoo
@@ -125,5 +125,5 @@ sudo /opt/elrond/./make.sh > /dev/null 2>&1
 sudo updatedb > /dev/null 2>&1
 
 # initialising temp account
-printf "\n >> Creating temp user\n"
+printf " >> Creating temp user\n"
 /opt/kasm/kasm/build/./temp.sh
