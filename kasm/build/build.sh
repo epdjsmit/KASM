@@ -1,9 +1,9 @@
 #!/bin/bash
-commenced = clear + echo "
+commenced = clear + printf "
   ##########################################################
   ---- \033[1;33mCommenced KASM-Workstation configuration script\033[0m  ----
   ##########################################################"
-banner = $commenced + echo "  \033[1;34m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\033[0m
+banner = $commenced + printf "  \033[1;34m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\033[0m
   ##########################################################
   |      \033[1;33mPlease note the following:\033[0m                        |
   |          -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m           |
@@ -12,11 +12,11 @@ banner = $commenced + echo "  \033[1;34m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ##########################################################
 "
 clear
-echo "
+printf "
   ##########################################################
   ---- \033[1;33mCommencing KASM-Workstation configuration script\033[0m ----
   ##########################################################"
-echo "  \033[1;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\033[0m
+printf "  \033[1;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\033[0m
   ##########################################################
   |      \033[1;33mPlease note the following:\033[0m                        |
   |          -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m           |
@@ -26,7 +26,7 @@ echo "  \033[1;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\033
 "
 sleep 2
 # initialising kasm
-printf "\033[0m\n    >> Initialising KASM-Workstation\n"
+printf "\n    >> Initialising KASM-Workstation\n"
 sudo chmod -R 755 /opt/kasm
 python3 -m keyring --disable
 gsettings set org.gnome.desktop.screensaver lock-enabled false
@@ -39,7 +39,7 @@ sudo mv elastic.py /opt/kasm/kasm/build/install/
 
 # creating cuckoo user
 $banner
-printf "    >> Creating 'cuckoo' account\n"
+printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m    >> Creating 'cuckoo' account\n"
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo > /dev/null 2>&1
 sleep 1
 sudo passwd cuckoo
