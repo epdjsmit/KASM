@@ -13,8 +13,6 @@ echo $cuckoo $greenbone $remnux $thehiveproject > .vars
 clear
 sleep 2
 echo "
-
-
     ##########################################################
     ---- Welcome to KASM-Workstation configuration script ----
     ##########################################################"
