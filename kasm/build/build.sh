@@ -1,9 +1,9 @@
 #!/bin/bash
-commenced = clear + printf "
+commenced =  + printf "
   ##########################################################
   ---- \033[1;33mCommenced KASM-Workstation configuration script\033[0m  ----
   ##########################################################"
-banner = $commenced + printf "  \033[1;34m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\033[0m
+banner = $commenced + printf "\n  \033[1;34m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\033[0m
   ##########################################################
   |      \033[1;33mPlease note the following:\033[0m                        |
   |          -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m           |
@@ -11,6 +11,7 @@ banner = $commenced + printf "  \033[1;34m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> \033[1;33mSelect the options as instructed\033[0m           |
   ##########################################################
 "
+
 clear
 printf "
   ##########################################################
@@ -38,14 +39,16 @@ wget -O elastic.py "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6
 sudo mv elastic.py /opt/kasm/kasm/build/install/
 
 # creating cuckoo user
+clear
 $banner
-printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m    >> Creating 'cuckoo' account\n"
+printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> Creating 'cuckoo' account\n"
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo > /dev/null 2>&1
 sleep 1
 sudo passwd cuckoo
 sleep 2
 
 # installing apfs-fuse
+clear
 $banner
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> Installing apfs-fuse\n"
 sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y > /dev/null 2>&1
@@ -62,6 +65,7 @@ sudo make > /dev/null 2>&1
 cd /home/sansforensics/
 
 # installing remnux - MUST be installed before anything else
+clear
 $banner
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> Installing REMnux\n"
 wget https://REMnux.org/remnux-cli > /dev/null 2>&1
@@ -71,6 +75,7 @@ sudo mv remnux /usr/local/bin
 #sudo remnux install > /dev/null 2>&1
 
 # configuring repositories
+clear
 $banner
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> Updating repositories\n"
 sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser # db browser for sqlite
@@ -88,6 +93,7 @@ sudo apt update > /dev/null 2>&1
 #options=$(cat /home/sansforensics/.vars)
 
 # installing cuckoo
+clear
 $banner
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> Installing Cuckoo Sandbox\n"
 wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E" > /dev/null 2>&1
@@ -156,6 +162,7 @@ sudo service mongodb restart
 deactivate
 
 # installing thehive
+clear
 $banner
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> Installing TheHive\n"
 sudo adduser --system docker
@@ -166,6 +173,7 @@ sudo docker run -d=true --rm -p 9000:9000 strangebee/thehive:latest
 sudo rm /etc/apt/sources.list.d/docker.list
 
 # installing misp
+clear
 $banner
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> Installing MISP\n"
 sudo useradd -m -u 6477 -p $(openssl passwd -1 misp) misp && sudo usermod -aG sudo misp > /dev/null 2>&1
@@ -180,6 +188,7 @@ sudo ufw allow 80/tcp > /dev/null 2>&1
 sudo ufw allow 443/tcp > /dev/null 2>&1
 
 # installing greenbone
+clear
 $banner
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> Installing Greenbone Vulnerability Manager\n"
 sudo apt install postgresql libvirt-daemon -y > /dev/null 2>&1
@@ -192,6 +201,7 @@ sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
 #sudo pg_ctlcluster 12 main start > /dev/null 2>&1
 
 # removing uneeded applications
+clear
 $banner
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> \033[1;32mInstalled Greenbone Vulnerability Manager\033[0m\n    >> Uninstalling redundant software\n"
 sudo du -sh /var/cache/apt/archives > /dev/null 2>&1
@@ -209,6 +219,7 @@ net.ipv6.conf.lo.disable_ipv6 = 1
 sudo chmod 644 /etc/sysctl.conf
 
 # installing virtualisation software
+clear
 $banner
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> \033[1;32mInstalled Greenbone Vulnerability Manager\033[0m\n    >> \033[1;32mUninstalling redundant software\033[0m\n    >> Installing virtualisation software\n"
 cd /home/sansforensics/
