@@ -96,12 +96,8 @@ sudo apt update > /dev/null 2>&1
 #/opt/kasm/kasm/build/install/./cuckoo.sh > /dev/null 2>&1
 #/opt/kasm/kasm/build/install/./thp.sh > /dev/null 2>&1
 printf "    >> Installing Greenbone Vulnerability Manager\n"
-echo "sudo apt install postgresql libvirt-daemon -y"
-sudo apt install postgresql libvirt-daemon -y
-sleep 30
-echo "sudo apt install gvm -y"
+sudo apt install postgresql libvirt-daemon -y > /dev/null 2>&1
 sudo apt install gvm -y
-sleep 30
 clear
 echo "
   ##########################################################
@@ -115,7 +111,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n    >> Installed apfs-fuse\n    >> Installed REMnux\n    >> Updated repositories\n    >> Installed Greenbone Vulnerability Manager\n"
+printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n    >> Installed apfs-fuse\n    >> Installed REMnux\n    >> Updated repositories\n    >> Installed Greenbone Vulnerability Manager\n    >> Configuring Greenbone Vulnerability Manager\n"
 sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
 sudo -u gvm -g gvm greenbone-feed-sync --type CERT > /dev/null 2>&1
 sudo -u gvm -g gvm greenbone-feed-sync --type SCAP > /dev/null 2>&1
