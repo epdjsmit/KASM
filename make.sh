@@ -109,4 +109,4 @@ read input
 clear
 sudo chmod +x /opt/kasm/kasm/build/*.*
 sudo chmod +x /opt/kasm/kasm/build/install/*.*
-/opt/kasm/kasm/build/./init.sh
+/opt/kasm/kasm/build/./build.sh
