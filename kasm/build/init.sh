@@ -84,8 +84,8 @@ sudo apt update > /dev/null 2>&1
 # installing kasm software suites
 #options=$(cat /home/sansforensics/.vars)
 
-/opt/kasm/kasm/build/install/./cuckoo.sh > /dev/null 2>&1
-/opt/kasm/kasm/build/install/./thp.sh > /dev/null 2>&1
+#/opt/kasm/kasm/build/install/./cuckoo.sh > /dev/null 2>&1
+#/opt/kasm/kasm/build/install/./thp.sh > /dev/null 2>&1
 printf "    >> Installing Greenbone Vulnerability Manager\n"
 sudo apt install postgresql libvirt-daemon gvm -y
 clear
