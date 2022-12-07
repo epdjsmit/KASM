@@ -13,16 +13,16 @@ echo $cuckoo $greenbone $remnux $thehiveproject > .vars
 clear
 sleep 2
 echo "
-    ##########################################################
-    ---- Welcome to KASM-Workstation configuration script ----
-    ##########################################################"
-echo "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ##########################################################
-    |      Please note the following:                        |
-    |          -> Configuring KASM takes ~10 hours           |
-    |          -> Ensure you have BUILD.md to hand           |
-    |          -> Select the options as instructed           |
-    ##########################################################
+  ##########################################################
+  ---- Welcome to KASM-Workstation configuration script ----
+  ##########################################################"
+echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ##########################################################
+  |      Please note the following:                        |
+  |          -> Configuring KASM takes ~10 hours           |
+  |          -> Ensure you have BUILD.md to hand           |
+  |          -> Select the options as instructed           |
+  ##########################################################
 "
 sleep 2
 echo "
