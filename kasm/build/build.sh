@@ -224,17 +224,4 @@ sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtu
 
 # downloading additional tooling
 /opt/kasm/kasm/build/install/./tools.sh
-
-# installing elrond
-$banner
-printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> \033[1;32mInstalled Greenbone Vulnerability Manager\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mUpgraded Python pip\033[0m\n    >> \033[1;32mInstalled Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled Chrome Browser\033[0m\n    >> \033[1;32mInstalled Opera Browser\033[0m\n    >> \033[1;32mInstalled DB Browser for SQLite\033[0m\n    >> \033[1;32Installed Azure CLI\033[0m\n    >> \033[1;32mInstalled AWS CLI\033[0m\n    >> \033[1;32mInstalled Bookstack\033[0m    >> Downloaded onestopcybershop\033[0m\n    >> \033[1;32mDownloaded bruce\033[0m\n    >> \033[1;32mDownloaded gandalf\033[0m\n    >> \033[1;32mDownloaded SIGMA\033[0m\n    >> \033[1;32mDownloaded DeepBlueCLI\033[0m\n    >> \033[1;32mDownloaded KAPE\033[0m\n    >> \033[1;32mDownloaded PowerForensics\033[0m\n    >> \033[1;32mDownloaded MemProcFS\033[0m\n    >> \033[1;32mDownloaded WMIExplorer\033[0m\n    >> \033[1;32mDownloaded CobaltStrike-Defence\033[0m\n    >> \033[1;32mDownloaded freq\033[0m\n    >> \033[1;32mDownloaded dnstwist\033[0m\n    >> \033[1;32mDownloaded rdap\033[0m\n    >> \033[1;32mDownloaded sherlock\033[0m\n    >> \033[1;32mDownloaded TweetScraper\033[0m\n    >> \033[1;32mDownloaded karma\033[0m\n    >> \033[1;32mDownloaded TZWorks\033[0m\n    >> \033[1;32mDownloaded BlueTeamPowerShell\033[0m\n    >> \033[1;32mDownloaded Sysmon\033[0m\n    >> \033[1;32mInstalled Metasploit\033[0m\n    >> \033[1;32mInstalled HTTrack\033[0m\n    >> \033[1;32mInstalled Maltego\033[0m\n    >> Installing elrond\n"
-sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond > /dev/null 2>&1
-sudo chmod -R 777 /opt/elrond/elrond/config.sh
-sudo sed -i '7d' /opt/elrond/elrond/config.sh
-sudo sed -i '$ d' /opt/elrond/elrond/config.sh
-# preparing navigator
-sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/nav_json.py
-sudo /opt/elrond/./make.sh > /dev/null 2>&1
-sudo updatedb > /dev/null 2>&1
-
 /opt/kasm/kasm/build/./temp.sh
