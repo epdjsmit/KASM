@@ -1,5 +1,5 @@
 #!/bin/bash
-commenced =  + printf "
+commenced = printf "
   ##########################################################
   ---- \033[1;33mCommenced KASM-Workstation configuration script\033[0m  ----
   ##########################################################"
