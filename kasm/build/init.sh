@@ -34,7 +34,20 @@ sudo passwd cuckoo
 sleep 2
 
 # installing apfs-fuse
-printf "\n    >> Installing apfs-fuse\n"
+clear
+echo "
+  ##########################################################
+  ---- Commenced KASM-Workstation configuration script  ----
+  ##########################################################"
+echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ##########################################################
+  |      Please note the following:                        |
+  |          -> Configuring KASM takes ~10 hours           |
+  |          -> Ensure you have BUILD.md to hand           |
+  |          -> Select the options as instructed           |
+  ##########################################################
+"
+printf "\n\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n\n    >> Installed apfs-fuse\n"
 sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y > /dev/null 2>&1
 cd /usr/local/bin
 sudo git clone https://github.com/ezaspy/apfs-fuse.git > /dev/null 2>&1
