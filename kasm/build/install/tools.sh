@@ -27,13 +27,13 @@ unzip awscliv2.zip > /dev/null 2>&1
 sudo ./aws/install > /dev/null 2>&1
 rm awscliv2.zip
 
+printf "      >> Installing Bookstack\n"
+sudo git clone https://github.com/BookStackApp/BookStack.git /opt/bookstack > /dev/null 2>&1
+
 printf "      >> Downloading onestopcybershop\n"
 git clone https://github.com/ezaspy/oscybershop.git /home/sansforensics/Desktop/cybershop > /dev/null 2>&1
 
 sudo mkdir -p /opt/TZWorks /opt/BlueTeamPowerShell /opt/Sysmon/SysmonForLinux /home/sansforensics/Desktop/CobaltStrike-Defence/content
-
-printf "      >> Installing Bookstack\n"
-sudo git clone https://github.com/BookStackApp/BookStack.git /opt/bookstack > /dev/null 2>&1
 printf "      >> Downloading bruce\n"
 sudo git clone https://github.com/ezaspy/bruce.git /opt/bruce > /dev/null 2>&1
 printf "      >> Downloading gandalf\n"
