@@ -42,7 +42,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n    >> Installing apfs-fuse\n"
+printf "\n    >> \033[0;32mInitialised KASM-Workstation\n    >> \033[0;32mCreated 'cuckoo' account\n    >> \033[0;32mInstalling apfs-fuse\n"
 sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y > /dev/null 2>&1
 cd /usr/local/bin
 sudo git clone https://github.com/ezaspy/apfs-fuse.git > /dev/null 2>&1
@@ -70,7 +70,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n    >> Installed apfs-fuse\n    >> Installing REMnux\n"
+printf "\n    >> \033[0;32mInitialised KASM-Workstation\n    >> \033[0;32mCreated 'cuckoo' account\n    >> \033[0;32mInstalled apfs-fuse\n    >> Installing REMnux\n"
 wget https://REMnux.org/remnux-cli > /dev/null 2>&1
 mv remnux-cli remnux
 chmod +x remnux
@@ -80,9 +80,9 @@ sudo mv remnux /usr/local/bin
 # configuring repositories
 printf "    >> Updating repositories\n"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg > /dev/null 2>&1 # thehive
-sleep 4
+sleep 2
 yes '' | echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null # thehive / cuckoo
-sleep 4
+sleep 2
 yes '' | sudo add-apt-repository ppa:mrazavi/gvm > /dev/null 2>&1 # greenbone
 echo 'deb http://security.ubuntu.com/ubuntu xenial-security main' | sudo tee /etc/apt/sources.list.d/xenial-security.list > /dev/null 2>&1 # cuckoo
 wget -O /tmp/python-mysqldb_1.3.10-1build1_amd64.deb http://archive.ubuntu.com/ubuntu/pool/main/p/python-mysqldb/python-mysqldb_1.3.10-1build1_amd64.deb > /dev/null 2>&1 # cuckoo
@@ -111,7 +111,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n    >> Installed apfs-fuse\n    >> Installed REMnux\n    >> Updated repositories\n    >> Installed Greenbone Vulnerability Manager\n    >> Configuring Greenbone Vulnerability Manager\n"
+printf "\n    >> \033[0;32mInitialised KASM-Workstation\n    >> \033[0;32mCreated 'cuckoo' account\n    >> \033[0;32mInstalled apfs-fuse\n    >> \033[0;32mInstalled REMnux\n    >> \033[0;32mUpdated repositories\n    >> \033[0;32mInstalled Greenbone Vulnerability Manager\n    >> Configuring Greenbone Vulnerability Manager\n"
 sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
 #sudo -u gvm -g gvm greenbone-feed-sync --type CERT > /dev/null 2>&1
 #sudo -u gvm -g gvm greenbone-feed-sync --type SCAP > /dev/null 2>&1
