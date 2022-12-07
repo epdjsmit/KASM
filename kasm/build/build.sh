@@ -42,7 +42,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n    >> \033[0;32mInitialised KASM-Workstation\n    >> \033[0;32mCreated 'cuckoo' account\n    >> \033[0;32mInstalling apfs-fuse\n"
+printf "\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalling apfs-fuse\033[0m\n"
 sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y > /dev/null 2>&1
 cd /usr/local/bin
 sudo git clone https://github.com/ezaspy/apfs-fuse.git > /dev/null 2>&1
@@ -70,7 +70,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n    >> \033[0;32mInitialised KASM-Workstation\n    >> \033[0;32mCreated 'cuckoo' account\n    >> \033[0;32mInstalled apfs-fuse\n    >> Installing REMnux\n"
+printf "\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> Installing REMnux\n"
 wget https://REMnux.org/remnux-cli > /dev/null 2>&1
 mv remnux-cli remnux
 chmod +x remnux
@@ -111,7 +111,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n    >> \033[0;32mInitialised KASM-Workstation\n    >> \033[0;32mCreated 'cuckoo' account\n    >> \033[0;32mInstalled apfs-fuse\n    >> \033[0;32mInstalled REMnux\n    >> \033[0;32mUpdated repositories\n    >> \033[0;32mInstalled Greenbone Vulnerability Manager\n    >> Configuring Greenbone Vulnerability Manager\n"
+printf "\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Greenbone Vulnerability Manager\033[0m\n    >> Configuring Greenbone Vulnerability Manager\n"
 sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
 #sudo -u gvm -g gvm greenbone-feed-sync --type CERT > /dev/null 2>&1
 #sudo -u gvm -g gvm greenbone-feed-sync --type SCAP > /dev/null 2>&1
