@@ -68,7 +68,7 @@ sudo chmod -R 777 /opt/elrond/elrond/config.sh
 sudo sed -i '7d' /opt/elrond/elrond/config.sh
 sudo sed -i '$ d' /opt/elrond/elrond/config.sh
 # preparing navigator
-sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/nav_json.py
+sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/navigator.py
 sudo /opt/elrond/./make.sh > /dev/null 2>&1
 
 $banner
