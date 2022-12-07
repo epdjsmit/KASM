@@ -51,7 +51,7 @@ sudo make > /dev/null 2>&1
 clear
 echo "
   ##########################################################
-  ---- Commencing KASM-Workstation configuration script ----
+  ---- Commenced KASM-Workstation configuration script  ----
   ##########################################################"
 echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ##########################################################
@@ -91,7 +91,7 @@ sudo apt install postgresql libvirt-daemon gvm -y
 clear
 echo "
   ##########################################################
-  ---- Commencing KASM-Workstation configuration script ----
+  ---- Commenced KASM-Workstation configuration script  ----
   ##########################################################"
 echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ##########################################################
