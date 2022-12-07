@@ -1,27 +1,27 @@
 #!/bin/bash
+commenced = clear + echo "
+  ##########################################################
+  ---- \033[1;33mCommenced KASM-Workstation configuration script\033[0m  ----
+  ##########################################################"
+banner = $commenced + echo "  \033[1;34m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\033[0m
+  ##########################################################
+  |      \033[1;33mPlease note the following:\033[0m                        |
+  |          -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m           |
+  |          -> \033[1;33mEnsure you have BUILD.md to hand\033[0m           |
+  |          -> \033[1;33mSelect the options as instructed\033[0m           |
+  ##########################################################
+"
 # initialising temp account
-printf "    >> Creating temp user\n"
+$banner
+printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> \033[1;32mInstalled Greenbone Vulnerability Manager\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mUpgraded Python pip\033[0m\n    >> \033[1;32mInstalled Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled Chrome Browser\033[0m\n    >> \033[1;32mInstalled Opera Browser\033[0m\n    >> \033[1;32mInstalled DB Browser for SQLite\033[0m\n    >> \033[1;32Installed Azure CLI\033[0m\n    >> \033[1;32mInstalled AWS CLI\033[0m\n    >> \033[1;32mInstalled Bookstack\033[0m    >> Downloaded onestopcybershop\033[0m\n    >> \033[1;32mDownloaded bruce\033[0m\n    >> \033[1;32mDownloaded gandalf\033[0m\n    >> \033[1;32mDownloaded SIGMA\033[0m\n    >> \033[1;32mDownloaded DeepBlueCLI\033[0m\n    >> \033[1;32mDownloaded KAPE\033[0m\n    >> \033[1;32mDownloaded PowerForensics\033[0m\n    >> \033[1;32mDownloaded MemProcFS\033[0m\n    >> \033[1;32mDownloaded WMIExplorer\033[0m\n    >> \033[1;32mDownloaded CobaltStrike-Defence\033[0m\n    >> \033[1;32mDownloaded freq\033[0m\n    >> \033[1;32mDownloaded dnstwist\033[0m\n    >> \033[1;32mDownloaded rdap\033[0m\n    >> \033[1;32mDownloaded sherlock\033[0m\n    >> \033[1;32mDownloaded TweetScraper\033[0m\n    >> \033[1;32mDownloaded karma\033[0m\n    >> \033[1;32mDownloaded TZWorks\033[0m\n    >> \033[1;32mDownloaded BlueTeamPowerShell\033[0m\n    >> \033[1;32mDownloaded Sysmon\033[0m\n    >> \033[1;32mInstalled Metasploit\033[0m\n    >> \033[1;32mInstalled HTTrack\033[0m\n    >> \033[1;32mInstalled Maltego\033[0m\n    >>  \033[1;32mInstalledelrond\n    >> Creating 'temp' account\n"
 sudo hostnamectl set-hostname kasm > /dev/null 2>&1
 hostname | (echo -n "127.0.0.1        " && cat) | sudo tee -a /etc/hosts > /dev/null 2>&1
 sleep 1
 sudo useradd -s /bin/bash -d /home/temp/ -m -G sudo temp
 sudo passwd temp
-
 sleep 2
-clear
-echo "
-  ##########################################################
-  ---- Commenced KASM-Workstation configuration script  ----
-  ##########################################################"
-echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  ##########################################################
-  |      Please note the following:                        |
-  |          -> Configuring KASM takes ~10 hours           |
-  |          -> Ensure you have BUILD.md to hand           |
-  |          -> Select the options as instructed           |
-  ##########################################################
-"
-printf "\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Greenbone Vulnerability Manager\033[0m\n    >> \033[1;32mConfigured Greenbone Vulnerability Manager\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled Chrome Browser\033[0m\n    >> \033[1;32mInstalled Opera Browser\033[0m\n    >> \033[1;32mInstalled DB Sqlite Browser\033[0m\n    >> \033[1;32mInstalled Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled Azure CLI\033[0m\n    >> \033[1;32mInstalled AWS CLI\033[0m\n    >> \033[1;32mInstalled Bookstack\033[0m\n    >> \033[1;32mDownloaded onestopcybershop\033[0m\n    >> \033[1;32mDownloaded bruce\033[0m\n    >> \033[1;32mDownloaded gandalf\033[0m\n    >> \033[1;32mDownloaded SIGMA\033[0m\n    >> \033[1;32mDownloaded DeepBlueCLI\033[0m\n    >> \033[1;32mDownloaded KAPE\033[0m\n    >> \033[1;32mDownloaded PowerForensics\033[0m\n    >> \033[1;32mDownloaded MemProcFS\033[0m\n    >> \033[1;32mDownloaded WMIExplorer\033[0m\n    >> \033[1;32mDownloaded CobaltStrike-Defence\033[0m\n    >> \033[1;32mDownloaded freq\033[0m\n    >> \033[1;32mDownloaded dnstwist\033[0m\n    >> \033[1;32mDownloaded rdap\033[0m\n    >> \033[1;32mDownloaded sherlock\033[0m\n    >> \033[1;32mDownloaded TweetScraper\033[0m\n    >> \033[1;32mDownloaded karma\033[0m\n    >> \033[1;32mDownloaded TZWorks\033[0m\n    >> \033[1;32mDownloaded BlueTeamPowerShell\033[0m\n    >> \033[1;32mDownloaded Sysmon\033[0m\n    >> \033[1;32mInstalled Metasploit\033[0m\n    >> \033[1;32mInstalled HTTrack\033[0m\n    >> \033[1;32mInstalled Maltego\033[0m\n    >> \033[1;32mDisabled IPv6 Updates\033[0m\n    >> \033[1;32mUpgraded Python pip\033[0m\n    >> \033[1;32mPrepared elastic stack\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mInitialised elrond\033[0m\n    >> \033[1;32mInstalled elrond\033[0m\n    >> \033[1;32mCreated 'temp' account\033[0m\n    >> Configuring 'temp' account\n"
+$banner
+printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> \033[1;32mInstalled Greenbone Vulnerability Manager\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mUpgraded Python pip\033[0m\n    >> \033[1;32mInstalled Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled Chrome Browser\033[0m\n    >> \033[1;32mInstalled Opera Browser\033[0m\n    >> \033[1;32mInstalled DB Browser for SQLite\033[0m\n    >> \033[1;32Installed Azure CLI\033[0m\n    >> \033[1;32mInstalled AWS CLI\033[0m\n    >> \033[1;32mInstalled Bookstack\033[0m    >> Downloaded onestopcybershop\033[0m\n    >> \033[1;32mDownloaded bruce\033[0m\n    >> \033[1;32mDownloaded gandalf\033[0m\n    >> \033[1;32mDownloaded SIGMA\033[0m\n    >> \033[1;32mDownloaded DeepBlueCLI\033[0m\n    >> \033[1;32mDownloaded KAPE\033[0m\n    >> \033[1;32mDownloaded PowerForensics\033[0m\n    >> \033[1;32mDownloaded MemProcFS\033[0m\n    >> \033[1;32mDownloaded WMIExplorer\033[0m\n    >> \033[1;32mDownloaded CobaltStrike-Defence\033[0m\n    >> \033[1;32mDownloaded freq\033[0m\n    >> \033[1;32mDownloaded dnstwist\033[0m\n    >> \033[1;32mDownloaded rdap\033[0m\n    >> \033[1;32mDownloaded sherlock\033[0m\n    >> \033[1;32mDownloaded TweetScraper\033[0m\n    >> \033[1;32mDownloaded karma\033[0m\n    >> \033[1;32mDownloaded TZWorks\033[0m\n    >> \033[1;32mDownloaded BlueTeamPowerShell\033[0m\n    >> \033[1;32mDownloaded Sysmon\033[0m\n    >> \033[1;32mInstalled Metasploit\033[0m\n    >> \033[1;32mInstalled HTTrack\033[0m\n    >> \033[1;32mInstalled Maltego\033[0m\n    >>  \033[1;32mInstalledelrond\n    >> \033[1;32mCreated 'temp' account\n    >> Configuring 'temp' account\n"
 
 # autologin for temp account
 echo "# GDM configuration storage
@@ -135,20 +135,7 @@ sleep 1
 gnome-session-quit --no-prompt" >> temp.sh
 sudo chmod +x temp.sh
 sudo mv temp.sh /home/temp/temp.sh
-sleep 2
-clear
-echo "
-  ##########################################################
-  ---- Commenced KASM-Workstation configuration script  ----
-  ##########################################################"
-echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  ##########################################################
-  |      Please note the following:                        |
-  |          -> Configuring KASM takes ~10 hours           |
-  |          -> Ensure you have BUILD.md to hand           |
-  |          -> Select the options as instructed           |
-  ##########################################################
-"
-printf "\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Greenbone Vulnerability Manager\033[0m\n    >> \033[1;32mConfigured Greenbone Vulnerability Manager\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled Chrome Browser\033[0m\n    >> \033[1;32mInstalled Opera Browser\033[0m\n    >> \033[1;32mInstalled DB Sqlite Browser\033[0m\n    >> \033[1;32mInstalled Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled Azure CLI\033[0m\n    >> \033[1;32mInstalled AWS CLI\033[0m\n    >> \033[1;32mInstalled Bookstack\033[0m\n    >> \033[1;32mDownloaded onestopcybershop\033[0m\n    >> \033[1;32mDownloaded bruce\033[0m\n    >> \033[1;32mDownloaded gandalf\033[0m\n    >> \033[1;32mDownloaded SIGMA\033[0m\n    >> \033[1;32mDownloaded DeepBlueCLI\033[0m\n    >> \033[1;32mDownloaded KAPE\033[0m\n    >> \033[1;32mDownloaded PowerForensics\033[0m\n    >> \033[1;32mDownloaded MemProcFS\033[0m\n    >> \033[1;32mDownloaded WMIExplorer\033[0m\n    >> \033[1;32mDownloaded CobaltStrike-Defence\033[0m\n    >> \033[1;32mDownloaded freq\033[0m\n    >> \033[1;32mDownloaded dnstwist\033[0m\n    >> \033[1;32mDownloaded rdap\033[0m\n    >> \033[1;32mDownloaded sherlock\033[0m\n    >> \033[1;32mDownloaded TweetScraper\033[0m\n    >> \033[1;32mDownloaded karma\033[0m\n    >> \033[1;32mDownloaded TZWorks\033[0m\n    >> \033[1;32mDownloaded BlueTeamPowerShell\033[0m\n    >> \033[1;32mDownloaded Sysmon\033[0m\n    >> \033[1;32mInstalled Metasploit\033[0m\n    >> \033[1;32mInstalled HTTrack\033[0m\n    >> \033[1;32mInstalled Maltego\033[0m\n    >> \033[1;32mDisabled IPv6 Updates\033[0m\n    >> \033[1;32mUpgraded Python pip\033[0m\n    >> \033[1;32mPrepared elastic stack\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mInitialised elrond\033[0m\n    >> \033[1;32mInstalled elrond\033[0m\n    >> \033[1;32mCreated 'temp' account\033[0m\n    >> \033[1;32mConfigured 'temp' account\033[0m\n    >> Rebooting\n"
+$banner
+printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> \033[1;32mInstalled Greenbone Vulnerability Manager\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mUpgraded Python pip\033[0m\n    >> \033[1;32mInstalled Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled Chrome Browser\033[0m\n    >> \033[1;32mInstalled Opera Browser\033[0m\n    >> \033[1;32mInstalled DB Browser for SQLite\033[0m\n    >> \033[1;32Installed Azure CLI\033[0m\n    >> \033[1;32mInstalled AWS CLI\033[0m\n    >> \033[1;32mInstalled Bookstack\033[0m    >> Downloaded onestopcybershop\033[0m\n    >> \033[1;32mDownloaded bruce\033[0m\n    >> \033[1;32mDownloaded gandalf\033[0m\n    >> \033[1;32mDownloaded SIGMA\033[0m\n    >> \033[1;32mDownloaded DeepBlueCLI\033[0m\n    >> \033[1;32mDownloaded KAPE\033[0m\n    >> \033[1;32mDownloaded PowerForensics\033[0m\n    >> \033[1;32mDownloaded MemProcFS\033[0m\n    >> \033[1;32mDownloaded WMIExplorer\033[0m\n    >> \033[1;32mDownloaded CobaltStrike-Defence\033[0m\n    >> \033[1;32mDownloaded freq\033[0m\n    >> \033[1;32mDownloaded dnstwist\033[0m\n    >> \033[1;32mDownloaded rdap\033[0m\n    >> \033[1;32mDownloaded sherlock\033[0m\n    >> \033[1;32mDownloaded TweetScraper\033[0m\n    >> \033[1;32mDownloaded karma\033[0m\n    >> \033[1;32mDownloaded TZWorks\033[0m\n    >> \033[1;32mDownloaded BlueTeamPowerShell\033[0m\n    >> \033[1;32mDownloaded Sysmon\033[0m\n    >> \033[1;32mInstalled Metasploit\033[0m\n    >> \033[1;32mInstalled HTTrack\033[0m\n    >> \033[1;32mInstalled Maltego\033[0m\n    >> \033[1;32mInstalled elrond\033[0m\n    >> \033[1;32mCreated 'temp' account\n    >> \033[1;32mConfigured 'temp' account\033[0m\n    >> Rebooting...\n"
 sleep 10
 sudo reboot
