@@ -61,7 +61,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n\n    >> Initialising KASM-Workstation\n    >> Creating Cuckoo user\n\n    >> Installing apfs-fuse\n    >> Installing REMnux\n"
+printf "\n\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n\n    >> Installed apfs-fuse\n    >> Installing REMnux\n"
 wget https://REMnux.org/remnux-cli > /dev/null 2>&1
 mv remnux-cli remnux
 chmod +x remnux
@@ -101,7 +101,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n    >> Initialising KASM-Workstation\n    >> Creating Cuckoo user\n\n    >> Installing apfs-fuse\n    >> Installing REMnux\n    >> Updating repositories\n    >> Installing Additional Tools\n    >> Installing Greenbone Vulnerability Manager\n"
+printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n\n    >> Installed apfs-fuse\n    >> Installed REMnux\n    >> Updated repositories\n    >> Installed Greenbone Vulnerability Manager\n"
 sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
 sudo -u gvm -g gvm greenbone-feed-sync --type CERT > /dev/null 2>&1
 sudo -u gvm -g gvm greenbone-feed-sync --type SCAP > /dev/null 2>&1
