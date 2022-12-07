@@ -31,6 +31,7 @@ printf "    >> Creating Cuckoo user\n"
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo > /dev/null 2>&1
 sleep 1
 sudo passwd cuckoo
+sleep 2
 
 # installing apfs-fuse
 printf "\n    >> Installing apfs-fuse\n"
