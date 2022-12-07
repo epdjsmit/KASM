@@ -79,6 +79,7 @@ sudo mv remnux /usr/local/bin
 
 # configuring repositories
 printf "    >> Updating repositories\n"
+sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser # db browser for sqlite
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg > /dev/null 2>&1 # thehive
 sleep 2
 yes '' | echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null # thehive / cuckoo
