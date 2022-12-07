@@ -55,8 +55,12 @@ sudo git submodule init
 sudo git submodule update > /dev/null 2>&1
 sudo mkdir build
 cd build
+echo "sudo cmake .."
 sudo cmake ..
+sleep 30
+echo "sudo ccmake ."
 sudo ccmake .
+sleep 30
 sudo make > /dev/null 2>&1
 
 sleep 30
@@ -75,9 +79,8 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n\n    >> Installed apfs-fuse\n    >> Installing REMnux\n"
-wget https://REMnux.org/remnux-cli > /dev/null 2>&1
-mv remnux-cli remnux
+printf "\n\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n    >> Installed apfs-fuse\n    >> Installing REMnux\n"
+wget -O remnux https://REMnux.org/remnux-cli > /dev/null 2>&1
 chmod +x remnux
 sudo mv remnux /usr/local/bin
 #sudo remnux install > /dev/null 2>&1
@@ -115,7 +118,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n\n    >> Installed apfs-fuse\n    >> Installed REMnux\n    >> Updated repositories\n    >> Installed Greenbone Vulnerability Manager\n"
+printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n    >> Installed apfs-fuse\n    >> Installed REMnux\n    >> Updated repositories\n    >> Installed Greenbone Vulnerability Manager\n"
 sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
 sudo -u gvm -g gvm greenbone-feed-sync --type CERT > /dev/null 2>&1
 sudo -u gvm -g gvm greenbone-feed-sync --type SCAP > /dev/null 2>&1
