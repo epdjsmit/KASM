@@ -92,7 +92,7 @@ ${titles[$rand]}
 
                                         configuration script
 "
-sleep 10
+sleep 4
 echo "
   ##########################################################"
 echo "  |      Please note the following:                        |"
