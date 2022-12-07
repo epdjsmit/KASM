@@ -113,11 +113,11 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "
 printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n    >> Installed apfs-fuse\n    >> Installed REMnux\n    >> Updated repositories\n    >> Installed Greenbone Vulnerability Manager\n    >> Configuring Greenbone Vulnerability Manager\n"
 sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
-sudo -u gvm -g gvm greenbone-feed-sync --type CERT > /dev/null 2>&1
-sudo -u gvm -g gvm greenbone-feed-sync --type SCAP > /dev/null 2>&1
-sudo -u gvm -g gvm greenbone-feed-sync --type GVMD_DATA > /dev/null 2>&1
-export $(sudo cat /etc/default/gvmd-pg)
-sudo pg_ctlcluster 12 main start > /dev/null 2>&1
+#sudo -u gvm -g gvm greenbone-feed-sync --type CERT > /dev/null 2>&1
+#sudo -u gvm -g gvm greenbone-feed-sync --type SCAP > /dev/null 2>&1
+#sudo -u gvm -g gvm greenbone-feed-sync --type GVMD_DATA > /dev/null 2>&1
+#export $(sudo cat /etc/default/gvmd-pg)
+#sudo pg_ctlcluster 12 main start > /dev/null 2>&1
 
 # removing uneeded applications
 printf "    >> Uninstalling redundant software\n"
