@@ -127,9 +127,6 @@ sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice
 sudo apt-get autoremove --purge > /dev/null 2>&1
 sudo apt-get clean > /dev/null 2>&1
 
-# downloading additional tooling
-/opt/kasm/kasm/build/install/./tools.sh
-
 # disabling updates via ipv6
 printf "    >> Disabling IPv6 Updates\n"
 sudo chmod 777 /etc/sysctl.conf
@@ -162,6 +159,9 @@ echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-
 chmod +x virtualbox.sh
 ./virtualbox.sh > /dev/null 2>&1
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
+
+# downloading additional tooling
+/opt/kasm/kasm/build/install/./tools.sh
 
 # initialising elrond
 printf "    >> Initialising elrond\n"
