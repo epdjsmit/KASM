@@ -1,7 +1,5 @@
 #!/bin/bash
 echo "
-
-
     ##########################################################
     ---- Commencing KASM-Workstation configuration script ----
     ##########################################################"
@@ -16,7 +14,7 @@ echo "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "
 sleep 1
 # initialising kasm
-printf "      >> Initialising KASM-Workstation\n"
+printf "\n      >> Initialising KASM-Workstation\n"
 sudo chmod -R 755 /opt/kasm
 python3 -m keyring --disable
 gsettings set org.gnome.desktop.screensaver lock-enabled false
@@ -29,8 +27,35 @@ sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -a
 sleep 1
 sudo passwd cuckoo
 
+# installing apfs-fuse
+printf "\n      >> Installing apfs-fuse\n"
+sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y > /dev/null 2>&1
+cd /usr/local/bin
+sudo git clone https://github.com/ezaspy/apfs-fuse.git > /dev/null 2>&1
+cd apfs-fuse
+sudo git submodule init
+sudo git submodule update
+sudo mkdir build
+cd build
+sudo cmake ..
+sudo ccmake .
+sudo make > /dev/null 2>&1
+
 # remnux must be installed before anything else
-printf "\n      >> Installing REMnux\n"
+clear
+echo "
+    ##########################################################
+    ---- Commencing KASM-Workstation configuration script ----
+    ##########################################################"
+echo "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ##########################################################
+    |      Please note the following:                        |
+    |          -> Configuring KASM takes ~10 hours           |
+    |          -> Ensure you have BUILD.md to hand           |
+    |          -> Select the options as instructed           |
+    ##########################################################
+"
+printf "\n\n      >> Initialising KASM-Workstation\n      >> Creating Cuckoo user\n\n      >> Installing apfs-fuse\n      >> Installing REMnux\n"
 wget https://REMnux.org/remnux-cli > /dev/null 2>&1
 mv remnux-cli remnux
 chmod +x remnux
@@ -57,12 +82,22 @@ sudo apt update > /dev/null 2>&1
 /opt/kasm/kasm/build/install/./thp.sh > /dev/null 2>&1
 printf "      >> Installing Additional Tools\n"
 /opt/kasm/kasm/build/install/./tools.sh
-printf "      >> Installing postgresql\n"
-sudo apt install postgresql -y --fix-missing
 printf "      >> Installing Greenbone Vulnerability Manager\n"
-sudo apt install gvm -y --fix-missing
-printf "      >> Installing libvirt-daemon\n"
-sudo apt install libvirt-daemon -y --fix-missing
+sudo apt install postgresql gvm libvirt-daemon -y
+clear
+echo "
+    ##########################################################
+    ---- Commencing KASM-Workstation configuration script ----
+    ##########################################################"
+echo "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ##########################################################
+    |      Please note the following:                        |
+    |          -> Configuring KASM takes ~10 hours           |
+    |          -> Ensure you have BUILD.md to hand           |
+    |          -> Select the options as instructed           |
+    ##########################################################
+"
+printf "\n      >> Initialising KASM-Workstation\n      >> Creating Cuckoo user\n\n      >> Installing apfs-fuse\n      >> Installing REMnux\n      >> Updating repositories\n      >> Installing Additional Tools\n      >> Installing Greenbone Vulnerability Manager\n"
 sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
 sudo -u gvm -g gvm greenbone-feed-sync --type CERT > /dev/null 2>&1
 sudo -u gvm -g gvm greenbone-feed-sync --type SCAP > /dev/null 2>&1
@@ -96,20 +131,6 @@ python2.7 -m pip install --upgrade pip > /dev/null 2>&1
 printf "      >> Preparing elastic stack\n"
 wget -O elastic.py "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M" > /dev/null 2>&1
 sudo mv elastic.py /opt/kasm/kasm/build/install/
-
-# installing apfs-fuse
-printf "      >> Installing apfs-fuse\n"
-sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y --fix-missing > /dev/null 2>&1
-cd /usr/local/bin
-sudo git clone https://github.com/ezaspy/apfs-fuse.git > /dev/null 2>&1
-cd apfs-fuse
-sudo git submodule init
-sudo git submodule update
-sudo mkdir build
-cd build
-sudo cmake ..
-sudo ccmake .
-sudo make > /dev/null 2>&1
 
 # installing virtualisation software
 printf "      >> Installing virtualisation software\n"
