@@ -24,6 +24,7 @@ python3 -m keyring --disable
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
+sudo apt update
 
 # creating cuckoo user
 printf "    >> Creating 'cuckoo' account\n"
@@ -51,11 +52,8 @@ sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y > /dev/null 2
 cd /usr/local/bin
 sudo git clone https://github.com/ezaspy/apfs-fuse.git > /dev/null 2>&1
 cd apfs-fuse
-echo "sudo git submodule init"
 sudo git submodule init
-echo "sudo git submodule update"
-sudo git submodule update
-echo "sudo mkdir build"
+sudo git submodule update > /dev/null 2>&1
 sudo mkdir build
 cd build
 sudo cmake ..
