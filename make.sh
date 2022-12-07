@@ -90,7 +90,7 @@ echo "
 
 ${titles[$rand]}
 
-                                         configuration script
+                                        configuration script
 "
 sleep 10
 echo "
