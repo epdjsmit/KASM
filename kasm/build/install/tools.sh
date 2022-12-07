@@ -1,16 +1,5 @@
 #!/bin/bash
-commenced = printf "
-  ##########################################################
-  ---- \033[1;33mCommenced KASM-Workstation configuration script\033[0m  ----
-  ##########################################################"
-banner = $commenced + printf "\n  \033[1;34m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\033[0m
-  ##########################################################
-  |      \033[1;33mPlease note the following:\033[0m                        |
-  |          -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m           |
-  |          -> \033[1;33mEnsure you have BUILD.md to hand\033[0m           |
-  |          -> \033[1;33mSelect the options as instructed\033[0m           |
-  ##########################################################
-"
+banner="\n  ##########################################################\n  #--- \033[1;33mCommenced KASM-Workstation configuration script\033[0m  ---#\n  ##########################################################\n  # \033[1;34m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\033[0m #\n  ##########################################################\n  |      \033[1;33mPlease note the following:\033[0m                        |\n  |          -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m           |\n  |          -> \033[1;33mEnsure you have BUILD.md to hand\033[0m           |\n  |          -> \033[1;33mSelect the options as instructed\033[0m           |\n  ##########################################################\n\n"
 
 clear
 $banner
