@@ -6,15 +6,14 @@ echo "
 sleep 4
 echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ##########################################################"
-sleep 1
+sleep 2
 echo "  |      Please note the following:                        |"
-sleep 1
+sleep 2
 echo "  |          -> Configuring KASM takes ~10 hours           |"
-sleep 1
+sleep 2
 echo "  |          -> Ensure you have BUILD.md to hand           |"
-sleep 1
+sleep 2
 echo "  |          -> Select the options as instructed           |"
-sleep 1
 echo "  ##########################################################
 "
 sleep 10
@@ -27,7 +26,7 @@ gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
 
 # creating cuckoo user
-printf "    >> Creating Cuckoo user\n"
+printf "    >> Creating 'cuckoo' account\n"
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo > /dev/null 2>&1
 sleep 1
 sudo passwd cuckoo
@@ -47,18 +46,23 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n\n    >> Installed apfs-fuse\n"
+printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n    >> Installing apfs-fuse\n"
 sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y > /dev/null 2>&1
 cd /usr/local/bin
 sudo git clone https://github.com/ezaspy/apfs-fuse.git > /dev/null 2>&1
 cd apfs-fuse
+echo "sudo git submodule init"
 sudo git submodule init
+echo "sudo git submodule update"
 sudo git submodule update
+echo "sudo mkdir build"
 sudo mkdir build
 cd build
 sudo cmake ..
 sudo ccmake .
 sudo make > /dev/null 2>&1
+
+sleep 30
 
 # remnux must be installed before anything else
 clear
