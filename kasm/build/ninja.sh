@@ -68,17 +68,17 @@ sudo chmod +x /home/ninja/Desktop/kick-ass.sh
 
 # cleaning up and installing remaining software
 printf "      >> Cleaning up\n"
-sudo -E -u gvm -g gvm gvmd --rebuild > /dev/null 2>&1
-libvirtd -d > /dev/null 2>&1
-sudo dpkg -i /opt/elrond/elrond/tools/.splunk.deb > /dev/null 2>&1
+sudo -E -u gvm -g gvm gvmd --rebuild # > /dev/null 2>&1
+libvirtd -d # > /dev/null 2>&1
+sudo dpkg -i /opt/elrond/elrond/tools/.splunk.deb # > /dev/null 2>&1
 sudo /opt/splunk/bin/./splunk start --accept-license --answer-yes --no-prompt --seed-passwd kick-ass
-sudo python3 /opt/kasm/kasm/build/install/navigator.py > /dev/null 2>&1
-sudo python3 /opt/kasm/kasm/build/install/CobaltStrike-Defence.py > /dev/null 2>&1
-sudo apt install python3-apt > /dev/null 2>&1
-wget -O aptsources-cleanup.pyz https://github.com/davidfoerster/aptsources-cleanup/releases/download/v0.1.7.5.2/aptsources-cleanup.pyz > /dev/null 2>&1
+sudo python3 /opt/kasm/kasm/build/install/navigator.py # > /dev/null 2>&1
+sudo python3 /opt/kasm/kasm/build/install/CobaltStrike-Defence.py # > /dev/null 2>&1
+sudo apt install python3-apt # > /dev/null 2>&1
+wget -O aptsources-cleanup.pyz https://github.com/davidfoerster/aptsources-cleanup/releases/download/v0.1.7.5.2/aptsources-cleanup.pyz # > /dev/null 2>&1
 chmod a+x aptsources-cleanup.pyz
-sudo ./aptsources-cleanup.pyz -n > /dev/null 2>&1
-sudo updatedb > /dev/null 2>&1
+sudo ./aptsources-cleanup.pyz -n # > /dev/null 2>&1
+sudo updatedb # > /dev/null 2>&1
 history -c
 unset HISTFILE
 
