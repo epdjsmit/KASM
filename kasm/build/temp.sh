@@ -21,7 +21,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n    >> Initialising KASM-Workstation\n    >> Creating Cuckoo user\n\n    >> Installing apfs-fuse\n    >> Installing REMnux\n    >> Updating repositories\n    >> Installing Additional Tools\n    >> Installing Greenbone Vulnerability Manager\n    >> Uninstalling redundant software\n    >> Installing Chrome Browser\n    >> Installing Opera Browser\n    >> Installing DB Sqlite Browser\n    >> Installing Jupyter Notebooks\n    >> Installing Azure CLI\n    >> Installing AWS CLI\n    >> Installing Bookstack\n    >> Downloading onestopcybershop\n    >> Downloading bruce\n    >> Downloading gandalf\n    >> Downloading SIGMA\n    >> Downloading DeepBlueCLI\n    >> Downloading KAPE\n    >> Downloading PowerForensics\n    >> Downloading MemProcFS\n    >> Downloading WMIExplorer\n    >> Downloading CobaltStrike-Defence\n    >> Downloading freq\n    >> Downloading dnstwist\n    >> Downloading rdap\n    >> Downloading sherlock\n    >> Downloading TweetScraper\n    >> Downloading karma\n    >> Downloading TZWorks\n    >> Downloading BlueTeamPowerShell\n    >> Downloading Sysmon\n    >> Installing Metasploit\n    >> Installing HTTrack\n    >> Installing Maltego\n    >> Disabling IPv6 Updates\n    >> Upgrading Python pip\n    >> Preparing elastic stack\n    >> Installing virtualisation software\n    >> Initialising elrond\n    >> Installing elrond\n    >> Creating temp user\n    >> Configuring ninja user\n"
+printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n\n    >> Installed apfs-fuse\n    >> Installed REMnux\n    >> Updated repositories\n    >> Installed Additional Tools\n    >> Installed Greenbone Vulnerability Manager\n    >> Uninstalled redundant software\n    >> Installed Chrome Browser\n    >> Installed Opera Browser\n    >> Installed DB Sqlite Browser\n    >> Installed Jupyter Notebooks\n    >> Installed Azure CLI\n    >> Installed AWS CLI\n    >> Installed Bookstack\n    >> Downloaded onestopcybershop\n    >> Downloaded bruce\n    >> Downloaded gandalf\n    >> Downloaded SIGMA\n    >> Downloaded DeepBlueCLI\n    >> Downloaded KAPE\n    >> Downloaded PowerForensics\n    >> Downloaded MemProcFS\n    >> Downloaded WMIExplorer\n    >> Downloaded CobaltStrike-Defence\n    >> Downloaded freq\n    >> Downloaded dnstwist\n    >> Downloaded rdap\n    >> Downloaded sherlock\n    >> Downloaded TweetScraper\n    >> Downloaded karma\n    >> Downloaded TZWorks\n    >> Downloaded BlueTeamPowerShell\n    >> Downloaded Sysmon\n    >> Installed Metasploit\n    >> Installed HTTrack\n    >> Installed Maltego\n    >> Disabled IPv6 Updates\n    >> Upgraded Python pip\n    >> Prepared elastic stack\n    >> Installed virtualisation software\n    >> Initialised elrond\n    >> Installed elrond\n    >> Created 'temp' account\n    >> Configured 'temp' account\n"
 
 # autologin for temp account
 echo "# GDM configuration storage
@@ -127,12 +127,28 @@ sudo cp /opt/elrond/elrond/tools/config/scripts/virtual.sh /home/ninja/VMware_To
 sudo chmod +x /home/ninja/VMware_Tools.sh
 sleep 1
 clear" > temp.sh
-echo 'printf "    >> Creating ninja user\n"' >> temp.sh
-echo "sudo passwd ninja # change password
+echo 'printf "    >> Creating ' >> temp.sh
+echo "'ninja'" >> temp.sh
+echo 'account\n"' >> temp.sh
+echo "sudo passwd ninja
 sleep 1
 gnome-session-quit --no-prompt" >> temp.sh
 sudo chmod +x temp.sh
 sudo mv temp.sh /home/temp/temp.sh
-printf "\n\n    >> Rebooting...\n"
+sleep 2
+clear
+echo "
+  ##########################################################
+  ---- Commencing KASM-Workstation configuration script ----
+  ##########################################################"
+echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ##########################################################
+  |      Please note the following:                        |
+  |          -> Configuring KASM takes ~10 hours           |
+  |          -> Ensure you have BUILD.md to hand           |
+  |          -> Select the options as instructed           |
+  ##########################################################
+"
+printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n\n    >> Installed apfs-fuse\n    >> Installed REMnux\n    >> Updated repositories\n    >> Installed Additional Tools\n    >> Installed Greenbone Vulnerability Manager\n    >> Uninstalled redundant software\n    >> Installed Chrome Browser\n    >> Installed Opera Browser\n    >> Installed DB Sqlite Browser\n    >> Installed Jupyter Notebooks\n    >> Installed Azure CLI\n    >> Installed AWS CLI\n    >> Installed Bookstack\n    >> Downloaded onestopcybershop\n    >> Downloaded bruce\n    >> Downloaded gandalf\n    >> Downloaded SIGMA\n    >> Downloaded DeepBlueCLI\n    >> Downloaded KAPE\n    >> Downloaded PowerForensics\n    >> Downloaded MemProcFS\n    >> Downloaded WMIExplorer\n    >> Downloaded CobaltStrike-Defence\n    >> Downloaded freq\n    >> Downloaded dnstwist\n    >> Downloaded rdap\n    >> Downloaded sherlock\n    >> Downloaded TweetScraper\n    >> Downloaded karma\n    >> Downloaded TZWorks\n    >> Downloaded BlueTeamPowerShell\n    >> Downloaded Sysmon\n    >> Installed Metasploit\n    >> Installed HTTrack\n    >> Installed Maltego\n    >> Disabled IPv6 Updates\n    >> Upgraded Python pip\n    >> Prepared elastic stack\n    >> Installed virtualisation software\n    >> Initialised elrond\n    >> Installed elrond\n    >> Created 'temp' account\n    >> Configured 'temp' account\n    >> Rebooting\n"
 sleep 10
 sudo reboot
