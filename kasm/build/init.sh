@@ -3,19 +3,15 @@ echo "
   ##########################################################
   ---- Commencing KASM-Workstation configuration script ----
   ##########################################################"
-sleep 2
 echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  ##########################################################"
-echo "  |      Please note the following:                        |"
-sleep 4
-echo "  |          -> Configuring KASM takes ~10 hours           |"
-sleep 2
-echo "  |          -> Ensure you have BUILD.md to hand           |"
-sleep 2
-echo "  |          -> Select the options as instructed           |"
-echo "  ##########################################################
+  ##########################################################
+  |      Please note the following:                        |
+  |          -> Configuring KASM takes ~10 hours           |
+  |          -> Ensure you have BUILD.md to hand           |
+  |          -> Select the options as instructed           |
+  ##########################################################
 "
-sleep 10
+sleep 4
 # initialising kasm
 printf "\n    >> Initialising KASM-Workstation\n"
 sudo chmod -R 755 /opt/kasm
