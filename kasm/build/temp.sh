@@ -7,6 +7,22 @@ sleep 1
 sudo useradd -s /bin/bash -d /home/temp/ -m -G sudo temp
 sudo passwd temp
 
+sleep 2
+clear
+echo "
+  ##########################################################
+  ---- Commencing KASM-Workstation configuration script ----
+  ##########################################################"
+echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ##########################################################
+  |      Please note the following:                        |
+  |          -> Configuring KASM takes ~10 hours           |
+  |          -> Ensure you have BUILD.md to hand           |
+  |          -> Select the options as instructed           |
+  ##########################################################
+"
+printf "\n    >> Initialising KASM-Workstation\n    >> Creating Cuckoo user\n\n    >> Installing apfs-fuse\n    >> Installing REMnux\n    >> Updating repositories\n    >> Installing Additional Tools\n    >> Installing Greenbone Vulnerability Manager\n    >> Uninstalling redundant software\n    >> Installing Chrome Browser\n    >> Installing Opera Browser\n    >> Installing DB Sqlite Browser\n    >> Installing Jupyter Notebooks\n    >> Installing Azure CLI\n    >> Installing AWS CLI\n    >> Installing Bookstack\n    >> Downloading onestopcybershop\n    >> Downloading bruce\n    >> Downloading gandalf\n    >> Downloading SIGMA\n    >> Downloading DeepBlueCLI\n    >> Downloading KAPE\n    >> Downloading PowerForensics\n    >> Downloading MemProcFS\n    >> Downloading WMIExplorer\n    >> Downloading CobaltStrike-Defence\n    >> Downloading freq\n    >> Downloading dnstwist\n    >> Downloading rdap\n    >> Downloading sherlock\n    >> Downloading TweetScraper\n    >> Downloading karma\n    >> Downloading TZWorks\n    >> Downloading BlueTeamPowerShell\n    >> Downloading Sysmon\n    >> Installing Metasploit\n    >> Installing HTTrack\n    >> Installing Maltego\n    >> Disabling IPv6 Updates\n    >> Upgrading Python pip\n    >> Preparing elastic stack\n    >> Installing virtualisation software\n    >> Initialising elrond\n    >> Installing elrond\n    >> Creating temp user\n    >> Configuring ninja user\n"
+
 # autologin for temp account
 echo "# GDM configuration storage
 #
@@ -117,8 +133,6 @@ sleep 1
 gnome-session-quit --no-prompt" >> temp.sh
 sudo chmod +x temp.sh
 sudo mv temp.sh /home/temp/temp.sh
-printf "       -> Done\n"
-sleep 10
 printf "\n\n    >> Rebooting...\n"
-sleep 2
+sleep 10
 sudo reboot
