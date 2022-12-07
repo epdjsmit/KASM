@@ -3,12 +3,11 @@ echo "
   ##########################################################
   ---- Commencing KASM-Workstation configuration script ----
   ##########################################################"
-sleep 4
+sleep 2
 echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ##########################################################"
-sleep 2
 echo "  |      Please note the following:                        |"
-sleep 2
+sleep 4
 echo "  |          -> Configuring KASM takes ~10 hours           |"
 sleep 2
 echo "  |          -> Ensure you have BUILD.md to hand           |"
@@ -24,7 +23,7 @@ python3 -m keyring --disable
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
-sudo apt update
+sudo apt update > /dev/null 2>&1
 
 # creating cuckoo user
 printf "    >> Creating 'cuckoo' account\n"
