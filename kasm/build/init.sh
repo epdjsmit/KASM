@@ -80,8 +80,6 @@ sudo apt update > /dev/null 2>&1
 
 /opt/kasm/kasm/build/install/./cuckoo.sh > /dev/null 2>&1
 /opt/kasm/kasm/build/install/./thp.sh > /dev/null 2>&1
-printf "      >> Installing Additional Tools\n"
-/opt/kasm/kasm/build/install/./tools.sh
 printf "      >> Installing Greenbone Vulnerability Manager\n"
 sudo apt install postgresql gvm libvirt-daemon -y
 clear
@@ -111,6 +109,9 @@ sudo du -sh /var/cache/apt/archives > /dev/null 2>&1
 sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* kdeconnect aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan wxhexeditor scite -y > /dev/null 2>&1
 sudo apt-get autoremove --purge > /dev/null 2>&1
 sudo apt-get clean > /dev/null 2>&1
+
+# downloading additional tooling
+/opt/kasm/kasm/build/install/./tools.sh
 
 # disabling updates via ipv6
 printf "      >> Disabling IPv6 Updates\n"
