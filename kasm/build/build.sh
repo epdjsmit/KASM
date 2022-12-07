@@ -42,7 +42,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalling apfs-fuse\033[0m\n"
+printf "\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> Installing apfs-fuse\n"
 sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y > /dev/null 2>&1
 cd /usr/local/bin
 sudo git clone https://github.com/ezaspy/apfs-fuse.git > /dev/null 2>&1
