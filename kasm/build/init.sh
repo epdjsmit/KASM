@@ -75,7 +75,8 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ##########################################################
 "
 printf "\n\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n    >> Installed apfs-fuse\n    >> Installing REMnux\n"
-wget -O remnux https://REMnux.org/remnux-cli > /dev/null 2>&1
+wget https://REMnux.org/remnux-cli > /dev/null 2>&1
+mv remnux-cli remnux
 chmod +x remnux
 sudo mv remnux /usr/local/bin
 #sudo remnux install > /dev/null 2>&1
