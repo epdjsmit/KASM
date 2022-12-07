@@ -66,7 +66,7 @@ wget https://REMnux.org/remnux-cli > /dev/null 2>&1
 mv remnux-cli remnux
 chmod +x remnux
 sudo mv remnux /usr/local/bin
-sudo remnux install > /dev/null 2>&1
+#sudo remnux install > /dev/null 2>&1
 
 # configuring repositories
 printf "    >> Updating repositories\n"
