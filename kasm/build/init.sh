@@ -47,7 +47,7 @@ sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y > /dev/null 2
 cd /usr/local/bin
 sudo git clone https://github.com/ezaspy/apfs-fuse.git > /dev/null 2>&1
 cd apfs-fuse
-sudo git submodule init
+sudo git submodule init > /dev/null 2>&1
 sudo git submodule update > /dev/null 2>&1
 sudo mkdir build
 cd build
@@ -96,7 +96,12 @@ sudo apt update > /dev/null 2>&1
 #/opt/kasm/kasm/build/install/./cuckoo.sh > /dev/null 2>&1
 #/opt/kasm/kasm/build/install/./thp.sh > /dev/null 2>&1
 printf "    >> Installing Greenbone Vulnerability Manager\n"
-sudo apt install postgresql libvirt-daemon gvm -y
+echo "sudo apt install postgresql libvirt-daemon -y"
+sudo apt install postgresql libvirt-daemon -y
+sleep 30
+echo "sudo apt install gvm -y"
+sudo apt install gvm -y
+sleep 30
 clear
 echo "
   ##########################################################
