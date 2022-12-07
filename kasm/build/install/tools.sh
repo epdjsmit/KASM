@@ -5,9 +5,8 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb > /dev/null 2>&1
 sudo rm -rf google-chrome-stable_current_amd64.deb
 printf "    >> Installing Opera Browser\n"
 sudo snap install opera > /dev/null 2>&1
-printf "    >> Installing DB Sqlite Browser\n"
-sudo snap install sqlitebrowser > /dev/null 2>&1
-sudo apt install xz-utils -y > /dev/null 2>&1
+printf "    >> Installing DB Browser for SQLite\n"
+sudo apt install sqlitebrowser xz-utils -y > /dev/null 2>&1
 printf "    >> Installing Jupyter Notebooks\n"
 pip install jupyterlab notebook voila > /dev/null 2>&1
 pip2 install jupyterlab notebook voila > /dev/null 2>&1
