@@ -5,7 +5,7 @@ sleep 2
 clear
 echo "
   ##########################################################
-  ---- Commencing KASM-Workstation configuration script ----
+  ---- Commenced KASM-Workstation configuration script  ----
   ##########################################################"
 echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ##########################################################
@@ -35,8 +35,6 @@ sudo chmod +x /usr/bin/theme.sh
 # configure .bashrc
 sudo chmod +x /opt/kasm/kasm/build/ninja.py
 python3 /opt/kasm/kasm/build/ninja.py
-sudo -E -u gvm -g gvm gvmd --rebuild > /dev/null 2>&1
-libvirtd -d > /dev/null 2>&1
 echo "[Desktop Entry]
 Type=Application
 Exec=gnome-terminal
@@ -51,10 +49,6 @@ sudo rm -rf /home/ninja/.config/autostart/gnome-terminal.desktop
 sudo mv gnome-terminal.desktop /home/ninja/.config/autostart/
 sudo chmod 755 /home/ninja/.config/autostart/gnome-terminal.desktop
 sudo chown -R ninja:ninja /opt/
-sudo dpkg -i /opt/elrond/elrond/tools/.splunk.deb > /dev/null 2>&1
-sudo /opt/splunk/bin/./splunk start --accept-license --answer-yes --no-prompt --seed-passwd kick-ass
-sudo python3 /opt/kasm/kasm/build/install/navigator.py > /dev/null 2>&1
-sudo python3 /opt/kasm/kasm/build/install/CobaltStrike-Defence.py > /dev/null 2>&1
 
 # creating kick-ass.sh
 echo "clear
@@ -71,7 +65,15 @@ sleep 1
 cd /home/ninja/
 " > /home/ninja/Desktop/kick-ass.sh
 sudo chmod +x /home/ninja/Desktop/kick-ass.sh
-sleep 10
+
+# cleaning up and installing remaining software
+printf "      >> Cleaning up\n"
+sudo -E -u gvm -g gvm gvmd --rebuild > /dev/null 2>&1
+libvirtd -d > /dev/null 2>&1
+sudo dpkg -i /opt/elrond/elrond/tools/.splunk.deb > /dev/null 2>&1
+sudo /opt/splunk/bin/./splunk start --accept-license --answer-yes --no-prompt --seed-passwd kick-ass
+sudo python3 /opt/kasm/kasm/build/install/navigator.py > /dev/null 2>&1
+sudo python3 /opt/kasm/kasm/build/install/CobaltStrike-Defence.py > /dev/null 2>&1
 sudo apt install python3-apt > /dev/null 2>&1
 wget -O aptsources-cleanup.pyz https://github.com/davidfoerster/aptsources-cleanup/releases/download/v0.1.7.5.2/aptsources-cleanup.pyz > /dev/null 2>&1
 chmod a+x aptsources-cleanup.pyz
@@ -84,7 +86,7 @@ sleep 2
 clear
 echo "
   ##########################################################
-  ---- Commencing KASM-Workstation configuration script ----
+  ---- Commenced KASM-Workstation configuration script  ----
   ##########################################################"
 echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ##########################################################
@@ -94,7 +96,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n\n    >> Installed apfs-fuse\n    >> Installed REMnux\n    >> Updated repositories\n    >> Installed Additional Tools\n    >> Installed Greenbone Vulnerability Manager\n    >> Uninstalled redundant software\n    >> Installed Chrome Browser\n    >> Installed Opera Browser\n    >> Installed DB Sqlite Browser\n    >> Installed Jupyter Notebooks\n    >> Installed Azure CLI\n    >> Installed AWS CLI\n    >> Installed Bookstack\n    >> Downloaded onestopcybershop\n    >> Downloaded bruce\n    >> Downloaded gandalf\n    >> Downloaded SIGMA\n    >> Downloaded DeepBlueCLI\n    >> Downloaded KAPE\n    >> Downloaded PowerForensics\n    >> Downloaded MemProcFS\n    >> Downloaded WMIExplorer\n    >> Downloaded CobaltStrike-Defence\n    >> Downloaded freq\n    >> Downloaded dnstwist\n    >> Downloaded rdap\n    >> Downloaded sherlock\n    >> Downloaded TweetScraper\n    >> Downloaded karma\n    >> Downloaded TZWorks\n    >> Downloaded BlueTeamPowerShell\n    >> Downloaded Sysmon\n    >> Installed Metasploit\n    >> Installed HTTrack\n    >> Installed Maltego\n    >> Disabled IPv6 Updates\n    >> Upgraded Python pip\n    >> Prepared elastic stack\n    >> Installed virtualisation software\n    >> Initialised elrond\n    >> Installed elrond\n    >> Created 'temp' account\n    >> Configured 'temp' account\n    >> Rebooted\n    >> Configured 'ninja' account\n      >> Success! KASM is fully configured\n\n"
+printf "\n    >> Initialised KASM-Workstation\n    >> Created 'cuckoo' account\n\n    >> Installed apfs-fuse\n    >> Installed REMnux\n    >> Updated repositories\n    >> Installed Additional Tools\n    >> Installed Greenbone Vulnerability Manager\n    >> Uninstalled redundant software\n    >> Installed Chrome Browser\n    >> Installed Opera Browser\n    >> Installed DB Sqlite Browser\n    >> Installed Jupyter Notebooks\n    >> Installed Azure CLI\n    >> Installed AWS CLI\n    >> Installed Bookstack\n    >> Downloaded onestopcybershop\n    >> Downloaded bruce\n    >> Downloaded gandalf\n    >> Downloaded SIGMA\n    >> Downloaded DeepBlueCLI\n    >> Downloaded KAPE\n    >> Downloaded PowerForensics\n    >> Downloaded MemProcFS\n    >> Downloaded WMIExplorer\n    >> Downloaded CobaltStrike-Defence\n    >> Downloaded freq\n    >> Downloaded dnstwist\n    >> Downloaded rdap\n    >> Downloaded sherlock\n    >> Downloaded TweetScraper\n    >> Downloaded karma\n    >> Downloaded TZWorks\n    >> Downloaded BlueTeamPowerShell\n    >> Downloaded Sysmon\n    >> Installed Metasploit\n    >> Installed HTTrack\n    >> Installed Maltego\n    >> Disabled IPv6 Updates\n    >> Upgraded Python pip\n    >> Prepared elastic stack\n    >> Installed virtualisation software\n    >> Initialised elrond\n    >> Installed elrond\n    >> Created 'temp' account\n    >> Configured 'temp' account\n    >> Rebooted\n    >> Configured 'ninja' account\n    >> Cleaned up\n      >> Success! KASM is fully configured\n\n"
 sleep 4
 echo "\n            Press ENTER to perform Final Reboot"
 read input
