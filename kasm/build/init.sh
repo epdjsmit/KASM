@@ -55,15 +55,10 @@ sudo git submodule init
 sudo git submodule update > /dev/null 2>&1
 sudo mkdir build
 cd build
-echo "sudo cmake .."
-sudo cmake ..
-sleep 30
-echo "sudo ccmake ."
+sudo cmake .. > /dev/null 2>&1
 sudo ccmake .
-sleep 30
 sudo make > /dev/null 2>&1
-
-sleep 30
+cd /home/sansforensics/
 
 # remnux must be installed before anything else
 clear
