@@ -38,7 +38,7 @@ sleep 2
 
 # installing apfs-fuse
 clear
-$banner
+printf "$banner"
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> Installing apfs-fuse\n"
 sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y > /dev/null 2>&1
 cd /usr/local/bin
@@ -55,17 +55,17 @@ cd /home/sansforensics/
 
 # installing remnux - MUST be installed before anything else
 clear
-$banner
+printf "$banner"
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> Installing REMnux\n"
 wget https://REMnux.org/remnux-cli > /dev/null 2>&1
 mv remnux-cli remnux
 chmod +x remnux
 sudo mv remnux /usr/local/bin
-#sudo remnux install > /dev/null 2>&1
+sudo remnux install > /dev/null 2>&1
 
 # configuring repositories
 clear
-$banner
+printf "$banner"
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> Updating repositories\n"
 sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser # db browser for sqlite
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg > /dev/null 2>&1 # thehive
@@ -83,7 +83,7 @@ sudo apt update > /dev/null 2>&1
 
 # installing cuckoo
 clear
-$banner
+printf "$banner"
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> Installing Cuckoo Sandbox\n"
 wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E" > /dev/null 2>&1
 sudo mv agent.pyw /opt/kasm/kasm/build/install/ > /dev/null 2>&1
@@ -152,7 +152,7 @@ deactivate
 
 # installing thehive
 clear
-$banner
+printf "$banner"
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> Installing TheHive\n"
 sudo adduser --system docker
 sudo groupadd docker
@@ -163,7 +163,7 @@ sudo rm /etc/apt/sources.list.d/docker.list
 
 # installing misp
 clear
-$banner
+printf "$banner"
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> Installing MISP\n"
 sudo useradd -m -u 6477 -p $(openssl passwd -1 misp) misp && sudo usermod -aG sudo misp > /dev/null 2>&1
 wget -O /tmp/INSTALL_orig.sh https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/INSTALL.sh > /dev/null 2>&1
@@ -178,20 +178,20 @@ sudo ufw allow 443/tcp > /dev/null 2>&1
 
 # installing greenbone
 clear
-$banner
+printf "$banner"
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> Installing Greenbone Vulnerability Manager\n"
 sudo apt install postgresql libvirt-daemon -y > /dev/null 2>&1
 sudo apt install gvm -y
 sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
-#sudo -u gvm -g gvm greenbone-feed-sync --type CERT > /dev/null 2>&1
-#sudo -u gvm -g gvm greenbone-feed-sync --type SCAP > /dev/null 2>&1
-#sudo -u gvm -g gvm greenbone-feed-sync --type GVMD_DATA > /dev/null 2>&1
-#export $(sudo cat /etc/default/gvmd-pg)
-#sudo pg_ctlcluster 12 main start > /dev/null 2>&1
+sudo -u gvm -g gvm greenbone-feed-sync --type CERT > /dev/null 2>&1
+sudo -u gvm -g gvm greenbone-feed-sync --type SCAP > /dev/null 2>&1
+sudo -u gvm -g gvm greenbone-feed-sync --type GVMD_DATA > /dev/null 2>&1
+export $(sudo cat /etc/default/gvmd-pg)
+sudo pg_ctlcluster 12 main start > /dev/null 2>&1
 
 # removing uneeded applications
 clear
-$banner
+printf "$banner"
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> \033[1;32mInstalled Greenbone Vulnerability Manager\033[0m\n    >> Uninstalling redundant software\n"
 sudo du -sh /var/cache/apt/archives > /dev/null 2>&1
 sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* kdeconnect aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan wxhexeditor scite -y > /dev/null 2>&1
@@ -209,7 +209,7 @@ sudo chmod 644 /etc/sysctl.conf
 
 # installing virtualisation software
 clear
-$banner
+printf "$banner"
 printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> \033[1;32mInstalled Greenbone Vulnerability Manager\033[0m\n    >> \033[1;32mUninstalling redundant software\033[0m\n    >> Installing virtualisation software\n"
 cd /home/sansforensics/
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle > /dev/null 2>&1
