@@ -11,7 +11,7 @@ echo "  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   |          -> Select the options as instructed           |
   ##########################################################
 "
-sleep 4
+sleep 2
 # initialising kasm
 printf "\n    >> Initialising KASM-Workstation\n"
 sudo chmod -R 755 /opt/kasm
