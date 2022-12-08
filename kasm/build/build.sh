@@ -48,7 +48,7 @@ if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then
   #sudo remnux install > /dev/null 2>&1
   remnux_iors="\033[1;32mInstalled   REMnux\033[0m"
 else
-  remnux_iors="\033[1;33mSkipped REMnux\033[0m"
+  remnux_iors="\033[1;30mSkipped     REMnux\033[0m"
 fi
 
 # configuring repositories
@@ -167,7 +167,7 @@ if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
   deactivate > /dev/null 2>&1
   cuckoo_iors="\033[1;32mInstalled   Cuckoo Sandbox\033[0m"
 else
-  cuckoo_iors="\033[1;33mSkipped Cuckoo Sandbox\033[0m"
+  cuckoo_iors="\033[1;30mSkipped     Cuckoo Sandbox\033[0m"
 fi
 
 if [[ $vars = *thp* ]] || [ $length -eq "0" ]; then
@@ -182,7 +182,7 @@ if [[ $vars = *thp* ]] || [ $length -eq "0" ]; then
   sudo rm /etc/apt/sources.list.d/docker.list > /dev/null 2>&1
   thehive_iors="\033[1;32mInstalled   TheHive\033[0m"
 else
-  thehive_iors="\033[1;33mSkipped TheHive\033[0m"
+  thehive_iors="\033[1;30mSkipped     TheHive\033[0m"
 fi
 
 if [[ $vars = *misp* ]] || [ $length -eq "0" ]; then
@@ -201,7 +201,7 @@ if [[ $vars = *misp* ]] || [ $length -eq "0" ]; then
   sudo ufw allow 443/tcp > /dev/null 2>&1
   misp_iors="\033[1;32mInstalled   MISP\033[0m"
 else
-  misp_iors="\033[1;33mSkipped MISP\033[0m"
+  misp_iors="\033[1;30mSkipped     MISP\033[0m"
 fi
 
 if [[ $vars = *greenbone* ]] || [ $length -eq "0" ]; then
@@ -218,7 +218,7 @@ if [[ $vars = *greenbone* ]] || [ $length -eq "0" ]; then
   sudo pg_ctlcluster 12 main start > /dev/null 2>&1
   greenbone_iors="\033[1;32mInstalled   Greenbone Vulnerability Manager\033[0m"
 else
-  greenbone_iors="\033[1;33mSkipped Greenbone Vulnerability Manager\033[0m"
+  greenbone_iors="\033[1;30mSkipped     Greenbone Vulnerability Manager\033[0m"
 fi
 
 echo $remnux_iors $cuckoo_iors $thehive_iors $misp_iors $greenbone_iors > .iors
