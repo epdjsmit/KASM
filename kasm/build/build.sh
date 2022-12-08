@@ -45,7 +45,7 @@ if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then
   mv remnux-cli remnux
   chmod +x remnux
   sudo mv remnux /usr/local/bin
-  #sudo remnux install > /dev/null 2>&1
+  sudo remnux install > /dev/null 2>&1
   remnux_install_or_skip=">> \033[1;32mInstalled   REMnux\033[0m"
 else
   remnux_install_or_skip="-- \033[1;30mSkipped     REMnux\033[0m"
@@ -108,7 +108,7 @@ wget -O elastic.py "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6
 sudo mv elastic.py /opt/kasm/kasm/build/install/
 # preparing navigator
 sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/navigator.py
-#sudo /opt/elrond/./make.sh > /dev/null 2>&1
+sudo /opt/elrond/./make.sh > /dev/null 2>&1
 
 if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
   # installing cuckoo
