@@ -43,20 +43,20 @@ cd /home/sansforensics/
 if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then
   # installing remnux - MUST be installed before anything else
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> Installing REMnux\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled  apfs-fuse\033[0m\n    >> Installing REMnux\n"
   wget https://REMnux.org/remnux-cli > /dev/null 2>&1
   mv remnux-cli remnux
   chmod +x remnux
   sudo mv remnux /usr/local/bin
   #sudo remnux install > /dev/null 2>&1
-  remnux_iors="\033[1;32mInstalled REMnux\033[0m"
+  remnux_iors="\033[1;32mInstalled  REMnux\033[0m"
 else
   remnux_iors="\033[1;33mSkipped REMnux\033[0m"
 fi
 
 # configuring repositories
 clear
-printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> Updating repositories\n"
+printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled  apfs-fuse\033[0m\n    >> $remnux_iors\n    >> Updating repositories\n"
 sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser > /dev/null 2>&1 # db browser for sqlite
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg > /dev/null 2>&1 # thehive
 sleep 2
@@ -70,7 +70,7 @@ sleep 4
 sudo apt update > /dev/null 2>&1
 
 clear
-printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> Uninstalling redundant software\n"
+printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled  apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> Uninstalling redundant software\n"
 # disabling updates via ipv6
 sudo chmod 777 /etc/sysctl.conf
 sudo echo "
@@ -88,7 +88,7 @@ sudo apt-get clean > /dev/null 2>&1
 
 # installing virtualisation engines
 clear
-printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> Installing virtualisation engines\n"
+printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled  apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> Installing virtualisation engines\n"
 cd /home/sansforensics/
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle > /dev/null 2>&1
 sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
@@ -103,7 +103,7 @@ sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtu
 if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
   # installing cuckoo
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation engines\033[0m\n    >> Installing Cuckoo Sandbox\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled  apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled  virtualisation engines\033[0m\n    >> Installing Cuckoo Sandbox\n"
   wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E" > /dev/null 2>&1
   sudo mv agent.pyw /opt/kasm/kasm/build/install/ > /dev/null 2>&1
   # installing components
@@ -168,7 +168,7 @@ if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
   sed -i '10s/= no/= yes/' /home/sansforensics/.cuckoo/conf/cuckoo.conf > /dev/null 2>&1
   sudo service mongodb restart > /dev/null 2>&1
   deactivate > /dev/null 2>&1
-  cuckoo_iors="\033[1;32mInstalled Cuckoo Sandbox\033[0m"
+  cuckoo_iors="\033[1;32mInstalled  Cuckoo Sandbox\033[0m"
 else
   cuckoo_iors="\033[1;33mSkipped Cuckoo Sandbox\033[0m"
 fi
@@ -176,14 +176,14 @@ fi
 if [[ $vars = *thp* ]] || [ $length -eq "0" ]; then
   # installing thehive
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> Installing TheHive\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled  apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled  virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> Installing TheHive\n"
   sudo adduser --system docker > /dev/null 2>&1
   sudo groupadd docker > /dev/null 2>&1
   sudo usermod -aG docker docker > /dev/null 2>&1
   sudo apt-get install ca-certificates curl gnupg lsb-release docker-ce docker-ce-cli containerd.io docker-compose-plugin dbus-user-session -y > /dev/null 2>&1
   sudo docker run -d=true --rm -p 9000:9000 strangebee/thehive:latest > /dev/null 2>&1
   sudo rm /etc/apt/sources.list.d/docker.list > /dev/null 2>&1
-  thehive_iors="\033[1;32mInstalled TheHive\033[0m"
+  thehive_iors="\033[1;32mInstalled  TheHive\033[0m"
 else
   thehive_iors="\033[1;33mSkipped TheHive\033[0m"
 fi
@@ -191,7 +191,7 @@ fi
 if [[ $vars = *misp* ]] || [ $length -eq "0" ]; then
   # installing misp
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> $thehive_iors\n    >> Installing MISP\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled  apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled  virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> $thehive_iors\n    >> Installing MISP\n"
   sudo useradd -m -u 6477 -p $(openssl passwd -1 misp) misp && sudo usermod -aG sudo misp > /dev/null 2>&1
   wget -O /tmp/INSTALL_orig.sh https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/INSTALL.sh > /dev/null 2>&1
   sudo chmod +x /tmp/INSTALL_orig.sh
@@ -202,7 +202,7 @@ if [[ $vars = *misp* ]] || [ $length -eq "0" ]; then
   sudo rm /tmp/INSTALL.sh
   sudo ufw allow 80/tcp > /dev/null 2>&1
   sudo ufw allow 443/tcp > /dev/null 2>&1
-  misp_iors="\033[1;32mInstalled MISP\033[0m"
+  misp_iors="\033[1;32mInstalled  MISP\033[0m"
 else
   misp_iors="\033[1;33mSkipped MISP\033[0m"
 fi
@@ -210,7 +210,7 @@ fi
 if [[ $vars = *greenbone* ]] || [ $length -eq "0" ]; then
   # installing greenbone
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> $thehive_iors\n    >> $misp_iors\n    >> Installing Greenbone Vulnerability Manager\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled  apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled  virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> $thehive_iors\n    >> $misp_iors\n    >> Installing Greenbone Vulnerability Manager\n"
   sudo apt install postgresql libvirt-daemon -y > /dev/null 2>&1
   sudo apt install gvm -y
   sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
@@ -219,7 +219,7 @@ if [[ $vars = *greenbone* ]] || [ $length -eq "0" ]; then
   sudo -u gvm -g gvm greenbone-feed-sync --type GVMD_DATA > /dev/null 2>&1
   export $(sudo cat /etc/default/gvmd-pg)
   sudo pg_ctlcluster 12 main start > /dev/null 2>&1
-  greenbone_iors="\033[1;32mInstalled Greenbone Vulnerability Manager\033[0m"
+  greenbone_iors="\033[1;32mInstalled  Greenbone Vulnerability Manager\033[0m"
 else
   greenbone_iors="\033[1;33mSkipped Greenbone Vulnerability Manager\033[0m"
 fi
