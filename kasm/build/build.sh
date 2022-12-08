@@ -14,7 +14,7 @@ gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
 sudo apt update > /dev/null 2>&1
 
-if [[ $vars = *cuckoo* ]] || [ "$length" -eq "0" ]; then
+if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
   # creating cuckoo user
   clear
   printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> Creating 'cuckoo' account\n"
@@ -40,7 +40,7 @@ sudo ccmake .
 sudo make > /dev/null 2>&1
 cd /home/sansforensics/
 
-if [[ $vars = *remnux* ]] || [ "$length" -eq "0" ]; then
+if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then
   # installing remnux - MUST be installed before anything else
   clear
   printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> Installing REMnux\n"
@@ -70,7 +70,7 @@ sleep 4
 sudo apt update > /dev/null 2>&1
 
 clear
-printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated repositories\033[0m\n    >> Uninstalling redundant software\n"
+printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> Uninstalling redundant software\n"
 # disabling updates via ipv6
 sudo chmod 777 /etc/sysctl.conf
 sudo echo "
@@ -88,7 +88,7 @@ sudo apt-get clean > /dev/null 2>&1
 
 # installing virtualisation engines
 clear
-printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> Installing virtualisation engines\n"
+printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> Installing virtualisation engines\n"
 cd /home/sansforensics/
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle > /dev/null 2>&1
 sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
@@ -100,10 +100,10 @@ chmod +x virtualbox.sh
 ./virtualbox.sh > /dev/null 2>&1
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
 
-if [[ $vars = *cuckoo* ]] || [ "$length" -eq "0" ]; then
+if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
   # installing cuckoo
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation engines\033[0m\n    >> Installing Cuckoo Sandbox\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation engines\033[0m\n    >> Installing Cuckoo Sandbox\n"
   wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E" > /dev/null 2>&1
   sudo mv agent.pyw /opt/kasm/kasm/build/install/ > /dev/null 2>&1
   # installing components
@@ -173,10 +173,10 @@ else
   cuckoo_iors="\033[1;33mSkipped Cuckoo Sandbox\033[0m"
 fi
 
-if [[ $vars = *thp* ]] || [ "$length" -eq "0" ]; then
+if [[ $vars = *thp* ]] || [ $length -eq "0" ]; then
   # installing thehive
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> Installing TheHive\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> Installing TheHive\n"
   sudo adduser --system docker > /dev/null 2>&1
   sudo groupadd docker > /dev/null 2>&1
   sudo usermod -aG docker docker > /dev/null 2>&1
@@ -188,10 +188,10 @@ else
   thehive_iors="\033[1;33mSkipped TheHive\033[0m"
 fi
 
-if [[ $vars = *misp* ]] || [ "$length" -eq "0" ]; then
+if [[ $vars = *misp* ]] || [ $length -eq "0" ]; then
   # installing misp
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> $thehive_iors\n    >> Installing MISP\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> $thehive_iors\n    >> Installing MISP\n"
   sudo useradd -m -u 6477 -p $(openssl passwd -1 misp) misp && sudo usermod -aG sudo misp > /dev/null 2>&1
   wget -O /tmp/INSTALL_orig.sh https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/INSTALL.sh > /dev/null 2>&1
   sudo chmod +x /tmp/INSTALL_orig.sh
@@ -207,10 +207,10 @@ else
   misp_iors="\033[1;33mSkipped MISP\033[0m"
 fi
 
-if [[ $vars = *greenbone* ]] || [ "$length" -eq "0" ]; then
+if [[ $vars = *greenbone* ]] || [ $length -eq "0" ]; then
   # installing greenbone
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> $thehive_iors\n    >> $misp_iors\n    >> Installing Greenbone Vulnerability Manager\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> $thehive_iors\n    >> $misp_iors\n    >> Installing Greenbone Vulnerability Manager\n"
   sudo apt install postgresql libvirt-daemon -y > /dev/null 2>&1
   sudo apt install gvm -y
   sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1

@@ -97,10 +97,3 @@ clear
 sudo chmod +x /opt/kasm/kasm/build/*.*
 sudo chmod +x /opt/kasm/kasm/build/install/*.*
 /opt/kasm/kasm/build/./build.sh
-
-takes ~10 hours
-can take ~10 hours
-you have BUILD.md to hand
-BUILD.md is available to you
-Invoke the selections when prompted
-Invoke the selections when prompted
