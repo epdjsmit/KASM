@@ -87,7 +87,7 @@ titles[6]="
 random=$[$RANDOM % ${#titles[@]}]
 printf "\n\n  \033[1;33mWelcome to\033[0m\n\n\033[1;34m${titles[$random]}\033[0m\n\n                                        \033[1;33mconfiguration script\033[0m\n"
 sleep 4
-printf "\n  ###################################################\n  |   \033[1;33mPlease note the following:\033[0m                    |\n  |       -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m       |\n  |       -> \033[1;33mEnsure you have BUILD.md to hand\033[0m       |\n  |       -> \033[1;33mSelect the options as instructed\033[0m       |\n  ###################################################\n"
+printf "\n  ###################################################\n  |   \033[1;33mPlease note the following:\033[0m                    |\n  |     -> \033[1;33mConfiguring KASM can take ~10 hours\033[0m      |\n  |     -> \033[1;33mEnsure BUILD.md is available to you\033[0m      |\n  |     -> \033[1;33mInvoke the selections when prompted\033[0m      |\n  ###################################################\n"
 sleep 2
 echo "
       Press ENTER to begin...
@@ -97,3 +97,10 @@ clear
 sudo chmod +x /opt/kasm/kasm/build/*.*
 sudo chmod +x /opt/kasm/kasm/build/install/*.*
 /opt/kasm/kasm/build/./build.sh
+
+takes ~10 hours
+can take ~10 hours
+you have BUILD.md to hand
+BUILD.md is available to you
+Invoke the selections when prompted
+Invoke the selections when prompted
