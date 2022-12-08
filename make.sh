@@ -1,10 +1,10 @@
 #!/bin/bash
 while :; do
     case $1 in
-        -c|--cuckoo) cuckoo="cuckoo";;
-        -g|--greenbone) greenbone="greenbone";;
         -r|--remnux) remnux="remnux";;
+        -c|--cuckoo) cuckoo="cuckoo";;
         -t|--thehiveproject) thehiveproject="thp";;
+        -g|--greenbone) greenbone="greenbone";;
         *) break
     esac
     shift
@@ -20,7 +20,8 @@ titles[0]="
     /**/**   **********////////**/**  //*   /**
     /**//** /**//////**       /**/**   /    /**
     /** //**/**     /** ******** /**        /**
-    //   // //      // ////////  //         // "
+    //   // //      // ////////  //         // 
+"
 titles[1]="
     ><<   ><<        ><         ><< <<  ><<       ><<
     ><<  ><<        >< <<     ><<    ><<>< ><<   ><<<
@@ -86,19 +87,19 @@ titles[6]="
 rand=$[$RANDOM % ${#titles[@]}]
 echo "
 
-  Welcome to
+  \033[1;33mWelcome to\033[0m
 
-${titles[$rand]}
+\033[1;34m${titles[$rand]}\033[0m
 
-                                        configuration script
+                                        \033[1;33mconfiguration script\033[0m
 "
 sleep 4
 echo "
   ########################################################"
-echo "  |      Please note the following:                        |"
-echo "  |          -> Configuring KASM takes ~10 hours           |"
-echo "  |          -> Ensure you have BUILD.md to hand           |"
-echo "  |          -> Select the options as instructed           |"
+echo "  |     \033[1;33m Please note the following:\033[0m                        |"
+echo "  |          -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m           |"
+echo "  |          -> \033[1;33mEnsure you have BUILD.md to hand\033[0m           |"
+echo "  |          -> \033[1;33mSelect the options as instructed\033[0m           |"
 echo "  ########################################################
 "
 sleep 2
