@@ -67,13 +67,8 @@ sleep 4
 #yes '' | sudo add-apt-repository ppa:micahflee/ppa > /dev/null 2>&1 # tor
 sudo apt update > /dev/null 2>&1
 
-# removing uneeded applications
 clear
 printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> Uninstalling redundant software\n"
-sudo du -sh /var/cache/apt/archives > /dev/null 2>&1
-sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* kdeconnect aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan wxhexeditor scite -y > /dev/null 2>&1
-sudo apt-get autoremove --purge > /dev/null 2>&1
-sudo apt-get clean > /dev/null 2>&1
 # disabling updates via ipv6
 sudo chmod 777 /etc/sysctl.conf
 sudo echo "
@@ -82,7 +77,12 @@ net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1
 " >> /etc/sysctl.conf
+# removing uneeded applications
 sudo chmod 644 /etc/sysctl.conf
+sudo du -sh /var/cache/apt/archives > /dev/null 2>&1
+sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* kdeconnect aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan wxhexeditor scite -y > /dev/null 2>&1
+sudo apt-get autoremove --purge > /dev/null 2>&1
+sudo apt-get clean > /dev/null 2>&1
 
 # installing virtualisation software
 clear
