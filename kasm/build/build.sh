@@ -4,9 +4,7 @@ options=$(cat /home/sansforensics/.vars)
 length=${#options}
 
 clear
-printf "  ###################################################
-  | Commenced KASM-Workstation configuration script |"
-printf "$banner"
+printf "  ###################################################\n  | Commenced KASM-Workstation configuration script |$banner"
 sleep 2
 # initialising kasm
 printf "\n    >> Initialising KASM-Workstation\n"
@@ -17,6 +15,7 @@ gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
 sudo apt update > /dev/null 2>&1
 
+if [[ $options = *cuckoo* ]] || [ "$length" -eq "0" ]; then
 # creating cuckoo user
 clear
 printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> Creating 'cuckoo' account\n"
@@ -24,6 +23,7 @@ sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -a
 sleep 1
 sudo passwd cuckoo
 sleep 2
+fi
 
 # installing apfs-fuse
 clear
