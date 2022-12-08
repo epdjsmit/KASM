@@ -82,6 +82,8 @@ echo "
   ----------- \033[1;33mSUCCESS! KASM is fully configured!\033[0m -----------
   ####################################################"
 sleep 4
+sudo rm -rf /home/sansforensics/.vars
+sudo rm -rf /home/sansforensics/.iors
 echo "\n            Press ENTER to perform final reboot"
 read input
 sudo reboot
