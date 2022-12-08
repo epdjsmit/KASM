@@ -46,7 +46,7 @@ if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then
   chmod +x remnux
   sudo mv remnux /usr/local/bin
   #sudo remnux install > /dev/null 2>&1
-  remnux_install_or_skip="\033[1;32mInstalled   REMnux\033[0m"
+  remnux_install_or_skip=">> \033[1;32mInstalled   REMnux\033[0m"
 else
   remnux_install_or_skip="-- \033[1;30mSkipped     REMnux\033[0m"
 fi
@@ -178,7 +178,7 @@ if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
   sed -i '10s/= no/= yes/' /home/sansforensics/.cuckoo/conf/cuckoo.conf > /dev/null 2>&1
   sudo service mongodb restart > /dev/null 2>&1
   deactivate > /dev/null 2>&1
-  cuckoo_install_or_skip="\033[1;32mInstalled   Cuckoo Sandbox\033[0m"
+  cuckoo_install_or_skip=">> \033[1;32mInstalled   Cuckoo Sandbox\033[0m"
 else
   cuckoo_install_or_skip="-- \033[1;30mSkipped     Cuckoo Sandbox\033[0m"
 fi
@@ -193,7 +193,7 @@ if [[ $vars = *thp* ]] || [ $length -eq "0" ]; then
   sudo apt-get install ca-certificates curl gnupg lsb-release docker-ce docker-ce-cli containerd.io docker-compose-plugin dbus-user-session -y > /dev/null 2>&1
   sudo docker run -d=true --rm -p 9000:9000 strangebee/thehive:latest > /dev/null 2>&1
   sudo rm /etc/apt/sources.list.d/docker.list > /dev/null 2>&1
-  thehive_install_or_skip="\033[1;32mInstalled   TheHive\033[0m"
+  thehive_install_or_skip=">> \033[1;32mInstalled   TheHive\033[0m"
 else
   thehive_install_or_skip="-- \033[1;30mSkipped     TheHive\033[0m"
 fi
@@ -212,7 +212,7 @@ if [[ $vars = *misp* ]] || [ $length -eq "0" ]; then
   sudo rm /tmp/INSTALL.sh
   sudo ufw allow 80/tcp > /dev/null 2>&1
   sudo ufw allow 443/tcp > /dev/null 2>&1
-  misp_install_or_skip="\033[1;32mInstalled   MISP\033[0m"
+  misp_install_or_skip=">> \033[1;32mInstalled   MISP\033[0m"
 else
   misp_install_or_skip="-- \033[1;30mSkipped     MISP\033[0m"
 fi
@@ -229,7 +229,7 @@ if [[ $vars = *greenbone* ]] || [ $length -eq "0" ]; then
   sudo -u gvm -g gvm greenbone-feed-sync --type GVMD_DATA > /dev/null 2>&1
   export $(sudo cat /etc/default/gvmd-pg)
   sudo pg_ctlcluster 12 main start > /dev/null 2>&1
-  greenbone_install_or_skip="\033[1;32mInstalled   Greenbone Vulnerability Manager\033[0m"
+  greenbone_install_or_skip=">> \033[1;32mInstalled   Greenbone Vulnerability Manager\033[0m"
 else
   greenbone_install_or_skip="-- \033[1;30mSkipped     Greenbone Vulnerability Manager\033[0m"
 fi
