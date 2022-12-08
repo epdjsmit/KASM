@@ -39,6 +39,8 @@ sudo ccmake .
 sudo make > /dev/null 2>&1
 cd /home/sansforensics/
 
+printf "$options"
+if [[ $options = *remnux* ]]; then
 # installing remnux - MUST be installed before anything else
 clear
 printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> Installing REMnux\n"
@@ -47,6 +49,7 @@ mv remnux-cli remnux
 chmod +x remnux
 sudo mv remnux /usr/local/bin
 #sudo remnux install > /dev/null 2>&1
+fi
 
 # configuring repositories
 clear
@@ -94,7 +97,7 @@ chmod +x virtualbox.sh
 ./virtualbox.sh > /dev/null 2>&1
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
 
-#options=$(cat /home/sansforensics/.vars)
+options=$(cat /home/sansforensics/.vars)
 
 # installing cuckoo
 clear
