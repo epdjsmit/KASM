@@ -39,8 +39,12 @@ sudo ccmake .
 sudo make > /dev/null 2>&1
 cd /home/sansforensics/
 
+length=${#options}
+
 printf "$options"
-if [[ $options = *remnux* ]]; then
+printf "$length"
+
+if [[ $options = *remnux* ]] || [ "$length" -eq "0" ]; then
 # installing remnux - MUST be installed before anything else
 clear
 printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> Installing REMnux\n"
