@@ -1,5 +1,7 @@
 #!/bin/bash
-banner="\n  ###################################################\n  |   \033[1;33mPlease note the following:\033[0m                    |\n  |       -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m       |\n  |       -> \033[1;33mEnsure you have BUILD.md to hand\033[0m       |\n  |       -> \033[1;33mSelect the options as instructed\033[0m       |\n  ###################################################\n\n"
+banner="\n  ###################################################\n  |   \033[1;33mPlease note the following:\033[0m                    |\n  |       -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m       |\n  |       -> \033[1;33mEnsure you have BUILD.md to hand\033[0m       |\n  |       -> \033[1;33mSelect the options as instructed\033[0m       |\n  ###################################################\n"
+options=$(cat /home/sansforensics/.vars)
+length=${#options}
 
 clear
 printf "  ###################################################
@@ -39,15 +41,9 @@ sudo ccmake .
 sudo make > /dev/null 2>&1
 cd /home/sansforensics/
 
-options=$(cat /home/sansforensics/.vars)
-length=${#options}
-
-printf "$options"
-printf "$length"
-
 if [[ $options = *remnux* ]] || [ "$length" -eq "0" ]; then
 # installing remnux - MUST be installed before anything else
-#clear
+clear
 printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> Installing REMnux\n"
 wget https://REMnux.org/remnux-cli > /dev/null 2>&1
 mv remnux-cli remnux
@@ -102,6 +98,7 @@ chmod +x virtualbox.sh
 ./virtualbox.sh > /dev/null 2>&1
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
 
+if [[ $options = *cuckoo* ]] || [ "$length" -eq "0" ]; then
 # installing cuckoo
 clear
 printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> Installing Cuckoo Sandbox\n"
@@ -169,7 +166,9 @@ sed -i '45s/enabled = no/enabled = yes/' /home/sansforensics/.cuckoo/conf/report
 sed -i '10s/= no/= yes/' /home/sansforensics/.cuckoo/conf/cuckoo.conf > /dev/null 2>&1
 sudo service mongodb restart > /dev/null 2>&1
 deactivate > /dev/null 2>&1
+fi
 
+if [[ $options = *thp* ]] || [ "$length" -eq "0" ]; then
 # installing thehive
 clear
 printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> Installing TheHive\n"
@@ -179,7 +178,9 @@ sudo usermod -aG docker docker > /dev/null 2>&1
 sudo apt-get install ca-certificates curl gnupg lsb-release docker-ce docker-ce-cli containerd.io docker-compose-plugin dbus-user-session -y > /dev/null 2>&1
 sudo docker run -d=true --rm -p 9000:9000 strangebee/thehive:latest > /dev/null 2>&1
 sudo rm /etc/apt/sources.list.d/docker.list > /dev/null 2>&1
+fi
 
+if [[ $options = *misp* ]] || [ "$length" -eq "0" ]; then
 # installing misp
 clear
 printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> Installing MISP\n"
@@ -193,7 +194,9 @@ bash /tmp/INSTALL.sh -c -M -u > /dev/null 2>&1
 sudo rm /tmp/INSTALL.sh
 sudo ufw allow 80/tcp > /dev/null 2>&1
 sudo ufw allow 443/tcp > /dev/null 2>&1
+fi
 
+if [[ $options = *greenbone* ]] || [ "$length" -eq "0" ]; then
 # installing greenbone
 clear
 printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> Installing Greenbone Vulnerability Manager\n"
@@ -205,6 +208,7 @@ sudo -u gvm -g gvm greenbone-feed-sync --type SCAP > /dev/null 2>&1
 sudo -u gvm -g gvm greenbone-feed-sync --type GVMD_DATA > /dev/null 2>&1
 export $(sudo cat /etc/default/gvmd-pg)
 sudo pg_ctlcluster 12 main start > /dev/null 2>&1
+fi
 
 # downloading additional tooling
 /opt/kasm/kasm/build/install/./tools.sh
