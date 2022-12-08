@@ -9,7 +9,7 @@ while :; do
     esac
     shift
 done
-echo $cuckoo $greenbone $remnux $thehiveproject > .vars
+echo $remnux $cuckoo $thehiveproject $greenbone > .vars
 clear
 sleep 2
 titles[0]="
