@@ -85,13 +85,7 @@ titles[6]="
       =========================================
 "
 rand=$[$RANDOM % ${#titles[@]}]
-printf "
-
-  \033[1;33mWelcome to\033[0m
-
-\033[1;34m${titles[$rand]}\033[0m
-
-                                        \033[1;33mconfiguration script\033[0m
+printf "\n\n  \033[1;33mWelcome to\033[0m\n\n\033[1;34m${titles[$rand]}\033[0m\n\n                                        \033[1;33mconfiguration script\033[0m
 "
 sleep 4
 printf "\n  ###################################################\n  |   \033[1;33mPlease note the following:\033[0m                    |\n  |       -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m       |\n  |       -> \033[1;33mEnsure you have BUILD.md to hand\033[0m       |\n  |       -> \033[1;33mSelect the options as instructed\033[0m       |\n  ###################################################\n\n"
