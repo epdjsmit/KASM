@@ -85,7 +85,7 @@ titles[6]="
     =========================================
 "
 rand=$[$RANDOM % ${#titles[@]}]
-echo "
+printf "
 
   \033[1;33mWelcome to\033[0m
 
@@ -94,14 +94,7 @@ echo "
                                         \033[1;33mconfiguration script\033[0m
 "
 sleep 4
-echo "
-  ########################################################"
-echo "  |     \033[1;33m Please note the following:\033[0m                        |"
-echo "  |          -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m           |"
-echo "  |          -> \033[1;33mEnsure you have BUILD.md to hand\033[0m           |"
-echo "  |          -> \033[1;33mSelect the options as instructed\033[0m           |"
-echo "  ########################################################
-"
+printf "\n  ###################################################\n  |   \033[1;33mPlease note the following:\033[0m                    |\n  |       -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m       |\n  |       -> \033[1;33mEnsure you have BUILD.md to hand\033[0m       |\n  |       -> \033[1;33mSelect the options as instructed\033[0m       |\n  ###################################################\n\n"
 sleep 2
 echo "
       Press ENTER to begin...
