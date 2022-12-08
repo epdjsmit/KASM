@@ -39,6 +39,7 @@ sudo ccmake .
 sudo make > /dev/null 2>&1
 cd /home/sansforensics/
 
+options=$(cat /home/sansforensics/.vars)
 length=${#options}
 
 printf "$options"
@@ -100,8 +101,6 @@ echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-
 chmod +x virtualbox.sh
 ./virtualbox.sh > /dev/null 2>&1
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
-
-options=$(cat /home/sansforensics/.vars)
 
 # installing cuckoo
 clear
