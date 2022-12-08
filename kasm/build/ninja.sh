@@ -9,7 +9,7 @@ else
 fi
 
 if [[ $iors = *Installed\ Cuckoo* ]]; then
-  cuckoo_iors="\033[1;32mInstalled    Cuckoo Sandbox\033[0m"
+  cuckoo_iors="\033[1;32mInstalled   Cuckoo Sandbox\033[0m"
 else
   cuckoo_iors="\033[1;30mSkipped     Cuckoo Sandbox\033[0m"
 fi
