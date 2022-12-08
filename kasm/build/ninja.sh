@@ -26,7 +26,7 @@ else
   remnux_iors="\033[1;33mSkipped MISP\033[0m"
 fi
 
-if [[ $iors = *Installed\ Greenbone Vulnerability Manager* ]]; then
+if [[ $iors = *Installed\ Greenbone\ Vulnerability\ Manager* ]]; then
   remnux_iors="\033[1;32mInstalled   Greenbone Vulnerability Manager\033[0m"
 else
   remnux_iors="\033[1;33mSkipped Greenbone Vulnerability Manager\033[0m"
