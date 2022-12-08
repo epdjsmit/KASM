@@ -2,6 +2,37 @@
 banner="\n  ###################################################\n  |   \033[1;33mPlease note the following:\033[0m                    |\n  |       -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m       |\n  |       -> \033[1;33mEnsure you have BUILD.md to hand\033[0m       |\n  |       -> \033[1;33mSelect the options as instructed\033[0m       |\n  ###################################################\n"
 iors=$(cat /home/sansforensics/.iors)
 
+if [[ $iors = *Installed REMnux* ]]; then
+  remnux_iors="\033[1;32mInstalled REMnux\033[0m"
+else
+  remnux_iors="\033[1;33mSkipped REMnux\033[0m"
+fi
+
+if [[ $iors = *Installed Cuckoo* ]]; then
+  remnux_iors="\033[1;32mInstalled Cuckoo Sandbox\033[0m"
+else
+  remnux_iors="\033[1;33mSkipped Cuckoo Sandbox\033[0m"
+fi
+
+if [[ $iors = *Installed TheHive* ]]; then
+  remnux_iors="\033[1;32mInstalled TheHive\033[0m"
+else
+  remnux_iors="\033[1;33mSkipped TheHive\033[0m"
+fi
+
+if [[ $iors = *Installed MISP* ]]; then
+  remnux_iors="\033[1;32mInstalled MISP\033[0m"
+else
+  remnux_iors="\033[1;33mSkipped MISP\033[0m"
+fi
+
+if [[ $iors = *Installed Greenbone Vulnerability Manager* ]]; then
+  remnux_iors="\033[1;32mInstalled Greenbone Vulnerability Manager\033[0m"
+else
+  remnux_iors="\033[1;33mSkipped Greenbone Vulnerability Manager\033[0m"
+fi
+
+
 clear
 printf "$banner"
 printf "\033[0m\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> $cuckoo_iors\n    >> $thehive_iors\n    >> $misp_iors\n    >> $greenbone_iors\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> Upgrading Python pip\n"
