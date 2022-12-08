@@ -37,10 +37,10 @@ The installation can take serveral hours. The coffee icons below indicate wthe o
 
  - **`ENTER`**<br>
 
+ - **&darr; &darr; `ENTER c g`**<br>
+
 > Enter **_cuckoo_** account password<br>
 > Confirm **_cuckoo_** account password<br>
-
- - **&darr; &darr; `ENTER c g`**<br>
 
 <p align="center">&nbsp;☕&nbsp;&nbsp;~ 6-7 hours ~&nbsp;&nbsp;☕&nbsp;</p>
 
