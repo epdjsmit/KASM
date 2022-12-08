@@ -98,7 +98,7 @@ chmod +x virtualbox.sh
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
 
 clear
-printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled    virtualisation engines\033[0m\n    >> \033[1;32mInstalled    elrond\033[0m\n    >> Installing elrond\n"
+printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> Installing elrond\n"
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond > /dev/null 2>&1
 sudo chmod -R 777 /opt/elrond/elrond/config.sh
 sudo sed -i '7d' /opt/elrond/elrond/config.sh
@@ -113,7 +113,7 @@ sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build
 if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
   # installing cuckoo
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled    virtualisation engines\033[0m\n    >> Installing Cuckoo Sandbox\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> Installing Cuckoo Sandbox\n"
   wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E" > /dev/null 2>&1
   sudo mv agent.pyw /opt/kasm/kasm/build/install/ > /dev/null 2>&1
   # installing components
@@ -186,7 +186,7 @@ fi
 if [[ $vars = *thp* ]] || [ $length -eq "0" ]; then
   # installing thehive
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled    virtualisation engines\033[0m\n    >> $cuckoo_install_or_skip\n    >> Installing TheHive\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> $cuckoo_install_or_skip\n    >> Installing TheHive\n"
   sudo adduser --system docker > /dev/null 2>&1
   sudo groupadd docker > /dev/null 2>&1
   sudo usermod -aG docker docker > /dev/null 2>&1
@@ -201,7 +201,7 @@ fi
 if [[ $vars = *misp* ]] || [ $length -eq "0" ]; then
   # installing misp
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled    virtualisation engines\033[0m\n    >> $cuckoo_install_or_skip\n    >> $thehive_install_or_skip\n    >> Installing MISP\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> $cuckoo_install_or_skip\n    >> $thehive_install_or_skip\n    >> Installing MISP\n"
   sudo useradd -m -u 6477 -p $(openssl passwd -1 misp) misp && sudo usermod -aG sudo misp > /dev/null 2>&1
   wget -O /tmp/INSTALL_orig.sh https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/INSTALL.sh > /dev/null 2>&1
   sudo chmod +x /tmp/INSTALL_orig.sh
@@ -220,7 +220,7 @@ fi
 if [[ $vars = *greenbone* ]] || [ $length -eq "0" ]; then
   # installing greenbone
   clear
-  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled    virtualisation engines\033[0m\n    >> $cuckoo_install_or_skip\n    >> $thehive_install_or_skip\n    >> $misp_install_or_skip\n    >> Installing Greenbone Vulnerability Manager\n"
+  printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> $cuckoo_install_or_skip\n    >> $thehive_install_or_skip\n    >> $misp_install_or_skip\n    >> Installing Greenbone Vulnerability Manager\n"
   sudo apt install postgresql libvirt-daemon -y > /dev/null 2>&1
   sudo apt install gvm -y
   sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1
