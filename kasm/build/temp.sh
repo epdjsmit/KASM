@@ -1,41 +1,41 @@
 #!/bin/bash
 banner="\n  ###################################################\n  |   \033[1;33mPlease note the following:\033[0m                    |\n  |     -> \033[1;33mConfiguring KASM can take ~10 hours\033[0m      |\n  |     -> \033[1;33mEnsure BUILD.md is available to you\033[0m      |\n  |     -> \033[1;33mInvoke the selections when prompted\033[0m      |\n  ###################################################\n"
-iors=$(cat /home/sansforensics/.iors)
+install_or_skip=$(cat /home/sansforensics/.install_or_skip)
 
-if [[ $iors = *Installed\ REMnux* ]]; then
-  remnux_iors="\033[1;32mInstalled   REMnux\033[0m"
+if [[ $install_or_skip = *Installed\ REMnux* ]]; then
+  remnux_install_or_skip="\033[1;32mInstalled   REMnux\033[0m"
 else
-  remnux_iors="\033[1;30mSkipped     REMnux\033[0m"
+  remnux_install_or_skip="\033[1;30mSkipped     REMnux\033[0m"
 fi
 
-if [[ $iors = *Installed\ Cuckoo* ]]; then
-  cuckoo_iors="\033[1;32mInstalled   Cuckoo Sandbox\033[0m"
+if [[ $install_or_skip = *Installed\ Cuckoo* ]]; then
+  cuckoo_install_or_skip="\033[1;32mInstalled   Cuckoo Sandbox\033[0m"
 else
-  cuckoo_iors="\033[1;30mSkipped     Cuckoo Sandbox\033[0m"
+  cuckoo_install_or_skip="\033[1;30mSkipped     Cuckoo Sandbox\033[0m"
 fi
 
-if [[ $iors = *Installed\ TheHive* ]]; then
-  thehive_iors="\033[1;32mInstalled   TheHive\033[0m"
+if [[ $install_or_skip = *Installed\ TheHive* ]]; then
+  thehive_install_or_skip="\033[1;32mInstalled   TheHive\033[0m"
 else
-  thehive_iors="\033[1;30mSkipped     TheHive\033[0m"
+  thehive_install_or_skip="\033[1;30mSkipped     TheHive\033[0m"
 fi
 
-if [[ $iors = *Installed\ MISP* ]]; then
-  misp_iors="\033[1;32mInstalled   MISP\033[0m"
+if [[ $install_or_skip = *Installed\ MISP* ]]; then
+  misp_install_or_skip="\033[1;32mInstalled   MISP\033[0m"
 else
-  misp_iors="\033[1;30mSkipped     MISP\033[0m"
+  misp_install_or_skip="\033[1;30mSkipped     MISP\033[0m"
 fi
 
-if [[ $iors = *Installed\ Greenbone\ Vulnerability\ Manager* ]]; then
-  greenbone_iors="\033[1;32mInstalled   Greenbone Vulnerability Manager\033[0m"
+if [[ $install_or_skip = *Installed\ Greenbone\ Vulnerability\ Manager* ]]; then
+  greenbone_install_or_skip="\033[1;32mInstalled   Greenbone Vulnerability Manager\033[0m"
 else
-  greenbone_iors="\033[1;30mSkipped     Greenbone Vulnerability Manager\033[0m"
+  greenbone_install_or_skip="\033[1;30mSkipped     Greenbone Vulnerability Manager\033[0m"
 fi
 
 
 # initialising temp account
 clear
-printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> $thehive_iors\n    >> $misp_iors\n    >> $greenbone_iors\n    >> \033[1;32mUpgraded     Python pip\033[0m\n    >> \033[1;32mInstalled   Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled   Chrome Browser\033[0m\n    >> \033[1;32mInstalled   Opera Browser\033[0m\n    >> \033[1;32mInstalled   DB Browser for SQLite\033[0m\n    >> \033[1;32mInstalled   Azure CLI\033[0m\n    >> \033[1;32mInstalled   AWS CLI\033[0m\n    >> \033[1;32mInstalled   Bookstack\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> \033[1;32mDownloaded additional tooling\033[0m\n      >> \033[1;34mDownloaded onestopcybershop\033[0m\n      >> \033[1;34mDownloaded gandalf\033[0m\n      >> \033[1;34mDownloaded bruce\033[0m\n      >> \033[1;34mDownloaded SIGMA\033[0m\n      >> \033[1;34mDownloaded DeepBlueCLI\033[0m\n      >> \033[1;34mDownloaded KAPE\033[0m\n      >> \033[1;34mDownloaded PowerForensics\033[0m\n      >> \033[1;34mDownloaded MemProcFS\033[0m\n      >> \033[1;34mDownloaded WMIExplorer\033[0m\n      >> \033[1;34mDownloaded CobaltStrike-Defence\033[0m\n      >> \033[1;34mDownloaded freq\033[0m\n      >> \033[1;34mDownloaded dnstwist\033[0m\n      >> \033[1;34mDownloaded rdap\033[0m\n      >> \033[1;34mDownloaded sherlock\033[0m\n      >> \033[1;34mDownloaded TweetScraper\033[0m\n      >> \033[1;34mDownloaded karma\033[0m\n      >> \033[1;34mDownloaded TZWorks\033[0m\n      >> \033[1;34mDownloaded BlueTeamPowerShell\033[0m\n      >> \033[1;34mDownloaded Sysmon\033[0m\n    >> \033[1;32mInstalled   Metasploit\033[0m\n    >> \033[1;32mInstalled   HTTrack\033[0m\n    >> \033[1;32mInstalled   Maltego\033[0m\n    >> Creating 'temp' account\n"
+printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> $cuckoo_install_or_skip\n    >> $thehive_install_or_skip\n    >> $misp_install_or_skip\n    >> $greenbone_install_or_skip\n    >> \033[1;32mUpgraded     Python pip\033[0m\n    >> \033[1;32mInstalled   Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled   Chrome Browser\033[0m\n    >> \033[1;32mInstalled   Opera Browser\033[0m\n    >> \033[1;32mInstalled   DB Browser for SQLite\033[0m\n    >> \033[1;32mInstalled   Azure CLI\033[0m\n    >> \033[1;32mInstalled   AWS CLI\033[0m\n    >> \033[1;32mInstalled   Bookstack\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> \033[1;32mDownloaded additional tooling\033[0m\n      >> \033[1;34mDownloaded onestopcybershop\033[0m\n      >> \033[1;34mDownloaded gandalf\033[0m\n      >> \033[1;34mDownloaded bruce\033[0m\n      >> \033[1;34mDownloaded SIGMA\033[0m\n      >> \033[1;34mDownloaded DeepBlueCLI\033[0m\n      >> \033[1;34mDownloaded KAPE\033[0m\n      >> \033[1;34mDownloaded PowerForensics\033[0m\n      >> \033[1;34mDownloaded MemProcFS\033[0m\n      >> \033[1;34mDownloaded WMIExplorer\033[0m\n      >> \033[1;34mDownloaded CobaltStrike-Defence\033[0m\n      >> \033[1;34mDownloaded freq\033[0m\n      >> \033[1;34mDownloaded dnstwist\033[0m\n      >> \033[1;34mDownloaded rdap\033[0m\n      >> \033[1;34mDownloaded sherlock\033[0m\n      >> \033[1;34mDownloaded TweetScraper\033[0m\n      >> \033[1;34mDownloaded karma\033[0m\n      >> \033[1;34mDownloaded TZWorks\033[0m\n      >> \033[1;34mDownloaded BlueTeamPowerShell\033[0m\n      >> \033[1;34mDownloaded Sysmon\033[0m\n    >> \033[1;32mInstalled   Metasploit\033[0m\n    >> \033[1;32mInstalled   HTTrack\033[0m\n    >> \033[1;32mInstalled   Maltego\033[0m\n    >> Creating 'temp' account\n"
 sudo hostnamectl set-hostname kasm > /dev/null 2>&1
 hostname | (echo -n "127.0.0.1        " && cat) | sudo tee -a /etc/hosts > /dev/null 2>&1
 sleep 1
@@ -43,7 +43,7 @@ sudo useradd -s /bin/bash -d /home/temp/ -m -G sudo temp
 sudo passwd temp
 sleep 2
 clear
-printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> $thehive_iors\n    >> $misp_iors\n    >> $greenbone_iors\n    >> \033[1;32mUpgraded     Python pip\033[0m\n    >> \033[1;32mInstalled   Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled   Chrome Browser\033[0m\n    >> \033[1;32mInstalled   Opera Browser\033[0m\n    >> \033[1;32mInstalled   DB Browser for SQLite\033[0m\n    >> \033[1;32mInstalled   Azure CLI\033[0m\n    >> \033[1;32mInstalled   AWS CLI\033[0m\n    >> \033[1;32mInstalled   Bookstack\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> \033[1;32mDownloaded additional tooling\033[0m\n      >> \033[1;34mDownloaded onestopcybershop\033[0m\n      >> \033[1;34mDownloaded gandalf\033[0m\n      >> \033[1;34mDownloaded bruce\033[0m\n      >> \033[1;34mDownloaded SIGMA\033[0m\n      >> \033[1;34mDownloaded DeepBlueCLI\033[0m\n      >> \033[1;34mDownloaded KAPE\033[0m\n      >> \033[1;34mDownloaded PowerForensics\033[0m\n      >> \033[1;34mDownloaded MemProcFS\033[0m\n      >> \033[1;34mDownloaded WMIExplorer\033[0m\n      >> \033[1;34mDownloaded CobaltStrike-Defence\033[0m\n      >> \033[1;34mDownloaded freq\033[0m\n      >> \033[1;34mDownloaded dnstwist\033[0m\n      >> \033[1;34mDownloaded rdap\033[0m\n      >> \033[1;34mDownloaded sherlock\033[0m\n      >> \033[1;34mDownloaded TweetScraper\033[0m\n      >> \033[1;34mDownloaded karma\033[0m\n      >> \033[1;34mDownloaded TZWorks\033[0m\n      >> \033[1;34mDownloaded BlueTeamPowerShell\033[0m\n      >> \033[1;34mDownloaded Sysmon\033[0m\n    >> \033[1;32mInstalled   Metasploit\033[0m\n    >> \033[1;32mInstalled   HTTrack\033[0m\n    >> \033[1;32mInstalled   Maltego\033[0m\n    >> \033[1;32mCreated 'temp' account\n    >> Configuring 'temp' account\n"
+printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> $cuckoo_install_or_skip\n    >> $thehive_install_or_skip\n    >> $misp_install_or_skip\n    >> $greenbone_install_or_skip\n    >> \033[1;32mUpgraded     Python pip\033[0m\n    >> \033[1;32mInstalled   Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled   Chrome Browser\033[0m\n    >> \033[1;32mInstalled   Opera Browser\033[0m\n    >> \033[1;32mInstalled   DB Browser for SQLite\033[0m\n    >> \033[1;32mInstalled   Azure CLI\033[0m\n    >> \033[1;32mInstalled   AWS CLI\033[0m\n    >> \033[1;32mInstalled   Bookstack\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> \033[1;32mDownloaded additional tooling\033[0m\n      >> \033[1;34mDownloaded onestopcybershop\033[0m\n      >> \033[1;34mDownloaded gandalf\033[0m\n      >> \033[1;34mDownloaded bruce\033[0m\n      >> \033[1;34mDownloaded SIGMA\033[0m\n      >> \033[1;34mDownloaded DeepBlueCLI\033[0m\n      >> \033[1;34mDownloaded KAPE\033[0m\n      >> \033[1;34mDownloaded PowerForensics\033[0m\n      >> \033[1;34mDownloaded MemProcFS\033[0m\n      >> \033[1;34mDownloaded WMIExplorer\033[0m\n      >> \033[1;34mDownloaded CobaltStrike-Defence\033[0m\n      >> \033[1;34mDownloaded freq\033[0m\n      >> \033[1;34mDownloaded dnstwist\033[0m\n      >> \033[1;34mDownloaded rdap\033[0m\n      >> \033[1;34mDownloaded sherlock\033[0m\n      >> \033[1;34mDownloaded TweetScraper\033[0m\n      >> \033[1;34mDownloaded karma\033[0m\n      >> \033[1;34mDownloaded TZWorks\033[0m\n      >> \033[1;34mDownloaded BlueTeamPowerShell\033[0m\n      >> \033[1;34mDownloaded Sysmon\033[0m\n    >> \033[1;32mInstalled   Metasploit\033[0m\n    >> \033[1;32mInstalled   HTTrack\033[0m\n    >> \033[1;32mInstalled   Maltego\033[0m\n    >> \033[1;32mCreated 'temp' account\n    >> Configuring 'temp' account\n"
 
 # autologin for temp account
 echo "# GDM configuration storage
@@ -156,6 +156,6 @@ gnome-session-quit --no-prompt" >> temp.sh
 sudo chmod +x temp.sh
 sudo mv temp.sh /home/temp/temp.sh
 clear
-printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_iors\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> $cuckoo_iors\n    >> $thehive_iors\n    >> $misp_iors\n    >> $greenbone_iors\n    >> \033[1;32mUpgraded     Python pip\033[0m\n    >> \033[1;32mInstalled   Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled   Chrome Browser\033[0m\n    >> \033[1;32mInstalled   Opera Browser\033[0m\n    >> \033[1;32mInstalled   DB Browser for SQLite\033[0m\n    >> \033[1;32mInstalled   Azure CLI\033[0m\n    >> \033[1;32mInstalled   AWS CLI\033[0m\n    >> \033[1;32mInstalled   Bookstack\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> \033[1;32mDownloaded additional tooling\033[0m\n      >> \033[1;34mDownloaded onestopcybershop\033[0m\n      >> \033[1;34mDownloaded gandalf\033[0m\n      >> \033[1;34mDownloaded bruce\033[0m\n      >> \033[1;34mDownloaded SIGMA\033[0m\n      >> \033[1;34mDownloaded DeepBlueCLI\033[0m\n      >> \033[1;34mDownloaded KAPE\033[0m\n      >> \033[1;34mDownloaded PowerForensics\033[0m\n      >> \033[1;34mDownloaded MemProcFS\033[0m\n      >> \033[1;34mDownloaded WMIExplorer\033[0m\n      >> \033[1;34mDownloaded CobaltStrike-Defence\033[0m\n      >> \033[1;34mDownloaded freq\033[0m\n      >> \033[1;34mDownloaded dnstwist\033[0m\n      >> \033[1;34mDownloaded rdap\033[0m\n      >> \033[1;34mDownloaded sherlock\033[0m\n      >> \033[1;34mDownloaded TweetScraper\033[0m\n      >> \033[1;34mDownloaded karma\033[0m\n      >> \033[1;34mDownloaded TZWorks\033[0m\n      >> \033[1;34mDownloaded BlueTeamPowerShell\033[0m\n      >> \033[1;34mDownloaded Sysmon\033[0m\n    >> \033[1;32mInstalled   Metasploit\033[0m\n    >> \033[1;32mInstalled   HTTrack\033[0m\n    >> \033[1;32mInstalled   Maltego\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> \033[1;32mCreated 'temp' account\n    >> \033[1;32mConfigured 'temp' account\033[0m\n    >> Rebooting...\n"
+printf "$banner\n    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> $cuckoo_install_or_skip\n    >> $thehive_install_or_skip\n    >> $misp_install_or_skip\n    >> $greenbone_install_or_skip\n    >> \033[1;32mUpgraded     Python pip\033[0m\n    >> \033[1;32mInstalled   Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled   Chrome Browser\033[0m\n    >> \033[1;32mInstalled   Opera Browser\033[0m\n    >> \033[1;32mInstalled   DB Browser for SQLite\033[0m\n    >> \033[1;32mInstalled   Azure CLI\033[0m\n    >> \033[1;32mInstalled   AWS CLI\033[0m\n    >> \033[1;32mInstalled   Bookstack\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> \033[1;32mDownloaded additional tooling\033[0m\n      >> \033[1;34mDownloaded onestopcybershop\033[0m\n      >> \033[1;34mDownloaded gandalf\033[0m\n      >> \033[1;34mDownloaded bruce\033[0m\n      >> \033[1;34mDownloaded SIGMA\033[0m\n      >> \033[1;34mDownloaded DeepBlueCLI\033[0m\n      >> \033[1;34mDownloaded KAPE\033[0m\n      >> \033[1;34mDownloaded PowerForensics\033[0m\n      >> \033[1;34mDownloaded MemProcFS\033[0m\n      >> \033[1;34mDownloaded WMIExplorer\033[0m\n      >> \033[1;34mDownloaded CobaltStrike-Defence\033[0m\n      >> \033[1;34mDownloaded freq\033[0m\n      >> \033[1;34mDownloaded dnstwist\033[0m\n      >> \033[1;34mDownloaded rdap\033[0m\n      >> \033[1;34mDownloaded sherlock\033[0m\n      >> \033[1;34mDownloaded TweetScraper\033[0m\n      >> \033[1;34mDownloaded karma\033[0m\n      >> \033[1;34mDownloaded TZWorks\033[0m\n      >> \033[1;34mDownloaded BlueTeamPowerShell\033[0m\n      >> \033[1;34mDownloaded Sysmon\033[0m\n    >> \033[1;32mInstalled   Metasploit\033[0m\n    >> \033[1;32mInstalled   HTTrack\033[0m\n    >> \033[1;32mInstalled   Maltego\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> \033[1;32mCreated 'temp' account\n    >> \033[1;32mConfigured 'temp' account\033[0m\n    >> Rebooting...\n"
 sleep 10
 sudo reboot
