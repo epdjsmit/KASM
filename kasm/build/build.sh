@@ -1,18 +1,10 @@
 #!/bin/bash
-banner="\n  ##########################################################\n  | \033[1;34m~~\033[0m \033[1;33mCommenced KASM-Workstation configuration script\033[0m  \033[1;34m~~\033[0m |\n  ##########################################################\n  |      \033[1;33mPlease note the following:\033[0m                        |\n  |          -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m           |\n  |          -> \033[1;33mEnsure you have BUILD.md to hand\033[0m           |\n  |          -> \033[1;33mSelect the options as instructed\033[0m           |\n  ##########################################################\n\n"
+banner="\n  ###################################################\n  |   \033[1;33mPlease note the following:\033[0m                    |\n  |       -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m       |\n  |       -> \033[1;33mEnsure you have BUILD.md to hand\033[0m       |\n  |       -> \033[1;33mSelect the options as instructed\033[0m       |\n  ###################################################\n\n"
 
 clear
-printf "
-  ##########################################################
-  | \033[1;34m~~\033[0m \033[1;33mCommencing KASM-Workstation configuration script\033[0m \033[1;34m~~\033[0m |
-  ##########################################################"
-printf "
-  |      \033[1;33mPlease note the following:\033[0m                        |
-  |          -> \033[1;33mConfiguring KASM takes ~10 hours\033[0m           |
-  |          -> \033[1;33mEnsure you have BUILD.md to hand\033[0m           |
-  |          -> \033[1;33mSelect the options as instructed\033[0m           |
-  ##########################################################
-"
+printf "  ###################################################
+  | Commenced KASM-Workstation configuration script |"
+printf "$banner"
 sleep 2
 # initialising kasm
 printf "\n    >> Initialising KASM-Workstation\n"
@@ -22,14 +14,10 @@ gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 gsettings set org.gnome.desktop.session idle-delay 0
 sudo apt update > /dev/null 2>&1
-# preparing elastic
-wget -O elastic.py "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M" > /dev/null 2>&1
-sudo mv elastic.py /opt/kasm/kasm/build/install/
 
 # creating cuckoo user
 clear
-printf "$banner"
-printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> Creating 'cuckoo' account\n"
+printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> Creating 'cuckoo' account\n"
 sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo > /dev/null 2>&1
 sleep 1
 sudo passwd cuckoo
@@ -37,8 +25,7 @@ sleep 2
 
 # installing apfs-fuse
 clear
-printf "$banner"
-printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> Installing apfs-fuse\n"
+printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> Installing apfs-fuse\n"
 sudo apt install libbz2-dev libattr1-dev cmake cmake-curses-gui -y > /dev/null 2>&1
 cd /usr/local/bin
 sudo git clone https://github.com/ezaspy/apfs-fuse.git > /dev/null 2>&1
@@ -54,8 +41,7 @@ cd /home/sansforensics/
 
 # installing remnux - MUST be installed before anything else
 clear
-printf "$banner"
-printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> Installing REMnux\n"
+printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> Installing REMnux\n"
 wget https://REMnux.org/remnux-cli > /dev/null 2>&1
 mv remnux-cli remnux
 chmod +x remnux
@@ -64,8 +50,7 @@ sudo mv remnux /usr/local/bin
 
 # configuring repositories
 clear
-printf "$banner"
-printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> Updating repositories\n"
+printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> Updating repositories\n"
 sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser > /dev/null 2>&1 # db browser for sqlite
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg > /dev/null 2>&1 # thehive
 sleep 2
@@ -80,8 +65,7 @@ sudo apt update > /dev/null 2>&1
 
 # removing uneeded applications
 clear
-printf "$banner"
-printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> Uninstalling redundant software\n"
+printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> Uninstalling redundant software\n"
 sudo du -sh /var/cache/apt/archives > /dev/null 2>&1
 sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice* kdeconnect aisleriot gnome-mines gnome-sudoku gnome-mahjongg cheese ghex simple-scan wxhexeditor scite -y > /dev/null 2>&1
 sudo apt-get autoremove --purge > /dev/null 2>&1
@@ -98,8 +82,7 @@ sudo chmod 644 /etc/sysctl.conf
 
 # installing virtualisation software
 clear
-printf "$banner"
-printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> Installing virtualisation software\n"
+printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> Installing virtualisation software\n"
 cd /home/sansforensics/
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle > /dev/null 2>&1
 sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
@@ -115,8 +98,7 @@ sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtu
 
 # installing cuckoo
 clear
-printf "$banner"
-printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> Installing Cuckoo Sandbox\n"
+printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> Installing Cuckoo Sandbox\n"
 wget -O agent.pyw "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083287&authkey=AO9ecFMM8pXll1E" > /dev/null 2>&1
 sudo mv agent.pyw /opt/kasm/kasm/build/install/ > /dev/null 2>&1
 # installing components
@@ -184,8 +166,7 @@ deactivate > /dev/null 2>&1
 
 # installing thehive
 clear
-printf "$banner"
-printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n\n    >> Installing TheHive\n"
+printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> Installing TheHive\n"
 sudo adduser --system docker > /dev/null 2>&1
 sudo groupadd docker > /dev/null 2>&1
 sudo usermod -aG docker docker > /dev/null 2>&1
@@ -195,8 +176,7 @@ sudo rm /etc/apt/sources.list.d/docker.list > /dev/null 2>&1
 
 # installing misp
 clear
-printf "$banner"
-printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> Installing MISP\n"
+printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> Installing MISP\n"
 sudo useradd -m -u 6477 -p $(openssl passwd -1 misp) misp && sudo usermod -aG sudo misp > /dev/null 2>&1
 wget -O /tmp/INSTALL_orig.sh https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/INSTALL.sh > /dev/null 2>&1
 sudo chmod +x /tmp/INSTALL_orig.sh
@@ -210,8 +190,7 @@ sudo ufw allow 443/tcp > /dev/null 2>&1
 
 # installing greenbone
 clear
-printf "$banner"
-printf "    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> Installing Greenbone Vulnerability Manager\n"
+printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> \033[1;32mInstalled REMnux\033[0m\n    >> \033[1;32mUpdated repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled virtualisation software\033[0m\n    >> \033[1;32mInstalled Cuckoo Sandbox\033[0m\n    >> \033[1;32mInstalled TheHive\033[0m\n    >> \033[1;32mInstalled MISP\033[0m\n    >> Installing Greenbone Vulnerability Manager\n"
 sudo apt install postgresql libvirt-daemon -y > /dev/null 2>&1
 sudo apt install gvm -y
 sudo -u gvm -g gvm greenbone-nvt-sync > /dev/null 2>&1

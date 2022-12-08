@@ -94,12 +94,12 @@ ${titles[$rand]}
 "
 sleep 4
 echo "
-  ##########################################################"
+  ########################################################"
 echo "  |      Please note the following:                        |"
 echo "  |          -> Configuring KASM takes ~10 hours           |"
 echo "  |          -> Ensure you have BUILD.md to hand           |"
 echo "  |          -> Select the options as instructed           |"
-echo "  ##########################################################
+echo "  ########################################################
 "
 sleep 2
 echo "
