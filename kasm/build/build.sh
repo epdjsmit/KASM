@@ -47,7 +47,7 @@ printf "$length"
 
 if [[ $options = *remnux* ]] || [ "$length" -eq "0" ]; then
 # installing remnux - MUST be installed before anything else
-clear
+#clear
 printf "$banner    >> \033[1;32mInitialised KASM-Workstation\033[0m\n    >> \033[1;32mCreated 'cuckoo' account\033[0m\n    >> \033[1;32mInstalled apfs-fuse\033[0m\n    >> Installing REMnux\n"
 wget https://REMnux.org/remnux-cli > /dev/null 2>&1
 mv remnux-cli remnux
