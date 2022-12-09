@@ -42,6 +42,8 @@ echo now="$(date)" >> date.txt && echo " - pre-remnux
 " >> date.txt # testing execution duration
 
 # -r has been selected
+#Fri 09 Dec 2022 02:57:46 PM UTC
+#Fri 09 Dec 2022 06:49:28 PM UTC
 if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then # 4 hours
   # installing remnux - MUST be installed before anything else
   clear
