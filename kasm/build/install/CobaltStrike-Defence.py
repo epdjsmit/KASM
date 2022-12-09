@@ -2,7 +2,7 @@
 import subprocess
 
 def main():
-    with open("/home/sansforensics/Desktop/CobaltStrike-Defence/README.md") as readme:
+    with open("/home/ninja/Desktop/CobaltStrike-Defence/README.md") as readme:
         for eachline in readme:
             slashes = eachline.count('/')
             if slashes == 4 and "https://github.com/" in eachline:
