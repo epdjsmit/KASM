@@ -38,8 +38,8 @@ if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
   sleep 2
 fi
 
-echo date > date.txt && echo " - pre-remnux
-" >> date.text # testing execution duration
+echo now="$(date)" > date.txt && echo " - pre-remnux
+" >> date.txt # testing execution duration
 
 # -r has been selected
 if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then
@@ -56,8 +56,8 @@ else
   remnux_install_or_skip="-- \033[1;30mSkipped     REMnux\033[0m"
 fi
 
-echo date > date.txt && echo " - post-remnux
-" >> date.text # testing execution duration
+echo now="$(date)" > date.txt && echo " - post-remnux
+" >> date.txt # testing execution duration
 
 # configuring repositories
 clear

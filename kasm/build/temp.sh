@@ -115,6 +115,9 @@ else
   misp_install_or_skip="-- \033[1;30mSkipped     MISP\033[0m"
 fi
 
+echo now="$(date)" > date.txt && echo " - pre-greenbone
+" >> date.txt # testing execution duration
+
 if [[ $install_or_skip = *Installed\ Greenbone\ Vulnerability\ Manager* ]]; then
   # installing greenbone
   clear
@@ -132,6 +135,8 @@ else
   greenbone_install_or_skip="-- \033[1;30mSkipped     Greenbone Vulnerability Manager\033[0m"
 fi
 
+echo now="$(date)" > date.txt && echo " - post-greenbone
+" >> date.txt # testing execution duration
 
 # initialising temp account
 clear
