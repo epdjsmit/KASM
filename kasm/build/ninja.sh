@@ -104,7 +104,7 @@ sudo updatedb > /dev/null 2>&1
 history -c
 unset HISTFILE
 
-echo now="$(date)" > date.txt && echo " - finish
+echo now="$(date)" >> date.txt && echo " - finish
 " >> date.txt # testing execution duration
 
 clear

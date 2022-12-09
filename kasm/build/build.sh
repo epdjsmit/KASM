@@ -38,7 +38,7 @@ if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
   sleep 2
 fi
 
-echo now="$(date)" > date.txt && echo " - pre-remnux
+echo now="$(date)" >> date.txt && echo " - pre-remnux
 " >> date.txt # testing execution duration
 
 # -r has been selected
