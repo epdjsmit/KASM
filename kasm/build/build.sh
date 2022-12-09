@@ -42,7 +42,7 @@ echo now="$(date)" >> date.txt && echo " - pre-remnux
 " >> date.txt # testing execution duration
 
 # -r has been selected
-if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then
+if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then # 4 hours
   # installing remnux - MUST be installed before anything else
   clear
   printf "$banner\n    >> Installing REMnux\n"
@@ -72,6 +72,8 @@ echo 'deb http://security.ubuntu.com/ubuntu xenial-security main' | sudo tee /et
 wget -O /tmp/python-mysqldb_1.3.10-1build1_amd64.deb http://archive.ubuntu.com/ubuntu/pool/main/p/python-mysqldb/python-mysqldb_1.3.10-1build1_amd64.deb > /dev/null 2>&1 # cuckoo
 sleep 4
 #yes '' | sudo add-apt-repository ppa:micahflee/ppa > /dev/null 2>&1 # tor
+python3 -m pip install --upgrade pip > /dev/null 2>&1
+python2.7 -m pip install --upgrade pip > /dev/null 2>&1
 sudo apt update > /dev/null 2>&1
 
 clear
@@ -93,7 +95,7 @@ sudo apt-get clean > /dev/null 2>&1
 
 # installing virtualisation engines
 clear
-printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> Installing virtualisation engines\n"
+printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mRemoved     redundant software\033[0m\n    >> Installing virtualisation engines\n"
 cd /home/sansforensics/
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle > /dev/null 2>&1
 sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
@@ -106,7 +108,7 @@ chmod +x virtualbox.sh
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
 
 clear
-printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mUninstalled redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> Installing elrond\n"
+printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mRemoved     redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> Installing elrond\n"
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond > /dev/null 2>&1
 sudo chmod -R 777 /opt/elrond/elrond/config.sh
 sudo sed -i '7d' /opt/elrond/elrond/config.sh
