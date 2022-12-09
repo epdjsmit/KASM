@@ -42,7 +42,7 @@ The installation can take serveral hours. The coffee icons below indicate wthe o
 > Enter **_cuckoo_** account password<br>
 > Confirm **_cuckoo_** account password<br>
 
-<p align="center">&nbsp;☕&nbsp;&nbsp;~ 8-9 hours ~&nbsp;&nbsp;☕&nbsp;</p>
+<p align="center">&nbsp;☕&nbsp;&nbsp;~ 8 hours ~&nbsp;&nbsp;☕&nbsp;</p>
 
  - `Do you want to enable redis unix socket in /etc/redis/redis.conf?`<br>
    - **&lt;`Yes`&gt;**<br><br>
@@ -57,7 +57,7 @@ The installation can take serveral hours. The coffee icons below indicate wthe o
 
  - `Password confirmation`<br>
    - **`________`**<br><br>
-<p align="center">&nbsp;☕&nbsp;&nbsp;~ 1-2 hours ~&nbsp;&nbsp;☕&nbsp;</p>
+<p align="center">&nbsp;☕&nbsp;&nbsp;~ 1 hour ~&nbsp;&nbsp;☕&nbsp;</p>
 
 > Enter **_temp_** account password<br>
 > Confirm **_temp_** account password<br>
