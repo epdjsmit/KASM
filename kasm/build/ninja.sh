@@ -1,5 +1,5 @@
 #!/bin/bash
-install_or_skip=$(cat /home/sansforensics/.install_or_skip)
+install_or_skip=$(cat /home/ninja/.install_or_skip)
 
 if [[ $install_or_skip = *Installed\ REMnux* ]]; then
   remnux_install_or_skip="\033[1;33mInstalled   REMnux\033[0m"
@@ -104,7 +104,7 @@ clear
 printf "\n\n\n    $remnux_install_or_skip\n    >> \033[1;33mUpdated     repositories\033[0m\n    >> \033[1;33mRemoved     redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    >> \033[1;32mInstalled   elrond\033[0m\n    >> \033[1;32mInstalled   Jupyter Notebooks\033[0m\n    >> \033[1;32mInstalled   Chrome Browser\033[0m\n    >> \033[1;32mInstalled   Opera Browser\033[0m\n    >> \033[1;32mInstalled   DB Browser for SQLite\033[0m\n    >> \033[1;32mInstalled   Cloud CLIs\033[0m\n    >> \033[1;32mInstalled   Bookstack\033[0m\033[0m\n    >> \033[1;32mDownloaded  additional tooling\033[0m\n      >> \033[1;34mDownloaded  onestopcybershop\033[0m\n      >> \033[1;34mDownloaded  gandalf\033[0m\n      >> \033[1;34mDownloaded  bruce\033[0m\n      >> \033[1;34mDownloaded  SIGMA\033[0m\n      >> \033[1;34mDownloaded  DeepBlueCLI\033[0m\n      >> \033[1;34mDownloaded  KAPE\033[0m\n      >> \033[1;34mDownloaded  PowerForensics\033[0m\n      >> \033[1;34mDownloaded  MemProcFS\033[0m\n      >> \033[1;34mDownloaded  WMIExplorer\033[0m\n      >> \033[1;34mDownloaded  CobaltStrike-Defence\033[0m\n      >> \033[1;34mDownloaded  freq\033[0m\n      >> \033[1;34mDownloaded  dnstwist\033[0m\n      >> \033[1;34mDownloaded  rdap\033[0m\n      >> \033[1;34mDownloaded  sherlock\033[0m\n      >> \033[1;34mDownloaded  TweetScraper\033[0m\n      >> \033[1;34mDownloaded  karma\033[0m\n      >> \033[1;34mDownloaded  TZWorks\033[0m\n      >> \033[1;34mDownloaded  BlueTeamPowerShell\033[0m\n      >> \033[1;34mDownloaded  Sysmon\033[0m\n    >> \033[1;33mInstalled   Metasploit\033[0m\n    >> \033[1;33mInstalled   HTTrack\033[0m\n    >> \033[1;33mInstalled   Maltego\033[0m\n    >> \033[1;32mInstalled   Splunk\033[0m\n    >> \033[1;32mInstalled   MITRE ATT&CK Navigator\033[0m\n    $cuckoo_install_or_skip\n    $thehive_install_or_skip\n    $misp_install_or_skip\n    $greenbone_install_or_skip\n    >> \033[1;31mRebooted\033[0m\n    >> \033[1;33mConfigured 'ninja' account\033[0m\n    >> \033[1;33mCleaned up\033[0m\n\n"
 printf "\n
   ####################################################
-  ----------- \033[1;32mSUCCESS! KASM is fully configured!\033[0m -----------
+  -------- \033[1;32mSUCCESS! KASM is fully configured!\033[0m --------
   ####################################################"
 sleep 4
 sudo rm -rf /home/sansforensics/.vars
