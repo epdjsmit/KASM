@@ -38,13 +38,8 @@ if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
   sleep 2
 fi
 
-echo now="$(date)" >> date.txt && echo " - pre-remnux
-" >> date.txt # testing execution duration
-
 # -r has been selected
-#Fri 09 Dec 2022 02:57:46 PM UTC
-#Fri 09 Dec 2022 06:49:28 PM UTC
-if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then # 4 hours
+if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then
   # installing remnux - MUST be installed before anything else
   clear
   printf "$banner\n    >> Installing REMnux\n"
@@ -57,9 +52,6 @@ if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then # 4 hours
 else
   remnux_install_or_skip="-- \033[1;30mSkipped     REMnux\033[0m"
 fi
-
-echo now="$(date)" > date.txt && echo " - post-remnux
-" >> date.txt # testing execution duration
 
 # configuring repositories
 clear
