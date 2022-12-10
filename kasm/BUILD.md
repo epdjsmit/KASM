@@ -69,13 +69,13 @@ The installation can take serveral hours. The coffee icons below indicate wthe o
 > Confirm **_ninja_** account password<br>
 <p align="center">🥾</p>
 
-> Log into **_ninja_** account<br>
+Log into **_ninja_** account<br>
 
 > Enter **_ninja_** account password<br>
 
-<br>
+<p align="center">&nbsp;☕&nbsp;&nbsp;~ 1 hour ~&nbsp;&nbsp;☕&nbsp;</p>
 
- - **`ENTER`**<br>
+ - **`ENTER`**
 
 <p align="center">🥾</p>
 
