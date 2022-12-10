@@ -6,7 +6,7 @@ sleep 2
 
 clear
 # initialising kasm
-printf "$banner\n    <<  Initialising KASM-Workstation\n"
+printf "$banner\n    << Initialising KASM-Workstation\n"
 sudo chmod -R 755 /opt/kasm
 python3 -m keyring --disable
 gsettings set org.gnome.desktop.screensaver lock-enabled false
@@ -31,7 +31,7 @@ cd /home/sansforensics/
 if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
   # creating cuckoo user
   clear
-  printf "$banner\n    <<  Creating 'cuckoo' account\n"
+  printf "$banner\n    << Creating 'cuckoo' account\n"
   sudo useradd -m -u 6478 -p $(openssl passwd -1 cuckoo) cuckoo && sudo usermod -aG sudo cuckoo > /dev/null 2>&1
   sleep 1
   sudo passwd cuckoo
@@ -42,7 +42,7 @@ fi
 if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then
   # installing remnux - MUST be installed before anything else
   clear
-  printf "$banner\n    <<  Installing REMnux\n"
+  printf "$banner\n    << Installing REMnux\n"
   wget https://REMnux.org/remnux-cli > /dev/null 2>&1
   mv remnux-cli remnux
   chmod +x remnux
@@ -55,23 +55,27 @@ fi
 
 # configuring repositories
 clear
-printf "$banner\n    $remnux_install_or_skip\n    <<  Updating repositories\n"
+printf "$banner\n    $remnux_install_or_skip\n    << Updating repositories\n"
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list # gcp cli
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - # gcp cli
+sleep 2
 sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser > /dev/null 2>&1 # db browser for sqlite
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg > /dev/null 2>&1 # thehive
 sleep 2
 yes '' | echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null # thehive / cuckoo
 sleep 2
-yes '' | sudo add-apt-repository ppa:mrazavi/gvm > /dev/null 2>&1 # greenbone
 echo 'deb http://security.ubuntu.com/ubuntu xenial-security main' | sudo tee /etc/apt/sources.list.d/xenial-security.list > /dev/null 2>&1 # cuckoo
 wget -O /tmp/python-mysqldb_1.3.10-1build1_amd64.deb http://archive.ubuntu.com/ubuntu/pool/main/p/python-mysqldb/python-mysqldb_1.3.10-1build1_amd64.deb > /dev/null 2>&1 # cuckoo
-sleep 4
+sleep 2
+yes '' | sudo add-apt-repository ppa:mrazavi/gvm > /dev/null 2>&1 # greenbone
+sleep 2
 #yes '' | sudo add-apt-repository ppa:micahflee/ppa > /dev/null 2>&1 # tor
 python3 -m pip install --upgrade pip > /dev/null 2>&1
 python2.7 -m pip install --upgrade pip > /dev/null 2>&1
 sudo apt update > /dev/null 2>&1
 
 clear
-printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    <<  Uninstalling redundant software\n"
+printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    << Uninstalling redundant software\n"
 # disabling updates via ipv6
 sudo chmod 777 /etc/sysctl.conf
 sudo echo "
@@ -89,7 +93,7 @@ sudo apt-get clean > /dev/null 2>&1
 
 # installing virtualisation engines
 clear
-printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mRemoved     redundant software\033[0m\n    <<  Installing virtualisation engines\n"
+printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mRemoved     redundant software\033[0m\n    << Installing virtualisation engines\n"
 cd /home/sansforensics/
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle > /dev/null 2>&1
 sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
@@ -102,7 +106,7 @@ chmod +x virtualbox.sh
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
 
 clear
-printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mRemoved     redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    <<  Installing elrond\n"
+printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mRemoved     redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    << Installing elrond\n"
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond > /dev/null 2>&1
 sudo chmod -R 777 /opt/elrond/elrond/config.sh
 sudo sed -i '7d' /opt/elrond/elrond/config.sh
