@@ -73,7 +73,7 @@ Log into **_ninja_** account<br>
 
 > Enter **_ninja_** account password<br>
 
-<p align="center">&nbsp;☕&nbsp;&nbsp;~ 1 hour ~&nbsp;&nbsp;☕&nbsp;</p>
+<br>
 
  - **`ENTER`**
 
