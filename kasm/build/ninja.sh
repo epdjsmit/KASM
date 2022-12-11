@@ -96,6 +96,11 @@ sudo python3 /opt/kasm/kasm/build/install/CobaltStrike-Defence.py > /dev/null 2>
 wget -O aptsources-cleanup.pyz https://github.com/davidfoerster/aptsources-cleanup/releases/download/v0.1.7.5.2/aptsources-cleanup.pyz > /dev/null 2>&1
 chmod a+x aptsources-cleanup.pyz
 sudo ./aptsources-cleanup.pyz -n > /dev/null 2>&1
+sleep 2
+sudo rm -rf /home/ninja/.vars
+sudo rm -rf /home/ninja/.install_or_skip
+sudo rm -rf /home/ninja/aptsources-cleanup.pyz
+sudo rm -rf /home/ninja/msfinstall
 sudo updatedb > /dev/null 2>&1
 history -c
 unset HISTFILE
@@ -107,8 +112,6 @@ printf "
   -- \033[1;32mSUCCESS! KASM is fully configured!\033[0m --
   #########################################"
 sleep 4
-sudo rm -rf /home/sansforensics/.vars
-sudo rm -rf /home/sansforensics/.install_or_skip
 printf "\n\n       Press ENTER to perform final reboot\n\n"
 read input
 sudo reboot
