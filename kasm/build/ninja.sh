@@ -2,31 +2,31 @@
 install_or_skip=$(cat /home/ninja/.install_or_skip)
 
 if [[ $install_or_skip = *Installed\ REMnux* ]]; then
-  remnux_install_or_skip="\033[1;33mInstalled   REMnux\033[0m"
+  remnux_install_or_skip=">> \033[1;33mInstalled   REMnux\033[0m"
 else
   remnux_install_or_skip="-- \033[1;30mSkipped     REMnux\033[0m"
 fi
 
 if [[ $install_or_skip = *Installed\ Cuckoo* ]]; then
-  cuckoo_install_or_skip="\033[1;33mInstalled   Cuckoo Sandbox\033[0m"
+  cuckoo_install_or_skip=">> \033[1;33mInstalled   Cuckoo Sandbox\033[0m"
 else
   cuckoo_install_or_skip="-- \033[1;30mSkipped     Cuckoo Sandbox\033[0m"
 fi
 
 if [[ $install_or_skip = *Installed\ TheHive* ]]; then
-  thehive_install_or_skip="\033[1;33mInstalled   TheHive\033[0m"
+  thehive_install_or_skip=">> \033[1;33mInstalled   TheHive\033[0m"
 else
   thehive_install_or_skip="-- \033[1;30mSkipped     TheHive\033[0m"
 fi
 
 if [[ $install_or_skip = *Installed\ MISP* ]]; then
-  misp_install_or_skip="\033[1;33mInstalled   MISP\033[0m"
+  misp_install_or_skip=">> \033[1;33mInstalled   MISP\033[0m"
 else
   misp_install_or_skip="-- \033[1;30mSkipped     MISP\033[0m"
 fi
 
 if [[ $install_or_skip = *Installed\ Greenbone* ]]; then
-  greenbone_install_or_skip="\033[1;33mInstalled   Greenbone Vulnerability Manager\033[0m"
+  greenbone_install_or_skip=">> \033[1;33mInstalled   Greenbone Vulnerability Manager\033[0m"
 else
   greenbone_install_or_skip="-- \033[1;30mSkipped     Greenbone Vulnerability Manager\033[0m"
 fi
