@@ -45,7 +45,7 @@ sudo rm -rf /usr/local/share/remnux/remnux-logo.png
 sudo rm -rf /var/cache/remnux/cli/v2022.44.5/salt-states-2022.44.5/remnux/theme/gnome-config/remnux-logo.png
 sudo cp /opt/kasm/kasm/images/kasm.png /usr/share/backgrounds/kasm.png
 gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/kasm.png
-gsettings set org.gnome.shell favorite-apps "['gnome-control-center.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Todo.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Screenshot.desktop', 'google-chrome.desktop', 'firefox.desktop', 'opera_opera.desktop', 'torbrowser.desktop', 'vmware-player.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'jupyter-notebook.desktop', 'bless.desktop', 'wireshark.desktop', 'networkminer.desktop', 'cyberchef.desktop', 'die.desktop', 'jd-gui.desktop', 'ghidra.desktop', 'cutter.desktop', 'edb.desktop', 'maltego.desktop']"
+gsettings set org.gnome.shell favorite-apps "['gnome-control-center.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Todo.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Screenshot.desktop', 'google-chrome.desktop', 'firefox.desktop', 'opera_opera.desktop', 'torbrowser.desktop', 'vmware-player.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'jupyter-notebook.desktop', 'bless.desktop', 'wireshark.desktop', 'networkminer.desktop', 'cyberchef.desktop', 'die.desktop', 'jd-gui.desktop', 'ghidra.desktop', 'cutter.desktop', 'sqlitebrowser.desktop', 'maltego.desktop']"
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 28
 
 # set bash shell theme
@@ -102,13 +102,13 @@ unset HISTFILE
 
 clear
 printf "\n\n\n    $remnux_install_or_skip\n    >> \033[1;33mUpdated     repositories\033[0m\n    >> \033[1;33mRemoved     redundant software\033[0m\n    >> \033[1;33mInstalled   virtualisation engines\033[0m\n    >> \033[1;33mInstalled   elrond\033[0m\n    >> \033[1;33mInstalled   Jupyter Notebooks\033[0m\n    >> \033[1;33mInstalled   Chrome Browser\033[0m\n    >> \033[1;33mInstalled   Opera Browser\033[0m\n    >> \033[1;33mInstalled   DB Browser for SQLite\033[0m\n    >> \033[1;33mInstalled   Cloud CLIs\033[0m\n    >> \033[1;33mInstalled   Bookstack\033[0m\033[0m\n    >> \033[1;33mDownloaded  additional tooling\033[0m\n      >> \033[1;34mDownloaded  onestopcybershop\033[0m\n      >> \033[1;34mDownloaded  gandalf\033[0m\n      >> \033[1;34mDownloaded  bruce\033[0m\n      >> \033[1;34mDownloaded  SIGMA\033[0m\n      >> \033[1;34mDownloaded  DeepBlueCLI\033[0m\n      >> \033[1;34mDownloaded  KAPE\033[0m\n      >> \033[1;34mDownloaded  PowerForensics\033[0m\n      >> \033[1;34mDownloaded  MemProcFS\033[0m\n      >> \033[1;34mDownloaded  WMIExplorer\033[0m\n      >> \033[1;34mDownloaded  CobaltStrike-Defence\033[0m\n      >> \033[1;34mDownloaded  freq\033[0m\n      >> \033[1;34mDownloaded  dnstwist\033[0m\n      >> \033[1;34mDownloaded  rdap\033[0m\n      >> \033[1;34mDownloaded  sherlock\033[0m\n      >> \033[1;34mDownloaded  TweetScraper\033[0m\n      >> \033[1;34mDownloaded  karma\033[0m\n      >> \033[1;34mDownloaded  TZWorks\033[0m\n      >> \033[1;34mDownloaded  BlueTeamPowerShell\033[0m\n      >> \033[1;34mDownloaded  Sysmon\033[0m\n    >> \033[1;33mInstalled   Metasploit\033[0m\n    >> \033[1;33mInstalled   HTTrack\033[0m\n    >> \033[1;33mInstalled   Maltego\033[0m\n    >> \033[1;33mInstalled   Splunk\033[0m\n    >> \033[1;33mInstalled   MITRE ATT&CK Navigator\033[0m\n    $cuckoo_install_or_skip\n    $thehive_install_or_skip\n    $misp_install_or_skip\n    $greenbone_install_or_skip\n    ^^ \033[1;31mRebooted\033[0m\n    >> \033[1;33mConfigured 'ninja' account\033[0m\n    >> \033[1;33mCleaned up\033[0m\n\n"
-printf "\n
-  ####################################################
-  -------- \033[1;32mSUCCESS! KASM is fully configured!\033[0m --------
-  ####################################################"
+printf "
+  #########################################
+  -- \033[1;32mSUCCESS! KASM is fully configured!\033[0m --
+  #########################################"
 sleep 4
 sudo rm -rf /home/sansforensics/.vars
 sudo rm -rf /home/sansforensics/.install_or_skip
-printf "\n            Press ENTER to perform final reboot\n\n"
+printf "\n\n       Press ENTER to perform final reboot\n\n"
 read input
 sudo reboot
