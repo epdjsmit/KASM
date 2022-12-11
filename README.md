@@ -69,27 +69,27 @@ A lot of the scripts and software installed in KASM has come from developing [el
   <tr>
       <td>Greenbone</td>
       <td>127.0.0.1:9392</td>
-      <td>admin:admin</td>
+      <td>admin::admin</td>
   </tr>
   <tr>
       <td>TheHive</td>
       <td>127.0.0.1:9000</td>
-      <td></td>
+      <td>admin@thehive.local::secret</td>
   </tr>
   <tr>
       <td>MISP</td>
       <td>127.0.0.1:443</td>
-      <td></td>
+      <td>admin@admin.test::admin</td>
   </tr>
   <tr>
       <td>Splunk</td>
       <td>127.0.0.1:8000</td>
-      <td>admin:kick-ass</td>
+      <td>admin::kick-ass</td>
   </tr>
   <tr>
       <td>Kibana</td>
       <td>127.0.0.1:9201</td>
-      <td></td>
+      <td>-</td>
   </tr>
   <tr>
       <td>Navigator</td>
@@ -99,7 +99,7 @@ A lot of the scripts and software installed in KASM has come from developing [el
   <tr>
       <td>Cuckoo</td>
       <td>127.0.0.1:8080</td>
-      <td></td>
+      <td>-</td>
   </tr>
 </table>
 <br><br>
