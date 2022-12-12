@@ -112,7 +112,7 @@ sudo chmod -R 777 /opt/elrond/elrond/config.sh
 sudo sed -i '7d' /opt/elrond/elrond/config.sh
 sudo sed -i '$ d' /opt/elrond/elrond/config.sh
 # preparing elastic
-wget -O elastic.py "https://onedrive.live.com/embed?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M" > /dev/null 2>&1
+wget -O elastic.py "https://onedrive.live.com/download?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M" > /dev/null 2>&1
 sudo mv elastic.py /opt/kasm/kasm/build/install/
 # preparing navigator
 sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/navigator.py
