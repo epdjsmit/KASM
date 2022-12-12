@@ -131,7 +131,7 @@ A lot of the scripts and software installed in KASM has come from developing [el
 ## KASM-Workstation Virtual Machine
 
 **Recommended Method**<br>
-Download the [KASM-Workstation Virtual Machine]() OVA, which is the latest version of SIFT (20.04) with additional software packages, pre-installed.
+Download the [KASM-Workstation Virtual Machine OVA](https://onedrive.live.com/download?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213092905&authkey=APqcjtnndcHyTVM), which is the latest version of SIFT (20.04) with additional software packages, pre-installed.
 > __Note__ - Last Updated: **DEC-2022**<br>
 
 ## KASM-Workstation Configuration Script
