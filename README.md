@@ -36,8 +36,8 @@
   - [Related Projects](#related-projects)
 - [Usage](#usage)
 - [Configuration](#configuration)
-  - [KASM Virtual Machine](#kasm-virtual-machine)
-  - [KASM Configuration Script](https://github.com/ezaspy/elrond/blob/main/elrond/BUILD.md)
+  - [KASM-Workstation Virtual Machine](#kasm-workstation-virtual-machine)
+  - [KASM-Workstation Configuration Script](https://github.com/ezaspy/elrond/blob/main/elrond/BUILD.md)
 - [Acknowledgements](#acknowledgements)
 
 <br><br>
@@ -67,39 +67,59 @@ A lot of the scripts and software installed in KASM has come from developing [el
       <td><h2><b>Credentials</b></h2></td>
   </tr>
   <tr>
-      <td>Greenbone</td>
-      <td>127.0.0.1:9392</td>
-      <td>admin::admin</td>
+      <td><b>KASM-Workstation</b></td>
+      <td>-</td>
+      <td><b>ninja::kasm</b></td>
   </tr>
   <tr>
-      <td>TheHive</td>
-      <td>127.0.0.1:9000</td>
-      <td>admin@thehive.local::secret</td>
+      <td>--------------------</td>
+      <td>--------------------</td>
+      <td>--------------------</td>
   </tr>
   <tr>
-      <td>MISP</td>
-      <td>127.0.0.1:443</td>
-      <td>admin@admin.test::admin</td>
+      <td><b>Greenbone</b></td>
+      <td><b>127.0.0.1:9392</b></td>
+      <td><b>admin::admin</b></td>
   </tr>
   <tr>
-      <td>Splunk</td>
-      <td>127.0.0.1:8000</td>
-      <td>admin::kick-ass</td>
+      <td><b>TheHive</b></td>
+      <td><b>127.0.0.1:9000</b></td>
+      <td><b>admin@thehive.local::secret</b></td>
   </tr>
   <tr>
-      <td>Kibana</td>
-      <td>127.0.0.1:9201</td>
+      <td><b>MISP</b></td>
+      <td><b>127.0.0.1:443</b></td>
+      <td><b>admin@admin.test::admin</b></td>
+  </tr>
+  <tr>
+      <td><b>Splunk</b></td>
+      <td><b>127.0.0.1:8000</b></td>
+      <td><b>admin::kick-ass</b></td>
+  </tr>
+  <tr>
+      <td><b>Kibana</b></td>
+      <td><b>127.0.0.1:9201</b></td>
+      <td><b>-</b></td>
+  </tr>
+  <tr>
+      <td><b>Navigator</b></td>
+      <td><b>127.0.0.1/attack-navigator</b></td>
       <td>-</td>
   </tr>
   <tr>
-      <td>Navigator</td>
-      <td>127.0.0.1/attack-navigator</td>
+      <td><b>Cuckoo</b></td>
+      <td><b>127.0.0.1:8080</b></td>
       <td>-</td>
   </tr>
   <tr>
-      <td>Cuckoo</td>
-      <td>127.0.0.1:8080</td>
+      <td>--------------------</td>
+      <td>--------------------</td>
+      <td>--------------------</td>
+  </tr>
+  <tr>
+      <td>postgresql</td>
       <td>-</td>
+      <td>::kasm</td>
   </tr>
 </table>
 <br><br>
@@ -108,13 +128,13 @@ A lot of the scripts and software installed in KASM has come from developing [el
 
 # Configuration
 
-## KASM Virtual Machine
+## KASM-Workstation Virtual Machine
 
 **Recommended Method**<br>
-Download the [KASM Virtual Machine](https://drive.google.com/file/d/1BjL3DUoE2-V7AwXCUFhmHuwQoThd48l_/view?usp=sharing) OVA, which is the latest version of SIFT (20.04) with additional software packages, pre-installed.
+Download the [KASM-Workstation Virtual Machine]() OVA, which is the latest version of SIFT (20.04) with additional software packages, pre-installed.
 > __Note__ - Last Updated: **DEC-2022**<br>
 
-## KASM Configuration Script
+## KASM-Workstation Configuration Script
 Follow the instructions in [BUILD.md](https://github.com/ezaspy/KASM/blob/main/kasm/BUILD.md).&nbsp;&nbsp;**_Please read the instructions carefully._**
 > __Note__ - Last Updated: **DEC-2022**<br>
 
@@ -123,43 +143,53 @@ Follow the instructions in [BUILD.md](https://github.com/ezaspy/KASM/blob/main/k
 <!-- ACKNOWLEDGEMENTS -->
 
 # Acknowledgements
+- Design
+  - [Desktop Background](https://www.canva.com/design/DAFQt9mHyiQ/sj_cMIlhHUAbQPiyLYR5TA/edit?utm_source=onboarding#)
+  - [Logo](https://app.logo.com/dashboard/logo_e2285b91-8ee8-4900-a40a-96da8d0ded1e/your-logo-files)
+  - [ASCII Art](https://www.messletters.com/en/big-text/)
+<br><br>
 
-- [Desktop Background](https://www.canva.com/design/DAFQt9mHyiQ/sj_cMIlhHUAbQPiyLYR5TA/edit?utm_source=onboarding#)
-- [Logo](https://app.logo.com/dashboard/logo_e2285b91-8ee8-4900-a40a-96da8d0ded1e/your-logo-files)
-- [SIFT](https://www.sans.org/tools/sift-workstation/)
-- [bruce](https://github.com/ezaspy/bruce.git)
-- [gandalf](https://github.com/ezaspy/gandalf.git)
-- [elrond](https://github.com/ezaspy/elrond.git)
-- [VMware](https://www.vmware.com/uk/products/workstation-player.html)
-- [VirtualBox](https://www.virtualbox.org)
-- [nmap](https://nmap.org)
-- [Visual Studio Code](https://code.visualstudio.com)
-- [Greenbone](https://www.greenbone.net/en/)
-- [MISP](https://www.misp-project.org)
-- [TheHive](https://thehive-project.org)
-- [REMnux](https://docs.remnux.org)
-- [Cuckoo](https://cuckoosandbox.org)
-- [jupyter](https://jupyter.org)
-- [Bookstack](https://github.com/BookStackApp/BookStack.git)
-- [TZWorks](https://tzworks.com/)
-- [BlueTeamPowerShell](https://blueteampowershell.com)
-- [Registry Viewer](https://accessdata.com/product-download/registry-viewer-2-0-0)
-- [SIGMA](https://github.com/SigmaHQ/sigma.git)
-- [DeepBlueCLI](https://github.com/sans-blue-team/DeepBlueCLI.git)
-- [KAPE](https://github.com/EricZimmerman/KapeFiles.git)
-- [PowerForensics](https://github.com/Invoke-IR/PowerForensics.git)
-- [MemProcFS](https://github.com/ufrisk/MemProcFS.git)
-- [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
-- [WMIExplorer](https://github.com/vinaypamnani/wmie2/)
-- [CobaltStrike-Defence](https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence)
-- [Metasploit](https://www.metasploit.com)
-- [HTTrack](https://github.com/xroche/httrack.git)
-- [Maltego](https://www.maltego.com)
-- [freq](https://github.com/MarkBaggett/freq.git)
-- [dnstwist](https://github.com/elceef/dnstwist.git)
-- [rdap](https://github.com/ezaspy/rdap.git)
-- [sherlock](https://github.com/sherlock-project/sherlock.git)
-- [TweetScraper](https://github.com/jonbakerfish/TweetScraper.git)
-- [karma](https://github.com/Dheerajmadhukar/karma_v2.git)
-- [oscybershop](https://oscybershop.herokuapp.com/main/index.html)
+- Tooling
+  - Installed
+    - [SIFT](https://www.sans.org/tools/sift-workstation/)
+    - [REMnux](https://docs.remnux.org)
+    - [Cuckoo](https://cuckoosandbox.org)
+    - [TheHive](https://thehive-project.org)
+    - [MISP](https://www.misp-project.org)
+    - [Greenbone](https://www.greenbone.net/en/)
+    - [VMware](https://www.vmware.com/uk/products/workstation-player.html)
+    - [Visual Studio Code](https://code.visualstudio.com)
+    - [elrond](https://github.com/ezaspy/elrond.git)
+    - [Jupyter Notebooks](https://jupyter.org)
+    - [Chrome](https://www.google.com/intl/en_uk/chrome/)
+    - [Firefox](https://www.mozilla.org/en-GB/firefox/new/)
+    - [DB Browser for SQLite](https://sqlitebrowser.org)
+    - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+    - [AWS CLI](https://aws.amazon.com/cli/)
+    - [gcloud CLI](https://cloud.google.com/sdk/gcloud)
+    - [Bookstack](https://github.com/BookStackApp/BookStack.git)
+    - [Metasploit](https://www.metasploit.com)
+    - [HTTrack](https://github.com/xroche/httrack.git)
+    - [Maltego](https://www.maltego.com)<br><br>
+
+  - Downloaded
+    - [oscybershop](https://oscybershop.herokuapp.com/main/index.html)
+    - [gandalf](https://github.com/ezaspy/gandalf.git)
+    - [bruce](https://github.com/ezaspy/bruce.git)
+    - [SIGMA](https://github.com/SigmaHQ/sigma.git)
+    - [DeepBlueCLI](https://github.com/sans-blue-team/DeepBlueCLI.git)
+    - [KAPE](https://github.com/EricZimmerman/KapeFiles.git)
+    - [PowerForensics](https://github.com/Invoke-IR/PowerForensics.git)
+    - [MemProcFS](https://github.com/ufrisk/MemProcFS.git)
+    - [WMIExplorer](https://github.com/vinaypamnani/wmie2/)
+    - [CobaltStrike-Defence](https://github.com/MichaelKoczwara/Awesome-CobaltStrike-Defence)
+    - [freq](https://github.com/MarkBaggett/freq.git)
+    - [dnstwist](https://github.com/elceef/dnstwist.git)
+    - [rdap](https://github.com/ezaspy/rdap.git)
+    - [sherlock](https://github.com/sherlock-project/sherlock.git)
+    - [TweetScraper](https://github.com/jonbakerfish/TweetScraper.git)
+    - [karma](https://github.com/Dheerajmadhukar/karma_v2.git)
+    - [TZWorks](https://tzworks.com/)
+    - [BlueTeamPowerShell](https://blueteampowershell.com)
+    - [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
 <br><br>
