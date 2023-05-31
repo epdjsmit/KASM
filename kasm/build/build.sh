@@ -43,11 +43,15 @@ if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then
   # installing remnux - MUST be installed before anything else
   clear
   printf "$banner\n    ++ Installing REMnux\n"
-  wget https://REMnux.org/remnux-cli > /dev/null 2>&1
-  mv remnux-cli remnux
-  chmod +x remnux
-  sudo mv remnux /usr/local/bin
-  sudo remnux install > /dev/null 2>&1
+  # -d has been selected
+  if [[ $vars = *docker* ]] || [ $length -eq "0" ]; then
+    sudo docker pull remnux/remnux-distro
+  else
+    wget https://REMnux.org/remnux-cli > /dev/null 2>&1
+    mv remnux-cli remnux
+    chmod +x remnux
+    sudo mv remnux /usr/local/bin
+    sudo remnux install > /dev/null 2>&1
   remnux_install_or_skip=">> \033[1;32mInstalled   REMnux\033[0m"
 else
   remnux_install_or_skip="-- \033[1;30mSkipped     REMnux\033[0m"
@@ -91,9 +95,9 @@ sudo apt-get remove --auto-remove --purge thunderbird rhythmbox yelp libreoffice
 sudo apt-get autoremove --purge > /dev/null 2>&1
 sudo apt-get clean > /dev/null 2>&1
 
-# installing virtualisation engines
+# installing virtualisation engines and docker
 clear
-printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mRemoved     redundant software\033[0m\n    ++ Installing virtualisation engines\n"
+printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mRemoved     redundant software\033[0m\n    ++ Installing virtualisation engines and docker\n"
 cd /home/sansforensics/
 sudo wget https://download3.vmware.com/software/WKST-PLAYER-1624/VMware-Player-Full-16.2.4-20089737.x86_64.bundle > /dev/null 2>&1
 sudo chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
@@ -104,16 +108,19 @@ echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-
 chmod +x virtualbox.sh
 ./virtualbox.sh > /dev/null 2>&1
 sudo rm -rf VMware-Player-Full-16.2.4-20089737.x86_64.bundle virtualbox.sh virtualbox-7.0_7.0.2-154219~Ubuntu~focal_amd64.deb
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+wget -O docker-desktop-4.20.0-amd64.deb "https://desktop.docker.com/linux/main/amd64/docker-desktop-4.20.0-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" && sudp dpkg -i docker-desktop-4.20.0-amd64.deb && systemctl --user start docker-desktop
+
 
 clear
-printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mRemoved     redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines\033[0m\n    ++ Installing elrond\n"
+printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mRemoved     redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines and docker\033[0m\n    ++ Installing elrond\n"
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond > /dev/null 2>&1
 sudo chmod -R 777 /opt/elrond/elrond/config.sh
 sudo sed -i '7d' /opt/elrond/elrond/config.sh
 sudo sed -i '$ d' /opt/elrond/elrond/config.sh
 # preparing elastic
-wget -O elastic.py "https://onedrive.live.com/download?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M" > /dev/null 2>&1
-sudo mv elastic.py /opt/kasm/kasm/build/install/
+#wget -O elastic.py "https://onedrive.live.com/download?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M" > /dev/null 2>&1
+#sudo mv elastic.py /opt/kasm/kasm/build/install/
 # preparing navigator
 sudo cp /opt/elrond/elrond/rivendell/post/mitre/nav_json.py /opt/kasm/kasm/build/install/navigator.py
 sudo /opt/elrond/./make.sh > /dev/null 2>&1
@@ -139,6 +146,13 @@ else
   misp_install_or_skip="-- \033[1;30mSkipped     MISP\033[0m"
 fi
 
+# -v has been selected
+if [[ $vars = *velociraptor* ]] || [ $length -eq "0" ]; then
+  velociraptor_install_or_skip=">> \033[1;32mInstalled   Velociraptor\033[0m"
+else
+  velociraptor_install_or_skip="-- \033[1;30mSkipped     Velociraptor\033[0m"
+fi
+
 # -g has been selected
 if [[ $vars = *greenbone* ]] || [ $length -eq "0" ]; then
   greenbone_install_or_skip=">> \033[1;32mInstalled   Greenbone Vulnerability Manager\033[0m"
@@ -146,7 +160,7 @@ else
   greenbone_install_or_skip="-- \033[1;30mSkipped     Greenbone Vulnerability Manager\033[0m"
 fi
 
-echo $remnux_install_or_skip $cuckoo_install_or_skip $thehive_install_or_skip $misp_install_or_skip $greenbone_install_or_skip > .install_or_skip
+echo $remnux_install_or_skip $docker_install_or_skip $cuckoo_install_or_skip $thehive_install_or_skip $misp_install_or_skip $greenbone_install_or_skip > .install_or_skip
 
 # downloading additional tooling
 /opt/kasm/kasm/build/install/./tools.sh

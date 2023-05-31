@@ -1,15 +1,18 @@
 #!/bin/bash
 while :; do
     case $1 in
+        -d|--docker) remnux="docker";;
         -r|--remnux) remnux="remnux";;
         -c|--cuckoo) cuckoo="cuckoo";;
         -t|--thehiveproject) thehiveproject="thp";;
+        -t|--misp) misp="misp";;
+        -v|--velociraptor) velociraptor="velociraptor";;
         -g|--greenbone) greenbone="greenbone";;
         *) break
     esac
     shift
 done
-echo $remnux $cuckoo $thehiveproject $greenbone > .vars
+echo $docker $remnux $cuckoo $thehiveproject $misp $velociraptor $greenbone > .vars
 clear
 sleep 2
 titles[0]="

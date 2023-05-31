@@ -25,7 +25,7 @@ Download and import [SANS SIFT Worksation](https://www.sans.org/tools/sift-works
 ## _Installation_
 > __Warning__ - _the following script will partition and format /dev/sdb. If you have not configured the second HDD as recommended above, it may delete data if you have another drive mounted. You can change this location, by editing the [elrond init.sh](https://github.com/ezaspy/elrond/blob/main/elrond/tools/config/scripts/init.sh) script_<br>
 
-The virtual machine will reboot and/or log out automatically. The boot icon - 🥾 - indicate when this will happen.<br>
+The virtual machine will reboot and/or log out automatically. The boot icon - 🥾 - indicate when this will happen; The down icon means the machine will shutdown. It is then advised you run a few commands to clean up the Virtual Machine (Example below is for VMware Fusion).<br>
 The installation can take serveral hours. The coffee icons below indicate wthe optimal times to step away for a beverage or leg stretch.<br>When prompted, enter the necessary credentials and/or the following commands (may need to use **TAB** to change options; most options are default):<br><br>
 
 ## _Configuration_
@@ -77,7 +77,11 @@ Log into **_ninja_** account<br>
 
  - **`ENTER`**
 
-<p align="center">🥾</p>
+<p align="center">⬇️</p>
+
+> /Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -d /path/to/KASM.vmwarevm/&lt;Virtual Disk&gt;.VMDK<br>
+
+> /Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -k /path/to/KASM.vmwarevm/&lt;Virtual Disk&gt;.VMDK<br>
 
 <br><br>
 
