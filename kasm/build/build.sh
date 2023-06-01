@@ -39,12 +39,12 @@ if [[ $vars = *cuckoo* ]] || [ $length -eq "0" ]; then
 fi
 
 # -r has been selected
-if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then
+if [[ $vars = *remnux* ]] || [[ $vars = *docker* ]] || [ $length -eq "0" ]; then
   # installing remnux - MUST be installed before anything else
   clear
   printf "$banner\n    ++ Installing REMnux\n"
   # -d has been selected
-  if [[ $vars = *docker* ]] || [ $length -eq "0" ]; then
+  if [[ $vars = *docker* ]]; then
     sudo docker pull remnux/remnux-distro
   else
     wget https://REMnux.org/remnux-cli > /dev/null 2>&1
@@ -52,6 +52,7 @@ if [[ $vars = *remnux* ]] || [ $length -eq "0" ]; then
     chmod +x remnux
     sudo mv remnux /usr/local/bin
     sudo remnux install > /dev/null 2>&1
+  fi
   remnux_install_or_skip=">> \033[1;32mInstalled   REMnux\033[0m"
 else
   remnux_install_or_skip="-- \033[1;30mSkipped     REMnux\033[0m"
