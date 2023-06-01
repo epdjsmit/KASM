@@ -117,8 +117,15 @@ clear
 printf "$banner\n    $remnux_install_or_skip\n    >> \033[1;32mUpdated     repositories\033[0m\n    >> \033[1;32mRemoved     redundant software\033[0m\n    >> \033[1;32mInstalled   virtualisation engines and docker\033[0m\n    ++ Installing elrond\n"
 sudo git clone https://github.com/ezaspy/elrond.git /opt/elrond > /dev/null 2>&1
 sudo chmod -R 777 /opt/elrond/elrond/config.sh
+sudo sed -i '8d' /opt/elrond/elrond/config.sh
+sudo sed -i '$ d' /opt/elrond/elrond/config.sh
 sudo sed -i '7d' /opt/elrond/elrond/config.sh
 sudo sed -i '$ d' /opt/elrond/elrond/config.sh
+sudo rm -rf /opt/elrond/elrond/tools/config/scripts/nsrl.sh
+sleep 1
+printf "\n\n  -> OPTIONAL:\n      Download 'https://s3.amazonaws.com/rds.nsrl.nist.gov/RDS/current_rdsv3/RDS_2022.12.1_modern_delta.zip'\n      via your chosen browser and save the file to '/opt/elrond/elrond/tools/'\n\n     Press ENTER to continue..."
+read answer
+sleep 1
 # preparing elastic
 #wget -O elastic.py "https://onedrive.live.com/download?cid=6B2C69CA86AC3FC8&resid=6B2C69CA86AC3FC8%213083290&authkey=ADWrcfFoW6cbo2M" > /dev/null 2>&1
 #sudo mv elastic.py /opt/kasm/kasm/build/install/
