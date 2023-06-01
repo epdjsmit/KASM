@@ -30,7 +30,7 @@ The installation can take serveral hours. The coffee icons below indicate wthe o
 
 ## _Configuration_
 
-`sudo git clone https://github.com/ezaspy/KASM.git /opt/kasm && /opt/kasm/./make.sh [-c/--cuckoo] [-g/--greenbone] [-r/--remnux] [-t/--thehiveproject]`<br>
+`sudo git clone https://github.com/ezaspy/KASM.git /opt/kasm && /opt/kasm/./make.sh [-d/--docker] [-c/--cuckoo] [-g/--greenbone] [-r/--remnux] [-t/--thehiveproject]`<br>
 > __Note__ - _the aforementioned flags/switches are optional; providing one or more of them will only install that specified software suite. Anything else provided will install all components of KASM._
 
 <br>
