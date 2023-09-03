@@ -1,7 +1,7 @@
 #!/bin/bash
 while :; do
     case $1 in
-        -d|--docker) remnux="docker";;
+        -d|--docker) docker="docker";;
         -r|--remnux) remnux="remnux";;
         -c|--cuckoo) cuckoo="cuckoo";;
         -t|--thehiveproject) thehiveproject="thp";;
